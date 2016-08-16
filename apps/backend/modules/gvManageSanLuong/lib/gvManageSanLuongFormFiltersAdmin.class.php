@@ -16,8 +16,14 @@ class gvManageSanLuongFormFiltersAdmin extends BaseLogPaymentFormFilter
     {
         $i18n = sfContext::getInstance()->getI18N();
         $arr_cp = PartnerTable::getListPartnerForSelectBox();
+        $arr_menhgia = array($i18n->__("Tất cá"), 10000, 20000, 50000, 100000, 200000, 500000);
+        $arr_type =  ClientTypeTable::getListClientTypeForSelectBox();
+        $arr_provider  = ProviderTable::getListProviderForSelectBox();
         $this->setWidgets(array(
             'partner_id' => new sfWidgetFormChoice(array('choices' => $arr_cp), array('add_empty' => true)),
+            'os_id' => new sfWidgetFormChoice(array('choices' => $arr_type), array('add_empty' => true)),
+            'menhgia' => new sfWidgetFormChoice(array('choices' => $arr_menhgia), array('add_empty' => true)),
+            'provider_code' => new sfWidgetFormChoice(array('choices' => $arr_provider), array('add_empty' => true)),
 
             'created_at' => new sfWidgetFormFilterInput(array('with_empty' => false), array('readonly' => true)),
 
@@ -26,6 +32,9 @@ class gvManageSanLuongFormFiltersAdmin extends BaseLogPaymentFormFilter
 
         $this->setValidators(array(
             'partner_id' => new sfValidatorChoice(array('required' => false, 'choices' => array_keys($arr_cp))),
+            'provider_code' => new sfValidatorChoice(array('required' => false, 'choices' => array_keys($arr_provider))),
+            'os_id' => new sfValidatorChoice(array('required' => false, 'choices' => array_keys($arr_type))),
+            'menhgia' => new sfValidatorChoice(array('required' => false, 'choices' => array_keys($arr_menhgia))),
             'created_at' => new sfValidatorDateRange(array('required' => false,
                 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')),
                 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
@@ -68,6 +77,15 @@ class gvManageSanLuongFormFiltersAdmin extends BaseLogPaymentFormFilter
         }
         if(array_key_exists('partner_id', $values)&& $values['partner_id'] != ''){
             $query->andWhere($alias .".providerId = ?",$values["partner_id"] );
+        }
+        if(array_key_exists('os_id', $values)&& $values['os_id'] != ''){
+            $query->andWhere("g.clientID = ?",$values["os_id"] );
+        }
+        if(array_key_exists('menhgia', $values)&& $values['menhgia'] != 0){
+            $query->andWhere($alias .".money = ?",$values["menhgia"] );
+        }
+        if(array_key_exists('provider_code', $values)&& $values['provider_code'] != ''){
+            $query->andWhere($alias .".providerId = ?",$values["provider_code"] );
         }
         $query->leftJoin($alias. ".UserInfo g");
         $query->leftJoin("g.Partner p");

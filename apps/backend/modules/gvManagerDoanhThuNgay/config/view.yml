@@ -2,7 +2,7 @@
 ---
 indexSuccess:
   metas:
-    title: Danh sách người chơi đăng ký
+    title: Danh sách người chơi
   stylesheets:
     - bootstrapDaterangepickerMaster/daterangepicker-bs2.css
 

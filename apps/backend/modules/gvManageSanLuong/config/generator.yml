@@ -21,7 +21,7 @@ generator:
         object_actions: {}
       filter:
         class: gvManageSanLuongFormFiltersAdmin
-        display: [created_at, partner_id]
+        display: [created_at, partner_id, os_id, menhgia, provider_code]
       form:    ~
       edit:    ~
       new:     ~

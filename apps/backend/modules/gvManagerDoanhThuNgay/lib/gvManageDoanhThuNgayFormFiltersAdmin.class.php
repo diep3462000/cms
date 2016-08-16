@@ -16,10 +16,10 @@ class gvManageDoanhThuNgayFormFiltersAdmin extends BaseLogPaymentFormFilter
     {
         $i18n = sfContext::getInstance()->getI18N();
         $arr_cp = PartnerTable::getListPartnerForSelectBox();
-        $arr_game = GameTable::getListGameForSelectBox();
+        $arr_os = ClientTypeTable::getListClientTypeForSelectBox();
         $this->setWidgets(array(
             'partner_id' => new sfWidgetFormChoice(array('choices' => $arr_cp), array('add_empty' => true)),
-            'game_id' => new sfWidgetFormChoice(array('choices' => $arr_game), array('add_empty' => true)),
+            'os_id' => new sfWidgetFormChoice(array('choices' => $arr_os), array('add_empty' => true)),
 
             'created_at' => new sfWidgetFormFilterInput(array('with_empty' => false), array('readonly' => true)),
 
@@ -28,7 +28,7 @@ class gvManageDoanhThuNgayFormFiltersAdmin extends BaseLogPaymentFormFilter
 
         $this->setValidators(array(
             'partner_id' => new sfValidatorChoice(array('required' => false, 'choices' => array_keys($arr_cp))),
-            'game_id' => new sfValidatorChoice(array('required' => false, 'choices' => array_keys($arr_game))),
+            'os_id' => new sfValidatorChoice(array('required' => false, 'choices' => array_keys($arr_os))),
             'created_at' => new sfValidatorDateRange(array('required' => false,
                 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')),
                 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
@@ -71,6 +71,9 @@ class gvManageDoanhThuNgayFormFiltersAdmin extends BaseLogPaymentFormFilter
         }
         if(array_key_exists('partner_id', $values)&& $values['partner_id'] != ''){
             $query->andWhere($alias .".providerId = ?",$values["partner_id"] );
+        }
+        if(array_key_exists('os_id', $values)&& $values['os_id'] != ''){
+            $query->andWhere("g.clientID = ?",$values["os_id"] );
         }
         $query->leftJoin($alias. ".UserInfo g");
         $query->leftJoin("g.Partner p");

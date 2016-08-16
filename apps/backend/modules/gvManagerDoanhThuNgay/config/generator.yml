@@ -21,7 +21,7 @@ generator:
         object_actions: {}
       filter:
         class: gvManageDoanhThuNgayFormFiltersAdmin
-        display: [created_at, partner_id, game_id]
+        display: [created_at, partner_id, os_id]
       form:    ~
       edit:    ~
       new:     ~

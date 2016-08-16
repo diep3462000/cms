@@ -13,6 +13,11 @@ charge_money:
   param: {module: charge, action: index}
   requirements:
     sf_method: [post]
+buy_card:
+  url: /buy_card
+  param: {module: buyCard, action: index}
+  requirements:
+    sf_method: [post]
 default_index:
   url:   /:module
   param: { action: index }
