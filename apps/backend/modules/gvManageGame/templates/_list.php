@@ -1,20 +1,19 @@
 <div class="sf_admin_list">
-    <table class="datatable table table-bordered table-striped" id="table_gv_manage_user" style="margin-top: 5px !important;">
+    <table class="datatable table table-bordered table-striped" id="table_gv_manage_game" style="margin-top: 5px !important;">
       <thead>
           <tr>
-<!--                        <th id="sf_admin_list_batch_actions" style="width: 10px">
-                            <input id="sf_admin_list_batch_checkbox" type="checkbox" onclick="checkAll();" />-->
-              <!--                        </th>-->
+<!--                        <th Gameid="sf_admin_list_batch_actions" style="...">-->
+<!--                            <input Gameid="sf_admin_list_batch_checkbox" type="checkbox" onclick="checkAll();" />-->
+<!--                        </th>-->
+          
+          <?php include_partial('gvManageGame/list_th_tabular', array('sort' => $sort)) ?>
 
-          <?php include_partial('gvManageUser/list_th_tabular', array('sort' => $sort)) ?>
-
-                        <th id="sf_admin_list_th_actions" style="width: 170px;text-align: center"><?php echo __('Actions', array(), 'tmcTwitterBootstrapPlugin') ?></th>
                     </tr>
       </thead>
       <?php if (!$pager->getNbResults()): ?>
       <tbody>
         <tr>
-          <th colspan="13">
+          <th colspan="6">
             <?php echo __('No results', array(), 'tmcTwitterBootstrapPlugin') ?>
           </th>
         </tr>
@@ -27,22 +26,21 @@
       <?php //$currentPage  = $sf_request->getParameter('current_page', 0)?>
       <?php $currentPage =  $pager->getPage() ?>
       <!--   End diepth2   -->
-        <?php foreach ($results as $i => $user): $odd = fmod(++$i, 2) ? 'odd' : 'even' ?>
+        <?php foreach ($results as $i => $game): $odd = fmod(++$i, 2) ? 'odd' : 'even' ?>
 
-          <tr class="sf_admin_row <?php echo $odd ?> {pk: <?php echo $user->getPrimaryKey() ?>}" rel="<?php echo $user->getPrimaryKey() ?>">
+          <tr class="sf_admin_row <?php echo $odd ?> {pk: <?php echo $game->getPrimaryKey() ?>}" rel="<?php echo $game->getPrimaryKey() ?>">
 
-                            <?php #include_partial('gvManageUser/list_td_batch_actions', array('user' => $user, 'helper' => $helper)) ?>
+                            <?php #include_partial('gvManageGame/list_td_batch_actions', array('game' => $game, 'helper' => $helper)) ?>
                             <?php $orderNo = ($i) + ($currentPage - 1)*$pager->getMaxPerPage(); ?>
-                <?php include_partial('gvManageUser/list_td_tabular', array('user' => $user, 'orderNo' => $orderNo)) ?>
-                            <?php #include_partial('gvManageUser/list_td_actions', array('user' => $user, 'helper' => $helper)) ?>
+                <?php include_partial('gvManageGame/list_td_tabular', array('game' => $game, 'orderNo' => $orderNo)) ?>
                       </tr>
         <?php endforeach; ?>
       </tbody>
       <tfoot>
         <tr>
-          <th colspan="13">
+          <th colspan="6">
             <?php if ($pager->haveToPaginate()): ?>
-            <div style="position: relative; width: auto; float:right"><?php include_partial('gvManageUser/pagination', array('pager' => $pager)) ?></div>
+            <div style="position: relative; width: auto; float:right"><?php include_partial('gvManageGame/pagination', array('pager' => $pager)) ?></div>
             <?php slot('pagination_extra') ?>
               <?php echo __('(page %%page%%/%%nb_pages%%)', array('%%page%%' => $pager->getPage(), '%%nb_pages%%' => $pager->getLastPage()), 'tmcTwitterBootstrapPlugin') ?>
             <?php end_slot() ?>
