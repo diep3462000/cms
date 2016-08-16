@@ -1,3 +1,12 @@
+avatar:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Avatar
+    module:               gvManageAvatar
+    prefix_path:          /gvManageAvatar
+    column:               avatarid
+    with_wildcard_routes: true
+
 doanh_thu_ngay:
   class: sfDoctrineRouteCollection
   options:

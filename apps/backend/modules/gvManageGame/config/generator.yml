@@ -14,8 +14,14 @@ generator:
     config:
       actions: ~
       fields:  ~
-      list:    ~
-      filter:  ~
+      list:
+        title: Quản lý game
+        display:  ~
+        actions: {}
+        object_actions: {}
+      filter:
+        class: gvManageGameFormFilter
+        display:  ~
       form:    ~
       edit:    ~
       new:     ~

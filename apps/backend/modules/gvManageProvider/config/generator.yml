@@ -14,8 +14,18 @@ generator:
     config:
       actions: ~
       fields:  ~
-      list:    ~
-      filter:  ~
+      list:
+        title: Danh sách nhà mạng
+        display: ~
+        actions:
+          _new: {label: Thêm mới}
+        object_actions:
+          _edit: ~
+      edit:
+        title: Chỉnh sửa nhà mạng
+      new:
+        title: Thêm mới nhà mạng
+      filter:
+        class:  gvManageProviderFormFilter
+        display: ~
       form:    ~
-      edit:    ~
-      new:     ~
