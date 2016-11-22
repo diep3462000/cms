@@ -16,12 +16,13 @@ generator:
       fields:  ~
       list:
         title: Thống kê nội dung web site
-        display: [image, title, content, status, type, is_hot, created_at]
-        actions: {}
+        display: [title, image, content, status, type, is_hot, created_at]
         object_actions: {}
         batch_actions: {}
       filter:
-        display: []
-      form:    ~
+        display: [title, content, type]
+      form:
+        class: bkManageWebContentFormAdmin
+        display: [title, content, image, status, type, is_hot]
       edit:    ~
       new:     ~
