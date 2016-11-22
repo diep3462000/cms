@@ -26688,3 +26688,295 @@ Nov 21 15:52:31 symfony [info] {sfWebDebugLogger} Component "tmcTwitterBootstrap
 Nov 21 15:52:31 symfony [info] {sfWebDebugLogger} Partial "tmcTwitterBootstrap/_footer" 0.94 ms (1)
 Nov 21 15:52:31 symfony [info] {sfWebResponse} Send content (142281 o)
 Nov 21 15:52:31 symfony [info] {myPDOSessionStorage} Write session module name "vtHomePage" | action name "index" | data "symfony/user/sfUser/lastRequest|i:1479718350;symfony/user/sfUser/authenticated|b:1;symfony/user/sfUser/credentials|a:1:{i:0;s:5:"admin";}symfony/user/sfUser/attributes|a:5:{s:30:"symfony/user/sfUser/attributes";a:3:{s:9:"IpAddress";s:3:"::1";s:9:"UserAgent";s:109:"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36";s:14:"UserPermission";s:0:"";}s:12:"admin_module";a:6:{s:20:"bkManageTaiGame.page";i:1;s:20:"bkManageTaiGame.sort";a:2:{i:0;N;i:1;N;}s:19:"bkManageXocdia.page";i:1;s:19:"bkManageXocdia.sort";a:2:{i:0;N;i:1;N;}s:25:"bkManageDoanhThuNgay.page";i:1;s:25:"bkManageDoanhThuNgay.sort";a:2:{i:0;N;i:1;N;}}s:19:"sfGuardSecurityUser";a:1:{s:7:"user_id";s:2:"26";}s:25:"symfony/user/sfUser/flash";a:0:{}s:32:"symfony/user/sfUser/flash/remove";a:0:{}}symfony/user/sfUser/culture|s:2:"vi";securimage_code_value|a:1:{s:7:"default";s:0:"";}securimage_code_ctime|a:1:{s:7:"default";s:0:"";}" | id "4nagp65js8c54nn9ej0jn5hj50"
+Nov 22 10:37:15 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Nov 22 10:37:15 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Nov 22 10:37:15 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_filter" (/guard/users/filter.:sf_format)
+Nov 22 10:37:15 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_batch" (/guard/users/batch.:sf_format)
+Nov 22 10:37:15 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user" (/guard/users.:sf_format)
+Nov 22 10:37:15 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_new" (/guard/users/new.:sf_format)
+Nov 22 10:37:15 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_create" (/guard/users.:sf_format)
+Nov 22 10:37:15 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_edit" (/guard/users/:id/edit.:sf_format)
+Nov 22 10:37:15 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_update" (/guard/users/:id.:sf_format)
+Nov 22 10:37:15 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_delete" (/guard/users/:id.:sf_format)
+Nov 22 10:37:15 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_show" (/guard/users/:id.:sf_format)
+Nov 22 10:37:15 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_object" (/guard/users/:id/:action.:sf_format)
+Nov 22 10:37:15 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_collection" (/guard/users/:action/action.:sf_format)
+Nov 22 10:37:15 symfony [info] {sfPatternRouting} Connect sfRequestRoute "sf_captchagd" (/captcha)
+Nov 22 10:37:15 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'vtHomePage',  'action' => 'index',)
+Nov 22 10:37:15 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Nov 22 10:37:18 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Nov 22 10:37:18 symfony [info] {sfFilterChain} Executing filter "mySecurityFilter"
+Nov 22 10:37:18 symfony [info] {mySecurityFilter} Action "vtHomePage/index" requires authentication, forwarding to "sfGuardAuth/signin"
+Nov 22 10:37:18 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Nov 22 10:37:18 symfony [info] {sfFilterChain} Executing filter "ChangeLanguageFilter"
+Nov 22 10:37:18 symfony [info] {sfFilterChain} Executing filter "ChangePortalFilter"
+Nov 22 10:37:18 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Nov 22 10:37:18 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Nov 22 10:37:18 symfony [info] {sfFrontWebController} Redirect to "http://localhost:8081/backend_dev.php/guard/login"
+Nov 22 10:37:18 symfony [info] {sfWebResponse} Send status "HTTP/1.1 302 Found"
+Nov 22 10:37:18 symfony [info] {sfWebResponse} Send header "Location: http://localhost:8081/backend_dev.php/guard/login"
+Nov 22 10:37:18 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Nov 22 10:37:18 symfony [info] {sfWebDebugLogger} Configuration 4221.93 ms (14)
+Nov 22 10:37:18 symfony [info] {sfWebDebugLogger} Factories 813.84 ms (1)
+Nov 22 10:37:18 symfony [info] {sfWebDebugLogger} Database (Doctrine) 48.88 ms (1)
+Nov 22 10:37:18 symfony [info] {sfWebDebugLogger} Action "sfGuardAuth/signin" 1.07 ms (1)
+Nov 22 10:37:18 symfony [info] {sfWebResponse} Send content (120 o)
+Nov 22 10:37:18 symfony [info] {myPDOSessionStorage} Write session module name "sfGuardAuth" | action name "signin" | data "symfony/user/sfUser/lastRequest|i:1479785836;symfony/user/sfUser/authenticated|b:0;symfony/user/sfUser/credentials|a:0:{}symfony/user/sfUser/attributes|a:0:{}symfony/user/sfUser/culture|s:2:"vi";" | id "4nagp65js8c54nn9ej0jn5hj50"
+Nov 22 10:37:18 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Nov 22 10:37:18 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Nov 22 10:37:18 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_filter" (/guard/users/filter.:sf_format)
+Nov 22 10:37:18 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_batch" (/guard/users/batch.:sf_format)
+Nov 22 10:37:18 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user" (/guard/users.:sf_format)
+Nov 22 10:37:18 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_new" (/guard/users/new.:sf_format)
+Nov 22 10:37:18 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_create" (/guard/users.:sf_format)
+Nov 22 10:37:18 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_edit" (/guard/users/:id/edit.:sf_format)
+Nov 22 10:37:18 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_update" (/guard/users/:id.:sf_format)
+Nov 22 10:37:18 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_delete" (/guard/users/:id.:sf_format)
+Nov 22 10:37:18 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_show" (/guard/users/:id.:sf_format)
+Nov 22 10:37:18 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_object" (/guard/users/:id/:action.:sf_format)
+Nov 22 10:37:18 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_collection" (/guard/users/:action/action.:sf_format)
+Nov 22 10:37:18 symfony [info] {sfPatternRouting} Connect sfRequestRoute "sf_captchagd" (/captcha)
+Nov 22 10:37:18 symfony [info] {sfPatternRouting} Match route "sf_guard_signin" (/guard/login) for /guard/login with parameters array (  'module' => 'sfGuardAuth',  'action' => 'signin',)
+Nov 22 10:37:18 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Nov 22 10:37:18 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Nov 22 10:37:18 symfony [info] {sfFilterChain} Executing filter "ChangeLanguageFilter"
+Nov 22 10:37:18 symfony [info] {sfFilterChain} Executing filter "ChangePortalFilter"
+Nov 22 10:37:18 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Nov 22 10:37:18 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Nov 22 10:37:19 symfony [info] {sfPHPView} Render "E:\Projects\kinggame\CMS\cms\apps\backend\modules/sfGuardAuth/templates/signinSuccess.php"
+Nov 22 10:37:19 symfony [info] {sfPartialView} Render "E:\Projects\kinggame\CMS\cms\apps\backend\modules/tmcTwitterBootstrap/templates/_assets.php"
+Nov 22 10:37:19 symfony [info] {sfPartialView} Render "E:\Projects\kinggame\CMS\cms\apps\backend\modules/sfGuardAuth/templates/_header.php"
+Nov 22 10:37:19 symfony [info] {sfPartialView} Render "E:\Projects\kinggame\CMS\cms\apps\backend\modules/sfGuardAuth/templates/_logo.php"
+Nov 22 10:37:19 symfony [info] {sfPartialView} Render "E:\Projects\kinggame\CMS\cms\apps\backend\modules/sfGuardAuth/templates/_alerts.php"
+Nov 22 10:37:19 symfony [info] {sfPartialView} Render "E:\Projects\kinggame\CMS\cms\apps\backend\modules/sfGuardAuth/templates/_signin_form.php"
+Nov 22 10:37:19 symfony [info] {main} Call "tmcTwitterBootstrap->executeFooter()"
+Nov 22 10:37:19 symfony [info] {sfPartialView} Render "E:\Projects\kinggame\CMS\cms\apps\backend\modules/tmcTwitterBootstrap/templates/_footer.php"
+Nov 22 10:37:19 symfony [info] {sfPHPView} Decorate content with "E:\Projects\kinggame\CMS\cms\apps\backend\templates/layout.php"
+Nov 22 10:37:19 symfony [info] {sfPHPView} Render "E:\Projects\kinggame\CMS\cms\apps\backend\templates/layout.php"
+Nov 22 10:37:19 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Nov 22 10:37:19 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Nov 22 10:37:19 symfony [info] {sfWebDebugLogger} Configuration 102.28 ms (13)
+Nov 22 10:37:19 symfony [info] {sfWebDebugLogger} Factories 280.35 ms (1)
+Nov 22 10:37:19 symfony [info] {sfWebDebugLogger} Database (Doctrine) 44.60 ms (1)
+Nov 22 10:37:19 symfony [info] {sfWebDebugLogger} Action "sfGuardAuth/signin" 152.69 ms (1)
+Nov 22 10:37:19 symfony [info] {sfWebDebugLogger} View "Success" for "sfGuardAuth/signin" 351.63 ms (1)
+Nov 22 10:37:19 symfony [info] {sfWebDebugLogger} Partial "tmcTwitterBootstrap/_assets" 15.83 ms (1)
+Nov 22 10:37:19 symfony [info] {sfWebDebugLogger} Partial "sfGuardAuth/_header" 38.35 ms (1)
+Nov 22 10:37:19 symfony [info] {sfWebDebugLogger} Partial "sfGuardAuth/_logo" 9.96 ms (1)
+Nov 22 10:37:19 symfony [info] {sfWebDebugLogger} Partial "sfGuardAuth/_alerts" 38.15 ms (1)
+Nov 22 10:37:19 symfony [info] {sfWebDebugLogger} Partial "sfGuardAuth/_signin_form" 120.39 ms (1)
+Nov 22 10:37:19 symfony [info] {sfWebDebugLogger} Component "tmcTwitterBootstrap/footer" 0.01 ms (1)
+Nov 22 10:37:19 symfony [info] {sfWebDebugLogger} Partial "tmcTwitterBootstrap/_footer" 0.31 ms (1)
+Nov 22 10:37:19 symfony [info] {sfWebResponse} Send content (62923 o)
+Nov 22 10:37:19 symfony [info] {myPDOSessionStorage} Write session module name "sfGuardAuth" | action name "signin" | data "symfony/user/sfUser/lastRequest|i:1479785838;symfony/user/sfUser/authenticated|b:0;symfony/user/sfUser/credentials|a:0:{}symfony/user/sfUser/attributes|a:0:{}symfony/user/sfUser/culture|s:2:"vi";" | id "4nagp65js8c54nn9ej0jn5hj50"
+Nov 22 10:37:19 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Nov 22 10:37:19 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Nov 22 10:37:19 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_filter" (/guard/users/filter.:sf_format)
+Nov 22 10:37:19 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_batch" (/guard/users/batch.:sf_format)
+Nov 22 10:37:19 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user" (/guard/users.:sf_format)
+Nov 22 10:37:19 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_new" (/guard/users/new.:sf_format)
+Nov 22 10:37:19 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_create" (/guard/users.:sf_format)
+Nov 22 10:37:19 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_edit" (/guard/users/:id/edit.:sf_format)
+Nov 22 10:37:19 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_update" (/guard/users/:id.:sf_format)
+Nov 22 10:37:19 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_delete" (/guard/users/:id.:sf_format)
+Nov 22 10:37:19 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_show" (/guard/users/:id.:sf_format)
+Nov 22 10:37:19 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_object" (/guard/users/:id/:action.:sf_format)
+Nov 22 10:37:19 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_collection" (/guard/users/:action/action.:sf_format)
+Nov 22 10:37:19 symfony [info] {sfPatternRouting} Connect sfRequestRoute "sf_captchagd" (/captcha)
+Nov 22 10:37:19 symfony [info] {sfPatternRouting} Match route "sf_captchagd" (/captcha) for /captcha with parameters array (  'module' => 'sfCaptchaGD',  'action' => 'showImage',)
+Nov 22 10:37:19 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Nov 22 10:37:19 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Nov 22 10:37:19 symfony [info] {sfFilterChain} Executing filter "ChangeLanguageFilter"
+Nov 22 10:37:19 symfony [info] {sfFilterChain} Executing filter "ChangePortalFilter"
+Nov 22 10:37:19 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Nov 22 10:37:19 symfony [info] {sfCaptchaGDActions} Call "sfCaptchaGDActions->executeShowImage()"
+Nov 22 10:37:19 symfony [info] captcha huync2: 79
+Nov 22 10:37:19 symfony [info] {myPDOSessionStorage} Write session module name "sfCaptchaGD" | action name "showImage" | data "symfony/user/sfUser/lastRequest|i:1479785839;symfony/user/sfUser/authenticated|b:0;symfony/user/sfUser/credentials|a:0:{}symfony/user/sfUser/attributes|a:0:{}symfony/user/sfUser/culture|s:2:"vi";securimage_code_value|a:1:{s:7:"default";s:2:"79";}securimage_code_ctime|a:1:{s:7:"default";i:1479785839;}" | id "4nagp65js8c54nn9ej0jn5hj50"
+Nov 22 10:37:26 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Nov 22 10:37:26 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Nov 22 10:37:26 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_filter" (/guard/users/filter.:sf_format)
+Nov 22 10:37:26 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_batch" (/guard/users/batch.:sf_format)
+Nov 22 10:37:26 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user" (/guard/users.:sf_format)
+Nov 22 10:37:26 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_new" (/guard/users/new.:sf_format)
+Nov 22 10:37:26 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_create" (/guard/users.:sf_format)
+Nov 22 10:37:26 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_edit" (/guard/users/:id/edit.:sf_format)
+Nov 22 10:37:26 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_update" (/guard/users/:id.:sf_format)
+Nov 22 10:37:26 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_delete" (/guard/users/:id.:sf_format)
+Nov 22 10:37:26 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_show" (/guard/users/:id.:sf_format)
+Nov 22 10:37:26 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_object" (/guard/users/:id/:action.:sf_format)
+Nov 22 10:37:26 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_collection" (/guard/users/:action/action.:sf_format)
+Nov 22 10:37:26 symfony [info] {sfPatternRouting} Connect sfRequestRoute "sf_captchagd" (/captcha)
+Nov 22 10:37:26 symfony [info] {sfPatternRouting} Match route "sf_guard_signin" (/guard/login) for /guard/login with parameters array (  'module' => 'sfGuardAuth',  'action' => 'signin',)
+Nov 22 10:37:26 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Nov 22 10:37:26 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Nov 22 10:37:26 symfony [info] {sfFilterChain} Executing filter "ChangeLanguageFilter"
+Nov 22 10:37:26 symfony [info] {sfFilterChain} Executing filter "ChangePortalFilter"
+Nov 22 10:37:26 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Nov 22 10:37:26 symfony [info] {sfGuardAuthActions} Call "sfGuardAuthActions->executeSignin()"
+Nov 22 10:37:26 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.first_name AS s__first_name, s.last_name AS s__last_name, s.phone AS s__phone, s.email_address AS s__email_address, s.username AS s__username, s.algorithm AS s__algorithm, s.salt AS s__salt, s.password AS s__password, s.is_active AS s__is_active, s.is_super_admin AS s__is_super_admin, s.last_login AS s__last_login, s.pass_update_at AS s__pass_update_at, s.is_lock_signin AS s__is_lock_signin, s.locked_time AS s__locked_time, s.created_at AS s__created_at, s.updated_at AS s__updated_at FROM sf_guard_user s WHERE (s.username = ? AND s.is_active = ?) - (diepth, 1)
+Nov 22 10:37:26 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.first_name AS s__first_name, s.last_name AS s__last_name, s.phone AS s__phone, s.email_address AS s__email_address, s.username AS s__username, s.algorithm AS s__algorithm, s.salt AS s__salt, s.password AS s__password, s.is_active AS s__is_active, s.is_super_admin AS s__is_super_admin, s.last_login AS s__last_login, s.pass_update_at AS s__pass_update_at, s.is_lock_signin AS s__is_lock_signin, s.locked_time AS s__locked_time, s.created_at AS s__created_at, s.updated_at AS s__updated_at FROM sf_guard_user s WHERE (s.username = ? AND s.is_active = ?) - (diepth, 1)
+Nov 22 10:37:26 symfony [info] {myUser} User is authenticated
+Nov 22 10:37:27 symfony [info] {myPDOSessionStorage} Write session module name "sfGuardAuth" | action name "signin" | data "" | id "oakkma0t8r9ffkbqf3io874bf1"
+Nov 22 10:37:27 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.first_name AS s__first_name, s.last_name AS s__last_name, s.phone AS s__phone, s.email_address AS s__email_address, s.username AS s__username, s.algorithm AS s__algorithm, s.salt AS s__salt, s.password AS s__password, s.is_active AS s__is_active, s.is_super_admin AS s__is_super_admin, s.last_login AS s__last_login, s.pass_update_at AS s__pass_update_at, s.is_lock_signin AS s__is_lock_signin, s.locked_time AS s__locked_time, s.created_at AS s__created_at, s.updated_at AS s__updated_at FROM sf_guard_user s WHERE (s.id = ?) LIMIT 1 - (26)
+Nov 22 10:37:27 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.name AS s__name, s.description AS s__description, s.types AS s__types, s.created_at AS s__created_at, s.updated_at AS s__updated_at, s2.user_id AS s2__user_id, s2.permission_id AS s2__permission_id, s2.created_at AS s2__created_at, s2.updated_at AS s2__updated_at FROM sf_guard_permission s LEFT JOIN sf_guard_user_permission s2 ON s.id = s2.permission_id WHERE (s2.user_id IN (?)) - (26)
+Nov 22 10:37:27 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.name AS s__name, s.description AS s__description, s.created_at AS s__created_at, s.updated_at AS s__updated_at, s2.user_id AS s2__user_id, s2.group_id AS s2__group_id, s2.created_at AS s2__created_at, s2.updated_at AS s2__updated_at FROM sf_guard_group s LEFT JOIN sf_guard_user_group s2 ON s.id = s2.group_id WHERE (s2.user_id IN (?)) - (26)
+Nov 22 10:37:27 symfony [info] {myUser} Add credential(s) "admin"
+Nov 22 10:37:27 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE sf_guard_user SET last_login = ?, updated_at = ? WHERE id = ? - (2016-11-22 10:37:27, 2016-11-22 10:37:27, 26)
+Nov 22 10:37:28 symfony [info] {Doctrine_Connection_Statement} execute : DELETE FROM vt_user_signin_lock WHERE (user_name = ?) - (diepth)
+Nov 22 10:37:28 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.user_id AS s__user_id, s.permission_id AS s__permission_id FROM sf_guard_user_permission s WHERE (s.user_id = ?) - (26)
+Nov 22 10:37:28 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id FROM sf_guard_permission s WHERE (s.types = ? AND s.id IN (?)) - (1, 1)
+Nov 22 10:37:28 symfony [info] {sfFrontWebController} Redirect to "http://localhost:8081/backend_dev.php/"
+Nov 22 10:37:28 symfony [info] {sfWebResponse} Send status "HTTP/1.1 302 Found"
+Nov 22 10:37:28 symfony [info] {sfWebResponse} Send header "Location: http://localhost:8081/backend_dev.php/"
+Nov 22 10:37:28 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Nov 22 10:37:28 symfony [info] {sfWebDebugLogger} Configuration 14.19 ms (9)
+Nov 22 10:37:28 symfony [info] {sfWebDebugLogger} Factories 279.33 ms (1)
+Nov 22 10:37:28 symfony [info] {sfWebDebugLogger} Database (Doctrine) 655.60 ms (10)
+Nov 22 10:37:28 symfony [info] {sfWebDebugLogger} Action "sfGuardAuth/signin" 1571.90 ms (1)
+Nov 22 10:37:28 symfony [info] {sfWebResponse} Send content (109 o)
+Nov 22 10:37:28 symfony [info] {myPDOSessionStorage} Write session module name "sfGuardAuth" | action name "signin" | data "symfony/user/sfUser/lastRequest|i:1479785846;symfony/user/sfUser/authenticated|b:1;symfony/user/sfUser/credentials|a:1:{i:0;s:5:"admin";}symfony/user/sfUser/attributes|a:2:{s:30:"symfony/user/sfUser/attributes";a:3:{s:9:"IpAddress";s:3:"::1";s:9:"UserAgent";s:109:"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36";s:14:"UserPermission";s:0:"";}s:19:"sfGuardSecurityUser";a:1:{s:7:"user_id";s:2:"26";}}symfony/user/sfUser/culture|s:2:"vi";securimage_code_value|a:1:{s:7:"default";s:0:"";}securimage_code_ctime|a:1:{s:7:"default";s:0:"";}" | id "oakkma0t8r9ffkbqf3io874bf1"
+Nov 22 10:37:28 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Nov 22 10:37:28 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Nov 22 10:37:28 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_filter" (/guard/users/filter.:sf_format)
+Nov 22 10:37:28 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_batch" (/guard/users/batch.:sf_format)
+Nov 22 10:37:28 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user" (/guard/users.:sf_format)
+Nov 22 10:37:28 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_new" (/guard/users/new.:sf_format)
+Nov 22 10:37:28 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_create" (/guard/users.:sf_format)
+Nov 22 10:37:28 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_edit" (/guard/users/:id/edit.:sf_format)
+Nov 22 10:37:28 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_update" (/guard/users/:id.:sf_format)
+Nov 22 10:37:28 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_delete" (/guard/users/:id.:sf_format)
+Nov 22 10:37:28 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_show" (/guard/users/:id.:sf_format)
+Nov 22 10:37:28 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_object" (/guard/users/:id/:action.:sf_format)
+Nov 22 10:37:28 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_collection" (/guard/users/:action/action.:sf_format)
+Nov 22 10:37:28 symfony [info] {sfPatternRouting} Connect sfRequestRoute "sf_captchagd" (/captcha)
+Nov 22 10:37:28 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'vtHomePage',  'action' => 'index',)
+Nov 22 10:37:28 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Nov 22 10:37:28 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Nov 22 10:37:28 symfony [info] {sfFilterChain} Executing filter "mySecurityFilter"
+Nov 22 10:37:28 symfony [info] {mySecurityFilter} Session ip "::1" | access ip "::1"
+Nov 22 10:37:28 symfony [info] {mySecurityFilter} Session user-agent "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36" | access user-agent "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36"
+Nov 22 10:37:28 symfony [info] {sfFilterChain} Executing filter "ChangeLanguageFilter"
+Nov 22 10:37:28 symfony [info] {sfFilterChain} Executing filter "ChangePortalFilter"
+Nov 22 10:37:28 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Nov 22 10:37:28 symfony [info] {vtHomePageActions} Call "vtHomePageActions->executeIndex()"
+Nov 22 10:37:28 symfony [info] {sfPHPView} Render "E:\Projects\kinggame\CMS\cms\apps\backend\modules/vtHomePage/templates/indexSuccess.php"
+Nov 22 10:37:28 symfony [info] {sfPartialView} Render "E:\Projects\kinggame\CMS\cms\apps\backend\modules/tmcTwitterBootstrap/templates/_assets.php"
+Nov 22 10:37:28 symfony [info] {main} Call "tmcTwitterBootstrap->executeHeader()"
+Nov 22 10:37:28 symfony [info] {sfPartialView} Render "E:\Projects\kinggame\CMS\cms\apps\backend\modules/tmcTwitterBootstrap/templates/_header.php"
+Nov 22 10:37:28 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.first_name AS s__first_name, s.last_name AS s__last_name, s.phone AS s__phone, s.email_address AS s__email_address, s.username AS s__username, s.algorithm AS s__algorithm, s.salt AS s__salt, s.password AS s__password, s.is_active AS s__is_active, s.is_super_admin AS s__is_super_admin, s.last_login AS s__last_login, s.pass_update_at AS s__pass_update_at, s.is_lock_signin AS s__is_lock_signin, s.locked_time AS s__locked_time, s.created_at AS s__created_at, s.updated_at AS s__updated_at FROM sf_guard_user s WHERE (s.id = ?) LIMIT 1 - (26)
+Nov 22 10:37:29 symfony [info] {main} Call "tmcTwitterBootstrap->executeFooter()"
+Nov 22 10:37:29 symfony [info] {sfPartialView} Render "E:\Projects\kinggame\CMS\cms\apps\backend\modules/tmcTwitterBootstrap/templates/_footer.php"
+Nov 22 10:37:29 symfony [info] {sfPHPView} Decorate content with "E:\Projects\kinggame\CMS\cms\apps\backend\templates/layout.php"
+Nov 22 10:37:29 symfony [info] {sfPHPView} Render "E:\Projects\kinggame\CMS\cms\apps\backend\templates/layout.php"
+Nov 22 10:37:29 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Nov 22 10:37:29 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Nov 22 10:37:29 symfony [info] {sfWebDebugLogger} Configuration 83.25 ms (17)
+Nov 22 10:37:29 symfony [info] {sfWebDebugLogger} Factories 270.20 ms (1)
+Nov 22 10:37:29 symfony [info] {sfWebDebugLogger} Database (Doctrine) 79.35 ms (2)
+Nov 22 10:37:29 symfony [info] {sfWebDebugLogger} Action "vtHomePage/index" 0.52 ms (1)
+Nov 22 10:37:29 symfony [info] {sfWebDebugLogger} View "Success" for "vtHomePage/index" 220.98 ms (1)
+Nov 22 10:37:29 symfony [info] {sfWebDebugLogger} Partial "tmcTwitterBootstrap/_assets" 0.52 ms (1)
+Nov 22 10:37:29 symfony [info] {sfWebDebugLogger} Component "tmcTwitterBootstrap/header" 0.15 ms (1)
+Nov 22 10:37:29 symfony [info] {sfWebDebugLogger} Partial "tmcTwitterBootstrap/_header" 131.51 ms (1)
+Nov 22 10:37:29 symfony [info] {sfWebDebugLogger} Component "tmcTwitterBootstrap/footer" 0.01 ms (1)
+Nov 22 10:37:29 symfony [info] {sfWebDebugLogger} Partial "tmcTwitterBootstrap/_footer" 0.44 ms (1)
+Nov 22 10:37:29 symfony [info] {sfWebResponse} Send content (143646 o)
+Nov 22 10:37:29 symfony [info] {myPDOSessionStorage} Write session module name "vtHomePage" | action name "index" | data "symfony/user/sfUser/lastRequest|i:1479785848;symfony/user/sfUser/authenticated|b:1;symfony/user/sfUser/credentials|a:1:{i:0;s:5:"admin";}symfony/user/sfUser/attributes|a:2:{s:30:"symfony/user/sfUser/attributes";a:3:{s:9:"IpAddress";s:3:"::1";s:9:"UserAgent";s:109:"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36";s:14:"UserPermission";s:0:"";}s:19:"sfGuardSecurityUser";a:1:{s:7:"user_id";s:2:"26";}}symfony/user/sfUser/culture|s:2:"vi";securimage_code_value|a:1:{s:7:"default";s:0:"";}securimage_code_ctime|a:1:{s:7:"default";s:0:"";}" | id "oakkma0t8r9ffkbqf3io874bf1"
+Nov 22 10:37:35 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Nov 22 10:37:35 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Nov 22 10:37:35 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_filter" (/guard/users/filter.:sf_format)
+Nov 22 10:37:35 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_batch" (/guard/users/batch.:sf_format)
+Nov 22 10:37:35 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user" (/guard/users.:sf_format)
+Nov 22 10:37:35 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_new" (/guard/users/new.:sf_format)
+Nov 22 10:37:35 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_create" (/guard/users.:sf_format)
+Nov 22 10:37:35 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_edit" (/guard/users/:id/edit.:sf_format)
+Nov 22 10:37:35 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_update" (/guard/users/:id.:sf_format)
+Nov 22 10:37:35 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_delete" (/guard/users/:id.:sf_format)
+Nov 22 10:37:35 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_show" (/guard/users/:id.:sf_format)
+Nov 22 10:37:35 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_object" (/guard/users/:id/:action.:sf_format)
+Nov 22 10:37:35 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_user_collection" (/guard/users/:action/action.:sf_format)
+Nov 22 10:37:35 symfony [info] {sfPatternRouting} Connect sfRequestRoute "sf_captchagd" (/captcha)
+Nov 22 10:37:35 symfony [info] {sfPatternRouting} Match route "web_content" (/bkManageWebContent.:sf_format) for /bkManageWebContent with parameters array (  'module' => 'bkManageWebContent',  'action' => 'index',  'sf_format' => 'html',)
+Nov 22 10:37:35 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Nov 22 10:37:36 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Nov 22 10:37:36 symfony [info] {sfFilterChain} Executing filter "mySecurityFilter"
+Nov 22 10:37:36 symfony [info] {mySecurityFilter} Session ip "::1" | access ip "::1"
+Nov 22 10:37:36 symfony [info] {mySecurityFilter} Session user-agent "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36" | access user-agent "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36"
+Nov 22 10:37:36 symfony [info] {sfFilterChain} Executing filter "ChangeLanguageFilter"
+Nov 22 10:37:36 symfony [info] {sfFilterChain} Executing filter "ChangePortalFilter"
+Nov 22 10:37:36 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Nov 22 10:37:36 symfony [info] {bkManageWebContentActions} Call "bkManageWebContentActions->executeIndex()"
+Nov 22 10:37:36 symfony [info] {Doctrine_Connection_Mysql} query : SELECT COUNT(*) AS num_results FROM web_content w - ()
+Nov 22 10:37:36 symfony [info] {Doctrine_Connection_Mysql} query : SELECT COUNT(*) AS num_results FROM web_content w - ()
+Nov 22 10:37:36 symfony [info] {sfPHPView} Render "E:\Projects\kinggame\CMS\cms\cache\backend\dev\modules/autoBkManageWebContent/templates/indexSuccess.php"
+Nov 22 10:37:36 symfony [info] {sfPartialView} Render "E:\Projects\kinggame\CMS\cms\cache\backend\dev\modules/autoBkManageWebContent/templates/_assets.php"
+Nov 22 10:37:36 symfony [info] {sfPartialView} Render "E:\Projects\kinggame\CMS\cms\apps\backend\modules/tmcTwitterBootstrap/templates/_assets.php"
+Nov 22 10:37:36 symfony [info] {sfPartialView} Render "E:\Projects\kinggame\CMS\cms\cache\backend\dev\modules/autoBkManageWebContent/templates/_header.php"
+Nov 22 10:37:36 symfony [info] {main} Call "tmcTwitterBootstrap->executeHeader()"
+Nov 22 10:37:36 symfony [info] {sfPartialView} Render "E:\Projects\kinggame\CMS\cms\apps\backend\modules/tmcTwitterBootstrap/templates/_header.php"
+Nov 22 10:37:36 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.first_name AS s__first_name, s.last_name AS s__last_name, s.phone AS s__phone, s.email_address AS s__email_address, s.username AS s__username, s.algorithm AS s__algorithm, s.salt AS s__salt, s.password AS s__password, s.is_active AS s__is_active, s.is_super_admin AS s__is_super_admin, s.last_login AS s__last_login, s.pass_update_at AS s__pass_update_at, s.is_lock_signin AS s__is_lock_signin, s.locked_time AS s__locked_time, s.created_at AS s__created_at, s.updated_at AS s__updated_at FROM sf_guard_user s WHERE (s.id = ?) LIMIT 1 - (26)
+Nov 22 10:37:36 symfony [info] {sfPartialView} Render "E:\Projects\kinggame\CMS\cms\cache\backend\dev\modules/autoBkManageWebContent/templates/_filters.php"
+Nov 22 10:37:36 symfony [info] {sfPartialView} Render "E:\Projects\kinggame\CMS\cms\cache\backend\dev\modules/autoBkManageWebContent/templates/_filters_field.php"
+Nov 22 10:37:36 symfony [info] {sfPartialView} Render "E:\Projects\kinggame\CMS\cms\cache\backend\dev\modules/autoBkManageWebContent/templates/_filters_field.php"
+Nov 22 10:37:36 symfony [info] {sfPartialView} Render "E:\Projects\kinggame\CMS\cms\cache\backend\dev\modules/autoBkManageWebContent/templates/_filters_field.php"
+Nov 22 10:37:36 symfony [info] {sfPartialView} Render "E:\Projects\kinggame\CMS\cms\cache\backend\dev\modules/autoBkManageWebContent/templates/_filters_field.php"
+Nov 22 10:37:36 symfony [info] {sfPartialView} Render "E:\Projects\kinggame\CMS\cms\cache\backend\dev\modules/autoBkManageWebContent/templates/_filters_field.php"
+Nov 22 10:37:36 symfony [info] {sfPartialView} Render "E:\Projects\kinggame\CMS\cms\cache\backend\dev\modules/autoBkManageWebContent/templates/_filters_field.php"
+Nov 22 10:37:36 symfony [info] {sfPartialView} Render "E:\Projects\kinggame\CMS\cms\cache\backend\dev\modules/autoBkManageWebContent/templates/_filters_field.php"
+Nov 22 10:37:36 symfony [info] {sfPartialView} Render "E:\Projects\kinggame\CMS\cms\cache\backend\dev\modules/autoBkManageWebContent/templates/_filters_field.php"
+Nov 22 10:37:36 symfony [info] {sfPartialView} Render "E:\Projects\kinggame\CMS\cms\cache\backend\dev\modules/autoBkManageWebContent/templates/_list_actions.php"
+Nov 22 10:37:36 symfony [info] {sfPartialView} Render "E:\Projects\kinggame\CMS\cms\cache\backend\dev\modules/autoBkManageWebContent/templates/_flashes.php"
+Nov 22 10:37:36 symfony [info] {sfPartialView} Render "E:\Projects\kinggame\CMS\cms\cache\backend\dev\modules/autoBkManageWebContent/templates/_list_header.php"
+Nov 22 10:37:36 symfony [info] {sfPartialView} Render "E:\Projects\kinggame\CMS\cms\cache\backend\dev\modules/autoBkManageWebContent/templates/_list.php"
+Nov 22 10:37:36 symfony [info] {sfPartialView} Render "E:\Projects\kinggame\CMS\cms\cache\backend\dev\modules/autoBkManageWebContent/templates/_list_th_tabular.php"
+Nov 22 10:37:36 symfony [info] {main} Set slot "sf_admin.current_header"
+Nov 22 10:37:36 symfony [info] {main} Get slot "sf_admin.current_header"
+Nov 22 10:37:36 symfony [info] {main} Set slot "sf_admin.current_header"
+Nov 22 10:37:36 symfony [info] {main} Get slot "sf_admin.current_header"
+Nov 22 10:37:36 symfony [info] {main} Set slot "sf_admin.current_header"
+Nov 22 10:37:36 symfony [info] {main} Get slot "sf_admin.current_header"
+Nov 22 10:37:36 symfony [info] {main} Set slot "sf_admin.current_header"
+Nov 22 10:37:36 symfony [info] {main} Get slot "sf_admin.current_header"
+Nov 22 10:37:36 symfony [info] {main} Set slot "sf_admin.current_header"
+Nov 22 10:37:36 symfony [info] {main} Get slot "sf_admin.current_header"
+Nov 22 10:37:36 symfony [info] {main} Set slot "sf_admin.current_header"
+Nov 22 10:37:36 symfony [info] {main} Get slot "sf_admin.current_header"
+Nov 22 10:37:36 symfony [info] {main} Set slot "sf_admin.current_header"
+Nov 22 10:37:36 symfony [info] {main} Get slot "sf_admin.current_header"
+Nov 22 10:37:36 symfony [info] {main} Set slot "sf_admin.current_header"
+Nov 22 10:37:36 symfony [info] {main} Get slot "sf_admin.current_header"
+Nov 22 10:37:36 symfony [info] {main} Set slot "sf_admin.current_header"
+Nov 22 10:37:36 symfony [info] {main} Get slot "sf_admin.current_header"
+Nov 22 10:37:36 symfony [info] {sfPartialView} Render "E:\Projects\kinggame\CMS\cms\cache\backend\dev\modules/autoBkManageWebContent/templates/_list_batch_actions.php"
+Nov 22 10:37:36 symfony [info] {sfPartialView} Render "E:\Projects\kinggame\CMS\cms\cache\backend\dev\modules/autoBkManageWebContent/templates/_list_footer.php"
+Nov 22 10:37:36 symfony [info] {sfPartialView} Render "E:\Projects\kinggame\CMS\cms\cache\backend\dev\modules/autoBkManageWebContent/templates/_footer.php"
+Nov 22 10:37:36 symfony [info] {main} Call "tmcTwitterBootstrap->executeFooter()"
+Nov 22 10:37:36 symfony [info] {sfPartialView} Render "E:\Projects\kinggame\CMS\cms\apps\backend\modules/tmcTwitterBootstrap/templates/_footer.php"
+Nov 22 10:37:36 symfony [info] {sfPHPView} Decorate content with "E:\Projects\kinggame\CMS\cms\apps\backend\templates/layout.php"
+Nov 22 10:37:36 symfony [info] {sfPHPView} Render "E:\Projects\kinggame\CMS\cms\apps\backend\templates/layout.php"
+Nov 22 10:37:36 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Nov 22 10:37:36 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Nov 22 10:37:36 symfony [info] {sfWebDebugLogger} Configuration 798.90 ms (17)
+Nov 22 10:37:36 symfony [info] {sfWebDebugLogger} Factories 315.24 ms (1)
+Nov 22 10:37:36 symfony [info] {sfWebDebugLogger} Database (Doctrine) 171.19 ms (4)
+Nov 22 10:37:36 symfony [info] {sfWebDebugLogger} Action "bkManageWebContent/index" 485.42 ms (1)
+Nov 22 10:37:36 symfony [info] {sfWebDebugLogger} View "Success" for "bkManageWebContent/index" 187.69 ms (1)
+Nov 22 10:37:36 symfony [info] {sfWebDebugLogger} Partial "bkManageWebContent/_assets" 1.91 ms (1)
+Nov 22 10:37:36 symfony [info] {sfWebDebugLogger} Partial "tmcTwitterBootstrap/_assets" 0.46 ms (1)
+Nov 22 10:37:36 symfony [info] {sfWebDebugLogger} Partial "bkManageWebContent/_header" 84.53 ms (1)
+Nov 22 10:37:36 symfony [info] {sfWebDebugLogger} Component "tmcTwitterBootstrap/header" 0.40 ms (1)
+Nov 22 10:37:36 symfony [info] {sfWebDebugLogger} Partial "tmcTwitterBootstrap/_header" 79.13 ms (1)
+Nov 22 10:37:36 symfony [info] {sfWebDebugLogger} Partial "bkManageWebContent/_filters" 15.65 ms (1)
+Nov 22 10:37:36 symfony [info] {sfWebDebugLogger} Partial "bkManageWebContent/_filters_field" 11.72 ms (8)
+Nov 22 10:37:36 symfony [info] {sfWebDebugLogger} Partial "bkManageWebContent/_list_actions" 0.48 ms (1)
+Nov 22 10:37:36 symfony [info] {sfWebDebugLogger} Partial "bkManageWebContent/_flashes" 0.39 ms (1)
+Nov 22 10:37:36 symfony [info] {sfWebDebugLogger} Partial "bkManageWebContent/_list_header" 0.37 ms (1)
+Nov 22 10:37:36 symfony [info] {sfWebDebugLogger} Partial "bkManageWebContent/_list" 1.91 ms (1)
+Nov 22 10:37:36 symfony [info] {sfWebDebugLogger} Partial "bkManageWebContent/_list_th_tabular" 1.22 ms (1)
+Nov 22 10:37:36 symfony [info] {sfWebDebugLogger} Partial "bkManageWebContent/_list_batch_actions" 0.54 ms (1)
+Nov 22 10:37:36 symfony [info] {sfWebDebugLogger} Partial "bkManageWebContent/_list_footer" 0.32 ms (1)
+Nov 22 10:37:36 symfony [info] {sfWebDebugLogger} Partial "bkManageWebContent/_footer" 3.83 ms (1)
+Nov 22 10:37:36 symfony [info] {sfWebDebugLogger} Component "tmcTwitterBootstrap/footer" 0.00 ms (1)
+Nov 22 10:37:36 symfony [info] {sfWebDebugLogger} Partial "tmcTwitterBootstrap/_footer" 0.50 ms (1)
+Nov 22 10:37:37 symfony [info] {sfWebResponse} Send content (171774 o)
+Nov 22 10:37:37 symfony [info] {myPDOSessionStorage} Write session module name "bkManageWebContent" | action name "index" | data "symfony/user/sfUser/lastRequest|i:1479785855;symfony/user/sfUser/authenticated|b:1;symfony/user/sfUser/credentials|a:1:{i:0;s:5:"admin";}symfony/user/sfUser/attributes|a:3:{s:30:"symfony/user/sfUser/attributes";a:3:{s:9:"IpAddress";s:3:"::1";s:9:"UserAgent";s:109:"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36";s:14:"UserPermission";s:0:"";}s:19:"sfGuardSecurityUser";a:1:{s:7:"user_id";s:2:"26";}s:12:"admin_module";a:2:{s:23:"bkManageWebContent.page";i:1;s:23:"bkManageWebContent.sort";a:2:{i:0;N;i:1;N;}}}symfony/user/sfUser/culture|s:2:"vi";securimage_code_value|a:1:{s:7:"default";s:0:"";}securimage_code_ctime|a:1:{s:7:"default";s:0:"";}" | id "oakkma0t8r9ffkbqf3io874bf1"

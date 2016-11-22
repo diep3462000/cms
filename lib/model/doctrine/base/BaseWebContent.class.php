@@ -11,19 +11,25 @@
  * @property integer $status
  * @property integer $type
  * @property integer $is_hot
+ * @property string $keywords
+ * @property string $description
  * 
- * @method string     getImage()   Returns the current record's "image" value
- * @method string     getContent() Returns the current record's "content" value
- * @method string     getTitle()   Returns the current record's "title" value
- * @method integer    getStatus()  Returns the current record's "status" value
- * @method integer    getType()    Returns the current record's "type" value
- * @method integer    getIsHot()   Returns the current record's "is_hot" value
- * @method WebContent setImage()   Sets the current record's "image" value
- * @method WebContent setContent() Sets the current record's "content" value
- * @method WebContent setTitle()   Sets the current record's "title" value
- * @method WebContent setStatus()  Sets the current record's "status" value
- * @method WebContent setType()    Sets the current record's "type" value
- * @method WebContent setIsHot()   Sets the current record's "is_hot" value
+ * @method string     getImage()       Returns the current record's "image" value
+ * @method string     getContent()     Returns the current record's "content" value
+ * @method string     getTitle()       Returns the current record's "title" value
+ * @method integer    getStatus()      Returns the current record's "status" value
+ * @method integer    getType()        Returns the current record's "type" value
+ * @method integer    getIsHot()       Returns the current record's "is_hot" value
+ * @method string     getKeywords()    Returns the current record's "keywords" value
+ * @method string     getDescription() Returns the current record's "description" value
+ * @method WebContent setImage()       Sets the current record's "image" value
+ * @method WebContent setContent()     Sets the current record's "content" value
+ * @method WebContent setTitle()       Sets the current record's "title" value
+ * @method WebContent setStatus()      Sets the current record's "status" value
+ * @method WebContent setType()        Sets the current record's "type" value
+ * @method WebContent setIsHot()       Sets the current record's "is_hot" value
+ * @method WebContent setKeywords()    Sets the current record's "keywords" value
+ * @method WebContent setDescription() Sets the current record's "description" value
  * 
  * @package    Vt_Portals
  * @subpackage model
@@ -70,6 +76,18 @@ abstract class BaseWebContent extends sfDoctrineRecord
              'notnull' => false,
              'comment' => '1: top hot',
              'length' => 1,
+             ));
+        $this->hasColumn('keywords', 'string', 256, array(
+             'type' => 'string',
+             'notnull' => false,
+             'comment' => 'keywords',
+             'length' => 256,
+             ));
+        $this->hasColumn('description', 'string', 512, array(
+             'type' => 'string',
+             'notnull' => false,
+             'comment' => 'description',
+             'length' => 512,
              ));
     }
 

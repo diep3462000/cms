@@ -9,6 +9,8 @@ WebContent:
     status:     {  type: integer(1), notnull: true, comment: "0 tạo mới, 1 active" }
     type: {  type: integer(1), notnull: false, comment: "0: tin tức, 1 sự kiện" }
     is_hot:     {  type: integer(1), notnull: false, comment: "1: top hot" }
+    keywords:     {  type: string(256), notnull: false, comment: "keywords" }
+    description:     {  type: string(512), notnull: false, comment: "description" }
 TaiGame:
   tableName: tai_game
   actAs:

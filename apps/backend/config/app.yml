@@ -165,6 +165,9 @@ all:
             Quản lý thông báo đến user:
               credentials: [admin]
               route: notification
+            Quản lý nội dung web:
+              credentials: [admin]
+              route: web_content
   sf_captchagd:
      image_width:                180 # image width in pixels
      image_height:               27 # image height in pixels

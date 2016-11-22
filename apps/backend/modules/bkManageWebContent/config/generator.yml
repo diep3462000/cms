@@ -14,8 +14,14 @@ generator:
     config:
       actions: ~
       fields:  ~
-      list:    ~
-      filter:  ~
+      list:
+        title: Thống kê nội dung web site
+        display: [image, title, content, status, type, is_hot, created_at]
+        actions: {}
+        object_actions: {}
+        batch_actions: {}
+      filter:
+        display: []
       form:    ~
       edit:    ~
       new:     ~
