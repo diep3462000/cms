@@ -16,4 +16,15 @@ class EventTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('Event');
     }
+
+    public static  function getNewestEvent($status = null)
+    {
+        $sql =   EventTable::getInstance()->createQuery('a')
+            ->select('*');
+        if(isset($status)){
+            $sql->where('a.status = ?', $status);
+        }
+//        $sql->orderBy('a.starttime desc');
+        return $sql->fetchArray();
+    }
 }

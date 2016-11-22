@@ -16,4 +16,28 @@ class WebContentTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('WebContent');
     }
+
+    public static  function getNewestContent($status = null, $type = null)
+    {
+        $sql =   WebContentTable::getInstance()->createQuery('a')
+            ->select('*');
+        if(isset($type)){
+            $sql->where('a.type = ?', $type);
+        }
+        if(isset($status)){
+            $sql->andWhere('a.status = ?', $status);
+        }
+        return $sql->fetchOne();
+    }
+
+    public static  function getAllContent($type = null)
+    {
+
+        $sql =   WebContentTable::getInstance()->createQuery('a')
+            ->select('*');
+        if(isset($type)){
+            $sql->where('a.type = ?', $type);
+        }
+        return $sql->fetchOne();
+    }
 }
