@@ -19,6 +19,7 @@ generator:
         display: [parter_name, provider_code, card_amount, menhgia]
         actions: {}
         object_actions: {}
+        batch_actions: {}
       filter:
         class: gvManageSanLuongFormFiltersAdmin
         display: [created_at, partner_id, os_id, menhgia, provider_code]

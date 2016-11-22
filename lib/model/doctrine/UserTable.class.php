@@ -24,5 +24,37 @@ class UserTable extends Doctrine_Table
             ->where("a.registedTime > ?", $created_at)
             ->fetchArray();
     }
+    public static function getRegisterInfoNew($created_at)
+    {
+        return UserTable::getInstance()->createQuery('a')
+            ->select ('count(DISTINCT u.deviceIdentify), date(registedTime)')
+            ->groupby("date(a.registedTime)")
+            ->where("a.registedTime > ?", $created_at)
+            ->leftJoin("a.UserInfo u")
+            ->fetchArray();
+    }
+
+
+    public static function getUserLikeName($prefix)
+    {
+        return UserTable::getInstance()->createQuery('a')
+            ->select ("a.*")
+            ->where("a.username like ?", "%" . $prefix . "%")
+            ->fetchArray();
+    }
+    public static function getUserByName($username)
+    {
+        return UserTable::getInstance()->createQuery('a')
+            ->select ("a.*")
+            ->where("a.username = ?",$username)
+            ->fetchOne();
+    }
+    public static function getUserByUserId($userId)
+    {
+        return UserTable::getInstance()->createQuery('a')
+            ->select ("a.*")
+            ->where("a.userId = ?",$userId)
+            ->fetchOne();
+    }
 
 }

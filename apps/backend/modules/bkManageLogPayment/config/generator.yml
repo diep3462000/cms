@@ -1,0 +1,26 @@
+generator:
+  class: tmcTwitterBootstrapDoctrineGenerator
+  param:
+    model_class:           LogPayment
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          log_payment
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        display: [userid, seria, pin_card, created_at, updated_at]
+        actions: {}
+        object_actions: {}
+        batch_actions: {}
+      filter:
+        display: [userid, seria]
+      form:    ~
+      edit:    ~
+      new:     ~

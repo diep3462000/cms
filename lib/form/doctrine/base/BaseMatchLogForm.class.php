@@ -18,7 +18,7 @@ abstract class BaseMatchLogForm extends BaseFormDoctrine
       'matchlogid'  => new sfWidgetFormInputHidden(),
       'roomid'      => new sfWidgetFormInputText(),
       'matchindex'  => new sfWidgetFormInputText(),
-      'gameid'      => new sfWidgetFormInputText(),
+      'gameid'      => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Game'), 'add_empty' => true)),
       'description' => new sfWidgetFormTextarea(),
       'createdtime' => new sfWidgetFormDateTime(),
     ));
@@ -27,7 +27,7 @@ abstract class BaseMatchLogForm extends BaseFormDoctrine
       'matchlogid'  => new sfValidatorChoice(array('choices' => array($this->getObject()->get('matchlogid')), 'empty_value' => $this->getObject()->get('matchlogid'), 'required' => false)),
       'roomid'      => new sfValidatorInteger(),
       'matchindex'  => new sfValidatorInteger(array('required' => false)),
-      'gameid'      => new sfValidatorInteger(array('required' => false)),
+      'gameid'      => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Game'), 'required' => false)),
       'description' => new sfValidatorString(array('max_length' => 4000)),
       'createdtime' => new sfValidatorDateTime(),
     ));

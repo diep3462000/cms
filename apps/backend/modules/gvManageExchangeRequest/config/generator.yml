@@ -1,0 +1,33 @@
+generator:
+  class: tmcTwitterBootstrapDoctrineGenerator
+  param:
+    model_class:           ExchangeAssetRequest
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          exchange_asset_request
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        totalParValue: {label: Giá trị thẻ}
+        status: {label: Trạng thái}
+        requestUserName: {label: Tên đăng nhập}
+        requestUserId: {label: User Id}
+      list:
+        title: Thống kê chi tiết đổ thưởng
+        actions: {}
+        object_actions: {}
+        batch_actions: {}
+        display: [display_name, requestUserId, requestUserName, assetId, amount, totalCash, totalParValue, status, description,checkedTime, responseData, request_topup_id, created_at]
+      filter:
+        class: gvManageExchangeAssetRequestFormFiltersAdmin
+        display: [user_name, status, created_date, request_topup_id, responseData]
+      form:
+        display: [requestUserId, requestUserName, assetId, amount, totalCash, totalParValue, status, description,checkedTime, responseData, request_topup_id, created_at]
+      edit:    ~
+      new:     ~

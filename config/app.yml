@@ -7,7 +7,15 @@ all:
      font_size:                  20 # font size
      force_new_captcha:          true # if true - captcha regenerated EVERY request, even if user input true value before
      fonts: ["akbar/vavobi.ttf"]
-  
+  .array:
+    os_build:
+      0: Android
+      1: IOS
+      2: Window Phone
+      3: Desktop(exe)
+    download_type:
+      0: Qua Store
+      1: tải file
   image_maxsize: 5242880
   upload_max_size:   10485760
   excel_max_row: 1000
@@ -24,7 +32,7 @@ all:
   
 #  url_media_default_file: http://localhost:8086/images/default-image.jpg
 
-  upload_media_file: /var/www/vuagame/web/uploads
+  upload_file: E:\Projects\kinggame\CMS\cms\web\wap\uploads
   upload_avatar_dir: E:\2015\xampp\htdocs\vuagame\web\media\vuagameAvatars\upload
   url_media_file: http://vuagame.vn/uploads
   url_media_default_file: http://vuagame.vn/images/default-image.jpg

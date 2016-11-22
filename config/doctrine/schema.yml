@@ -1,3 +1,129 @@
+TaiGame:
+  tableName: tai_game
+  actAs:
+    Timestampable: ~
+  columns:
+    OS:  { type: string(12), notnull: true, comment: "1: andoird, 2: IOS, 3: windown" }
+    link_tai:     {  type: string(256), notnull: false, comment: "Link tai game store" }
+    file_down:     {  type: string(256), notnull: false, comment: "Link tai truc tiếp trên web" }
+    is_direct:     {  type: integer(1), notnull: true, comment: "0: tai truc tiep qua store, 1: tai file apk" }
+    count: {  type: integer(6), notnull: false, comment: "Số lượt tải" }
+    version_build:     {  type: string(256), notnull: false, comment: "version game" }
+    platform_icon: {type: string(256), notnull: false, comment: "Ảnh banner tải game" }
+    status:     {  type: integer(1), notnull: true, comment: "0: inactive, 1: active" }
+
+TaxDailyStatictis:
+  tableName: tax_daily_statictis
+  columns:
+    taxId:
+      type: integer(11)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    day:  { type: datetime, notnull: true, comment: "" }
+    gameId:     {  type: integer(5), notnull: true, comment: "id game" }
+    taxValue:     {  type: integer(5), notnull: true, comment: "0: deactive, 1:active" }
+    isCash: {type: integer(1), comment: "1: cash, 0: gold"}
+    insertedTime:  { type: timestamp, notnull: true, comment: "" }
+Notify:
+  tableName: notify
+  actAs:
+    Timestampable: ~
+  columns:
+    content: { type: string(6000),  comment: "Noi dung thong bao"}
+    status:     {  type: integer(1), notnull: true, comment: "0: deactive, 1:active" }
+UserOTP:
+  tableName: user_otp
+  actAs:
+    Timestampable: ~
+  columns:
+    user_id:  { type: bigint(20), notnull: true, comment: "" }
+    verify_code:  { type: string(32), comment: "Mệnh giá thẻ cào hoặc giá niêm yết của hiện vật" }
+    expried_time:  { type: timestamp, notnull: true, comment: "" }
+    mo_id: { type: string(256), notnull: true, comment: "map voi bang mo_log"}
+    msisdn: { type: string(15),  comment: ""}
+    type: {type int(2),comment: "kiểu otp: 0 xác thực tai khoan, 1 reset mật khẩu" }
+    status:     {  type: integer(1), notnull: true, comment: "0: chua su dung, 1:da su dung" }
+ExchangeAsset:
+  tableName: exchange_asset
+  actAs:
+    Timestampable: ~
+  columns:
+    assetId:
+      type: integer(11)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    name:  { type: bigint(20), notnull: true, comment: "" }
+    parValue:  { type: string(32), comment: "Mệnh giá thẻ cào hoặc giá niêm yết của hiện vật" }
+    cashValue:  { type: integer(13), notnull: true, comment: "" }
+    trustedIndex: { type: string(256), notnull: true, comment: "điểm tín nhiệm sẽ bị giảm đi"}
+    provider: { type: string(12), notnull: true, comment: "nhà cung cấp, nếu là trường hợp thẻ cào thì là mã nhà cung cấp" }
+    type: { type: integer(11), notnull: true, comment: "1: thẻ cào, 2: hiện vật" }
+    active:     {  type: integer(1), notnull: true, comment: "" }
+    description: { type: string(256),  comment: ""}
+ExchangeAssetLog:
+  tableName: exchange_asset
+  actAs:
+    Timestampable: ~
+  columns:
+    requestId:
+      type: integer(11)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    requestUserId:  { type: bigint(20), notnull: true, comment: "" }
+    requestUserName:  { type: string(32), comment: "" }
+    assetId:  { type: integer(13), notnull: true, comment: "" }
+    securityKey: { type: string(256), notnull: true, comment: "Mã để cms kiểm tra có đúng request đổi thưởng từ người dùng không"}
+    amount: { type: integer(3), notnull: true, comment: "Số lượng vật phẩm" }
+    totalCash: { type: integer(11), notnull: true, comment: "tổng giá trị xu " }
+    requestTime:     {  type: timestamp, notnull: true, comment: "Thời điểm gửi yêu cầu" }
+    responseTime: { type: timestamp,  comment: ""}
+    description: { type: string(256),  comment: ""}
+    accepted: { type: int(2),  comment: "chấp nhận hoặc từ chối"}
+    request_topup_id: { type: string(256),  comment: "request Id lên topup"}
+ExchangeAssetRequest:
+  tableName: exchange_asset_request
+  actAs:
+    Timestampable: ~
+  columns:
+    requestId:
+      type: integer(11)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    requestUserId:  { type: bigint(20), notnull: true, comment: "" }
+    requestUserName:  { type: string(32), comment: "" }
+    assetId:  { type: integer(11), notnull: true, comment: "" }
+    securityKey: { type: string(256), notnull: true, comment: "Mã để cms kiểm tra có đúng request đổi thưởng từ người dùng không"}
+    amount: { type: integer(11), notnull: true, comment: "" }
+    totalCash: { type: integer(11), notnull: true, comment: "tổng giá trị xu" }
+    status:     {  type: integer(1), notnull: true, comment: "trạng thái yêu cầu: 0 - mới insert chưa xử lý, 1 - sms đã check thành công, 2 - thất bại" }
+    description: { type: string(256),  comment: ""}
+    checkedTime:  { type: timestamp, comment: "Thời gian CMS check" }
+    responseData: {type: string(2000),  comment: "Thông tin trả về"}
+    request_topup_id: {type: string(32),  comment: "request id map voi topup"}
+    totalParValue: {type: integer(11),  comment: "Giá trị thẻ nạp VNĐ"}
+  relations:
+    User: { class: User, local: requestUserId, foreign: userId, type: one, foreignAlias: ExchangeAssetRequest }
+VtActionLogs:
+  tableName: vt_action_logs
+  actAs:
+    Timestampable: ~
+  columns:
+    ip: { type: string(50), default: null, comment: "Ip của admin"}
+    action: { type: string(20), default: null, comment: "ten hanh dong ACCESS, ADD, UPDATE, DELETE, ACTIVE, DEACTIVE, REQUEST_APPROVE, APPROVE, DENY, SIGN" }
+    description: { type: string(256), default: null, comment: "Nội dung thực hiện"}
+    actor_id: { type: bigint(20), notnull: true, comment: "" }
+    model: { type: string(50), notnull: true, comment: "Tên bảng tác động (1 bảng cho mỗi dòng)" }
+    record_id: { type: string(20), default: null, comment: "ID bản ghi bị tác động" }
+  relations:
+    sfGuardUser: { class: sfGuardUser, local: actor_id, type: one, foreignAlias: GuardUser }
 Announcement:
   connection: doctrine
   tableName: announcement
@@ -228,56 +354,24 @@ CardProvider:
   connection: doctrine
   tableName: card_provider
   columns:
-    cardproviderid:
+    providerId:
       type: integer(4)
       fixed: false
       unsigned: false
       primary: true
       autoincrement: true
-    cardid:
-      type: integer(4)
+    providerCode:
+      type: string(10)
       fixed: false
       unsigned: false
       primary: false
       notnull: true
       autoincrement: false
-    cardname:
-      type: string(30)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: true
-      autoincrement: false
-    submenu:
-      type: string(200)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: true
-      autoincrement: false
-    len1:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: false
-      default: '0'
-      notnull: true
-      autoincrement: false
-    len2:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: false
-      default: '0'
-      notnull: true
-      autoincrement: false
-    cardmsg:
-      type: string(200)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: true
-      autoincrement: false
+    providerName: {type: stringh(20), notnull: true, comment: "Tên nhà cung cấp"}
+    description: {type: string(20), notnull: false, comment: "Mô tả"}
+    active: {type: integer(1), default: 1, comment: "Active = 1"}
+    telcoPercent: {type: string(5), default: 1, comment: "Tỉ lệ game nhận được từ nhà mạng"}
+    valuePercent: {type: string(5), default: 1, comment: "Tỉ lệ Ken nhận được"}
 Cp:
   connection: doctrine
   tableName: cp
@@ -952,14 +1046,14 @@ Game:
       notnull: true
       autoincrement: false
     description:
-      type: string(4000)
+      type: string(10000)
       fixed: false
       unsigned: false
       primary: false
       notnull: false
       autoincrement: false
     help:
-      type: string(4000)
+      type: string(10000)
       fixed: false
       unsigned: false
       primary: false
@@ -1419,8 +1513,8 @@ GvTestCase:
       fixed: false
       unsigned: false
       primary: false
-      default: '0'
-      notnull: false
+      default: 0
+      notnull: true
       autoincrement: false
 History:
   connection: doctrine
@@ -1636,11 +1730,6 @@ Level:
       default: '10000'
       notnull: false
       autoincrement: false
-  relations:
-    UserInfo:
-      local: level
-      foreign: level
-      type: many
 Link:
   connection: doctrine
   tableName: link
@@ -1786,7 +1875,7 @@ LogPayment:
       autoincrement: false
     request_time:      { type: timestamp(25), notnull: true, comment: "Thời gian phản hồi" }
   relations:
-    UserInfo:       { class: UserInfo, local: userId, foreign: userId, type: one, foreignAlias: LogPayment }
+#    UserInfo:       { class: UserInfo, local: userId, foreign: userId, type: one, foreignAlias: LogPayment }
     User:       { class: User, local: userId, foreign: userId, type: one, foreignAlias: LogPayment }
     Provider:       { class: Provider, local: providerId, type: one, foreignAlias: LogPayments}
 MatchLog:
@@ -1835,6 +1924,8 @@ MatchLog:
       primary: false
       notnull: true
       autoincrement: false
+  relations:
+    Game:       { class: Game, local: gameId, foreign: gameId, type: one, foreignAlias: MatchLogs }
 ClientType:
   tableName: client_type
   columns:
@@ -1885,11 +1976,6 @@ Medal:
       primary: false
       notnull: false
       autoincrement: false
-  relations:
-    UserInfo:
-      local: medal
-      foreign: medal
-      type: many
 Message:
   connection: doctrine
   tableName: message
@@ -1993,6 +2079,57 @@ Message:
       primary: false
       notnull: false
       autoincrement: false
+GiftCode:
+  connection: doctrine
+  tableName: gift_code
+  actAs:
+    Timestampable: ~
+  columns:
+    giftId:
+      type: integer(8)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    giftEventId:
+      type: integer(11)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    userId: { type: integer(11),  comment: "userid người chơi"}
+    userName: { type: string(50),  comment: "userName người chơi"}
+    cashValue: { type: integer(11),  comment: ""}
+    goldValue: { type: integer(11),  comment: ""}
+    code: { type: string(20), notnull: true, comment: "", unique: true}
+    expiredTime: {  type: timestamp(25), comment: "Thời điểm hết hạn. Đổi tên từ expired" }
+    reuseable: { type: integer(2),  comment: "0: dem so lan; 1: ko dem so lan su dung-su dung nhieu lan 1 ma"}
+    status: { type: integer(2),  comment: "Trạng thái: 1: active, 0: đã sử dụng"}
+    ip: { type: string(50),  comment: "Đổi đến từ IP"}
+    description: { type: string(250),  comment: "Mô tả"}
+  relations:
+    GiftEvent:       { class: GiftEvent, local: giftEventId, foreign: giftEventId, type: one, foreignAlias: GiftCodes }
+GiftEvent:
+  connection: doctrine
+  tableName: gift_event
+  actAs:
+    Timestampable: ~
+  columns:
+    giftEventId:
+      type: integer(8)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    eventName: { type: string(250), notnull: true, comment: ""}
+    cashValue: { type: integer(11), comment: ""}
+    goldValue: { type: integer(11), comment: ""}
+    expiredTime: { type: timestamp(20),  comment: "Thời điểm hết hạn. Đổi tên từ expired"}
+    reuseable: { type: integer(2),  comment: "0: dem so lan; 1: ko dem so lan su dung-su dung nhieu lan 1 ma"}
+    description: { type: string(250),  comment: ""}
+    status: { type: integer(2),  comment: ""}
 MoneyLog:
   connection: doctrine
   tableName: money_log
@@ -2128,8 +2265,10 @@ MoneyLog:
       notnull: true
       autoincrement: false
   relations:
+    User:       { class: User, local: userId, foreign: userId, type: one, foreignAlias: MoneyLogs }
     UserInfo:       { class: UserInfo, local: userId, foreign: userId, type: one, foreignAlias: MoneyLogs }
     Game:       { class: Game, local: gameId, foreign: gameId, type: one, foreignAlias: MoneyLogs }
+    MoneyTransaction:       { class: MoneyTransaction, local: transactionId, foreign: transactionId, type: one, foreignAlias: MoneyLogs }
 MoneyTransaction:
   connection: doctrine
   tableName: money_transaction
@@ -2165,15 +2304,15 @@ Notification:
       unsigned: false
       primary: true
       autoincrement: true
-    pushmessage:
+    title:
       type: string(500)
       fixed: false
       unsigned: false
       primary: false
       notnull: false
       autoincrement: false
-    pushnumber:
-      type: integer(4)
+    message:
+      type: string(500)
       fixed: false
       unsigned: false
       primary: false
@@ -2511,6 +2650,55 @@ PromotionRule:
       default: '500000'
       notnull: false
       autoincrement: false
+PurchaseMoneyLog:
+  connection: doctrine
+  tableName: purchase_money_log
+  columns:
+    purchaseLogId: {type: integer(11),  fixed: false,unsigned: false,primary: true,autoincrement: true}
+    userId: {type: integer(11),  comment: "user nap"}
+    userName: {type: string(32),  comment: "user nap"}
+    cashValue: {type: integer(11),  comment: "giá trị cash nạp"}
+    currentCash: {type: integer(11),  comment: "giá trị sau khi nạp"}
+    purchasedTime: {type: integer(11),  comment: "thời gian giao dịch"}
+    parValue: {type: integer(11),  comment: "mệnh giá tiền nạp"}
+    type: {type: integer(2), comment: "1- nap the, 2: sms"}
+    description: {type: string(256), comment: "Mô tả giao dịch"}
+  relations:
+    UserInfo:       { class: UserInfo, local: userId, foreign: userId, type: one, foreignAlias: PurchaseMoneyLogs }
+#cộng tiền thẻ nạp chưa thành công
+PurchaseMoneyMissing:
+  connection: doctrine
+  tableName: purchase_money_missing
+  actAs:
+    Timestampable: ~
+  columns:
+    missId: {type: integer(11),  fixed: false,unsigned: false,primary: true,autoincrement: true}
+    userId: {type: integer(11),  comment: "user nap"}
+    userName: {type: string(32),  comment: "user nap"}
+    provider: {type: string(11),  comment: "mã nhà cũng cấp"}
+    cardSerial: {type: string(32),  comment: "serial"}
+    cardPin: {type: string(32),  comment: "Pin thẻ"}
+    cardValue: {type: integer(32),  comment: "mệnh giá tiền nạp"}
+    toCash: {type: integer(11), comment: "Số cash được cộng"}
+    active: {type: integer(2), comment: "Trạng thái giao dịch"}
+    admin_id: {type: integer(11), comment: "admin tạo"}
+  relations:
+    sfGuardUser: { class: sfGuardUser, local: admin_id, type: one, foreignAlias: GuardUser }
+#Cộng tiền cho người dùng
+AddMoney:
+  connection: doctrine
+  tableName: add_money
+  actAs:
+    Timestampable: ~
+  columns:
+    userId: {type: integer(11), comment: "user id nạp tiền"}
+    addCash: {type: integer(11), comment: "Số cash được cộng"}
+    addGold: {type: integer(11), comment: "Số gold được cộng"}
+    description: {type: string(256), comment: "Lý do cộng tiền"}
+    admin_id: {type: integer(11), comment: "admin id cộng tiền"}
+    status:  {type: integer(2), comment: "Trạng thái giao dịch: 0 tạo mới, 1: cộng tiền thành công"}
+  relations:
+    sfGuardUser: { class: sfGuardUser, local: admin_id, type: one, foreignAlias: GuardUser }
 PurchaseMoney:
   connection: doctrine
   tableName: purchase_money
@@ -3851,16 +4039,34 @@ User:
       default: '20'
       notnull: true
       autoincrement: false
-    status:
-      type: integer(1)
-      fixed: false
-      unsigned: false
-      primary: false
-      default: '1'
-      notnull: true
-      autoincrement: false
   relations:
     UserInfo:       { class: UserInfo, local: userId, foreign: userId, type: one, foreignAlias: UserInfo }
+MoHistory:
+  connection: doctrine
+  tableName: mo_history
+  actAs:
+    Timestampable: ~
+  columns:
+    id:               { type: bigint(20), primary: true, autoincrement: true }
+    mo_id:  { type: bigint(11), notnull: true, comment: "" }
+    phone_number:  { type: bigint(20), notnull: true, comment: "" }
+    user_id:  { type: bigint(15), notnull: true, comment: "" }
+    amount:  { type: bigint(15), notnull: true, comment: "" }
+    transdate:  { type: string(256), notnull: true, comment: "" }
+    shortcode:  { type: string(256), notnull: true, comment: "" }
+    keyword:  { type: string(32), comment: "keyword tin nhan" }
+    content:  { type: string(256), comment: "" }
+    telco:  { type: string(10), comment: "mã nhà mạng" }
+    status:  { type: int(2), comment: "" }
+MoResult:
+  connection: doctrine
+  tableName: mo_result
+  columns:
+    id:               { type: bigint(20), primary: true, autoincrement: true }
+    mo_id:  { type: bigint(11), notnull: true, comment: "map voi id MoHistory" }
+    amount:  { type: bigint(15), notnull: true, comment: "" }
+    userId:  { type: bigint(15), notnull: true, comment: "" }
+    userName:  { type: string(32), notnull: true, comment: "username nap tien" }
 UserInfo:
   connection: doctrine
   tableName: user_info
@@ -3870,6 +4076,14 @@ UserInfo:
       fixed: false
       unsigned: false
       primary: true
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '1'
+      notnull: true
       autoincrement: false
     username:
       type: string(50)
@@ -4053,15 +4267,11 @@ UserInfo:
       primary: false
       notnull: false
       autoincrement: false
+    verified: {type: integer(2), comment: "0 chưa xác thực, 1 xác thực"}
+    verifiedPhone: {type: string(15), comment: "sdt xác thực"}
+    verifiedEmail: {type: string(15), comment: "sdt xác thực"}
+    disableCashTransaction: {type: integer(2), comment: "khóa chức năng giao dịch cash"}
   relations:
-    Medal:
-      local: medal
-      foreign: medal
-      type: one
-    Level:
-      local: level
-      foreign: level
-      type: one
     User:       { class: User, local: userId, foreign: userId, type: one, foreignAlias: User }
     ClientType:       { class: ClientType, local: clientId, foreign: ClientId, type: one, foreignAlias: Users }
     Partner:       { class: Partner, local: cp, foreign: partnerId, type: one, foreignAlias: Users }

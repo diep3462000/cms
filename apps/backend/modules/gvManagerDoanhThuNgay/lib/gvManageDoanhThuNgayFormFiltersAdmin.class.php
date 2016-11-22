@@ -40,7 +40,6 @@ class gvManageDoanhThuNgayFormFiltersAdmin extends BaseLogPaymentFormFilter
         $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
 
         $this->setupInheritance();
-
     }
 
     public function doBuildQuery(array $values) {

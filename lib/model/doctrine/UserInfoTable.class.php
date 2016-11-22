@@ -25,4 +25,40 @@ class UserInfoTable extends Doctrine_Table
         $query->orderBy("sum_os desc");
         return $query->fetchArray();
     }
+    public static function getUserByMsisdn($msisdn)
+    {
+        return UserInfoTable::getInstance()->createQuery('a')
+            ->select ("a.*")
+            ->where("a.verifiedPhone = ?",$msisdn)
+            ->fetchOne();
+    }
+    public static function getUserNameById($userId)
+    {
+        return UserInfoTable::getInstance()->createQuery('a')
+            ->select ("a.*")
+            ->where("a.userId = ?", $userId)
+            ->fetchOne();
+    }
+    public static function getRegisterInfoNew($created_at)
+    {
+        return UserInfoTable::getInstance()->createQuery('a')
+            ->select ('count(DISTINCT a.deviceIdentify), date(a.startPlayedTime)')
+            ->groupby("date(a.startPlayedTime)")
+            ->where("a.startPlayedTime > ?", $created_at)
+            ->fetchArray();
+    }
+    public static function getPlayUserInday($created_at)
+    {
+        return UserInfoTable::getInstance()->createQuery('a')
+            ->select ('count(DISTINCT a.deviceIdentify), date(a.lastLoginTime)')
+            ->groupby("date(a.lastLoginTime)")
+            ->where("a.lastLoginTime > ?", $created_at)
+            ->fetchArray();
+    }
+
+    public static function getSumMoneyUser(){
+        return UserInfoTable::getInstance()->createQuery('u')
+            ->select ('SUM(u.gold) AS sum_gold, SUM(u.cash) AS sum_cash')
+            ->fetchArray()[0];
+    }
 }

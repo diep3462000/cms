@@ -1,0 +1,28 @@
+generator:
+  class: tmcTwitterBootstrapDoctrineGenerator
+  param:
+    model_class:           GiftEvent
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          gift_event
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: Danh sách Event
+        object_actions:
+          _edit: {label: Chi tiết}
+#          _delete: ~
+        batch_actions: {}
+      filter:
+        display: [eventName]
+      form:
+        class: gvManageGiftEventFormAdmin
+      edit:    ~
+      new:     ~

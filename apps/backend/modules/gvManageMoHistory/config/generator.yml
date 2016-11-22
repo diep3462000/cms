@@ -1,0 +1,26 @@
+generator:
+  class: tmcTwitterBootstrapDoctrineGenerator
+  param:
+    model_class:           MoHistory
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          mo_history
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        actions: {}
+        object_actions: {}
+        batch_actions: {}
+      filter:
+        class: gvManageMoHistoryFormFiltersAdmin
+        display: [mo_id, phone_number, user_id, amount,shortcode, telco, created_date]
+      form:    ~
+      edit:    ~
+      new:     ~

@@ -45,7 +45,8 @@ class ajaxActions extends sfActions{
             $this->datefrom = $datefrom;
             $this->dateto = $dateto;
         }
-        $this->listRevenueGroupByDateFromTo = MoneyLogTable::getRevenueGroupByDateFromTo($filter_game, $datefrom, $dateto, $filter_type, $filter_os, $filter_partner);
+        //$this->listRevenueGroupByDateFromTo = MoneyLogTable::getRevenueGroupByDateFromTo($filter_game, $datefrom, $dateto, $filter_type, $filter_os, $filter_partner);
+        $this->listRevenueGroupByDateFromTo = TaxDailyStatictisTable::getRevenueGroupByDateFromTo($filter_game, $datefrom, $dateto, $filter_type, $filter_os, $filter_partner);
 
     }
 
@@ -125,16 +126,22 @@ class ajaxActions extends sfActions{
         $this->revenuGoldToday = MoneyLogTable::getTotalRevenuByDay(null, null, TypeGame::GOLD_MODE,  null, date('Y-m-d'));
         $this->revenuCashToday = MoneyLogTable::getTotalRevenuByDay(null, null, TypeGame::CASH_MODE,  null, date('Y-m-d'));
 
-        $this->revenuGoldYesterday = MoneyLogTable::getTotalRevenuByDay(null, null, TypeGame::GOLD_MODE,  null, date('Y-m-d', time() - 24*3600));
-        $this->revenuCashYesterday = MoneyLogTable::getTotalRevenuByDay(null, null, TypeGame::CASH_MODE,  null, date('Y-m-d', time() - 24*3600));
+//        $this->revenuGoldYesterday = MoneyLogTable::getTotalRevenuByDay(null, null, TypeGame::GOLD_MODE,  null, date('Y-m-d', time() - 24*3600));
+//        $this->revenuCashYesterday = MoneyLogTable::getTotalRevenuByDay(null, null, TypeGame::CASH_MODE,  null, date('Y-m-d', time() - 24*3600));
+//
+//        $this->revenuGoldThisMonth = MoneyLogTable::getTotalRevenuByMonth(null, TypeGame::GOLD_MODE, null,  date('Y-m'));
+//        $this->revenuCashThisMonth = MoneyLogTable::getTotalRevenuByMonth(null, TypeGame::CASH_MODE, null, date('Y-m'));
 
-        $this->revenuGoldThisMonth = MoneyLogTable::getTotalRevenuByMonth(null, TypeGame::GOLD_MODE, null,  date('Y-m'));
-        $this->revenuCashThisMonth = MoneyLogTable::getTotalRevenuByMonth(null, TypeGame::CASH_MODE, null, date('Y-m'));
+        $this->revenuGoldYesterday = TaxDailyStatictisTable::getTotalRevenuByDay(null, TypeGame::GOLD_MODE, date('Y-m-d', time() - 24*3600));
+        $this->revenuCashYesterday = TaxDailyStatictisTable::getTotalRevenuByDay(null, TypeGame::CASH_MODE, date('Y-m-d', time() - 24*3600));
+
+        $this->revenuGoldThisMonth = TaxDailyStatictisTable::getTotalRevenuByMonth(null, TypeGame::GOLD_MODE, null,  date('Y-m'));
+        $this->revenuCashThisMonth = TaxDailyStatictisTable::getTotalRevenuByMonth(null, TypeGame::CASH_MODE, null, date('Y-m'));
 
         // Biểu đồ
-        $this->revenuGoldByDate = MoneyLogTable::getMoneyGroupByDate($gameId = null, TypeGame::GOLD_MODE, $os_type = null);
-        $this->revenuCashByDate = MoneyLogTable::getMoneyGroupByDate($gameId = null, TypeGame::CASH_MODE, $os_type = null);
-        $this->listRevenueGroupByDateFromTo = MoneyLogTable::getRevenueGroupByDateFromTo($filter_game, $datefrom, $dateto, $filter_type, $filter_os, $filter_partner);
+        $this->revenuGoldByDate = TaxDailyStatictisTable::getMoneyGroupByDate($gameId = null, TypeGame::GOLD_MODE, $os_type = null);
+        $this->revenuCashByDate = TaxDailyStatictisTable::getMoneyGroupByDate($gameId = null, TypeGame::CASH_MODE, $os_type = null);
+        $this->listRevenueGroupByDateFromTo = TaxDailyStatictisTable::getRevenueGroupByDateFromTo($filter_game, $datefrom, $dateto, $filter_type, $filter_os, $filter_partner);
         // Mảng DL API từ bảng vt_api_item để hiển thị ở bảng
         $this->list_games = GameTable::getListGame($filter_game);
 //        $this->list_os = ClientTypeTable::getListOs($filter_os);
@@ -232,7 +239,7 @@ class ajaxActions extends sfActions{
        // $this->listRequestGroupByDateFromTo = VtLogApiRequestTable::getApiRequestGroupByDateFromTo($filter_publisher, $datefrom, $dateto, $idapp, $idapi);
         // Mảng DL API từ bảng vt_api_item để hiển thị ở bảng
        // $this->listApiItem = VtApiItemTable::getListItemm(0, $idapi);
-        $this->listRevenueGroupByDateFromTo = MoneyLogTable::getRevenueGroupByDateFromTo(null, $datefrom, $dateto, $filter_type, null);
+        $this->listRevenueGroupByDateFromTo = TaxDailyStatictisTable::getRevenueGroupByDateFromTo(null, $datefrom, $dateto, $filter_type, null);
 
         $this->revenuYesterday = $request->getParameter('revenuYesterday');
         $this->revenuThisMonth = $request->getParameter('revenuThisMonth');

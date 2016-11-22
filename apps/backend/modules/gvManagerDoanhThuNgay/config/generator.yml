@@ -19,6 +19,7 @@ generator:
         display: [created_date, sum_money]
         actions: {}
         object_actions: {}
+        batch_actions: {}
       filter:
         class: gvManageDoanhThuNgayFormFiltersAdmin
         display: [created_at, partner_id, os_id]

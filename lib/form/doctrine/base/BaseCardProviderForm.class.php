@@ -15,23 +15,23 @@ abstract class BaseCardProviderForm extends BaseFormDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'cardproviderid' => new sfWidgetFormInputHidden(),
-      'cardid'         => new sfWidgetFormInputText(),
-      'cardname'       => new sfWidgetFormInputText(),
-      'submenu'        => new sfWidgetFormInputText(),
-      'len1'           => new sfWidgetFormInputText(),
-      'len2'           => new sfWidgetFormInputText(),
-      'cardmsg'        => new sfWidgetFormInputText(),
+      'providerId'   => new sfWidgetFormInputHidden(),
+      'providerCode' => new sfWidgetFormInputText(),
+      'providerName' => new sfWidgetFormInputText(),
+      'description'  => new sfWidgetFormInputText(),
+      'active'       => new sfWidgetFormInputText(),
+      'telcoPercent' => new sfWidgetFormInputText(),
+      'valuePercent' => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
-      'cardproviderid' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('cardproviderid')), 'empty_value' => $this->getObject()->get('cardproviderid'), 'required' => false)),
-      'cardid'         => new sfValidatorInteger(),
-      'cardname'       => new sfValidatorString(array('max_length' => 30)),
-      'submenu'        => new sfValidatorString(array('max_length' => 200)),
-      'len1'           => new sfValidatorInteger(array('required' => false)),
-      'len2'           => new sfValidatorInteger(array('required' => false)),
-      'cardmsg'        => new sfValidatorString(array('max_length' => 200)),
+      'providerId'   => new sfValidatorChoice(array('choices' => array($this->getObject()->get('providerId')), 'empty_value' => $this->getObject()->get('providerId'), 'required' => false)),
+      'providerCode' => new sfValidatorString(array('max_length' => 10)),
+      'providerName' => new sfValidatorPass(),
+      'description'  => new sfValidatorString(array('max_length' => 20, 'required' => false)),
+      'active'       => new sfValidatorInteger(array('required' => false)),
+      'telcoPercent' => new sfValidatorString(array('max_length' => 5, 'required' => false)),
+      'valuePercent' => new sfValidatorString(array('max_length' => 5, 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('card_provider[%s]');

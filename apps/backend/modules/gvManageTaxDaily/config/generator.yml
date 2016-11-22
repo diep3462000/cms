@@ -1,0 +1,25 @@
+generator:
+  class: tmcTwitterBootstrapDoctrineGenerator
+  param:
+    model_class:           TaxDailyStatictis
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          tax_daily_statictis
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        actions: {}
+        object_actions: {}
+        batch_actions: {}
+      filter:
+        display: [gameId, isCash, day]
+      form:    ~
+      edit:    ~
+      new:     ~

@@ -12,20 +12,17 @@ Doctrine_Manager::getInstance()->bindComponent('Medal', 'doctrine');
  * @property string $description
  * @property integer $maxlevel
  * @property blob $_bytes
- * @property Doctrine_Collection $UserInfo
  * 
- * @method integer             getMedal()       Returns the current record's "medal" value
- * @method string              getName()        Returns the current record's "name" value
- * @method string              getDescription() Returns the current record's "description" value
- * @method integer             getMaxlevel()    Returns the current record's "maxlevel" value
- * @method blob                get_bytes()      Returns the current record's "_bytes" value
- * @method Doctrine_Collection getUserInfo()    Returns the current record's "UserInfo" collection
- * @method Medal               setMedal()       Sets the current record's "medal" value
- * @method Medal               setName()        Sets the current record's "name" value
- * @method Medal               setDescription() Sets the current record's "description" value
- * @method Medal               setMaxlevel()    Sets the current record's "maxlevel" value
- * @method Medal               set_bytes()      Sets the current record's "_bytes" value
- * @method Medal               setUserInfo()    Sets the current record's "UserInfo" collection
+ * @method integer getMedal()       Returns the current record's "medal" value
+ * @method string  getName()        Returns the current record's "name" value
+ * @method string  getDescription() Returns the current record's "description" value
+ * @method integer getMaxlevel()    Returns the current record's "maxlevel" value
+ * @method blob    get_bytes()      Returns the current record's "_bytes" value
+ * @method Medal   setMedal()       Sets the current record's "medal" value
+ * @method Medal   setName()        Sets the current record's "name" value
+ * @method Medal   setDescription() Sets the current record's "description" value
+ * @method Medal   setMaxlevel()    Sets the current record's "maxlevel" value
+ * @method Medal   set_bytes()      Sets the current record's "_bytes" value
  * 
  * @package    Vt_Portals
  * @subpackage model
@@ -87,8 +84,6 @@ abstract class BaseMedal extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasMany('UserInfo', array(
-             'local' => 'medal',
-             'foreign' => 'medal'));
+        
     }
 }

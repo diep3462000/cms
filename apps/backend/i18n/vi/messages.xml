@@ -196,6 +196,126 @@
                 <source>"%value%" must be at least %min%.</source>
                 <target>Phải lớn hơn %min%.</target>
             </trans-unit>
+            <trans-unit id="46">
+                <source>Created date</source>
+                <target>Ngày tạo</target>
+            </trans-unit>
+            <trans-unit id="47">
+                <source>Partner name</source>
+                <target>Đối tác</target>
+            </trans-unit>
+            <trans-unit id="48">
+                <source>Type</source>
+                <target>Loại</target>
+            </trans-unit>
+            <trans-unit id="49">
+                <source>Os</source>
+                <target>Hệ điều hành</target>
+            </trans-unit>
+            <trans-unit id="50">
+                <source>Partner</source>
+                <target>Đối tác</target>
+            </trans-unit>
+            <trans-unit id="51">
+                <source>User name</source>
+                <target>Tên đăng nhập</target>
+            </trans-unit>
+            <trans-unit id="51">
+                <source>Sum cash</source>
+                <target>Tổng Xu nạp</target>
+            </trans-unit>
+            <trans-unit id="51">
+                <source>Sum money</source>
+                <target>Tổng tiền nạp(VNĐ)</target>
+            </trans-unit>
+            <trans-unit id="52">
+                <source>Amount</source>
+                <target>Số lượng</target>
+            </trans-unit>
+            <trans-unit id="52">
+                <source>Display name</source>
+                <target>Tên hiển thị</target>
+            </trans-unit>
+            <trans-unit id="52">
+                <source>UserId</source>
+                <target>User Id</target>
+            </trans-unit>
+            <trans-unit id="53">
+                <source>Transaction view</source>
+                <target>Loại giao dịch</target>
+            </trans-unit>
+            <trans-unit id="54">
+                <source>Admin name</source>
+                <target>Tên admin</target>
+            </trans-unit>
+            <trans-unit id="54">
+                <source>Description</source>
+                <target>Mô tả</target>
+            </trans-unit>
+            <trans-unit id="55">
+                <source>Status</source>
+                <target>Trạng thái</target>
+            </trans-unit>
+            <trans-unit id="55">
+                <source>Status view</source>
+                <target>Trạng thái</target>
+            </trans-unit>
+            <trans-unit id="55">
+                <source>Created at</source>
+                <target>Thời gian tạo</target>
+            </trans-unit>
+            <trans-unit id="55">
+                <source>Updated at</source>
+                <target>Thời gian cập nhật</target>
+            </trans-unit>
+            <trans-unit id="55">
+                <source>Provider</source>
+                <target>Nhà cung cấp</target>
+            </trans-unit>
+            <trans-unit id="55">
+                <source>CardValue</source>
+                <target>Giá trị thẻ nạp</target>
+            </trans-unit>
+            <trans-unit id="55">
+                <source>Add cash</source>
+                <target>Cộng Ken</target>
+            </trans-unit>
+            <trans-unit id="55">
+                <source>Add gold</source>
+                <target>Cộng Xu</target>
+            </trans-unit>
+            <trans-unit id="55">
+                <source>Change cash</source>
+                <target>Thay đổi Ken</target>
+            </trans-unit>
+            <trans-unit id="55">
+                <source>Change gold</source>
+                <target>Thay đổi Xu</target>
+            </trans-unit>
+            <trans-unit id="55">
+                <source>Last cash</source>
+                <target>Ken ban dau</target>
+            </trans-unit>
+            <trans-unit id="55">
+                <source>Current cash</source>
+                <target>Ken hiện tại</target>
+            </trans-unit>
+            <trans-unit id="55">
+                <source>Current gold</source>
+                <target>Xu hiện tại</target>
+            </trans-unit>
+            <trans-unit id="55">
+                <source>Last gold</source>
+                <target>Xu ban đầu</target>
+            </trans-unit>
+            <trans-unit id="55">
+                <source>AddCash</source>
+                <target>Cộng ken</target>
+            </trans-unit>
+            <trans-unit id="55">
+                <source>AddGold</source>
+                <target>Cộng xu</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

@@ -13,15 +13,15 @@ abstract class BaseNotificationFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'pushmessage'    => new sfWidgetFormFilterInput(),
-      'pushnumber'     => new sfWidgetFormFilterInput(),
+      'title'          => new sfWidgetFormFilterInput(),
+      'message'        => new sfWidgetFormFilterInput(),
       'pushtime'       => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate())),
       'cp'             => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
-      'pushmessage'    => new sfValidatorPass(array('required' => false)),
-      'pushnumber'     => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'title'          => new sfValidatorPass(array('required' => false)),
+      'message'        => new sfValidatorPass(array('required' => false)),
       'pushtime'       => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
       'cp'             => new sfValidatorPass(array('required' => false)),
     ));
@@ -44,8 +44,8 @@ abstract class BaseNotificationFormFilter extends BaseFormFilterDoctrine
   {
     return array(
       'notificationid' => 'Number',
-      'pushmessage'    => 'Text',
-      'pushnumber'     => 'Number',
+      'title'          => 'Text',
+      'message'        => 'Text',
       'pushtime'       => 'Date',
       'cp'             => 'Text',
     );

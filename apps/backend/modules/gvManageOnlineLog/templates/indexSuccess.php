@@ -37,13 +37,13 @@
 
             <div id="sf_admin_content">
                 <form class="form-inline" id="list-form" action="<?php echo url_for('online_log_collection', array('action' => 'batch')) ?>" method="post">
-                    <b>Lượng CCU ở thời điểm hiện tại</b>
+                    <b>Lượng CCU ở thời điểm gần nhất</b>
                     <div class="sf_admin_list">
                         <table class="datatable table table-bordered table-striped" id="table_gv_manage_online_log" style="margin-top: 5px !important;">
                             <tr class="sf_admin_row">
                                 <?php foreach ($arr_game as $name => $numOnline) {?>
                                 <td class="sf_admin_text" style="background-color: #d1d1e6"><?php echo VtHelper::truncate($name, 50, '...', true)?>
-                                    <p style="color: red"><?php echo $numOnline?></p>
+                                    <h2 style="color: red"><?php echo $numOnline?></h2>
                                 </td>
                                 <?php }?>
                             </tr>
@@ -85,16 +85,17 @@
         });
 
         //Hình 3: Thông tin nhà phát triển đăng ký tài khoản
-        var array_online_log = new Array(["<?php echo __('Thời gian') ?>", "<?php echo __('Online') ?>"]);
+        var array_online_log = new Array(["<?php echo __('Thời gian') ?>", "<?php echo __('Online') ?>", "<?php echo __('Trong bàn') ?>"]);
         <?php foreach($arr_log as $time => $value):?>
-            array_online_log.push(['<?php echo $time;  ?>', Number('<?php echo $value?>')]);
-        <?php endforeach ?>
+            array_online_log.push(['<?php echo VtHelper::reFormatDate($time, "H:i");  ?>', Number('<?php echo $value[0]?>') , Number('<?php echo $value[1]?>') ]);
+
+    <?php endforeach ?>
         var data_online_log = google.visualization.arrayToDataTable(array_online_log);
         formatter.format(data_online_log, 1);
         var options_online_log = {
             title: '<?php echo __('CCU') ?>',
             is3D: true,
-            hAxis: {title: 'CCU gamevina',  titleTextStyle: {color: '#333'}},
+            hAxis: {title: 'CCU BIGKEN',  titleTextStyle: {color: '#333'}},
             vAxis: {minValue: 0}
         };
         var chart_online_log = new google.visualization.ColumnChart(document.getElementById('piechart_user_online'));

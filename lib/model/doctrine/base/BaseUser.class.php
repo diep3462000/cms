@@ -19,40 +19,43 @@ Doctrine_Manager::getInstance()->bindComponent('User', 'doctrine');
  * @property integer $sex
  * @property timestamp $registedtime
  * @property integer $age
- * @property integer $status
  * @property UserInfo $UserInfo
+ * @property Doctrine_Collection $ExchangeAssetRequest
  * @property Doctrine_Collection $LogPayment
+ * @property Doctrine_Collection $MoneyLogs
  * 
- * @method integer             getUserid()       Returns the current record's "userid" value
- * @method string              getUsername()     Returns the current record's "username" value
- * @method string              getPassword()     Returns the current record's "password" value
- * @method string              getDisplayname()  Returns the current record's "displayname" value
- * @method string              getIdentity()     Returns the current record's "identity" value
- * @method string              getAddress()      Returns the current record's "address" value
- * @method string              getEmail()        Returns the current record's "email" value
- * @method string              getMobile()       Returns the current record's "mobile" value
- * @method date                getBirthday()     Returns the current record's "birthday" value
- * @method integer             getSex()          Returns the current record's "sex" value
- * @method timestamp           getRegistedtime() Returns the current record's "registedtime" value
- * @method integer             getAge()          Returns the current record's "age" value
- * @method integer             getStatus()       Returns the current record's "status" value
- * @method UserInfo            getUserInfo()     Returns the current record's "UserInfo" value
- * @method Doctrine_Collection getLogPayment()   Returns the current record's "LogPayment" collection
- * @method User                setUserid()       Sets the current record's "userid" value
- * @method User                setUsername()     Sets the current record's "username" value
- * @method User                setPassword()     Sets the current record's "password" value
- * @method User                setDisplayname()  Sets the current record's "displayname" value
- * @method User                setIdentity()     Sets the current record's "identity" value
- * @method User                setAddress()      Sets the current record's "address" value
- * @method User                setEmail()        Sets the current record's "email" value
- * @method User                setMobile()       Sets the current record's "mobile" value
- * @method User                setBirthday()     Sets the current record's "birthday" value
- * @method User                setSex()          Sets the current record's "sex" value
- * @method User                setRegistedtime() Sets the current record's "registedtime" value
- * @method User                setAge()          Sets the current record's "age" value
- * @method User                setStatus()       Sets the current record's "status" value
- * @method User                setUserInfo()     Sets the current record's "UserInfo" value
- * @method User                setLogPayment()   Sets the current record's "LogPayment" collection
+ * @method integer             getUserid()               Returns the current record's "userid" value
+ * @method string              getUsername()             Returns the current record's "username" value
+ * @method string              getPassword()             Returns the current record's "password" value
+ * @method string              getDisplayname()          Returns the current record's "displayname" value
+ * @method string              getIdentity()             Returns the current record's "identity" value
+ * @method string              getAddress()              Returns the current record's "address" value
+ * @method string              getEmail()                Returns the current record's "email" value
+ * @method string              getMobile()               Returns the current record's "mobile" value
+ * @method date                getBirthday()             Returns the current record's "birthday" value
+ * @method integer             getSex()                  Returns the current record's "sex" value
+ * @method timestamp           getRegistedtime()         Returns the current record's "registedtime" value
+ * @method integer             getAge()                  Returns the current record's "age" value
+ * @method UserInfo            getUserInfo()             Returns the current record's "UserInfo" value
+ * @method Doctrine_Collection getExchangeAssetRequest() Returns the current record's "ExchangeAssetRequest" collection
+ * @method Doctrine_Collection getLogPayment()           Returns the current record's "LogPayment" collection
+ * @method Doctrine_Collection getMoneyLogs()            Returns the current record's "MoneyLogs" collection
+ * @method User                setUserid()               Sets the current record's "userid" value
+ * @method User                setUsername()             Sets the current record's "username" value
+ * @method User                setPassword()             Sets the current record's "password" value
+ * @method User                setDisplayname()          Sets the current record's "displayname" value
+ * @method User                setIdentity()             Sets the current record's "identity" value
+ * @method User                setAddress()              Sets the current record's "address" value
+ * @method User                setEmail()                Sets the current record's "email" value
+ * @method User                setMobile()               Sets the current record's "mobile" value
+ * @method User                setBirthday()             Sets the current record's "birthday" value
+ * @method User                setSex()                  Sets the current record's "sex" value
+ * @method User                setRegistedtime()         Sets the current record's "registedtime" value
+ * @method User                setAge()                  Sets the current record's "age" value
+ * @method User                setUserInfo()             Sets the current record's "UserInfo" value
+ * @method User                setExchangeAssetRequest() Sets the current record's "ExchangeAssetRequest" collection
+ * @method User                setLogPayment()           Sets the current record's "LogPayment" collection
+ * @method User                setMoneyLogs()            Sets the current record's "MoneyLogs" collection
  * 
  * @package    Vt_Portals
  * @subpackage model
@@ -176,16 +179,6 @@ abstract class BaseUser extends sfDoctrineRecord
              'autoincrement' => false,
              'length' => 4,
              ));
-        $this->hasColumn('status', 'integer', 1, array(
-             'type' => 'integer',
-             'fixed' => 0,
-             'unsigned' => false,
-             'primary' => false,
-             'default' => '1',
-             'notnull' => true,
-             'autoincrement' => false,
-             'length' => 1,
-             ));
     }
 
     public function setUp()
@@ -195,7 +188,15 @@ abstract class BaseUser extends sfDoctrineRecord
              'local' => 'userId',
              'foreign' => 'userId'));
 
+        $this->hasMany('ExchangeAssetRequest', array(
+             'local' => 'userId',
+             'foreign' => 'requestUserId'));
+
         $this->hasMany('LogPayment', array(
+             'local' => 'userId',
+             'foreign' => 'userId'));
+
+        $this->hasMany('MoneyLog as MoneyLogs', array(
              'local' => 'userId',
              'foreign' => 'userId'));
     }

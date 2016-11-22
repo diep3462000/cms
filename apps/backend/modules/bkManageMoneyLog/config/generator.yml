@@ -1,0 +1,28 @@
+generator:
+  class: tmcTwitterBootstrapDoctrineGenerator
+  param:
+    model_class:           PurchaseMoneyLog
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          purchase_money_log
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: Thống kê chi tiết nạp tiền
+        display: [userId,userName, display_name, parValue, cashValue, currentCash, purchasedTime, type, description]
+        actions: {}
+        object_actions: {}
+        batch_actions: {}
+      filter:
+        class: bkManageMoneyLogFormFiltersAdmin
+        display: [created_date,register_at, partner_id, os_id, type, user_name, display_name]
+      form:    ~
+      edit:    ~
+      new:     ~

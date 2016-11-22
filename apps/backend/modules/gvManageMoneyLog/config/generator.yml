@@ -13,9 +13,16 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
-      list:    ~
-      filter:  ~
+      fields: ~
+      list:
+        title: Lịch sử giao dịch
+        display: [display_name, userId, userName, lastCash, changeCash, currentCash, lastGold, changeGold, currentGold, transaction_view, taxPercent, taxValue, gameId, insertedTime, description]
+        actions: {}
+        object_actions: {}
+        batch_actions: {}
+      filter:
+        class: gvManageMoneyLogtFormFiltersAdmin
+        display: [user_name, type, gameId, insertedTime]
       form:    ~
       edit:    ~
       new:     ~

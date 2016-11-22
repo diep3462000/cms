@@ -12,5 +12,8 @@
  */
 class MatchLog extends BaseMatchLog
 {
-
+public function getDescriptionArr(){
+//    return (array) json_decode($this->getDescription());
+   return str_replace('"', "'",$this->getDescription());
+}
 }

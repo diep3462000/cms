@@ -16,4 +16,15 @@ class sfGuardUserTable extends PluginsfGuardUserTable
     {
         return Doctrine_Core::getTable('sfGuardUser');
     }
+    public function getUserByUsername($username, $is_active = 1) {
+        $q = $this->createQuery()
+            ->where('username = ?', $username)
+            ->addWhere('is_active = ?', $is_active);
+
+        return $q->fetchOne();
+    }
+    public function getSortUsernameAscList(Doctrine_Query $q)
+    {
+        return $q->orderBy('username');
+    }
 }

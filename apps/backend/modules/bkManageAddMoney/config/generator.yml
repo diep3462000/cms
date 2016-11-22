@@ -1,0 +1,29 @@
+generator:
+  class: tmcTwitterBootstrapDoctrineGenerator
+  param:
+    model_class:           AddMoney
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          add_money
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields: ~
+      list:
+        title: Danh sách cộng tiền cho user
+        object_actions: {}
+        batch_actions: {}
+        display: [userId, addCash, addGold, description, admin_name, status_view, created_at, updated_at]
+      filter:
+        class: gvManageAddMoneyFormFiltersAdmin
+        display: [userId, description]
+      form:
+        class: gvManageAddMoneyFormAdmin
+        display: [userId, addCash, addGold, description]
+      edit:    ~
+      new:     ~

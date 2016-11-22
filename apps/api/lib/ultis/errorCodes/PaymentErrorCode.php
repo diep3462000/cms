@@ -7,7 +7,7 @@
 
 /**
  * Danh sách các mã lỗi và message tương ứng của Restfull
- * @author diepth2 <diepth2@viettel.com>
+ * @author diepth2 <Diepth>
  * @created_at: 4/15/14 8:48 AM
  */
 class PaymentErrorCode  extends  ErrorCodeUtil{

@@ -27,7 +27,6 @@ abstract class BaseUserForm extends BaseFormDoctrine
       'sex'          => new sfWidgetFormInputText(),
       'registedtime' => new sfWidgetFormDateTime(),
       'age'          => new sfWidgetFormInputText(),
-      'status'       => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
@@ -43,7 +42,6 @@ abstract class BaseUserForm extends BaseFormDoctrine
       'sex'          => new sfValidatorInteger(array('required' => false)),
       'registedtime' => new sfValidatorDateTime(array('required' => false)),
       'age'          => new sfValidatorInteger(array('required' => false)),
-      'status'       => new sfValidatorInteger(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('user[%s]');

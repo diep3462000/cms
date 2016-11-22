@@ -12,9 +12,9 @@ include_component('tmcTwitterBootstrap', 'header');
             <div class="span4">
                 <div class="well sidebar">
                     <p>
-                        <?php echo __('Hệ thống Quản trị nội dung GAMEVINA. Mọi khó khăn liên hệ quản trị:') ?>
+                        <?php echo __('Hệ thống Quản trị nội dung BIGKEN. Mọi khó khăn liên hệ quản trị:') ?>
                     <ul>
-                        <li>diepth2@viettel.com.vn</li>
+                        <li>Diepth 0966858997</li>
                     </ul>
                     </p>
                 </div>

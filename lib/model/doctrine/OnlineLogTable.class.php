@@ -16,11 +16,21 @@ class OnlineLogTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('OnlineLog');
     }
-    public static  function getOnlineLog()
+    public static  function getOnlineLog($insertedtime = null, $option = null)
     {
-        return  OnlineLogTable::getInstance()->createQuery('a')
-            ->select('a.logId, a.peakData, a.insertedTime')
-            ->orderBy('a.insertedTime asc')
+        $sql=   OnlineLogTable::getInstance()->createQuery('a')
+            ->select('a.logId, a.peakData, a.insertedTime');
+        if($option == 1 || $option == 2 || $option == 6){
+            $sql->where('a.insertedTime >= ?' , date("Y-m-d H:i:s", time() - 3600 * $option));
+        } else if($option == 24){
+            $sql->where('Date(insertedTime) = ?' , date("Y-m-d", time()));
+            $sql->andWhere('a.logId % 4 = 1');
+        }
+        if ($insertedtime && $insertedtime != date("Y-m-d", time())){
+            $sql->where('Date(insertedTime) = ?' , $insertedtime);
+            $sql->andWhere('a.logId % 4 = 1');
+        }
+       return  $sql->orderBy('a.insertedTime desc')
             ->fetchArray();
     }
 }

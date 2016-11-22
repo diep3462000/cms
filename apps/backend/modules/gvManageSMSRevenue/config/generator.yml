@@ -1,0 +1,28 @@
+generator:
+  class: tmcTwitterBootstrapDoctrineGenerator
+  param:
+    model_class:           MoHistory
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          sms_revenue
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: Thống kê doanh thu SMS theo ngày
+        display: [keyword, created_date, sum_money]
+        actions: {}
+        object_actions: {}
+        batch_actions: {}
+      filter:
+        class: gvManageSMSRevenueFormFiltersAdmin
+        display: [created_date, keyword, amount, telco]
+      form:    ~
+      edit:    ~
+      new:     ~

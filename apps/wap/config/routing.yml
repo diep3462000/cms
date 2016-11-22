@@ -1,0 +1,44 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+# default rules
+homepage:
+  url:   /
+  param: { module: home, action: index }
+
+# generic rules
+# please, remove them by adding more specific rules
+game_guild:
+  url: /huongdan/:id
+  param: { module: game, action: index }
+game_notify:
+  url: /notify
+  param: { module: notify, action: index }
+game_event:
+  url: /event
+  param: { module: notify, action: event }
+home:
+  url: /
+  param: { module: home, action: index }
+tai_game:
+  url: /tai-game
+  param: {module: game, action: tai}
+dl:
+  url: /dl
+  param: {module: game, action: dl}
+tai:
+  url: /tai
+  param: {module: game, action: taiGame}
+luat_game:
+  url: /luat-game
+  param: {module: game, action: rule}
+privacy_policy:
+  url: privacy-policy
+  param: {module: notify, action: policy}
+
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

@@ -15,7 +15,7 @@ abstract class BaseMatchLogFormFilter extends BaseFormFilterDoctrine
     $this->setWidgets(array(
       'roomid'      => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'matchindex'  => new sfWidgetFormFilterInput(),
-      'gameid'      => new sfWidgetFormFilterInput(),
+      'gameid'      => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Game'), 'add_empty' => true)),
       'description' => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'createdtime' => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
     ));
@@ -23,7 +23,7 @@ abstract class BaseMatchLogFormFilter extends BaseFormFilterDoctrine
     $this->setValidators(array(
       'roomid'      => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'matchindex'  => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
-      'gameid'      => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'gameid'      => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Game'), 'column' => 'gameid')),
       'description' => new sfValidatorPass(array('required' => false)),
       'createdtime' => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
     ));
@@ -48,7 +48,7 @@ abstract class BaseMatchLogFormFilter extends BaseFormFilterDoctrine
       'matchlogid'  => 'Number',
       'roomid'      => 'Number',
       'matchindex'  => 'Number',
-      'gameid'      => 'Number',
+      'gameid'      => 'ForeignKey',
       'description' => 'Text',
       'createdtime' => 'Date',
     );

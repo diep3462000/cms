@@ -15,19 +15,31 @@ class gvManageOnlineLogActions extends autoGvManageOnlineLogActions
 {
     public function executeIndex(sfWebRequest $request)
     {
-        $online_logs = OnlineLogTable::getOnlineLog();
+        $filter = $this->getFilters();
+        $insertedtime = isset($filter["insertedtime"])? explode(" ", $filter["insertedtime"])[0]: date("Y-m-d", time());
+        $option = isset($filter["option"])?$filter["option"] : 6;
+        $online_logs = OnlineLogTable::getOnlineLog($insertedtime, $option);
         $arr_log = array();
         foreach($online_logs as $i => $log){
-            $arr_log[$log["insertedtime"]] = json_decode($log["peakdata"])->total;
+            $arr_data =  (array)  json_decode($log["peakdata"]);
+            $sum  = array_sum($arr_data);
+            $arr_log[$log["insertedtime"]] = array(json_decode($log["peakdata"])->total, $sum - $arr_data["total"] - array_values($arr_data)[0]);
+
         }
-        $current_time_log = json_decode(end($online_logs)["peakdata"]);
+//        var_dump($online_logs);die;
+        $current_time_log = json_decode($online_logs[0]["peakdata"]);
         $list_game  = GameTable::getListGame();
         $arr_game = array();
-        $arr_game["Tổng"] = $current_time_log->total;
+        $arr_game["Người chơi"] = $current_time_log->total;
+        $num_player = 0 ;
         foreach($list_game as $i => $game){
             //$arr_game[$game["id"]] = $game["name"];
-            $arr_game[$game["name"]] = isset($current_time_log->$game["gameid"])? $current_time_log->$game["gameid"]:0;
+            if(isset($current_time_log->$game["gameid"])){
+                $arr_game[$game["name"]] =  $current_time_log->$game["gameid"];
+                $num_player += $arr_game[$game["name"]];
+            }
         }
+        $arr_game["Người chơi"] = $num_player . "/" . $current_time_log->total;
         $this->arr_game=$arr_game;
         $this->arr_log = $arr_log;
         // sorting
@@ -66,7 +78,17 @@ class gvManageOnlineLogActions extends autoGvManageOnlineLogActions
 
         $this->sort = $this->getSort();
     }
+    protected function getPager()
+    {
+        $query = $this->buildQuery();
+//        $pages = ceil($query->count() / $this->getMaxPerPage());
+//        $pager = $this->configuration->getPager('OnlineLog');
+//        $pager->setQuery($query);
+//        $pager->setPage(($this->getPage() > $pages) ? $pages : $this->getPage());
+//        $pager->init();
 
+//        return $pager;
+    }
     public function executeFilter(sfWebRequest $request)
     {
         $this->setPage(1);
@@ -96,9 +118,9 @@ class gvManageOnlineLogActions extends autoGvManageOnlineLogActions
 
             $this->redirect('@online_log');
         }
-        $this->sidebar_status = $this->configuration->getListSidebarStatus();
-        $this->pager = $this->getPager();
-        $this->sort = $this->getSort();
+//        $this->sidebar_status = $this->configuration->getListSidebarStatus();
+//        $this->pager = $this->getPager();
+//        $this->sort = $this->getSort();
 
         $this->setTemplate('index');
     }

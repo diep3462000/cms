@@ -1,4 +1,4 @@
-<?php $footer = sfConfig::get('app_tmcTwitterBootstrapPlugin_footer', array('copyright' => 'DIEPTH2')); ?>
+<?php $footer = sfConfig::get('app_tmcTwitterBootstrapPlugin_footer', array('copyright' => 'BIGKEN')); ?>
 <div class="container-fluid" id="footer">
     <p><?php echo __($footer['copyright'], null, 'tmcTwitterBootstrapPlugin') ?></p>
 </div>

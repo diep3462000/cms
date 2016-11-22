@@ -20,7 +20,7 @@ class CallSoapErrorException extends Exception {
      * @param type $message
      * @param type $code
      * @param type $previous
-     * @author diepth2 <diepth2@viettel.com>
+     * @author diepth2 <Diepth>
      * @created_at: 4/16/14 1:47 PM
      */
     public function __construct($message = null, $code = null, $previous = null) {

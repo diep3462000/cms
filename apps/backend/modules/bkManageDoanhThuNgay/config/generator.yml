@@ -1,0 +1,28 @@
+generator:
+  class: tmcTwitterBootstrapDoctrineGenerator
+  param:
+    model_class:           PurchaseMoneyLog
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          doanh_thu_ngay_linh
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: Doanh thu tổng hợp
+        display: [created_date, partner_name, type, sum_money, sum_cash]
+        actions: {}
+        object_actions: {}
+        batch_actions: {}
+      filter:
+        class: bkManageDoanhThuNgayLinhFormFiltersAdmin
+        display: [created_date, register_at, partner_id, os_id, type, user_name]
+      form:    ~
+      edit:    ~
+      new:     ~

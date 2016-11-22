@@ -1,0 +1,28 @@
+generator:
+  class: tmcTwitterBootstrapDoctrineGenerator
+  param:
+    model_class:           MatchLog
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          xoc_dia
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: Thống kê xóc đĩa
+        display: [roomid, matchindex, description_arr]
+        actions: {}
+        object_actions: {}
+        batch_actions: {}
+      filter:
+        class: gvManageXocDiaFormAdminFilter
+        display: [roomid, matchindex, created_date]
+      form:    ~
+      edit:    ~
+      new:     ~

@@ -13,6 +13,7 @@ Doctrine_Manager::getInstance()->bindComponent('MatchLog', 'doctrine');
  * @property integer $gameid
  * @property string $description
  * @property timestamp $createdtime
+ * @property Game $Game
  * 
  * @method integer   getMatchlogid()  Returns the current record's "matchlogid" value
  * @method integer   getRoomid()      Returns the current record's "roomid" value
@@ -20,12 +21,14 @@ Doctrine_Manager::getInstance()->bindComponent('MatchLog', 'doctrine');
  * @method integer   getGameid()      Returns the current record's "gameid" value
  * @method string    getDescription() Returns the current record's "description" value
  * @method timestamp getCreatedtime() Returns the current record's "createdtime" value
+ * @method Game      getGame()        Returns the current record's "Game" value
  * @method MatchLog  setMatchlogid()  Sets the current record's "matchlogid" value
  * @method MatchLog  setRoomid()      Sets the current record's "roomid" value
  * @method MatchLog  setMatchindex()  Sets the current record's "matchindex" value
  * @method MatchLog  setGameid()      Sets the current record's "gameid" value
  * @method MatchLog  setDescription() Sets the current record's "description" value
  * @method MatchLog  setCreatedtime() Sets the current record's "createdtime" value
+ * @method MatchLog  setGame()        Sets the current record's "Game" value
  * 
  * @package    Vt_Portals
  * @subpackage model
@@ -96,6 +99,8 @@ abstract class BaseMatchLog extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        
+        $this->hasOne('Game', array(
+             'local' => 'gameId',
+             'foreign' => 'gameId'));
     }
 }

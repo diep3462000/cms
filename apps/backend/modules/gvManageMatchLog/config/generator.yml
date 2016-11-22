@@ -1,0 +1,31 @@
+generator:
+  class: tmcTwitterBootstrapDoctrineGenerator
+  param:
+    model_class:           MatchLog
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          match_log
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        display: [roomid, matchindex, gameid, game_name, description]
+#        class: gvManageMatchLogFormAdmin
+        object_actions:
+          _edit: {label: Chi tiết}
+          _delete: ~
+        actions: {}
+        object_actions: {}
+        batch_actions: {}
+      filter:
+        class: gvManageMatchLogFormAdminFilter
+        display: [roomid, matchindex, gameid ]
+      form:    ~
+      edit:    ~
+      new:     ~

@@ -38,6 +38,7 @@ foreach ($dataDate2 as $valDate2){
             $arrRevenue2[] = $valReques2['sumTaxValue'];
         }
     }
+    $arrRevenueGold2 = array();
     foreach ($listRevenueGoldGroupByDateFromTo as $valReques2) {
         $date_created = date_format(date_create($valReques2['DATE']),'Y-m-d' );
         if ($date_created == $valDate2) {
@@ -59,9 +60,9 @@ foreach ($dataDate2 as $valDate2){
                     <p style="font-size: 20px;"><?php echo __('Tổng phế cash') ?></p>
                     <span style="font-size: 25px;"><?php echo VtHelper::number_format(array_sum($arrRevenueTotal2)). __(' VND'); ?> </span>
                     <table class="table" style="margin-top: 10px;">
-                        <tr><td><?php echo __('Hôm nay') ?></td><td style="text-align: center"><?php echo VtHelper::number_format($revenuCashToday[0]['sumTaxValue']);?> <?php echo __('XU')?></td></tr>
-                        <tr><td><?php echo __('Hôm quá') ?></td><td style="text-align: center"><?php echo VtHelper::number_format($revenuCashYesterday[0]['sumTaxValue']);?> <?php echo __('XU')?></td></tr>
-                        <tr><td><?php echo __('Tháng này') ?></td><td style="text-align: center"><?php echo VtHelper::number_format($revenuCashThisMonth[0]['sumTaxValue']);?> <?php echo __('XU')?></td></tr>
+                        <tr><td><?php echo __('Hôm nay') ?></td><td style="text-align: center"><?php echo VtHelper::number_format($revenuCashToday[0]['sumTaxValue']);?> <?php echo __('KEN')?></td></tr>
+                        <tr><td><?php echo __('Hôm quá') ?></td><td style="text-align: center"><?php echo VtHelper::number_format($revenuCashYesterday[0]['sumTaxValue']);?> <?php echo __('KEN')?></td></tr>
+                        <tr><td><?php echo __('Tháng này') ?></td><td style="text-align: center"><?php echo VtHelper::number_format($revenuCashThisMonth[0]['sumTaxValue']);?> <?php echo __('KEN')?></td></tr>
                         <tr><td></td><td></td></tr>
                     </table>
                 </div>
@@ -83,8 +84,8 @@ foreach ($dataDate2 as $valDate2){
                 <div class="span12">
                     <div class="span6" style="text-align: left; margin-left: 0px;">
                         <select name="filterType" id="filter-type" style="margin-left: 10px; width: 130px;">
-                            <option value="1">CASH</option>
-                            <option value="0">GOLD</option>
+                            <option value="1">Xu</option>
+                            <option value="0">KEN</option>
                         </select>
                             <select name="filtergame" id="filter-game" style="margin-left: 10px; width: 130px;">
 								<option value="">Tất cả Game</option>

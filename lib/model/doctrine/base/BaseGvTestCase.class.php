@@ -86,8 +86,8 @@ abstract class BaseGvTestCase extends sfDoctrineRecord
              'fixed' => 0,
              'unsigned' => false,
              'primary' => false,
-             'default' => '0',
-             'notnull' => false,
+             'default' => 0,
+             'notnull' => true,
              'autoincrement' => false,
              'length' => 1,
              ));

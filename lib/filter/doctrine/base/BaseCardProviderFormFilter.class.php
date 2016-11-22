@@ -13,21 +13,21 @@ abstract class BaseCardProviderFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'cardid'         => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'cardname'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'submenu'        => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'len1'           => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'len2'           => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'cardmsg'        => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'providerCode' => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'providerName' => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'description'  => new sfWidgetFormFilterInput(),
+      'active'       => new sfWidgetFormFilterInput(),
+      'telcoPercent' => new sfWidgetFormFilterInput(),
+      'valuePercent' => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
-      'cardid'         => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
-      'cardname'       => new sfValidatorPass(array('required' => false)),
-      'submenu'        => new sfValidatorPass(array('required' => false)),
-      'len1'           => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
-      'len2'           => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
-      'cardmsg'        => new sfValidatorPass(array('required' => false)),
+      'providerCode' => new sfValidatorPass(array('required' => false)),
+      'providerName' => new sfValidatorPass(array('required' => false)),
+      'description'  => new sfValidatorPass(array('required' => false)),
+      'active'       => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'telcoPercent' => new sfValidatorPass(array('required' => false)),
+      'valuePercent' => new sfValidatorPass(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('card_provider_filters[%s]');
@@ -47,13 +47,13 @@ abstract class BaseCardProviderFormFilter extends BaseFormFilterDoctrine
   public function getFields()
   {
     return array(
-      'cardproviderid' => 'Number',
-      'cardid'         => 'Number',
-      'cardname'       => 'Text',
-      'submenu'        => 'Text',
-      'len1'           => 'Number',
-      'len2'           => 'Number',
-      'cardmsg'        => 'Text',
+      'providerId'   => 'Number',
+      'providerCode' => 'Text',
+      'providerName' => 'Text',
+      'description'  => 'Text',
+      'active'       => 'Number',
+      'telcoPercent' => 'Text',
+      'valuePercent' => 'Text',
     );
   }
 }

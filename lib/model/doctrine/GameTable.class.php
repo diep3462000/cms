@@ -19,7 +19,7 @@ class GameTable extends Doctrine_Table
     public static  function getListGame($gameId = null)
     {
         $sql =   GameTable::getInstance()->createQuery('a')
-            ->select('a.gameid, a.name')
+            ->select('a.gameid, a.name, a.description')
             ->where('status = 1');
         if($gameId){
             $sql->andWhere("a.gameid =?", $gameId);

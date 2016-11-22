@@ -2,17 +2,14 @@ all:
   slave:
     class: sfDoctrineDatabase
     param:
-      dsn: 'mysql:host=103.28.37.24;dbname=gamevina_v2'
-      username: root
-      password: mysql!mi14@
+      dsn: 'mysql:host=124.158.7.138;dbname=bigken'
+      username: bigken
+      password: mySql!Bk16@
       attributes: { default_table_charset: utf8, default_table_collate: utf8_general_ci }
   doctrine:
     class: sfDoctrineDatabase
     param:
-#      dsn: 'mysql:host=localhost:3306;dbname=gonline'
-      dsn: 'mysql:host=103.28.37.24;dbname=gamevina_v2'
-#      username: vtp_v2
-      username: root
-#      password: ''
-      password: 'mysql!mi14@'
+      dsn: 'mysql:host=124.158.7.138;dbname=bigken'
+      username: bigken
+      password: mySql!Bk16@
       attributes: { default_table_charset: utf8, default_table_collate: utf8_general_ci }

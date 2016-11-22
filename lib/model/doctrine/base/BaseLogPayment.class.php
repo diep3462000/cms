@@ -18,7 +18,6 @@ Doctrine_Manager::getInstance()->bindComponent('LogPayment', 'doctrine');
  * @property string $message
  * @property string $content
  * @property timestamp $request_time
- * @property UserInfo $UserInfo
  * @property User $User
  * @property Provider $Provider
  * 
@@ -33,7 +32,6 @@ Doctrine_Manager::getInstance()->bindComponent('LogPayment', 'doctrine');
  * @method string     getMessage()      Returns the current record's "message" value
  * @method string     getContent()      Returns the current record's "content" value
  * @method timestamp  getRequestTime()  Returns the current record's "request_time" value
- * @method UserInfo   getUserInfo()     Returns the current record's "UserInfo" value
  * @method User       getUser()         Returns the current record's "User" value
  * @method Provider   getProvider()     Returns the current record's "Provider" value
  * @method LogPayment setId()           Sets the current record's "id" value
@@ -47,7 +45,6 @@ Doctrine_Manager::getInstance()->bindComponent('LogPayment', 'doctrine');
  * @method LogPayment setMessage()      Sets the current record's "message" value
  * @method LogPayment setContent()      Sets the current record's "content" value
  * @method LogPayment setRequestTime()  Sets the current record's "request_time" value
- * @method LogPayment setUserInfo()     Sets the current record's "UserInfo" value
  * @method LogPayment setUser()         Sets the current record's "User" value
  * @method LogPayment setProvider()     Sets the current record's "Provider" value
  * 
@@ -150,10 +147,6 @@ abstract class BaseLogPayment extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasOne('UserInfo', array(
-             'local' => 'userId',
-             'foreign' => 'userId'));
-
         $this->hasOne('User', array(
              'local' => 'userId',
              'foreign' => 'userId'));

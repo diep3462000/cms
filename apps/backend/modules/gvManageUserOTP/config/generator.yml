@@ -1,0 +1,27 @@
+generator:
+  class: tmcTwitterBootstrapDoctrineGenerator
+  param:
+    model_class:           UserOTP
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          user_otp
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        display: [msisdn, user_id, statusView, typeView,verify_code, created_at, updated_at]
+        actions: {}
+        object_actions: {}
+        batch_actions: {}
+      filter:
+        class: gvManageUserOTPFormFiltersAdmin
+        display: [msisdn, user_id, verify_code, status, type]
+      form:    ~
+      edit:    ~
+      new:     ~

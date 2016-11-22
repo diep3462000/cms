@@ -22,6 +22,7 @@ generator:
       filter:
         class: gvManageGameFormFilter
         display:  ~
-      form:    ~
+      form:
+        class: gvManageGameFormAdmin
       edit:    ~
       new:     ~

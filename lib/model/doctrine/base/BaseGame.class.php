@@ -12,6 +12,7 @@ Doctrine_Manager::getInstance()->bindComponent('Game', 'doctrine');
  * @property string $description
  * @property string $help
  * @property integer $status
+ * @property Doctrine_Collection $MatchLogs
  * @property Doctrine_Collection $MoneyLogs
  * 
  * @method integer             getGameid()      Returns the current record's "gameid" value
@@ -19,12 +20,14 @@ Doctrine_Manager::getInstance()->bindComponent('Game', 'doctrine');
  * @method string              getDescription() Returns the current record's "description" value
  * @method string              getHelp()        Returns the current record's "help" value
  * @method integer             getStatus()      Returns the current record's "status" value
+ * @method Doctrine_Collection getMatchLogs()   Returns the current record's "MatchLogs" collection
  * @method Doctrine_Collection getMoneyLogs()   Returns the current record's "MoneyLogs" collection
  * @method Game                setGameid()      Sets the current record's "gameid" value
  * @method Game                setName()        Sets the current record's "name" value
  * @method Game                setDescription() Sets the current record's "description" value
  * @method Game                setHelp()        Sets the current record's "help" value
  * @method Game                setStatus()      Sets the current record's "status" value
+ * @method Game                setMatchLogs()   Sets the current record's "MatchLogs" collection
  * @method Game                setMoneyLogs()   Sets the current record's "MoneyLogs" collection
  * 
  * @package    Vt_Portals
@@ -54,23 +57,23 @@ abstract class BaseGame extends sfDoctrineRecord
              'autoincrement' => false,
              'length' => 50,
              ));
-        $this->hasColumn('description', 'string', 4000, array(
+        $this->hasColumn('description', 'string', 10000, array(
              'type' => 'string',
              'fixed' => 0,
              'unsigned' => false,
              'primary' => false,
              'notnull' => false,
              'autoincrement' => false,
-             'length' => 4000,
+             'length' => 10000,
              ));
-        $this->hasColumn('help', 'string', 4000, array(
+        $this->hasColumn('help', 'string', 10000, array(
              'type' => 'string',
              'fixed' => 0,
              'unsigned' => false,
              'primary' => false,
              'notnull' => false,
              'autoincrement' => false,
-             'length' => 4000,
+             'length' => 10000,
              ));
         $this->hasColumn('status', 'integer', 1, array(
              'type' => 'integer',
@@ -86,6 +89,10 @@ abstract class BaseGame extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
+        $this->hasMany('MatchLog as MatchLogs', array(
+             'local' => 'gameId',
+             'foreign' => 'gameId'));
+
         $this->hasMany('MoneyLog as MoneyLogs', array(
              'local' => 'gameId',
              'foreign' => 'gameId'));

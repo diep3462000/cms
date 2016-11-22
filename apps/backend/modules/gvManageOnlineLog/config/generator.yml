@@ -13,9 +13,16 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
-      list:    ~
-      filter:  ~
+      fields:
+        insertedtime: {label: Ngày }
+      list:
+        title: Thống kê CCU
+        actions: {}
+        object_actions: {}
+        batch_actions: {}
+      filter:
+        class: gvManageOnlineLogFormFiltersAdmin
+        display: [insertedtime, option]
       form:    ~
       edit:    ~
       new:     ~

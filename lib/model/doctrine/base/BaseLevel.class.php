@@ -13,22 +13,19 @@ Doctrine_Manager::getInstance()->bindComponent('Level', 'doctrine');
  * @property integer $maxexp
  * @property integer $cashgift
  * @property integer $goldgift
- * @property Doctrine_Collection $UserInfo
  * 
- * @method integer             getLevel()       Returns the current record's "level" value
- * @method string              getName()        Returns the current record's "name" value
- * @method string              getDescription() Returns the current record's "description" value
- * @method integer             getMaxexp()      Returns the current record's "maxexp" value
- * @method integer             getCashgift()    Returns the current record's "cashgift" value
- * @method integer             getGoldgift()    Returns the current record's "goldgift" value
- * @method Doctrine_Collection getUserInfo()    Returns the current record's "UserInfo" collection
- * @method Level               setLevel()       Sets the current record's "level" value
- * @method Level               setName()        Sets the current record's "name" value
- * @method Level               setDescription() Sets the current record's "description" value
- * @method Level               setMaxexp()      Sets the current record's "maxexp" value
- * @method Level               setCashgift()    Sets the current record's "cashgift" value
- * @method Level               setGoldgift()    Sets the current record's "goldgift" value
- * @method Level               setUserInfo()    Sets the current record's "UserInfo" collection
+ * @method integer getLevel()       Returns the current record's "level" value
+ * @method string  getName()        Returns the current record's "name" value
+ * @method string  getDescription() Returns the current record's "description" value
+ * @method integer getMaxexp()      Returns the current record's "maxexp" value
+ * @method integer getCashgift()    Returns the current record's "cashgift" value
+ * @method integer getGoldgift()    Returns the current record's "goldgift" value
+ * @method Level   setLevel()       Sets the current record's "level" value
+ * @method Level   setName()        Sets the current record's "name" value
+ * @method Level   setDescription() Sets the current record's "description" value
+ * @method Level   setMaxexp()      Sets the current record's "maxexp" value
+ * @method Level   setCashgift()    Sets the current record's "cashgift" value
+ * @method Level   setGoldgift()    Sets the current record's "goldgift" value
  * 
  * @package    Vt_Portals
  * @subpackage model
@@ -101,8 +98,6 @@ abstract class BaseLevel extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasMany('UserInfo', array(
-             'local' => 'level',
-             'foreign' => 'level'));
+        
     }
 }

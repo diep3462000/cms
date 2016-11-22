@@ -22,7 +22,7 @@ class gvManageTestCaseFormsAdmin extends BaseGvTestCaseForm
             'value'       => new sfWidgetFormTextarea(),
             'game_id'     => new sfWidgetFormInputText(),
             'description' => new sfWidgetFormTextarea(),
-            'status'      => new sfWidgetFormInputCheckbox(),
+            'status'      => new sfWidgetFormInputText(),
         ));
         $this->setValidators(array(
             'id'          => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
@@ -30,11 +30,15 @@ class gvManageTestCaseFormsAdmin extends BaseGvTestCaseForm
             'value'       => new sfValidatorString(),
             'game_id'     => new sfValidatorString(array('max_length' => 12)),
             'description' => new sfValidatorString(array('max_length' => 256, 'required' => false)),
-            'status'      => new sfValidatorBoolean(array('required' => false)),
+            'status'      => new sfValidatorString(array('required' => false)),
         ));
 
         $this->widgetSchema->setNameFormat('gv_test_case[%s]');
         $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
         $this->setupInheritance();
     }
+//    protected function doBind(array $values) {
+//        $values["status"] = isset($values["status"])? 1 : 0;
+//        parent::doBind($values);
+//    }
 }

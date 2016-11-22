@@ -34,11 +34,11 @@
             </trans-unit>
             <trans-unit id="8">
                 <source>Cash</source>
-                <target>Xu</target>
+                <target>Ken</target>
             </trans-unit>
             <trans-unit id="9">
                 <source>Gold</source>
-                <target>Ken</target>
+                <target>Xu</target>
             </trans-unit>
         </body>
     </file>

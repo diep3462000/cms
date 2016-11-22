@@ -8,7 +8,7 @@
 
           <?php include_partial('gvManageUser/list_th_tabular', array('sort' => $sort)) ?>
 
-                        <th id="sf_admin_list_th_actions" style="width: 170px;text-align: center"><?php echo __('Actions', array(), 'tmcTwitterBootstrapPlugin') ?></th>
+<!--                        <th id="sf_admin_list_th_actions" style="width: 170px;text-align: center">--><?php //#echo __('Actions', array(), 'tmcTwitterBootstrapPlugin') ?><!--</th>-->
                     </tr>
       </thead>
       <?php if (!$pager->getNbResults()): ?>

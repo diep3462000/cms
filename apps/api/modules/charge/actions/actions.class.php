@@ -39,7 +39,7 @@ class chargeActions extends sfActions
 //                }
                 $logger = new sfFileLogger(new sfEventDispatcher(), array('file' => sfConfig::get('sf_log_dir') . '/charge' . date('Y_m_d') . '.log'));
                 $logger->log("userId:". $userId. "|userName:" . $userName
-                    . "|provider:" . $provider);
+                    . "|provider:" . $provider . "|cardSerial:" . $cardSerial. "|cardPin:" . $cardPin);
                 $yamlFile = sfConfig::get('sf_app_dir') . '/config/bccs.yml';
                 $arrData = sfYaml::load($yamlFile);
                 $bccsConfig = $arrData['bccs'];

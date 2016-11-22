@@ -117,8 +117,8 @@
         <target>Save</target>
       </trans-unit>
       <trans-unit id="29">
-        <source>Quản Trị GAMEVINA</source>
-        <target> GAMEVINA Administration</target>
+        <source>Quản Trị BIGKEN</source>
+        <target> BIGKEN Administration</target>
       </trans-unit>
       <trans-unit id="30">
         <source>Bạn không có quyền truy cập chức năng này!</source>
@@ -133,11 +133,11 @@
         <target>Logout</target>
       </trans-unit>
       <trans-unit id="33">
-        <source>QUẢN TRỊ NỘI DUNG GAMEVINA </source>
+        <source>QUẢN TRỊ NỘI DUNG BIGKEN </source>
         <target>VIETTEL CONTENT MANAGEMENT PORTAL</target>
       </trans-unit>
       <trans-unit id="34">
-        <source>HỆ THỐNG QUẢN TRỊ NỘI DUNG GAMEVINA</source>
+        <source>HỆ THỐNG QUẢN TRỊ NỘI DUNG BIGKEN</source>
         <target>CONTENT MANAGEMENT SYSTEM PORTAL VIETTEL</target>
       </trans-unit>
       <trans-unit id="35">
@@ -417,7 +417,7 @@
         <target>Click on the links below to perform tasks.</target>
       </trans-unit>
       <trans-unit id="104">
-        <source>Hệ thống Quản trị nội dung GAMEVINA. Mọi khó khăn liên hệ quản trị:</source>
+        <source>Hệ thống Quản trị nội dung BIGKEN. Mọi khó khăn liên hệ quản trị:</source>
         <target>Content Management System Portal Viettel. Ledge management contact:</target>
       </trans-unit>
       <trans-unit id="105">

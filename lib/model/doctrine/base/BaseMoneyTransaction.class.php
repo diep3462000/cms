@@ -10,13 +10,16 @@ Doctrine_Manager::getInstance()->bindComponent('MoneyTransaction', 'doctrine');
  * @property integer $transactionid
  * @property string $type
  * @property string $code
+ * @property Doctrine_Collection $MoneyLogs
  * 
- * @method integer          getTransactionid() Returns the current record's "transactionid" value
- * @method string           getType()          Returns the current record's "type" value
- * @method string           getCode()          Returns the current record's "code" value
- * @method MoneyTransaction setTransactionid() Sets the current record's "transactionid" value
- * @method MoneyTransaction setType()          Sets the current record's "type" value
- * @method MoneyTransaction setCode()          Sets the current record's "code" value
+ * @method integer             getTransactionid() Returns the current record's "transactionid" value
+ * @method string              getType()          Returns the current record's "type" value
+ * @method string              getCode()          Returns the current record's "code" value
+ * @method Doctrine_Collection getMoneyLogs()     Returns the current record's "MoneyLogs" collection
+ * @method MoneyTransaction    setTransactionid() Sets the current record's "transactionid" value
+ * @method MoneyTransaction    setType()          Sets the current record's "type" value
+ * @method MoneyTransaction    setCode()          Sets the current record's "code" value
+ * @method MoneyTransaction    setMoneyLogs()     Sets the current record's "MoneyLogs" collection
  * 
  * @package    Vt_Portals
  * @subpackage model
@@ -60,6 +63,8 @@ abstract class BaseMoneyTransaction extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        
+        $this->hasMany('MoneyLog as MoneyLogs', array(
+             'local' => 'transactionId',
+             'foreign' => 'transactionId'));
     }
 }

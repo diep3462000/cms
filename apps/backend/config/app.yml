@@ -14,7 +14,7 @@ all:
 #    dashboard_name: Administration
     header:
       menu:
-        Quản trị hệ thống:
+        Hệ thống:
           credentials: [admin]
           dropdown:
             Danh sách người dùng:
@@ -23,30 +23,58 @@ all:
               route: vtp_users
             Danh sách quyền hạn:
               route: sf_guard_permission
-        Quản lý doanh thu:
+            Tiếng Việt:
+              route: pageVI
+            English:
+              route: pageEN
+        Doanh thu:
           credentials: [admin]
           dropdown:
             Quản lý doanh thu theo ngày:
+              credentials: [[admin, dev]]
+              route: doanh_thu_ngay_linh
+            Thống kê chi tiết giao dịch nạp tiền:
               credentials: [[admin]]
-              route: doanh_thu_ngay
+              route: purchase_money_log
+#            Quản lý doanh thu theo ngày online:
+#              credentials: [[admin]]
+#              route: doanh_thu_ngay
             Quản lý doanh thu thẻ nạp:
-              credentials: [[admin]]
+              credentials: [[admin, dev]]
               route: doanh_thu
-            Quản lý tiền phế trong game:
+            Quản lý tiền phế trong game online:
               credentials: [[admin]]
               route: revenue_game
+            Quản lý tiền phế trong game:
+              credentials: [[admin]]
+              route: tax_daily_statictis
             Quản lý lịch sử tiền chơi game:
               credentials: [[admin]]
               route: money_log
             Quản lý lịch sử nạp thẻ:
-              credentials: [[admin]]
+              credentials: [[admin, dev]]
               route: log_payment
-        Quản lý game:
+            Thông kê doanh thu SMS:
+              credentials: [[admin, dev]]
+              route: sms_revenue
+            Thông kê chi tiết SMS:
+              credentials: [[admin, dev]]
+              route: mo_history
+            Thống kê đổi thưởng:
+              credentials: [[admin, dev]]
+              route: exchange_asset_request
+            Quản lý CCU:
+              credentials: [admin]
+              route: online_log
+        Game:
           credentials: [[admin]]
           dropdown:
             Quản lý game:
               credentials: [[admin]]
               route: game
+            Quản lý ván chơi:
+              credentials: [[admin]]
+              route: match_log
             Quản lý lịch sử chơi game:
               credentials: [[admin]]
               route: game_history
@@ -65,7 +93,10 @@ all:
             Quản lý phòng Game:
               credentials: [admin]
               route: room
-        Quản lý người chơi game:
+            Thống kê game xóc đĩa:
+              credentials: [admin]
+              route: xoc_dia
+        Người chơi game:
           credentials: [[admin]]
           dropdown:
             Quản lý user đăng ký:
@@ -74,11 +105,14 @@ all:
             Quản lý thông tin người chơi:
               credentials: [[admin]]
               route: user
-        Quản lý tiền trong game:
-          credentials: [[admin]]
+            Quản lý OTP:
+              credentials: [[admin]]
+              route: user_otp
+        Tiền trong game:
+          credentials: [[admin, add_cash]]
           dropdown:
             Quản lý tiền trong game:
-              credentials: [[admin]]
+              credentials: [[admin, add_cash]]
               route: money_log
             Quản lý cash cược:
               credentials: [[admin]]
@@ -89,33 +123,27 @@ all:
             Quản lý nhà cung cấp thẻ:
               credentials: [[admin]]
               route: card_provider
-            Quản lý quà tặng:
-              credentials: [[admin]]
-              route: gift
-            Quản lý loại quà tặng:
-              credentials: [[admin]]
-              route: gift_type             
-        Quản lý tin nhắn:
-          credentials: [[admin]]
-          dropdown:
-            Quản lý tin nhắn đến user:
-              credentials: [admin]
-              route: message
-            Quản lý loại tin nhắn:
-              credentials: [admin]
-              route: message_type
-            Quản lý thông báo đến user:
-              credentials: [admin]
-              route: notification
+            Quản lý mã quà tặng:
+              credentials: [[admin, add_cash]]
+              route: gift_code
+            Quản lý quà sự kiện:
+              credentials: [[admin, add_cash]]
+              route: gift_event
+            Bù tiền thẻ nạp lỗi:
+              credentials: [[admin, add_cash]]
+              route: purchase_money_missing
+            Cộng tiền cho người dùng:
+              credentials: [[admin, add_cash]]
+              route: add_money
         Các phân hệ khác:
           credentials: [[admin]]
           dropdown:
+            Quản lý link tải game:
+              credentials: [admin]
+              route: tai_game
             Quản lý testcase:
               credentials: [admin]
               route: gv_test_case
-            Quản lý CCU:
-              credentials: [admin]
-              route: online_log
             Quản lý hệ điều hành:
               credentials: [admin]
               route: client_type
@@ -125,12 +153,18 @@ all:
             Danh sách nhà mạng:
               credentials: [admin]
               route: provider
-        Ngôn ngữ:
-          dropdown:
-            Tiếng Việt:
-              route: pageVI
-            English:
-              route: pageEN
+            Quản lý notify game:
+              credentials: [admin]
+              route: notify
+            Quản lý tin nhắn đến user:
+              credentials: [admin]
+              route: message
+            Quản lý loại tin nhắn:
+              credentials: [admin]
+              route: message_type
+            Quản lý thông báo đến user:
+              credentials: [admin]
+              route: notification
   sf_captchagd:
      image_width:                180 # image width in pixels
      image_height:               27 # image height in pixels

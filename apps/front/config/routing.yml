@@ -1,0 +1,71 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+# default rules
+homepage:
+  url:   /
+  param: { module: home, action: index }
+
+# generic rules
+# please, remove them by adding more specific rules
+ajax_check_user_exits:
+  url: /ajax-check-user-exited
+  param: { module: ajax, action: checkUserExited }
+game_guild:
+  url: /huongdan/:id
+  param: { module: game, action: index }
+game_notify:
+  url: /notify
+  param: { module: notify, action: index }
+game_event:
+  url: /event
+  param: { module: notify, action: event }
+home:
+  url: /
+  param: { module: home, action: index }
+tai_game:
+  url: /tai-game
+  param: {module: game, action: tai}
+dl:
+  url: /dl
+  param: {module: game, action: dl}
+tai:
+  url: /tai
+  param: {module: game, action: taiGame}
+luat_game:
+  url: /luat-game
+  param: {module: game, action: rule}
+
+#menu
+su_kien:
+  url: /su-kien
+  param: {module: home, action: event}
+gioi_thieu:
+  url: /gioi-thieu
+  param: {module: home, action: gioiThieu}
+tin_tuc:
+  url: /tin-tuc
+  param: {module: home, action: tinTuc}
+ho_tro:
+  url: /ho-tro
+  param: {module: home, action: hoTro}
+tai_game:
+  url: /tai-game
+  param: {module: home, action: taiGame}
+doi_thuong:
+  url: /doi-thuong
+  param: {module: home, action: doiThuong}
+
+privacy_policy:
+  url: /privacy-policy
+  param: {module: notify, action: policy}
+nap_tien:
+  url: /mua_ken
+  param: {module: charge, action: index}
+
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

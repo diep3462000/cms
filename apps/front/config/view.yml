@@ -1,0 +1,27 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/13-View
+
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    #title:        symfony project
+    #description:  symfony project
+    #keywords:     symfony, project
+    #language:     en
+    #robots:       index, follow
+
+  stylesheets:
+    - frontend/formValidation.min.css
+    - bootstrap.css
+  javascripts:
+    - jquery.1.11.1.js
+    - frontend/formValidation.min.js
+    - frontend/validate/bootstrap.min.js
+    - frontend/jquery.placeholder.js
+    - frontend.js
+    - select2/select2.js
+    - select2/select2.min.js
+  has_layout:     true
+  layout:         layout

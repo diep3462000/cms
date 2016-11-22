@@ -1,0 +1,29 @@
+generator:
+  class: tmcTwitterBootstrapDoctrineGenerator
+  param:
+    model_class:           PurchaseMoneyMissing
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          purchase_money_missing
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: Danh sách nạp thẻ lỗi
+        display: [userId, provider, cardValue, cardPin, active_view]
+      filter:
+        class: gvManagePurchaseMoneyMissingFormFiltersAdmin
+        display: [userId, provider, cardValue, cardPin]
+      form:
+        class: gvManagePurchaseMoneyMissingFormAdmin
+        display: [userId, userName, provider, cardValue, cardPin, cardSerial, toCash]
+      edit:    ~
+      new:
+        title: Tạo mới
+

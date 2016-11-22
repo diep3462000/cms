@@ -17,16 +17,21 @@ class gvManagerRevenueGameActions extends autoGvManagerRevenueGameActions
     {
         $this->revenuGoldToday = MoneyLogTable::getTotalRevenuByDay(null, null, TypeGame::GOLD_MODE,  null, date('Y-m-d'));
         $this->revenuCashToday = MoneyLogTable::getTotalRevenuByDay(null, null, TypeGame::CASH_MODE,  null, date('Y-m-d'));
+        
+//        var_dump($this->revenuCashToday);die;
 
-        $this->revenuGoldYesterday = MoneyLogTable::getTotalRevenuByDay(null, null, TypeGame::GOLD_MODE,  null, date('Y-m-d', time() - 24*3600));
-        $this->revenuCashYesterday = MoneyLogTable::getTotalRevenuByDay(null, null, TypeGame::CASH_MODE,  null, date('Y-m-d', time() - 24*3600));
+    //    $this->revenuGoldYesterday = MoneyLogTable::getTotalRevenuByDay(null, null, TypeGame::GOLD_MODE,  null, date('Y-m-d', time() - 24*3600));
+      //  $this->revenuCashYesterday = MoneyLogTable::getTotalRevenuByDay(null, null, TypeGame::CASH_MODE,  null, date('Y-m-d', time() - 24*3600));
 
-        $this->revenuGoldThisMonth = MoneyLogTable::getTotalRevenuByMonth(null, TypeGame::GOLD_MODE, null,  date('Y-m'));
-        $this->revenuCashThisMonth = MoneyLogTable::getTotalRevenuByMonth(null, TypeGame::CASH_MODE, null, date('Y-m'));
+        $this->revenuGoldYesterday = TaxDailyStatictisTable::getTotalRevenuByDay(null, TypeGame::GOLD_MODE, date('Y-m-d', time() - 24*3600));
+        $this->revenuCashYesterday = TaxDailyStatictisTable::getTotalRevenuByDay(null, TypeGame::CASH_MODE, date('Y-m-d', time() - 24*3600));
+
+        $this->revenuGoldThisMonth = TaxDailyStatictisTable::getTotalRevenuByMonth(null, TypeGame::GOLD_MODE, null,  date('Y-m'));
+        $this->revenuCashThisMonth = TaxDailyStatictisTable::getTotalRevenuByMonth(null, TypeGame::CASH_MODE, null, date('Y-m'));
 
         // Biểu đồ
-        $this->revenuGoldByDate = MoneyLogTable::getMoneyGroupByDate($gameId = null, TypeGame::GOLD_MODE, $os_type = null);
-        $this->revenuCashByDate = MoneyLogTable::getMoneyGroupByDate($gameId = null, TypeGame::CASH_MODE, $os_type = null);
+        $this->revenuGoldByDate = TaxDailyStatictisTable::getMoneyGroupByDate($gameId = null, TypeGame::GOLD_MODE, $os_type = null);
+        $this->revenuCashByDate = TaxDailyStatictisTable::getMoneyGroupByDate($gameId = null, TypeGame::CASH_MODE, $os_type = null);
 
         // Thống kê -----------------------------------------------------------------------------------------------------
         // Mảng DL từ bảng App join với bảng Platform
@@ -36,8 +41,8 @@ class gvManagerRevenueGameActions extends autoGvManagerRevenueGameActions
         $daystr2 = mktime(0, 0, 0, date("m"), date("d"), date("Y"));
         $datefrom = date("Y-m-d", $daystr1);
         $dateto = date("Y-m-d", $daystr2);
-        $this->listRevenueGroupByDateFromTo = MoneyLogTable::getRevenueGroupByDateFromTo(null, $datefrom, $dateto, TypeGame::CASH_MODE, null);
-        $this->listRevenueGoldGroupByDateFromTo = MoneyLogTable::getRevenueGroupByDateFromTo(null, $datefrom, $dateto, TypeGame::GOLD_MODE, null);
+        $this->listRevenueGroupByDateFromTo = TaxDailyStatictisTable::getRevenueGroupByDateFromTo(null, $datefrom, $dateto, TypeGame::CASH_MODE, null);
+        $this->listRevenueGoldGroupByDateFromTo = TaxDailyStatictisTable::getRevenueGroupByDateFromTo(null, $datefrom, $dateto, TypeGame::GOLD_MODE, null);
         // Mảng DL API từ bảng vt_api_item để hiển thị ở bảng
         $this->list_games = GameTable::getListGame();
         $this->list_os = ClientTypeTable::getListOs();

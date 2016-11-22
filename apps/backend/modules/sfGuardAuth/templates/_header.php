@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
             </a>
 
-            <a class="brand" href="<?php echo url_for("@homepage") ?>"><?php echo __(sfConfig::get('app_tmcTwitterBootstrapPlugin_dashboard_name', __('HỆ THỐNG QUẢN TRỊ NỘI DUNG GAMEVINA')), null, 'tmcTwitterBootstrapPlugin') ?></a>
+            <a class="brand" href="<?php echo url_for("@homepage") ?>"><?php echo __(sfConfig::get('app_tmcTwitterBootstrapPlugin_dashboard_name', __('HỆ THỐNG QUẢN TRỊ NỘI DUNG BIGKEN')), null, 'tmcTwitterBootstrapPlugin') ?></a>
         </div>
     </div>
 </div>

@@ -8,5 +8,5 @@
   <td class="sf_admin_text sf_admin_list_td_totalMatch" field="totalMatch"><?php echo  VtHelper::truncate($user->getTotalMatch(), 50, '...', true)  ?></td>      
   <td class="sf_admin_text sf_admin_list_td_totalWin" field="totalWin"><?php echo  VtHelper::truncate($user->getTotalWin(), 50, '...', true)  ?></td>      
   <td class="sf_admin_text sf_admin_list_td_total_lost" field="total_lost"><?php echo  VtHelper::truncate($user->getTotalLost(), 50, '...', true)  ?></td>      
-  <td class="sf_admin_text sf_admin_list_td_cash" field="cash"><?php echo  VtHelper::truncate($user->getCash(), 50, '...', true)  ?></td>      
-  <td class="sf_admin_text sf_admin_list_td_gold" field="gold"><?php echo  VtHelper::truncate($user->getGold(), 50, '...', true)  ?></td>    
+  <td class="sf_admin_text sf_admin_list_td_cash" field="cash"><?php echo  VtHelper::number_format($user->getCash())  ?></td>
+  <td class="sf_admin_text sf_admin_list_td_gold" field="gold"><?php echo  VtHelper::number_format($user->getGold())  ?></td>

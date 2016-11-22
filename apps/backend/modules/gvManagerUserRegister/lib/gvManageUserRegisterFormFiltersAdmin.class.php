@@ -22,7 +22,7 @@ class gvManageUserRegisterFormFiltersAdmin extends BaseUserFormFilter
             'ip'     => new sfWidgetFormFilterInput(array('with_empty' => false)),
             'cp' => new sfWidgetFormChoice(array('choices' => $arr_cp), array('add_empty' => true)),
 
-            'registedtime' => new sfWidgetFormFilterInput(array('with_empty' => false), array('readonly' => true)),
+            'registedtime' => new sfWidgetFormFilterInput(array('with_empty' => false), array('readonly' => false)),
 
 
         ));

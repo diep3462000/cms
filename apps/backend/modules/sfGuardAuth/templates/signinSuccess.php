@@ -9,7 +9,7 @@
             <?php include_partial('logo') ?>
         </div>
         <div class="pull-left login-right" style="width: 55%;">
-            <h2><?php echo __('QUẢN TRỊ NỘI DUNG GAMEVINA ', null, 'tmcTwitterBootstrapPlugin') ?></span></h2>
+            <h2><?php echo __('QUẢN TRỊ NỘI DUNG BIGKEN ', null, 'tmcTwitterBootstrapPlugin') ?></span></h2>
 
             <?php include_partial('alerts') ?>
             <?php include_partial('signin_form', array('form' => $form, 'routes' => $sf_context->getRouting()->getRoutes(),'change_password' => $change_password)) ?>

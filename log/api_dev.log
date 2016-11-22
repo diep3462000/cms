@@ -1,0 +1,202 @@
+Sep 24 04:28:27 symfony [info] {sfPatternRouting} Connect sfRequestRoute "sf_captchagd" (/captcha)
+Sep 24 04:28:27 symfony [info] {sfPatternRouting} Match route "ws_sms" (/smsepay) for /smsepay with parameters array (  'module' => 'sms',  'action' => 'index',)
+Sep 24 04:28:27 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Sep 24 04:28:27 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Sep 24 04:28:27 symfony [info] {smsActions} Call "smsActions->executeIndex()"
+Sep 24 04:28:27 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Sep 24 04:28:27 symfony [info] {Doctrine_Connection_Statement} execute : SELECT m.id AS m__id, m.mo_id AS m__mo_id, m.phone_number AS m__phone_number, m.user_id AS m__user_id, m.amount AS m__amount, m.transdate AS m__transdate, m.shortcode AS m__shortcode, m.keyword AS m__keyword, m.content AS m__content, m.telco AS m__telco, m.status AS m__status, m.created_at AS m__created_at, m.updated_at AS m__updated_at FROM mo_history m WHERE (m.mo_id = ?) - (6249891)
+Sep 24 04:28:27 symfony [err] {sfException} The priority level "SMS PAYMENT - ERROR: MoID is available" does not exist.
+Sep 24 04:28:27 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Sep 24 04:28:27 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Sep 24 04:28:27 symfony [info] {sfWebDebugLogger} Configuration 1536.69 ms (9)
+Sep 24 04:28:27 symfony [info] {sfWebDebugLogger} Factories 299.12 ms (1)
+Sep 24 04:28:27 symfony [info] {sfWebDebugLogger} Action "sms/index" 172.03 ms (1)
+Sep 24 04:28:27 symfony [info] {sfWebDebugLogger} Database (Doctrine) 6.18 ms (2)
+Sep 24 04:44:08 symfony [info] {sfPatternRouting} Connect sfRequestRoute "sf_captchagd" (/captcha)
+Sep 24 04:44:08 symfony [info] {sfPatternRouting} Match route "ws_sms" (/smsepay) for /smsepay with parameters array (  'module' => 'sms',  'action' => 'index',)
+Sep 24 04:44:08 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Sep 24 04:44:08 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Sep 24 04:44:08 symfony [info] {smsActions} Call "smsActions->executeIndex()"
+Sep 24 04:44:08 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Sep 24 04:44:08 symfony [info] {Doctrine_Connection_Statement} execute : SELECT m.id AS m__id, m.mo_id AS m__mo_id, m.phone_number AS m__phone_number, m.user_id AS m__user_id, m.amount AS m__amount, m.transdate AS m__transdate, m.shortcode AS m__shortcode, m.keyword AS m__keyword, m.content AS m__content, m.telco AS m__telco, m.status AS m__status, m.created_at AS m__created_at, m.updated_at AS m__updated_at FROM mo_history m WHERE (m.mo_id = ?) - (6249891)
+Sep 24 04:44:08 symfony [err] {sfException} The priority level "SMS PAYMENT - ERROR: MoID is available" does not exist.
+Sep 24 04:44:08 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Sep 24 04:44:08 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Sep 24 04:44:08 symfony [info] {sfWebDebugLogger} Configuration 26.94 ms (9)
+Sep 24 04:44:08 symfony [info] {sfWebDebugLogger} Factories 41.27 ms (1)
+Sep 24 04:44:08 symfony [info] {sfWebDebugLogger} Action "sms/index" 76.61 ms (1)
+Sep 24 04:44:08 symfony [info] {sfWebDebugLogger} Database (Doctrine) 6.47 ms (2)
+Sep 24 04:44:38 symfony [info] {sfPatternRouting} Connect sfRequestRoute "sf_captchagd" (/captcha)
+Sep 24 04:44:38 symfony [info] {sfPatternRouting} Match route "ws_sms" (/smsepay) for /smsepay with parameters array (  'module' => 'sms',  'action' => 'index',)
+Sep 24 04:44:38 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Sep 24 04:44:38 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Sep 24 04:44:38 symfony [info] {smsActions} Call "smsActions->executeIndex()"
+Sep 24 04:44:38 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Sep 24 04:44:38 symfony [info] {Doctrine_Connection_Statement} execute : SELECT m.id AS m__id, m.mo_id AS m__mo_id, m.phone_number AS m__phone_number, m.user_id AS m__user_id, m.amount AS m__amount, m.transdate AS m__transdate, m.shortcode AS m__shortcode, m.keyword AS m__keyword, m.content AS m__content, m.telco AS m__telco, m.status AS m__status, m.created_at AS m__created_at, m.updated_at AS m__updated_at FROM mo_history m WHERE (m.mo_id = ?) - (6249891)
+Sep 24 04:54:14 symfony [info] {sfPatternRouting} Connect sfRequestRoute "sf_captchagd" (/captcha)
+Sep 24 04:54:14 symfony [info] {sfPatternRouting} Match route "ws_sms" (/smsepay) for /smsepay with parameters array (  'module' => 'sms',  'action' => 'index',)
+Sep 24 04:54:14 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Sep 24 04:54:14 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Sep 24 04:54:14 symfony [info] {smsActions} Call "smsActions->executeIndex()"
+Sep 24 04:54:14 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Sep 24 04:54:14 symfony [info] {Doctrine_Connection_Statement} execute : SELECT m.id AS m__id, m.mo_id AS m__mo_id, m.phone_number AS m__phone_number, m.user_id AS m__user_id, m.amount AS m__amount, m.transdate AS m__transdate, m.shortcode AS m__shortcode, m.keyword AS m__keyword, m.content AS m__content, m.telco AS m__telco, m.status AS m__status, m.created_at AS m__created_at, m.updated_at AS m__updated_at FROM mo_history m WHERE (m.mo_id = ?) - (6249891)
+Sep 24 04:55:07 symfony [info] {sfPatternRouting} Connect sfRequestRoute "sf_captchagd" (/captcha)
+Sep 24 04:55:07 symfony [info] {sfPatternRouting} Match route "ws_sms" (/smsepay) for /smsepay with parameters array (  'module' => 'sms',  'action' => 'index',)
+Sep 24 04:55:08 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Sep 24 04:55:08 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Sep 24 04:55:08 symfony [info] {smsActions} Call "smsActions->executeIndex()"
+Sep 24 04:55:08 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Sep 24 04:55:08 symfony [info] {Doctrine_Connection_Statement} execute : SELECT m.id AS m__id, m.mo_id AS m__mo_id, m.phone_number AS m__phone_number, m.user_id AS m__user_id, m.amount AS m__amount, m.transdate AS m__transdate, m.shortcode AS m__shortcode, m.keyword AS m__keyword, m.content AS m__content, m.telco AS m__telco, m.status AS m__status, m.created_at AS m__created_at, m.updated_at AS m__updated_at FROM mo_history m WHERE (m.mo_id = ?) - (6249891)
+Sep 24 05:14:23 symfony [info] {sfPatternRouting} Connect sfRequestRoute "sf_captchagd" (/captcha)
+Sep 24 05:14:23 symfony [info] {sfPatternRouting} Match route "ws_sms" (/smsepay) for /smsepay with parameters array (  'module' => 'sms',  'action' => 'index',)
+Sep 24 05:14:23 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Sep 24 05:14:23 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Sep 24 05:14:23 symfony [info] {smsActions} Call "smsActions->executeIndex()"
+Sep 24 05:14:23 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Sep 24 05:14:23 symfony [info] {Doctrine_Connection_Statement} execute : SELECT m.id AS m__id, m.mo_id AS m__mo_id, m.phone_number AS m__phone_number, m.user_id AS m__user_id, m.amount AS m__amount, m.transdate AS m__transdate, m.shortcode AS m__shortcode, m.keyword AS m__keyword, m.content AS m__content, m.telco AS m__telco, m.status AS m__status, m.created_at AS m__created_at, m.updated_at AS m__updated_at FROM mo_history m WHERE (m.mo_id = ?) - (6249891)
+Sep 24 05:14:23 symfony [info] {Doctrine_Connection_Statement} execute : SELECT u.userid AS u__userid, u.username AS u__username, u.password AS u__password, u.displayname AS u__displayname, u.identity AS u__identity, u.address AS u__address, u.email AS u__email, u.mobile AS u__mobile, u.birthday AS u__birthday, u.sex AS u__sex, u.registedtime AS u__registedtime, u.age AS u__age FROM user u WHERE (u.userid = ?) - (1002594)
+Sep 24 05:14:23 symfony [warning] {sfWebDebugLogger}  Warning at E:\Projects\kinggame\CMS\cms\apps\api\modules\sms\actions\actions.class.php on line 45 (end() expects parameter 1 to be array, null given)
+Sep 24 05:14:23 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO mo_history (mo_id, keyword, user_id, amount, transdate, shortcode, content, phone_number, status, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (6249891, BKG, 1002594, 1000, 20160923174046, 9029, bkg nap 1002594, 84966858997, 0, 2016-09-24 05:14:23, 2016-09-24 05:14:23)
+Sep 24 05:14:23 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO mo_result (mo_id, amount, userid, username) VALUES (?, ?, ?, ?) - (9, 1000, 84966858997, DIEPTH2)
+Sep 24 05:14:50 symfony [info] {sfPatternRouting} Connect sfRequestRoute "sf_captchagd" (/captcha)
+Sep 24 05:14:50 symfony [info] {sfPatternRouting} Match route "ws_sms" (/smsepay) for /smsepay with parameters array (  'module' => 'sms',  'action' => 'index',)
+Sep 24 05:14:50 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Sep 24 05:14:50 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Sep 24 05:14:50 symfony [info] {smsActions} Call "smsActions->executeIndex()"
+Sep 24 05:14:50 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Sep 24 05:14:50 symfony [info] {Doctrine_Connection_Statement} execute : SELECT m.id AS m__id, m.mo_id AS m__mo_id, m.phone_number AS m__phone_number, m.user_id AS m__user_id, m.amount AS m__amount, m.transdate AS m__transdate, m.shortcode AS m__shortcode, m.keyword AS m__keyword, m.content AS m__content, m.telco AS m__telco, m.status AS m__status, m.created_at AS m__created_at, m.updated_at AS m__updated_at FROM mo_history m WHERE (m.mo_id = ?) - (6249891)
+Sep 24 05:15:10 symfony [info] {sfPatternRouting} Connect sfRequestRoute "sf_captchagd" (/captcha)
+Sep 24 05:15:10 symfony [info] {sfPatternRouting} Match route "ws_sms" (/smsepay) for /smsepay with parameters array (  'module' => 'sms',  'action' => 'index',)
+Sep 24 05:15:10 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Sep 24 05:15:10 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Sep 24 05:15:10 symfony [info] {smsActions} Call "smsActions->executeIndex()"
+Sep 24 05:15:10 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Sep 24 05:15:10 symfony [info] {Doctrine_Connection_Statement} execute : SELECT m.id AS m__id, m.mo_id AS m__mo_id, m.phone_number AS m__phone_number, m.user_id AS m__user_id, m.amount AS m__amount, m.transdate AS m__transdate, m.shortcode AS m__shortcode, m.keyword AS m__keyword, m.content AS m__content, m.telco AS m__telco, m.status AS m__status, m.created_at AS m__created_at, m.updated_at AS m__updated_at FROM mo_history m WHERE (m.mo_id = ?) - (6249891)
+Sep 24 05:15:10 symfony [info] {Doctrine_Connection_Statement} execute : SELECT u.userid AS u__userid, u.username AS u__username, u.password AS u__password, u.displayname AS u__displayname, u.identity AS u__identity, u.address AS u__address, u.email AS u__email, u.mobile AS u__mobile, u.birthday AS u__birthday, u.sex AS u__sex, u.registedtime AS u__registedtime, u.age AS u__age FROM user u WHERE (u.userid = ?) - (1002594)
+Sep 24 05:15:10 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO mo_history (mo_id, keyword, user_id, amount, transdate, shortcode, content, phone_number, status, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (6249891, BKG, 1002594, 1000, 20160923174046, 9029, bkg nap 1002594, 84966858997, 0, 2016-09-24 05:15:10, 2016-09-24 05:15:10)
+Sep 24 05:15:10 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO mo_result (mo_id, amount, userid, username) VALUES (?, ?, ?, ?) - (10, 1000, 84966858997, DIEPTH2)
+Sep 24 05:15:33 symfony [info] {sfPatternRouting} Connect sfRequestRoute "sf_captchagd" (/captcha)
+Sep 24 05:15:33 symfony [info] {sfPatternRouting} Match route "ws_sms" (/smsepay) for /smsepay with parameters array (  'module' => 'sms',  'action' => 'index',)
+Sep 24 05:15:33 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Sep 24 05:15:33 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Sep 24 05:15:33 symfony [info] {smsActions} Call "smsActions->executeIndex()"
+Sep 24 05:15:33 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Sep 24 05:15:33 symfony [info] {Doctrine_Connection_Statement} execute : SELECT m.id AS m__id, m.mo_id AS m__mo_id, m.phone_number AS m__phone_number, m.user_id AS m__user_id, m.amount AS m__amount, m.transdate AS m__transdate, m.shortcode AS m__shortcode, m.keyword AS m__keyword, m.content AS m__content, m.telco AS m__telco, m.status AS m__status, m.created_at AS m__created_at, m.updated_at AS m__updated_at FROM mo_history m WHERE (m.mo_id = ?) - (6249891)
+Sep 24 05:15:33 symfony [info] {Doctrine_Connection_Statement} execute : SELECT u.userid AS u__userid, u.username AS u__username, u.password AS u__password, u.displayname AS u__displayname, u.identity AS u__identity, u.address AS u__address, u.email AS u__email, u.mobile AS u__mobile, u.birthday AS u__birthday, u.sex AS u__sex, u.registedtime AS u__registedtime, u.age AS u__age FROM user u WHERE (u.userid = ?) - (1002594)
+Sep 24 05:15:33 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO mo_history (mo_id, keyword, user_id, amount, transdate, shortcode, content, phone_number, status, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) - (6249891, BKG, 1002594, 1000, 20160923174046, 9029, bkg nap 1002594, 84966858997, 0, 2016-09-24 05:15:33, 2016-09-24 05:15:33)
+Sep 24 05:15:33 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO mo_result (mo_id, amount, userid, username) VALUES (?, ?, ?, ?) - (11, 1000, 84966858997, DIEPTH2)
+Sep 24 06:21:42 symfony [info] {sfPatternRouting} Connect sfRequestRoute "sf_captchagd" (/captcha)
+Sep 24 06:21:42 symfony [info] {sfPatternRouting} Match route "ws_sms" (/smsepay) for /smsepay with parameters array (  'module' => 'sms',  'action' => 'index',)
+Sep 24 06:21:42 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Sep 24 06:21:42 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Sep 24 06:21:42 symfony [info] {smsActions} Call "smsActions->executeIndex()"
+Sep 24 09:14:52 symfony [info] {sfPatternRouting} Connect sfRequestRoute "sf_captchagd" (/captcha)
+Sep 24 09:14:52 symfony [info] {sfPatternRouting} Match route "ws_sms" (/smsepay) for /smsepay with parameters array (  'module' => 'sms',  'action' => 'index',)
+Sep 24 09:14:52 symfony [info] {myUser} Automatic user logout due to timeout
+Sep 24 09:14:52 symfony [info] {myUser} User is not authenticated
+Sep 24 09:14:52 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Sep 24 09:14:52 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Sep 24 09:14:52 symfony [info] {smsActions} Call "smsActions->executeIndex()"
+Sep 24 09:17:12 symfony [info] {sfPatternRouting} Connect sfRequestRoute "sf_captchagd" (/captcha)
+Sep 24 09:17:12 symfony [info] {sfPatternRouting} Match route "ws_sms" (/smsepay) for /smsepay with parameters array (  'module' => 'sms',  'action' => 'index',)
+Sep 24 09:17:12 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Sep 24 09:17:12 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Sep 24 09:17:12 symfony [info] {smsActions} Call "smsActions->executeIndex()"
+Sep 24 09:18:10 symfony [info] {sfPatternRouting} Connect sfRequestRoute "sf_captchagd" (/captcha)
+Sep 24 09:18:10 symfony [info] {sfPatternRouting} Match route "ws_sms" (/smsepay) for /smsepay with parameters array (  'module' => 'sms',  'action' => 'index',)
+Sep 24 09:18:10 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Sep 24 09:18:10 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Sep 24 09:18:10 symfony [info] {smsActions} Call "smsActions->executeIndex()"
+Sep 24 09:21:08 symfony [info] {sfPatternRouting} Connect sfRequestRoute "sf_captchagd" (/captcha)
+Sep 24 09:21:08 symfony [info] {sfPatternRouting} Match route "ws_sms" (/smsepay) for /smsepay with parameters array (  'module' => 'sms',  'action' => 'index',)
+Sep 24 09:21:08 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Sep 24 09:21:08 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Sep 24 09:21:08 symfony [info] {smsActions} Call "smsActions->executeIndex()"
+Oct 06 15:51:30 symfony [info] {sfPatternRouting} Connect sfRequestRoute "sf_captchagd" (/captcha)
+Oct 06 15:51:30 symfony [info] {sfPatternRouting} Match route "buy_card" (/buy_card) for /buy_card with parameters array (  'module' => 'buyCard',  'action' => 'index',)
+Oct 06 15:51:30 symfony [info] {myUser} Automatic user logout due to timeout
+Oct 06 15:51:30 symfony [info] {myUser} User is not authenticated
+Oct 06 15:51:30 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 06 15:51:30 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 06 15:51:30 symfony [info] {buyCardActions} Call "buyCardActions->executeIndex()"
+Oct 06 15:51:31 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Oct 06 15:51:31 symfony [info] {Doctrine_Connection_Statement} execute : SELECT e.requestid AS e__requestid, e.requestuserid AS e__requestuserid, e.requestusername AS e__requestusername, e.assetid AS e__assetid, e.securitykey AS e__securitykey, e.amount AS e__amount, e.totalcash AS e__totalcash, e.status AS e__status, e.description AS e__description, e.checkedtime AS e__checkedtime, e.responsedata AS e__responsedata, e.request_topup_id AS e__request_topup_id, e.created_at AS e__created_at, e.updated_at AS e__updated_at FROM exchange_asset_request e WHERE (e.securitykey = ? AND e.requestid = ? AND e.status = ? AND e.request_topup_id is null) - (b5331cfc-e88a-4c3f-9a1a-8889f378f52a, 100029, 0)
+Oct 06 15:51:31 symfony [info] {Doctrine_Connection_Statement} execute : SELECT e.requestid AS e__requestid, e.requestuserid AS e__requestuserid, e.requestusername AS e__requestusername, e.assetid AS e__assetid, e.securitykey AS e__securitykey, e.amount AS e__amount, e.totalcash AS e__totalcash, e.status AS e__status, e.description AS e__description, e.checkedtime AS e__checkedtime, e.responsedata AS e__responsedata, e.request_topup_id AS e__request_topup_id, e.created_at AS e__created_at, e.updated_at AS e__updated_at FROM exchange_asset_request e WHERE (e.securitykey = ? AND e.requestid = ? AND e.status = ? AND e.request_topup_id is null) - (b5331cfc-e88a-4c3f-9a1a-8889f378f52a, 100029, 0)
+Oct 06 15:51:40 symfony [info] {sfPatternRouting} Connect sfRequestRoute "sf_captchagd" (/captcha)
+Oct 06 15:51:40 symfony [info] {sfPatternRouting} Match route "buy_card" (/buy_card) for /buy_card with parameters array (  'module' => 'buyCard',  'action' => 'index',)
+Oct 06 15:51:40 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 06 15:51:40 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 06 15:51:40 symfony [info] {buyCardActions} Call "buyCardActions->executeIndex()"
+Oct 06 15:51:40 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Oct 06 15:51:40 symfony [info] {Doctrine_Connection_Statement} execute : SELECT e.requestid AS e__requestid, e.requestuserid AS e__requestuserid, e.requestusername AS e__requestusername, e.assetid AS e__assetid, e.securitykey AS e__securitykey, e.amount AS e__amount, e.totalcash AS e__totalcash, e.status AS e__status, e.description AS e__description, e.checkedtime AS e__checkedtime, e.responsedata AS e__responsedata, e.request_topup_id AS e__request_topup_id, e.created_at AS e__created_at, e.updated_at AS e__updated_at FROM exchange_asset_request e WHERE (e.securitykey = ? AND e.requestid = ? AND e.status = ? AND e.request_topup_id is null) - (b5331cfc-e88a-4c3f-9a1a-8889f378f52a, 100029, 0)
+Oct 06 15:51:40 symfony [info] {Doctrine_Connection_Statement} execute : SELECT e.requestid AS e__requestid, e.requestuserid AS e__requestuserid, e.requestusername AS e__requestusername, e.assetid AS e__assetid, e.securitykey AS e__securitykey, e.amount AS e__amount, e.totalcash AS e__totalcash, e.status AS e__status, e.description AS e__description, e.checkedtime AS e__checkedtime, e.responsedata AS e__responsedata, e.request_topup_id AS e__request_topup_id, e.created_at AS e__created_at, e.updated_at AS e__updated_at FROM exchange_asset_request e WHERE (e.securitykey = ? AND e.requestid = ? AND e.status = ? AND e.request_topup_id is null) - (b5331cfc-e88a-4c3f-9a1a-8889f378f52a, 100029, 0)
+Oct 06 15:51:52 symfony [info] {sfPatternRouting} Connect sfRequestRoute "sf_captchagd" (/captcha)
+Oct 06 15:51:52 symfony [info] {sfPatternRouting} Match route "buy_card" (/buy_card) for /buy_card with parameters array (  'module' => 'buyCard',  'action' => 'index',)
+Oct 06 15:51:52 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 06 15:51:52 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 06 15:51:52 symfony [info] {buyCardActions} Call "buyCardActions->executeIndex()"
+Oct 06 15:51:52 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Oct 06 15:51:52 symfony [info] {Doctrine_Connection_Statement} execute : SELECT e.requestid AS e__requestid, e.requestuserid AS e__requestuserid, e.requestusername AS e__requestusername, e.assetid AS e__assetid, e.securitykey AS e__securitykey, e.amount AS e__amount, e.totalcash AS e__totalcash, e.status AS e__status, e.description AS e__description, e.checkedtime AS e__checkedtime, e.responsedata AS e__responsedata, e.request_topup_id AS e__request_topup_id, e.created_at AS e__created_at, e.updated_at AS e__updated_at FROM exchange_asset_request e WHERE (e.securitykey = ? AND e.requestid = ? AND e.status = ? AND e.request_topup_id is null) - (b5331cfc-e88a-4c3f-9a1a-8889f378f52a, 100029, 0)
+Oct 06 15:51:52 symfony [info] {Doctrine_Connection_Statement} execute : SELECT e.requestid AS e__requestid, e.requestuserid AS e__requestuserid, e.requestusername AS e__requestusername, e.assetid AS e__assetid, e.securitykey AS e__securitykey, e.amount AS e__amount, e.totalcash AS e__totalcash, e.status AS e__status, e.description AS e__description, e.checkedtime AS e__checkedtime, e.responsedata AS e__responsedata, e.request_topup_id AS e__request_topup_id, e.created_at AS e__created_at, e.updated_at AS e__updated_at FROM exchange_asset_request e WHERE (e.securitykey = ? AND e.requestid = ? AND e.status = ? AND e.request_topup_id is null) - (b5331cfc-e88a-4c3f-9a1a-8889f378f52a, 100029, 0)
+Oct 06 15:57:46 symfony [info] {sfPatternRouting} Connect sfRequestRoute "sf_captchagd" (/captcha)
+Oct 06 15:57:46 symfony [info] {sfPatternRouting} Match route "buy_card" (/buy_card) for /buy_card with parameters array (  'module' => 'buyCard',  'action' => 'index',)
+Oct 06 15:57:46 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 06 15:57:46 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 06 15:57:46 symfony [info] {buyCardActions} Call "buyCardActions->executeIndex()"
+Oct 06 15:57:46 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Oct 06 15:57:46 symfony [info] {Doctrine_Connection_Statement} execute : SELECT e.requestid AS e__requestid, e.requestuserid AS e__requestuserid, e.requestusername AS e__requestusername, e.assetid AS e__assetid, e.securitykey AS e__securitykey, e.amount AS e__amount, e.totalcash AS e__totalcash, e.status AS e__status, e.description AS e__description, e.checkedtime AS e__checkedtime, e.responsedata AS e__responsedata, e.request_topup_id AS e__request_topup_id, e.created_at AS e__created_at, e.updated_at AS e__updated_at FROM exchange_asset_request e WHERE (e.securitykey = ? AND e.requestid = ? AND e.status = ? AND e.request_topup_id is null) - (b5331cfc-e88a-4c3f-9a1a-8889f378f52a, 100029, 0)
+Oct 06 15:58:32 symfony [info] {sfPatternRouting} Connect sfRequestRoute "sf_captchagd" (/captcha)
+Oct 06 15:58:32 symfony [info] {sfPatternRouting} Match route "buy_card" (/buy_card) for /buy_card with parameters array (  'module' => 'buyCard',  'action' => 'index',)
+Oct 06 15:58:32 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 06 15:58:32 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 06 15:58:32 symfony [info] {buyCardActions} Call "buyCardActions->executeIndex()"
+Oct 06 15:58:32 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Oct 06 15:58:32 symfony [info] {Doctrine_Connection_Statement} execute : SELECT e.requestid AS e__requestid, e.requestuserid AS e__requestuserid, e.requestusername AS e__requestusername, e.assetid AS e__assetid, e.securitykey AS e__securitykey, e.amount AS e__amount, e.totalcash AS e__totalcash, e.status AS e__status, e.description AS e__description, e.checkedtime AS e__checkedtime, e.responsedata AS e__responsedata, e.request_topup_id AS e__request_topup_id, e.created_at AS e__created_at, e.updated_at AS e__updated_at FROM exchange_asset_request e WHERE (e.securitykey = ? AND e.requestid = ? AND e.status = ? AND e.request_topup_id is null) - (b5331cfc-e88a-4c3f-9a1a-8889f378f52a, 100029, 0)
+Oct 06 15:58:58 symfony [info] {sfPatternRouting} Connect sfRequestRoute "sf_captchagd" (/captcha)
+Oct 06 15:58:58 symfony [info] {sfPatternRouting} Match route "buy_card" (/buy_card) for /buy_card with parameters array (  'module' => 'buyCard',  'action' => 'index',)
+Oct 06 15:58:58 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 06 15:58:58 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 06 15:58:58 symfony [info] {buyCardActions} Call "buyCardActions->executeIndex()"
+Oct 06 15:58:58 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Oct 06 15:58:58 symfony [info] {Doctrine_Connection_Statement} execute : SELECT e.requestid AS e__requestid, e.requestuserid AS e__requestuserid, e.requestusername AS e__requestusername, e.assetid AS e__assetid, e.securitykey AS e__securitykey, e.amount AS e__amount, e.totalcash AS e__totalcash, e.status AS e__status, e.description AS e__description, e.checkedtime AS e__checkedtime, e.responsedata AS e__responsedata, e.request_topup_id AS e__request_topup_id, e.created_at AS e__created_at, e.updated_at AS e__updated_at FROM exchange_asset_request e WHERE (e.securitykey = ? AND e.requestid = ? AND e.status = ? AND e.request_topup_id is null) - (b5331cfc-e88a-4c3f-9a1a-8889f378f52a, 100029, 0)
+Oct 06 15:59:25 symfony [info] {sfPatternRouting} Connect sfRequestRoute "sf_captchagd" (/captcha)
+Oct 06 15:59:25 symfony [info] {sfPatternRouting} Match route "buy_card" (/buy_card) for /buy_card with parameters array (  'module' => 'buyCard',  'action' => 'index',)
+Oct 06 15:59:25 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 06 15:59:25 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 06 15:59:25 symfony [info] {buyCardActions} Call "buyCardActions->executeIndex()"
+Oct 06 15:59:26 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Oct 06 15:59:26 symfony [info] {Doctrine_Connection_Statement} execute : SELECT e.requestid AS e__requestid, e.requestuserid AS e__requestuserid, e.requestusername AS e__requestusername, e.assetid AS e__assetid, e.securitykey AS e__securitykey, e.amount AS e__amount, e.totalcash AS e__totalcash, e.status AS e__status, e.description AS e__description, e.checkedtime AS e__checkedtime, e.responsedata AS e__responsedata, e.request_topup_id AS e__request_topup_id, e.created_at AS e__created_at, e.updated_at AS e__updated_at FROM exchange_asset_request e WHERE (e.securitykey = ? AND e.requestid = ? AND e.status = ? AND e.request_topup_id is null) - (b5331cfc-e88a-4c3f-9a1a-8889f378f52a, 100029, 0)
+Oct 06 15:59:26 symfony [notice] {sfWebDebugLogger}  Notice at E:\Projects\kinggame\CMS\cms\apps\api\modules\buyCard\actions\actions.class.php on line 61 (Trying to get property of non-object)
+Oct 06 15:59:26 symfony [warning] {sfWebDebugLogger}  Warning at E:\Projects\kinggame\CMS\cms\apps\api\modules\buyCard\actions\actions.class.php on line 63 (Invalid argument supplied for foreach())
+Oct 06 15:59:26 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE exchange_asset_request SET responsedata = ?, request_topup_id = ?, status = ?, updated_at = ? WHERE requestid = ? - ([], gamevina_1475744366511, 1, 2016-10-06 15:59:26, 100029)
+Oct 06 16:01:54 symfony [info] {sfPatternRouting} Connect sfRequestRoute "sf_captchagd" (/captcha)
+Oct 06 16:01:54 symfony [info] {sfPatternRouting} Match route "buy_card" (/buy_card) for /buy_card with parameters array (  'module' => 'buyCard',  'action' => 'index',)
+Oct 06 16:01:54 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 06 16:01:54 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 06 16:01:54 symfony [info] {buyCardActions} Call "buyCardActions->executeIndex()"
+Oct 06 16:01:54 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Oct 06 16:01:54 symfony [info] {Doctrine_Connection_Statement} execute : SELECT e.requestid AS e__requestid, e.requestuserid AS e__requestuserid, e.requestusername AS e__requestusername, e.assetid AS e__assetid, e.securitykey AS e__securitykey, e.amount AS e__amount, e.totalcash AS e__totalcash, e.status AS e__status, e.description AS e__description, e.checkedtime AS e__checkedtime, e.responsedata AS e__responsedata, e.request_topup_id AS e__request_topup_id, e.created_at AS e__created_at, e.updated_at AS e__updated_at FROM exchange_asset_request e WHERE (e.securitykey = ? AND e.requestid = ? AND e.status = ? AND e.request_topup_id is null) - (b5331cfc-e88a-4c3f-9a1a-8889f378f52a, 100029, 0)
+Oct 06 16:02:25 symfony [info] {sfPatternRouting} Connect sfRequestRoute "sf_captchagd" (/captcha)
+Oct 06 16:02:25 symfony [info] {sfPatternRouting} Match route "buy_card" (/buy_card) for /buy_card with parameters array (  'module' => 'buyCard',  'action' => 'index',)
+Oct 06 16:02:25 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 06 16:02:25 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 06 16:02:25 symfony [info] {buyCardActions} Call "buyCardActions->executeIndex()"
+Oct 06 16:02:25 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Oct 06 16:02:25 symfony [info] {Doctrine_Connection_Statement} execute : SELECT e.requestid AS e__requestid, e.requestuserid AS e__requestuserid, e.requestusername AS e__requestusername, e.assetid AS e__assetid, e.securitykey AS e__securitykey, e.amount AS e__amount, e.totalcash AS e__totalcash, e.status AS e__status, e.description AS e__description, e.checkedtime AS e__checkedtime, e.responsedata AS e__responsedata, e.request_topup_id AS e__request_topup_id, e.created_at AS e__created_at, e.updated_at AS e__updated_at FROM exchange_asset_request e WHERE (e.securitykey = ? AND e.requestid = ? AND e.status = ? AND e.request_topup_id is null) - (b5331cfc-e88a-4c3f-9a1a-8889f378f52a, 100029, 0)
+Oct 06 16:02:25 symfony [notice] {sfWebDebugLogger}  Notice at E:\Projects\kinggame\CMS\cms\apps\api\modules\buyCard\actions\actions.class.php on line 61 (Trying to get property of non-object)
+Oct 06 16:02:25 symfony [warning] {sfWebDebugLogger}  Warning at E:\Projects\kinggame\CMS\cms\apps\api\modules\buyCard\actions\actions.class.php on line 63 (Invalid argument supplied for foreach())
+Oct 06 16:02:25 symfony [info] {Doctrine_Connection_Statement} execute : UPDATE exchange_asset_request SET responsedata = ?, request_topup_id = ?, status = ?, updated_at = ? WHERE requestid = ? - ([], gamevina_1475744545769, 1, 2016-10-06 16:02:25, 100029)
+Oct 06 16:10:23 symfony [info] {sfPatternRouting} Connect sfRequestRoute "sf_captchagd" (/captcha)
+Oct 06 16:10:23 symfony [info] {sfPatternRouting} Match route "buy_card" (/buy_card) for /buy_card with parameters array (  'module' => 'buyCard',  'action' => 'index',)
+Oct 06 16:10:23 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 06 16:10:23 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 06 16:10:23 symfony [info] {buyCardActions} Call "buyCardActions->executeIndex()"
+Oct 06 16:10:23 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Oct 06 16:10:23 symfony [info] {Doctrine_Connection_Statement} execute : SELECT e.requestid AS e__requestid, e.requestuserid AS e__requestuserid, e.requestusername AS e__requestusername, e.assetid AS e__assetid, e.securitykey AS e__securitykey, e.amount AS e__amount, e.totalcash AS e__totalcash, e.status AS e__status, e.description AS e__description, e.checkedtime AS e__checkedtime, e.responsedata AS e__responsedata, e.request_topup_id AS e__request_topup_id, e.created_at AS e__created_at, e.updated_at AS e__updated_at FROM exchange_asset_request e WHERE (e.securitykey = ? AND e.requestid = ? AND e.status = ? AND e.request_topup_id is null) - (b5331cfc-e88a-4c3f-9a1a-8889f378f52a, 100029, 0)
+Oct 06 16:10:46 symfony [info] {sfPatternRouting} Connect sfRequestRoute "sf_captchagd" (/captcha)
+Oct 06 16:10:46 symfony [info] {sfPatternRouting} Match route "buy_card" (/buy_card) for /buy_card with parameters array (  'module' => 'buyCard',  'action' => 'index',)
+Oct 06 16:10:46 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 06 16:10:46 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 06 16:10:46 symfony [info] {buyCardActions} Call "buyCardActions->executeIndex()"
+Oct 06 16:10:46 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Oct 06 16:10:46 symfony [info] {Doctrine_Connection_Statement} execute : SELECT e.requestid AS e__requestid, e.requestuserid AS e__requestuserid, e.requestusername AS e__requestusername, e.assetid AS e__assetid, e.securitykey AS e__securitykey, e.amount AS e__amount, e.totalcash AS e__totalcash, e.status AS e__status, e.description AS e__description, e.checkedtime AS e__checkedtime, e.responsedata AS e__responsedata, e.request_topup_id AS e__request_topup_id, e.created_at AS e__created_at, e.updated_at AS e__updated_at FROM exchange_asset_request e WHERE (e.securitykey = ? AND e.requestid = ? AND e.status = ? AND e.request_topup_id is null) - (b5331cfc-e88a-4c3f-9a1a-8889f378f52a, 100029, 0)

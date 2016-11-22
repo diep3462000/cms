@@ -25,5 +25,8 @@ class vtHomePageActions extends sfActions
     $this->setVar('menus', array_key_exists('menu', $this->header) ? $this->header['menu'] : array('Home' => 'homepage'), true);
     $this->setVar('routes', $this->getContext()->getRouting()->getRoutes(), true);
     $this->current_route = $this->getContext()->getRouting()->getCurrentRouteName();
+//    $total_money =  UserInfoTable::getSumMoneyUser();
+//    $total_gift = GiftCodeTable::getSumGiftUser();
+//    $phe_xu = MoneyLogTable::ge
   }
 }

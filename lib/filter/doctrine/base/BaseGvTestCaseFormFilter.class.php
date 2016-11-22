@@ -17,7 +17,7 @@ abstract class BaseGvTestCaseFormFilter extends BaseFormFilterDoctrine
       'value'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'game_id'     => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'description' => new sfWidgetFormFilterInput(),
-      'status'      => new sfWidgetFormFilterInput(),
+      'status'      => new sfWidgetFormFilterInput(array('with_empty' => false)),
     ));
 
     $this->setValidators(array(

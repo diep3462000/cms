@@ -1,3 +1,200 @@
+tai_game:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                TaiGame
+    module:               bkManageTaiGame
+    prefix_path:          /bkManageTaiGame
+    column:               id
+    with_wildcard_routes: true
+
+log_payment:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                LogPayment
+    module:               bkManageLogPayment
+    prefix_path:          /bkManageLogPayment
+    column:               id
+    with_wildcard_routes: true
+
+xoc_dia:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                MatchLog
+    module:               bkManageXocdia
+    prefix_path:          /bkManageXocdia
+    column:               matchlogid
+    with_wildcard_routes: true
+
+tax_daily_statictis:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                TaxDailyStatictis
+    module:               gvManageTaxDaily
+    prefix_path:          /gvManageTaxDaily
+    column:               taxId
+    with_wildcard_routes: true
+
+add_money:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AddMoney
+    module:               bkManageAddMoney
+    prefix_path:          /bkManageAddMoney
+    column:               id
+    with_wildcard_routes: true
+
+purchase_money_missing:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                PurchaseMoneyMissing
+    module:               bkManagePurchaseMoneyMissing
+    prefix_path:          /bkManagePurchaseMoneyMissing
+    column:               missId
+    with_wildcard_routes: true
+
+doanh_thu_ngay_linh:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                PurchaseMoneyLog
+    module:               bkManageDoanhThuNgay
+    prefix_path:          /bkManageDoanhThuNgay
+    column:               purchaseLogId
+    with_wildcard_routes: true
+
+purchase_money_log:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                PurchaseMoneyLog
+    module:               bkManageMoneyLog
+    prefix_path:          /bkManageMoneyLog
+    column:               purchaseLogId
+    with_wildcard_routes: true
+
+system_properties:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                SystemProperties
+    module:               gvManageSystemProperties
+    prefix_path:          /gvManageSystemProperties
+    column:               key_
+    with_wildcard_routes: true
+
+notify:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Notify
+    module:               gvManageNotify
+    prefix_path:          /gvManageNotify
+    column:               id
+    with_wildcard_routes: true
+
+match_log:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                MatchLog
+    module:               gvManageMatchLog
+    prefix_path:          /gvManageMatchLog
+    column:               matchlogid
+    with_wildcard_routes: true
+
+user_otp:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                UserOTP
+    module:               gvManageUserOTP
+    prefix_path:          /gvManageUserOTP
+    column:               id
+    with_wildcard_routes: true
+
+user_reset_pw:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                UserResetPw
+    module:               gvManageUserResetPW
+    prefix_path:          /gvManageUserResetPW
+    column:               id
+    with_wildcard_routes: true
+
+user_verify:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                UserVerify
+    module:               gvManageUserVerify
+    prefix_path:          /gvManageUserVerify
+    column:               id
+    with_wildcard_routes: true
+
+exchange_asset_request:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ExchangeAssetRequest
+    module:               gvManageExchangeRequest
+    prefix_path:          /gvManageExchangeRequest
+    column:               requestId
+    with_wildcard_routes: true
+
+exchange_asset_log:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ExchangeAssetLog
+    module:               gvManageExchangeAssetLog
+    prefix_path:          /gvManageExchangeAssetLog
+    column:               requestId
+    with_wildcard_routes: true
+
+exchange_asset:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ExchangeAsset
+    module:               gvManageExchangeAsset
+    prefix_path:          /gvManageExchangeAsset
+    column:               assetId
+    with_wildcard_routes: true
+
+sms_revenue:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                MoHistory
+    module:               gvManageSMSRevenue
+    prefix_path:          /gvManageSMSRevenue
+    column:               id
+    with_wildcard_routes: true
+mo_history:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                MoHistory
+    module:               gvManageMoHistory
+    prefix_path:          /gvManageMoHistory
+    column:               id
+    with_wildcard_routes: true
+
+vt_action_logs:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                VtActionLogs
+    module:               vtManageActionLogs
+    prefix_path:          /vtManageActionLogs
+    column:               id
+    with_wildcard_routes: true
+
+gift_event:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                GiftEvent
+    module:               gvManageGiftEvent
+    prefix_path:          /gvManageGiftEvent
+    column:               giftEventId
+    with_wildcard_routes: true
+
+gift_code:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                GiftCode
+    module:               gvManageGiftCode
+    prefix_path:          /gvManageGiftCode
+    column:               giftId
+    with_wildcard_routes: true
+
 avatar:
   class: sfDoctrineRouteCollection
   options:
@@ -31,15 +228,6 @@ doanh_thu:
     model:                LogPayment
     module:               gvManageSanLuong
     prefix_path:          /gvManageSanLuong
-    column:               id
-    with_wildcard_routes: true
-
-log_payment:
-  class: sfDoctrineRouteCollection
-  options:
-    model:                LogPayment
-    module:               gvManageLogPayment
-    prefix_path:          /gvManageLogPayment
     column:               id
     with_wildcard_routes: true
 

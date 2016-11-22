@@ -1,0 +1,32 @@
+generator:
+  class: tmcTwitterBootstrapDoctrineGenerator
+  param:
+    model_class:           TaiGame
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          tai_game
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title : Danh sách phiên bản
+        display: [OS_view, link_tai, file_down, is_direct_view, status_view, version_build]
+        actions:
+          _new: {label: Thêm mới}
+        object_actions:
+          _edit: {label: Chi tiết}
+          _delete: {}
+        batch_actions: {}
+      filter:
+        display: [OS, version_build]
+      form:
+        class: bkManageTaiGameFormsAdmin
+        display: [OS, link_tai, file_down, is_direct, status, status]
+      edit:    ~
+      new:     ~

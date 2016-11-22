@@ -18,6 +18,21 @@ buy_card:
   param: {module: buyCard, action: index}
   requirements:
     sf_method: [post]
+ws_sms:
+  url: /smsepay
+  param: {module: sms, action: index}
+  requirements:
+    sf_method: [post]
+ws_createUser:
+  url: /createUser
+  param: {module: test, action: index}
+  requirements:
+    sf_method: [post]
+show_buy_card:
+  url: /showBuyCard
+  param: {module: buyCard, action: showBuyCard}
+  requirements:
+    sf_method: [get]
 default_index:
   url:   /:module
   param: { action: index }

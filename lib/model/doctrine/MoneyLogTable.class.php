@@ -20,8 +20,9 @@ class MoneyLogTable extends Doctrine_Table
     public static function getTotalRevenuByDay($user_name = null, $gameId = null, $type_game = null, $os_type = null, $date)
     {
         $sql =  MoneyLogTable::getInstance()->createQuery('a')
-            ->select('SUM(a.taxValue) AS sumTaxValue');
-        $sql->where('DATE(a.insertedTime)= ?', $date);
+            ->select('SUM(a.taxValue) AS sumTaxValue, a.gameId as gameid');
+        $sql->where('a.insertedTime >= ?', $date);
+        $sql->andwhere('a.insertedTime <= ?', date('Y-m-d', time() + 24*3600));
         if($type_game == TypeGame::GOLD_MODE){
             $sql->andwhere('a.changeGold > 0');
         }
@@ -50,10 +51,14 @@ class MoneyLogTable extends Doctrine_Table
     public static function getTotalRevenuByMonth( $gameId = null, $type_game = null, $os_type = null, $date)
     {
         $date1Arr = explode('-', $date);
+//        die;
         $sql = MoneyLogTable::getInstance()->createQuery('a')
             ->select('SUM(a.taxValue) AS sumTaxValue');
-        $sql->where('MONTH(a.insertedTime)= ?', $date1Arr[1]);
-        $sql->andwhere('YEAR(a.insertedTime)= ?', $date1Arr[0]);
+        $sql->where('a.insertedTime >= ?', $date);
+
+        $sql->andwhere('a.insertedTime < ?', date('Y-m-d', strtotime("+1 month", strtotime($date))));
+/*        $sql->where('MONTH(a.insertedTime)= ?', $date1Arr[1]);
+        $sql->andwhere('YEAR(a.insertedTime)= ?', $date1Arr[0]);*/
         $sql = self::prepareQuery($sql, $gameId = null, $type_game = null, $os_type = null);
         return $sql->fetchArray();
     }
@@ -104,8 +109,8 @@ class MoneyLogTable extends Doctrine_Table
     {
         $sql = MoneyLogTable::getInstance()->createQuery('a')
             ->select('SUM(a.taxValue) AS sumTaxValue, DATE(a.insertedTime), a.gameId');
-        $sql->where('DATE(a.insertedTime ) >= ?', $datefrom);
-        $sql->andWhere('DATE(a.insertedTime ) <= ?', $dateto);
+        $sql->where('a.insertedTime >= ?', $datefrom);
+        $sql->andWhere('a.insertedTime <= ?', $dateto);
 //        $sql = self::prepareQuery($sql, null , $type_game , $os_type );
         if($type_game == TypeGame::GOLD_MODE){
             $sql->andwhere('a.changeGold > 0');

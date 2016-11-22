@@ -16,4 +16,14 @@ class MatchLogTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('MatchLog');
     }
+    public static  function getNumByResult($date = null, $num = null)
+    {
+        return $query=   MatchLogTable::getInstance()->createQuery('a')
+            ->select("count(a.gameId) as num_count")
+            ->where("a.gameId = ?", 15)
+        ->andwhere('a.createdTime >= ?',  $date)
+        ->andwhere('a.createdTime <= ?', $date . "24:59:59")
+//        ->andWhere("a.")
+        ->fetchArray();
+    }
 }

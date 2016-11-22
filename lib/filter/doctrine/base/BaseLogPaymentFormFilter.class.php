@@ -13,7 +13,7 @@ abstract class BaseLogPaymentFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'userid'       => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('UserInfo'), 'add_empty' => true)),
+      'userid'       => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('User'), 'add_empty' => true)),
       'seria'        => new sfWidgetFormFilterInput(),
       'pin_card'     => new sfWidgetFormFilterInput(),
       'providerId'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Provider'), 'add_empty' => true)),
@@ -28,7 +28,7 @@ abstract class BaseLogPaymentFormFilter extends BaseFormFilterDoctrine
     ));
 
     $this->setValidators(array(
-      'userid'       => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('UserInfo'), 'column' => 'userid')),
+      'userid'       => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('User'), 'column' => 'userid')),
       'seria'        => new sfValidatorPass(array('required' => false)),
       'pin_card'     => new sfValidatorPass(array('required' => false)),
       'providerId'   => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Provider'), 'column' => 'id')),

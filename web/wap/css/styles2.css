@@ -1,0 +1,507 @@
+.site
+{
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 7px 22px rgba(0, 0, 0, 0.3);
+}
+.clear{
+    clear:both;
+}
+body{
+    color:#333;
+    font-size:14px;
+
+    font-family: 'Roboto', sans-serif;
+}
+
+#header{
+    min-height:78px;
+    border-radius:0;
+    -webkit-border-radius:0;
+    -moz-border-radius:0;
+    margin-bottom:0;
+    z-index:9;
+    border:none;
+    background:url(../images/banner-top.jpg) repeat-y 50% 0;
+}
+
+.event
+{
+    padding: 3px;
+}
+
+.eventblock
+{
+    text-align:center;
+    margin-top: 3px;    
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box; 
+    padding: 0px 10px 0px 10px;
+    border: #ddd 1px solid;
+}
+
+.eventblock h4
+{
+    font-weight: bold;
+}
+
+.eventcontent
+{
+    text-align: left;
+}
+
+.event h1
+{
+    font-size: 18px;
+}
+
+/*COMMENT*/
+
+.comment
+{
+    padding: 3px;
+}
+.commentlist
+{
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+}
+.cmtAvatar, .cmtRepAvatar
+{
+    float:left;   
+}
+
+
+.cmtAvatar img
+{    
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    vertical-align: -30px;    
+    margin-right: 10px;
+}
+.cmtRepAvatar img
+{    
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    vertical-align: -30px;    
+    margin-right: 10px;
+}
+.cmtNickname, .cmtNickname a , .cmtRepNickname a
+{
+    font-weight: bold;
+    color: #0a356a;
+    padding-top: 10px;
+}
+.cmtRepNickname
+{
+    padding-top: 13px;
+}
+.cmtTime, .cmtRepTime, .newsTime
+{
+    font-style: italic;
+    font-size: 11px;
+    color: #adabab;
+}
+.commentItem
+{
+    padding-top: 5px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eaeaea;
+
+}
+.commentItemGhim
+{
+    background-color: #dff0d8;/*#e7f0f5;*/
+    padding-top: 5px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.cmtContent, .cmtReply .cmtRepContent, .newsContent
+{
+    font-family: 'Roboto', sans-serif;
+    padding: 5px;
+    text-align: justify;
+}
+
+.cmtReply
+{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 8%;
+    font-style: italic
+}
+
+.cmtUtility
+{
+    padding-left: 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.cmtUtility a
+{
+    padding-right: 10px;
+
+}
+
+.commentItem .cmtAdmin, .commentItem .cmtAdmin a
+{
+    background: #ddd;
+    padding-left: 5px;
+    margin-top: 5px;
+}
+.commentForm
+{
+    padding: 5px;
+
+}
+
+.commentForm textarea 
+{
+    width: 100%;
+}
+
+.commentSent
+{
+    padding:5px;
+}
+
+/*DOWNLOAD BUTTON*/
+.btndownload
+{
+    padding: 5px;
+    text-align:center;
+}
+
+/*NEWS*/
+.news
+{
+    padding:5px 0px 5px 0px;
+}
+.newsBar
+{
+    background: linear-gradient(141deg, #0a356a 0%, #1fe1f3 90%);
+    height: 30px;
+}
+.newsBar .title
+{
+    color:#fff;
+    text-transform: uppercase;
+    padding-left: 20px;
+    line-height: 30px;
+    font-weight: normal;
+    font-family: roboto condensed;
+}
+.newsItem
+{
+    padding: 10px;
+    margin-top: 5px;
+}
+.newsItemGhim
+{
+    padding: 10px;
+    margin-top: 5px;
+    background-color: #fffbd5;
+}
+
+.newsThumb
+{
+    float:left;
+    margin-top: 3px;
+}
+.newsThumb img
+{
+
+    width: 100px;
+    height: 70px;
+    vertical-align: -30px;    
+    margin-right: 10px;
+}
+.newsTitle , .newsTitle a, .marketTitle, .marketTitle a
+{
+    font-weight: bold;
+    color: #333;
+}
+
+.market
+{
+    padding-left: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.marketIcon
+{
+    float: left;
+    padding-left:20px;
+    display: table-cell;
+}
+
+.marketItem
+{
+    padding-left: 10px;
+    display: table-cell;
+}
+.marketInfo a
+{
+    color: #333;
+    font-weight: normal;
+    font-style: italic;
+}
+.marketInfo span
+{
+    font-style: italic;
+    color: #adabab;
+    font-size: 11px;
+}
+
+/* FOOTER */
+
+#footer
+{
+    margin-top: 10px;
+    background: url('../images/bg.gif') repeat 50% 50%;
+    width: 100%;
+    /*height: 100px;*/
+}
+
+.flogo
+{
+    padding: 10px;
+    display: table-cell;
+    vertical-align: top;
+    padding-left: 20px;
+}
+.fInfo
+{
+    padding-left: 10px;
+    display: table-cell;
+    color: #fff;
+    vertical-align: top;
+}
+
+.fInfo h5
+{
+    color: #ffda40;   
+    margin-bottom: 3px;
+}
+.fInfo .hotline,.fInfo .website ,.fInfo .website a, .fInfo .copyright
+{
+    font-size: 12px;
+    color: #fff;
+}
+.fInfo .copyright
+{
+    color: #9E9E9E;
+    padding-top: 5px;
+    font-size: 11px;
+}
+
+
+
+.block
+{
+    padding: 5px;
+}
+.block h4 a 
+{
+    font-size: 12px;
+    color: #00aeef;
+}
+
+/* NEWS */
+.news_main
+{
+    padding:3px;
+}
+.news_title h1
+{
+    margin-bottom:1px;
+    font-size: 22px;
+    color: #333;
+    text-transform: uppercase;
+}
+.news_time
+{
+    font-style:italic;
+    font-size: 11px;
+    color: #999;
+}
+.news_sapo
+{
+    font-weight: bold;
+    text-align: justify;
+}
+
+.news_content
+{
+    margin-top: 10px;
+    text-align:justify;
+}
+
+.news_content img
+{
+
+    text-align: center;
+    width: 90%;
+    margin: auto;
+    max-width: 320px;
+}
+
+/* ******* */
+.title_page h2
+{
+    text-align:center;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color:#00aeef;
+}
+
+
+/* CUSTOME NAV BOOTSTRAP */
+
+.navbar
+{
+    margin-bottom: 0px;
+}
+.navbar-toggle
+{
+    padding: 5px 5px !important;
+    margin-top: 10px !important;
+}
+.navbar-default {
+    /*background-color: #00aeef;
+    background: #00aeef;    
+    border-color: #00aeef;*/
+    background: #0a356a;
+    border-color: #164b8f;
+    border-radius: 0px; 
+}
+.navbar-default .navbar-brand {
+    color: #fff;
+    padding: 15px 10px;
+    font-size: 15px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+    color: #f7dc0b;
+}
+.navbar-default .navbar-text {
+    color: #fff;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #fbfbf9;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: #f7dc0b;
+    background-color: #4b4b4b;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    color: #000;
+    background-color: #4b4b4b;
+}
+.navbar-default .navbar-toggle {
+    border-color: #fff;/*#4b4b4b;*/
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color: #4b4b4b;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+    border-color: #fff;
+}
+.navbar-default .navbar-link {
+    color: #fff;
+}
+.navbar-default .navbar-link:hover {
+    color: #f7dc0b;
+}
+
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: #fbfbf9;
+        font-style:italic;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+        color: #f7dc0b;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+        color: #000;
+        background-color: #4b4b4b;
+    }
+    .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.open>a
+    {
+        background-image: linear-gradient(to bottom,#ffffff 0,#ffffff 100%) !important;
+    }
+}
+/*nap the cao*/
+.stepwizard-step p {
+    margin-top: 10px;
+}
+.stepwizard-row {
+    display: table-row;
+}
+.stepwizard {
+    display: table;
+    width: 50%;
+    position: relative;
+    width:100%;
+}
+.stepwizard-step button[disabled] {
+    opacity: 1 !important;
+    filter: alpha(opacity=100) !important;
+}
+.stepwizard-row:before {
+    top: 14px;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    z-order: 0;
+}
+.stepwizard-step {
+    display: table-cell;
+    text-align: center;
+    position: relative;
+}
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 15px;
+}
+.btn-radio {
+    width: 100%;
+}
+.img-radio {
+    opacity: 0.8;
+    margin-bottom: 5px;
+}
+
+.space-20 {
+    margin-top: 20px;
+}
+.nav li
+{
+    font-size: 15px;
+}
+/*.nap the cao*/

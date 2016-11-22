@@ -25,49 +25,55 @@ Doctrine_Manager::getInstance()->bindComponent('MoneyLog', 'doctrine');
  * @property timestamp $insertedtime
  * @property string $cp
  * @property string $description
+ * @property User $User
  * @property UserInfo $UserInfo
  * @property Game $Game
+ * @property MoneyTransaction $MoneyTransaction
  * 
- * @method integer   getLogid()         Returns the current record's "logid" value
- * @method string    getUuid()          Returns the current record's "uuid" value
- * @method integer   getLogstamp()      Returns the current record's "logstamp" value
- * @method integer   getUserid()        Returns the current record's "userid" value
- * @method string    getUsername()      Returns the current record's "username" value
- * @method integer   getTransactionid() Returns the current record's "transactionid" value
- * @method integer   getLastcash()      Returns the current record's "lastcash" value
- * @method integer   getChangecash()    Returns the current record's "changecash" value
- * @method integer   getCurrentcash()   Returns the current record's "currentcash" value
- * @method integer   getLastgold()      Returns the current record's "lastgold" value
- * @method integer   getChangegold()    Returns the current record's "changegold" value
- * @method integer   getCurrentgold()   Returns the current record's "currentgold" value
- * @method integer   getTaxpercent()    Returns the current record's "taxpercent" value
- * @method integer   getTaxvalue()      Returns the current record's "taxvalue" value
- * @method integer   getGameid()        Returns the current record's "gameid" value
- * @method timestamp getInsertedtime()  Returns the current record's "insertedtime" value
- * @method string    getCp()            Returns the current record's "cp" value
- * @method string    getDescription()   Returns the current record's "description" value
- * @method UserInfo  getUserInfo()      Returns the current record's "UserInfo" value
- * @method Game      getGame()          Returns the current record's "Game" value
- * @method MoneyLog  setLogid()         Sets the current record's "logid" value
- * @method MoneyLog  setUuid()          Sets the current record's "uuid" value
- * @method MoneyLog  setLogstamp()      Sets the current record's "logstamp" value
- * @method MoneyLog  setUserid()        Sets the current record's "userid" value
- * @method MoneyLog  setUsername()      Sets the current record's "username" value
- * @method MoneyLog  setTransactionid() Sets the current record's "transactionid" value
- * @method MoneyLog  setLastcash()      Sets the current record's "lastcash" value
- * @method MoneyLog  setChangecash()    Sets the current record's "changecash" value
- * @method MoneyLog  setCurrentcash()   Sets the current record's "currentcash" value
- * @method MoneyLog  setLastgold()      Sets the current record's "lastgold" value
- * @method MoneyLog  setChangegold()    Sets the current record's "changegold" value
- * @method MoneyLog  setCurrentgold()   Sets the current record's "currentgold" value
- * @method MoneyLog  setTaxpercent()    Sets the current record's "taxpercent" value
- * @method MoneyLog  setTaxvalue()      Sets the current record's "taxvalue" value
- * @method MoneyLog  setGameid()        Sets the current record's "gameid" value
- * @method MoneyLog  setInsertedtime()  Sets the current record's "insertedtime" value
- * @method MoneyLog  setCp()            Sets the current record's "cp" value
- * @method MoneyLog  setDescription()   Sets the current record's "description" value
- * @method MoneyLog  setUserInfo()      Sets the current record's "UserInfo" value
- * @method MoneyLog  setGame()          Sets the current record's "Game" value
+ * @method integer          getLogid()            Returns the current record's "logid" value
+ * @method string           getUuid()             Returns the current record's "uuid" value
+ * @method integer          getLogstamp()         Returns the current record's "logstamp" value
+ * @method integer          getUserid()           Returns the current record's "userid" value
+ * @method string           getUsername()         Returns the current record's "username" value
+ * @method integer          getTransactionid()    Returns the current record's "transactionid" value
+ * @method integer          getLastcash()         Returns the current record's "lastcash" value
+ * @method integer          getChangecash()       Returns the current record's "changecash" value
+ * @method integer          getCurrentcash()      Returns the current record's "currentcash" value
+ * @method integer          getLastgold()         Returns the current record's "lastgold" value
+ * @method integer          getChangegold()       Returns the current record's "changegold" value
+ * @method integer          getCurrentgold()      Returns the current record's "currentgold" value
+ * @method integer          getTaxpercent()       Returns the current record's "taxpercent" value
+ * @method integer          getTaxvalue()         Returns the current record's "taxvalue" value
+ * @method integer          getGameid()           Returns the current record's "gameid" value
+ * @method timestamp        getInsertedtime()     Returns the current record's "insertedtime" value
+ * @method string           getCp()               Returns the current record's "cp" value
+ * @method string           getDescription()      Returns the current record's "description" value
+ * @method User             getUser()             Returns the current record's "User" value
+ * @method UserInfo         getUserInfo()         Returns the current record's "UserInfo" value
+ * @method Game             getGame()             Returns the current record's "Game" value
+ * @method MoneyTransaction getMoneyTransaction() Returns the current record's "MoneyTransaction" value
+ * @method MoneyLog         setLogid()            Sets the current record's "logid" value
+ * @method MoneyLog         setUuid()             Sets the current record's "uuid" value
+ * @method MoneyLog         setLogstamp()         Sets the current record's "logstamp" value
+ * @method MoneyLog         setUserid()           Sets the current record's "userid" value
+ * @method MoneyLog         setUsername()         Sets the current record's "username" value
+ * @method MoneyLog         setTransactionid()    Sets the current record's "transactionid" value
+ * @method MoneyLog         setLastcash()         Sets the current record's "lastcash" value
+ * @method MoneyLog         setChangecash()       Sets the current record's "changecash" value
+ * @method MoneyLog         setCurrentcash()      Sets the current record's "currentcash" value
+ * @method MoneyLog         setLastgold()         Sets the current record's "lastgold" value
+ * @method MoneyLog         setChangegold()       Sets the current record's "changegold" value
+ * @method MoneyLog         setCurrentgold()      Sets the current record's "currentgold" value
+ * @method MoneyLog         setTaxpercent()       Sets the current record's "taxpercent" value
+ * @method MoneyLog         setTaxvalue()         Sets the current record's "taxvalue" value
+ * @method MoneyLog         setGameid()           Sets the current record's "gameid" value
+ * @method MoneyLog         setInsertedtime()     Sets the current record's "insertedtime" value
+ * @method MoneyLog         setCp()               Sets the current record's "cp" value
+ * @method MoneyLog         setDescription()      Sets the current record's "description" value
+ * @method MoneyLog         setUser()             Sets the current record's "User" value
+ * @method MoneyLog         setUserInfo()         Sets the current record's "UserInfo" value
+ * @method MoneyLog         setGame()             Sets the current record's "Game" value
+ * @method MoneyLog         setMoneyTransaction() Sets the current record's "MoneyTransaction" value
  * 
  * @package    Vt_Portals
  * @subpackage model
@@ -250,6 +256,10 @@ abstract class BaseMoneyLog extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
+        $this->hasOne('User', array(
+             'local' => 'userId',
+             'foreign' => 'userId'));
+
         $this->hasOne('UserInfo', array(
              'local' => 'userId',
              'foreign' => 'userId'));
@@ -257,5 +267,9 @@ abstract class BaseMoneyLog extends sfDoctrineRecord
         $this->hasOne('Game', array(
              'local' => 'gameId',
              'foreign' => 'gameId'));
+
+        $this->hasOne('MoneyTransaction', array(
+             'local' => 'transactionId',
+             'foreign' => 'transactionId'));
     }
 }

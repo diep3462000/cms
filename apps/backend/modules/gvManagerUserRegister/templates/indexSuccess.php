@@ -97,16 +97,16 @@
         chart_api.draw(data_api, options_api);
 
         //Hình 3: Thông tin nhà phát triển đăng ký tài khoản
-        var array_develop_info = new Array(["<?php echo __('Ngày') ?>", "<?php echo __('Đăng ký mới') ?>"]);
-        <?php foreach($sevent_day as $day => $value):?>
-        array_develop_info.push(['<?php echo $day;  ?>', Number('<?php echo $value[0]?>')]);
+        var array_develop_info = new Array(["<?php echo __('Ngày') ?>", "<?php echo __('Đăng ký mới') ?>", "<?php echo __('Thiết bị mới') ?>", "<?php echo __('Còn chơi đến ngày') ?>"]);
+    <?php foreach($sevent_day as $day => $value):?>
+        array_develop_info.push(['<?php echo $day;  ?>', Number('<?php echo $value[0]?>'), Number('<?php echo $value[1]?>'), Number('<?php echo $value[2]?>') ]);
         <?php endforeach ?>
         var data_develop_info = google.visualization.arrayToDataTable(array_develop_info);
         formatter.format(data_develop_info, 1);
         var options_develop_info = {
             title: '<?php echo __('Thông tin người chơi đăng ký') ?>',
             is3D: true,
-            hAxis: {title: 'Gamevina',  titleTextStyle: {color: '#333'}},
+            hAxis: {title: 'BIGKEN',  titleTextStyle: {color: '#333'}},
             vAxis: {minValue: 0}
         };
         var chart_develop_info = new google.visualization.ColumnChart(document.getElementById('piechart_pub_register'));

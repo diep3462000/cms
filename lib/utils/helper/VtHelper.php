@@ -27,6 +27,31 @@ class VtHelper
 
         return $string;
     }
+    public static function getPlatform(){
+        $agent = $_SERVER['HTTP_USER_AGENT'];
+        if (strpos($agent, 'android') !== false) {
+            return 'android';
+        } elseif(strpos($agent, 'iphone') !== false) {
+            return 'iphone';
+        }else{
+            return "computer";
+        }
+    }
+    public static function genRandomNumber($length = 4)
+    {
+        $characters = '0123456789';
+        $string = '';
+
+        for ($p = 0; $p < $length; $p++) {
+            $string .= $characters[mt_rand(0, strlen($characters) - 1)];
+        }
+
+        return $string;
+    }
+    public static function cleanXSS($content) {
+        $purifier = HTMLPurifier::getInstance();
+        return $purifier->purify($content);
+    }
     //ngoctv login: 20140610
     public static function encryptPassword($username, $password) {
         $toLowerUsername = strtolower($username);
@@ -1070,7 +1095,7 @@ class VtHelper
           return $str;
         $str = $trim ? trim($str) : $str;
         $str = addcslashes($str, "\\%_");
-        return $str;
+        return mb_strtolower($str);
       }
 
     //check format date

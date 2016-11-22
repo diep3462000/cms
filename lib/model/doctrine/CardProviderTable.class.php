@@ -16,4 +16,33 @@ class CardProviderTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('CardProvider');
     }
+    public static function getListProviderSelectBox()
+    {
+        $i18n = sfContext::getInstance()->getI18N();
+        $listType[""] = $i18n->__("Tất cả");
+        $arrType = CardProviderTable::getInstance()->createQuery('a')
+            ->select('a.providerId, a.providerCode, a.providerName')
+            ->where("a.active = ?", 1)
+            ->fetchArray();
+        foreach($arrType as $valType){
+            $listType[$valType['providerCode']] = $valType['providerName'];
+        }
+        return $listType;
+    }
+    public static function getListProvider()
+    {
+        $i18n = sfContext::getInstance()->getI18N();
+        $arrType = CardProviderTable::getInstance()->createQuery('a')
+            ->select('a.providerId, a.providerCode, a.providerName, a.valuePercent')
+            ->where("a.active = ?", 1)
+            ->fetchArray();
+        return $arrType;
+    }
+    public static function getProviderByCode($telco_coede)
+    {
+        return CardProviderTable::getInstance()->createQuery('a')
+            ->where("a.providerCode = ?", $telco_coede)
+            ->andWhere("a.active = ?", 1)
+            ->fetchOne();
+    }
 }

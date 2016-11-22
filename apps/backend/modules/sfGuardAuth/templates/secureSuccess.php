@@ -9,7 +9,7 @@
       <?php include_partial('logo') ?>
     </div>
     <div class="pull-left login-right">
-      <h2><?php echo __('Quản Trị GAMEVINA', null, 'tmcTwitterBootstrapPlugin') ?></span></h2>
+      <h2><?php echo __('Quản Trị BIGKEN', null, 'tmcTwitterBootstrapPlugin') ?></span></h2>
 
       <p class="error_list"><?php echo __('Bạn không có quyền truy cập chức năng này!', null, 'tmcTwitterBootstrapPlugin') ?></p>
 

@@ -1,0 +1,29 @@
+generator:
+  class: tmcTwitterBootstrapDoctrineGenerator
+  param:
+    model_class:           GiftCode
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          gift_code
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: Danh sách gift code
+        object_actions:
+#          _edit: {label: Chi tiết}
+          _delete: ~
+      filter:
+        class: gvManageGiftCodeFormFiltersAdmin
+        display: [userName]
+      form:
+        display: [giftEventId, userName, userId,  expiredTime, description]
+        class: gvManageGiftCodeFormAdmin
+      edit:    ~
+      new:     ~

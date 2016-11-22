@@ -1,0 +1,31 @@
+generator:
+  class: tmcTwitterBootstrapDoctrineGenerator
+  param:
+    model_class:           Notify
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          notify
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        content: {label: Nội dùng}
+        status: {label: Trạng thái}
+      list:
+        title: Quản lý notify
+        display:  [content, status, created_at]
+      filter:
+        class: gvManageNotifyFormFilter
+        display:  [content, status]
+      form:
+        class: gvManageNotifyFormAdmin
+        display: [content, status]
+      edit:
+        title: Chỉnh sửa notify
+      new:
+        title: Thêm mới notify

@@ -54,15 +54,40 @@ class gvManagerUserRegisterActions extends autoGvManagerUserRegisterActions
 
         $day = 60*60*24; $day_7 = time() - 6*$day;
         $register_info = UserTable::getRegisterInfo(date("Y-m-d", $day_7) . "00:00:00");
+        $register_info_new = UserInfoTable::getRegisterInfoNew(date("Y-m-d", $day_7) . "00:00:00");
+        $user_play_inday  =  UserInfoTable::getPlayUserInday(date("Y-m-d", $day_7) . "00:00:00");
+//        $register_info_new = UserTable::getRegisterInfoNew(date("Y-m-d", $day_7) . "00:00:00");
         $created_at = array();
+        //tai khoan moi
         foreach($register_info as $date){
             $created_at[$date['date']] = $date['count'];
         }
+        // thiet bị moi
+        $created_at_new = array();
+
+        foreach($register_info_new as $date){
+            $created_at_new[$date['date']] = $date['count'];
+        }
+        // nguoi choi hang ngay
+        $play_in_day= array();
+
+        foreach($user_play_inday as $date){
+            $play_in_day[$date['date']] = $date['count'];
+        }
 
         $sevent_day = array();
+//        for($i=0; $i<7; $i++) {
+//            $sevent_day[date("d/m/Y", $day_7 + $i* $day)] = array(
+//               isset($created_at[date("Y-m-d", $day_7 + $i* $day)]) ? $created_at[date("Y-m-d", $day_7 + $i* $day)]: 0),
+//               isset($created_at_new[date("Y-m-d", $day_7 + $i* $day)]) ? $created_at_new[date("Y-m-d", $day_7 + $i* $day)]: 0);
+//        }
         for($i=0; $i<7; $i++) {
             $sevent_day[date("d/m/Y", $day_7 + $i* $day)] = array(
-                isset($created_at[date("Y-m-d", $day_7 + $i* $day)]) ? $created_at[date("Y-m-d", $day_7 + $i* $day)]: 0);
+                isset($created_at[date("Y-m-d", $day_7 + $i* $day)]) ? $created_at[date("Y-m-d", $day_7 + $i* $day)]: 0,
+                isset($created_at_new[date("Y-m-d", $day_7 + $i* $day)]) ? $created_at_new[date("Y-m-d", $day_7 + $i* $day)]: 0,
+                isset($play_in_day[date("Y-m-d", $day_7 + $i* $day)]) ? $play_in_day[date("Y-m-d", $day_7 + $i* $day)]: 0,
+            );
+
         }
         $this->sevent_day = $sevent_day;
     }

@@ -24,7 +24,6 @@ abstract class BaseUserFormFilter extends BaseFormFilterDoctrine
       'sex'          => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'registedtime' => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate())),
       'age'          => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'status'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
     ));
 
     $this->setValidators(array(
@@ -39,7 +38,6 @@ abstract class BaseUserFormFilter extends BaseFormFilterDoctrine
       'sex'          => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'registedtime' => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
       'age'          => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
-      'status'       => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
     ));
 
     $this->widgetSchema->setNameFormat('user_filters[%s]');
@@ -71,7 +69,6 @@ abstract class BaseUserFormFilter extends BaseFormFilterDoctrine
       'sex'          => 'Number',
       'registedtime' => 'Date',
       'age'          => 'Number',
-      'status'       => 'Number',
     );
   }
 }

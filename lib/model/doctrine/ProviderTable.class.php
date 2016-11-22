@@ -27,4 +27,15 @@ class ProviderTable extends Doctrine_Table
         }
         return $listType;
     }
+    public static function getListProviderSelectBox()
+    {
+        $i18n = sfContext::getInstance()->getI18N();
+        $listType[""] = $i18n->__("Tất cả");
+        $arrType = ProviderTable::getInstance()->createQuery('a')
+            ->select('a.id, a.code, a.description')->fetchArray();
+        foreach($arrType as $valType){
+            $listType[$valType['code']] = $valType['description'];
+        }
+        return $listType;
+    }
 }

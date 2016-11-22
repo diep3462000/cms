@@ -14,6 +14,12 @@ bccs:
   partnerId: '11359',                                                                     //Mã Merchant, sau khi đăng ký dịch vụ, Epay sẽ cung cấp cho khách hàng
   targetAcc: 'chrapi',                                                                    //Tên Merchant Epay cung cấp cho khách hàng
   password: '2f6e1b'
+#SMS
+  partner_name_sms: KING
+  partner_id_sms: 10229
+  md5_pass: 4a6ec3e52a89dcb4fa020d0a9d6aab4e
+  command_code: BKG
+  short_code: 9039
 timeout:
   connect: 3
   response: 30

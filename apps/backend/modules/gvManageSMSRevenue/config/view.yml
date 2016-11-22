@@ -1,0 +1,11 @@
+## YAML Template.
+---
+indexSuccess:
+  metas:
+    title: Doanh thu SMS
+  stylesheets:
+    - bootstrapDaterangepickerMaster/daterangepicker-bs2.css
+
+  javascripts:
+    - bootstrapDaterangepickerMaster/moment.min.js
+    - bootstrapDaterangepickerMaster/daterangepicker.js
