@@ -13,19 +13,23 @@ class homeActions extends sfActions
     }
     public function executeEvent(sfWebRequest $request)
     {
-        $this->notify = NotifyTable::getNewestNofify(0);
+        $this->title = 'Sự kiện';
+        $this->event = EventTable::getNewestEvent(0);
     }
-    public function executeGioiThieu(fWebRequest $request)
+    public function executeGioiThieu(sfWebRequest $request)
     {
-        $this->notify = NotifyTable::getNewestNofify(0);
+        $this->title = 'Giới thiệu';
+        $this->content = WebContentTable::getAllContent(2);
     }
     public function executeTinTuc(sfWebRequest $request)
     {
-        $this->notify = NotifyTable::getNewestNofify(0);
+        $this->title = 'Tin tức';
+        $this->content = WebContentTable::getNewestContent(0, 0);
     }
     public function executeHoTro(sfWebRequest $request)
     {
-        $this->notify = NotifyTable::getNewestNofify(0);
+        $this->title = 'Hỗ trợ';
+        $this->content = WebContentTable::getAllContent(3);
     }
     public function executeDoiThuong(sfWebRequest $request)
     {
