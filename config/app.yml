@@ -29,6 +29,9 @@ all:
   import_max_size: 20971520
   prepaid: 268
   postpaid: 271
+  wap:
+    item_list_number: 4
+    max_items_on_page: 10
   
 #  url_media_default_file: http://localhost:8086/images/default-image.jpg
 

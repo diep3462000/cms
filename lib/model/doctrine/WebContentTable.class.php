@@ -40,4 +40,89 @@ class WebContentTable extends Doctrine_Table
         }
         return $sql->fetchOne();
     }
+
+    public static  function getNewestRecord($type = null)
+    {
+        $itemNumber = sfConfig::get('app_wap_item_list_number') != null ? sfConfig::get('app_wap_item_list_number') : 4;
+        $sql =   WebContentTable::getInstance()->createQuery('a')
+            ->select('*')
+            ->where('a.status = 0')
+            ->andWhere('a.type = ?', $type)
+            ->orderBy('a.created_at desc')
+            ->limit($itemNumber);
+        return $sql->fetchArray();
+    }
+
+    public static  function getAllRecord($type = null)
+    {
+        $itemNumber = sfConfig::get('app_wap_item_list_number') != null ? sfConfig::get('app_wap_item_list_number') : 4;
+        $sql =   WebContentTable::getInstance()->createQuery('a')
+            ->select('*')
+            ->where('a.status = 0')
+            ->andWhere('a.type = ?', $type)
+            ->orderBy('a.created_at desc')
+            ->limit($itemNumber);
+        return $sql->fetchArray();
+    }
+
+    public static  function getTotalRecord($type = null)
+    {
+        $sql =   WebContentTable::getInstance()->createQuery('a')
+            ->select('*')
+            ->where('a.status = 0')
+            ->andWhere('a.type = ?', $type)
+            ->orderBy('a.created_at desc');
+        return $sql->count();
+    }
+
+    public function retrieveActiveWebContent(Doctrine_Query $q)
+    {
+        return $this->addActiveWebContentQuery($q)->fetchOne();
+    }
+
+    public function getActiveWebContent($max = 1)
+    {
+        $q = $this->getActiveWebContentQuery()
+            ->limit($max);
+
+        return $q->execute();
+    }
+
+    public function getDefaultWebContent($max = 4)
+    {
+        $q = $this->getActiveWebContentQuery()
+            ->limit($max);
+
+        return $q->execute();
+    }
+
+    public function countActiveWebContent($type = null)
+    {
+        return $this->getActiveWebContentQuery($type)->count();
+    }
+
+    public function addActiveWebContentQuery(Doctrine_Query $q = null, $type = null)
+    {
+        if (is_null($q))
+        {
+            $q = Doctrine_Query::create()
+                ->from('WebContent j');
+        }
+
+        $alias = $q->getRootAlias();
+
+        $q->where($alias .'.status = 0')->andWhere($alias . '.type = ?', $type )
+            ->addOrderBy($alias . '.created_at DESC');
+
+        return $q;
+    }
+
+    public function getActiveWebContentQuery($type = null)
+    {
+        $q = Doctrine_Query::create()
+            ->from('WebContent j');
+
+        return Doctrine::getTable('WebContent')->addActiveWebContentQuery($q, $type);
+    }
+
 }

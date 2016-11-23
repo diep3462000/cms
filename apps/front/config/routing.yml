@@ -37,15 +37,15 @@ luat_game:
   param: {module: game, action: rule}
 
 #menu
-su_kien:
-  url: /su-kien
-  param: {module: home, action: event}
+#su_kien:
+#  url: /su-kien
+#  param: {module: home, action: event}
 gioi_thieu:
   url: /gioi-thieu
   param: {module: home, action: gioiThieu}
 tin_tuc:
   url: /tin-tuc
-  param: {module: home, action: tinTuc}
+  param: {module: news, action: index}
 ho_tro:
   url: /ho-tro
   param: {module: home, action: hoTro}
@@ -55,6 +55,15 @@ tai_game:
 doi_thuong:
   url: /doi-thuong
   param: {module: home, action: doiThuong}
+rule_game:
+  url: /luat-choi
+  param: {module: rules, action: index}
+tin_tuc_chi_tiet:
+  url: /tin-tuc-chi-tiet/:id
+  param: { module: news, action: show }
+rule_game_detail:
+  url: /luat-choi-chi-tiet/:id
+  param: { module: rules, action: show }
 
 privacy_policy:
   url: /privacy-policy

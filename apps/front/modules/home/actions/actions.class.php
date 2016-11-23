@@ -9,30 +9,26 @@ class homeActions extends sfActions
 {
     public function executeIndex(sfWebRequest $request)
     {
+//        Lay list tin tuc moi nhat
+        $this->news = WebContentTable::getNewestRecord(0);
+        $this->totalNews = WebContentTable::getTotalRecord(0);
+        $this->games = GameTable::getNewestRecord();
+        $this->totalGames = GameTable::getTotalRecord();
         $this->notify = NotifyTable::getNewestNofify(0);
-    }
-    public function executeEvent(sfWebRequest $request)
-    {
-        $this->title = 'Sự kiện';
-        $this->event = EventTable::getNewestEvent(0);
     }
     public function executeGioiThieu(sfWebRequest $request)
     {
         $this->title = 'Giới thiệu';
-        $this->content = WebContentTable::getAllContent(2);
-    }
-    public function executeTinTuc(sfWebRequest $request)
-    {
-        $this->title = 'Tin tức';
-        $this->content = WebContentTable::getNewestContent(0, 0);
+        $this->contents = WebContentTable::getAllContent(2);
     }
     public function executeHoTro(sfWebRequest $request)
     {
         $this->title = 'Hỗ trợ';
-        $this->content = WebContentTable::getAllContent(3);
+        $this->contents = WebContentTable::getAllContent(3);
     }
     public function executeDoiThuong(sfWebRequest $request)
     {
         $this->notify = NotifyTable::getNewestNofify(0);
     }
+
 }
