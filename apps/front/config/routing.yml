@@ -24,14 +24,14 @@ home:
   url: /
   param: { module: home, action: index }
 tai_game:
-  url: /tai-game
-  param: {module: game, action: tai}
+  url: /tai-game-bigken
+  param: {module: game, action: taiGame}
 dl:
   url: /dl
   param: {module: game, action: dl}
 tai:
   url: /tai
-  param: {module: game, action: taiGame}
+  param: {module: game, action: tai}
 luat_game:
   url: /luat-game
   param: {module: game, action: rule}
@@ -49,9 +49,9 @@ tin_tuc:
 ho_tro:
   url: /ho-tro
   param: {module: home, action: hoTro}
-tai_game:
-  url: /tai-game
-  param: {module: home, action: taiGame}
+#tai_game:
+#  url: /tai-game
+#  param: {module: home, action: taiGame}
 doi_thuong:
   url: /doi-thuong
   param: {module: home, action: doiThuong}

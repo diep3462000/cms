@@ -22,4 +22,11 @@ class TaiGameTable extends Doctrine_Table
             ->where("a.status = ?", 1)
             ->fetchArray();
     }
+    public static function getLinkByOs($os){
+        return TaiGameTable::getInstance()->createQuery('a')
+            ->select("a.*")
+            ->where("a.status = ?", 1)
+            ->andWhere("a.OS = ?", $os)
+            ->fetchOne();
+    }
 }
