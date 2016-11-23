@@ -14,9 +14,8 @@
             <span class = "icon-bar"></span>
         </button>
         <a class = "navbar-brand" href="/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
-        <a class = "navbar-brand" href="<?php echo url_for('su_kien')?>" ><?php echo __("Sự kiện")?></a></li>
         <a class = "navbar-brand" href="<?php echo url_for('gioi_thieu')?>" ><?php echo __("Giới thiệu")?></a></li>
-        <a class = "navbar-brand" href="<?php echo url_for('tin_tuc')?>" ><?php echo __("Tin tức")?></a></li>
+        <a class = "navbar-brand" href="<?php echo url_for('tin_tuc')?>" ><?php echo __("Tin tức & Sự kiện")?></a></li>
         <a class = "navbar-brand" href="<?php echo url_for('ho_tro')?>" ><?php echo __("Hỗ trợ")?></a></li>
         <a class = "navbar-brand" href="<?php echo url_for('tai_game')?>" ><?php echo __("Tải game")?></a></li>
         <a class = "navbar-brand" href="<?php echo url_for('doi_thuong')?>" ></a><?php echo __("Đổi thưởng")?></a></li>

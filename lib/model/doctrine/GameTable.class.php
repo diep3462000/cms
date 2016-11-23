@@ -38,4 +38,54 @@ class GameTable extends Doctrine_Table
         return $listType;
     }
 
+    public function addActiveGameQuery(Doctrine_Query $q = null)
+    {
+        if (is_null($q))
+        {
+            $q = Doctrine_Query::create()
+                ->from('Game j');
+        }
+
+        $alias = $q->getRootAlias();
+
+        $q->where($alias .'.status = 1');
+
+        return $q;
+    }
+
+    public function getActiveGameQuery()
+    {
+        $q = Doctrine_Query::create()
+            ->from('Game j');
+
+        return Doctrine::getTable('Game')->addActiveGameQuery($q);
+    }
+
+    public static  function getAllRecord()
+    {
+        $itemNumber = sfConfig::get('app_wap_item_list_number') != null ? sfConfig::get('app_wap_item_list_number') : 4;
+        $sql =   GameTable::getInstance()->createQuery('a')
+            ->select('*')
+            ->where('a.status = 1')
+            ->limit($itemNumber);
+        return $sql->fetchArray();
+    }
+
+    public static  function getTotalRecord()
+    {
+        $sql =   GameTable::getInstance()->createQuery('a')
+            ->select('*')
+            ->where('a.status = 1');
+        return $sql->count();
+    }
+
+    public static  function getNewestRecord()
+    {
+        $itemNumber = sfConfig::get('app_wap_item_list_number') != null ? sfConfig::get('app_wap_item_list_number') : 4;
+        $sql =   GameTable::getInstance()->createQuery('a')
+            ->select('*')
+            ->where('a.status = 1')
+            ->limit($itemNumber);
+        return $sql->fetchArray();
+    }
 }
