@@ -14,7 +14,7 @@ default:
 
   stylesheets:
     - frontend/formValidation.min.css
-    - bootstrap.css
+    - bootstrap.min.css
   javascripts:
     - jquery.1.11.1.js
     - frontend/formValidation.min.js
@@ -23,5 +23,8 @@ default:
     - frontend.js
     - select2/select2.js
     - select2/select2.min.js
+    - bootstrap.min.js
+    - frontend/jquery-3.1.0.min.js
+    - frontend/jquery-ui.min.js
   has_layout:     true
   layout:         layout

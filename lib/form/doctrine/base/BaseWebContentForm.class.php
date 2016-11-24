@@ -33,7 +33,7 @@ abstract class BaseWebContentForm extends BaseFormDoctrine
       'image'       => new sfValidatorString(array('max_length' => 12)),
       'content'     => new sfValidatorString(array('max_length' => 8000, 'required' => false)),
       'title'       => new sfValidatorString(array('max_length' => 512, 'required' => false)),
-      'status'      => new sfValidatorInteger(),
+      'status'      => new sfValidatorInteger(array('required' => false)),
       'type'        => new sfValidatorInteger(array('required' => false)),
       'is_hot'      => new sfValidatorInteger(array('required' => false)),
       'keywords'    => new sfValidatorString(array('max_length' => 256, 'required' => false)),
