@@ -48,8 +48,8 @@ class bkManageWebContentFormAdmin extends BaseWebContentForm
 //            'type'        => new sfValidatorInteger(array('required' => false)),
             'keywords'    => new sfValidatorString(array('max_length' => 256, 'required' => false)),
             'description' => new sfValidatorString(array('max_length' => 512, 'required' => false)),
-            'status'    => new sfValidatorInteger(array('required' => false)),
-            'is_hot'    => new sfValidatorInteger(array('required' => false)),
+            'status'    => new sfValidatorBoolean(),
+            'is_hot'    => new sfValidatorBoolean(),
             'image' =>new sfValidatorFileViettel(
                 array(
                     'validated_file_class' => 'sfResizeMediumThumbnailImage',

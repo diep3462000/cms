@@ -61,7 +61,8 @@ abstract class BaseWebContent extends sfDoctrineRecord
              ));
         $this->hasColumn('status', 'integer', 1, array(
              'type' => 'integer',
-             'notnull' => true,
+             'notnull' => false,
+             'default' => 0,
              'comment' => '0 tạo mới, 1 active',
              'length' => 1,
              ));
@@ -74,6 +75,7 @@ abstract class BaseWebContent extends sfDoctrineRecord
         $this->hasColumn('is_hot', 'integer', 1, array(
              'type' => 'integer',
              'notnull' => false,
+             'default' => 0,
              'comment' => '1: top hot',
              'length' => 1,
              ));

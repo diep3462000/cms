@@ -46,7 +46,7 @@ class WebContentTable extends Doctrine_Table
         $itemNumber = sfConfig::get('app_wap_item_list_number') != null ? sfConfig::get('app_wap_item_list_number') : 4;
         $sql =   WebContentTable::getInstance()->createQuery('a')
             ->select('*')
-            ->where('a.status = 0')
+            ->where('a.status = 1')
             ->andWhere('a.type = ?', $type)
             ->orderBy('a.created_at desc')
             ->limit($itemNumber);
@@ -58,7 +58,7 @@ class WebContentTable extends Doctrine_Table
         $itemNumber = sfConfig::get('app_wap_item_list_number') != null ? sfConfig::get('app_wap_item_list_number') : 4;
         $sql =   WebContentTable::getInstance()->createQuery('a')
             ->select('*')
-            ->where('a.status = 0')
+            ->where('a.status = 1')
             ->andWhere('a.type = ?', $type)
             ->orderBy('a.created_at desc')
             ->limit($itemNumber);
@@ -69,7 +69,7 @@ class WebContentTable extends Doctrine_Table
     {
         $sql =   WebContentTable::getInstance()->createQuery('a')
             ->select('*')
-            ->where('a.status = 0')
+            ->where('a.status = 1')
             ->andWhere('a.type = ?', $type)
             ->orderBy('a.created_at desc');
         return $sql->count();
@@ -111,7 +111,7 @@ class WebContentTable extends Doctrine_Table
 
         $alias = $q->getRootAlias();
 
-        $q->where($alias .'.status = 0')->andWhere($alias . '.type = ?', $type )
+        $q->where($alias .'.status = 1')->andWhere($alias . '.type = ?', $type )
             ->addOrderBy($alias . '.created_at DESC');
 
         return $q;

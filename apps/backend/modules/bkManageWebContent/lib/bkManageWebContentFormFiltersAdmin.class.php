@@ -46,7 +46,7 @@ class bkManageWebContentFormFiltersAdmin extends BaseWebContentFormFilter
         $query = parent::doBuildQuery($values);
         $alias = $query->getRootAlias();
         $query->select($alias . ".*");
-        $query->where($alias . ".status = 0");
+        $query->where($alias . ".status = 1");
         if(array_key_exists('type', $values) && $values['type'] != ''){
             $query->andWhere($alias . ".type = ?",$values["type"] );
         }

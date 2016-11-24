@@ -16,7 +16,7 @@ abstract class BaseWebContentFormFilter extends BaseFormFilterDoctrine
       'image'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'content'     => new sfWidgetFormFilterInput(),
       'title'       => new sfWidgetFormFilterInput(),
-      'status'      => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'status'      => new sfWidgetFormFilterInput(),
       'type'        => new sfWidgetFormFilterInput(),
       'is_hot'      => new sfWidgetFormFilterInput(),
       'keywords'    => new sfWidgetFormFilterInput(),
