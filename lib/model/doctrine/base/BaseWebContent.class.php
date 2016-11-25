@@ -8,18 +8,18 @@
  * @property string $image
  * @property string $content
  * @property string $title
- * @property integer $status
+ * @property boolean $status
  * @property integer $type
- * @property integer $is_hot
+ * @property boolean $is_hot
  * @property string $keywords
  * @property string $description
  * 
  * @method string     getImage()       Returns the current record's "image" value
  * @method string     getContent()     Returns the current record's "content" value
  * @method string     getTitle()       Returns the current record's "title" value
- * @method integer    getStatus()      Returns the current record's "status" value
+ * @method boolean    getStatus()      Returns the current record's "status" value
  * @method integer    getType()        Returns the current record's "type" value
- * @method integer    getIsHot()       Returns the current record's "is_hot" value
+ * @method boolean    getIsHot()       Returns the current record's "is_hot" value
  * @method string     getKeywords()    Returns the current record's "keywords" value
  * @method string     getDescription() Returns the current record's "description" value
  * @method WebContent setImage()       Sets the current record's "image" value
@@ -59,12 +59,10 @@ abstract class BaseWebContent extends sfDoctrineRecord
              'comment' => 'Tieu de',
              'length' => 100,
              ));
-        $this->hasColumn('status', 'integer', 1, array(
-             'type' => 'integer',
+        $this->hasColumn('status', 'boolean', null, array(
+             'type' => 'boolean',
              'notnull' => false,
-             'default' => 0,
              'comment' => '0 tạo mới, 1 active',
-             'length' => 1,
              ));
         $this->hasColumn('type', 'integer', 1, array(
              'type' => 'integer',
@@ -72,12 +70,10 @@ abstract class BaseWebContent extends sfDoctrineRecord
              'comment' => '0: tin tức, 1 sự kiện, 2 giới thiệu, 3 hỗ trợ, 4 luật game',
              'length' => 1,
              ));
-        $this->hasColumn('is_hot', 'integer', 1, array(
-             'type' => 'integer',
+        $this->hasColumn('is_hot', 'boolean', null, array(
+             'type' => 'boolean',
              'notnull' => false,
-             'default' => 0,
              'comment' => '1: top hot',
-             'length' => 1,
              ));
         $this->hasColumn('keywords', 'string', 256, array(
              'type' => 'string',

@@ -17,17 +17,13 @@ class gvManageAddMoneyFormFiltersAdmin extends BaseAddMoneyFormFilter
         $i18n = sfContext::getInstance()->getI18N();
         $this->setWidgets(array(
             'userId'      => new sfWidgetFormFilterInput(array('with_empty' => false)),
-            'addCash'     => new sfWidgetFormFilterInput(array('with_empty' => false)),
-            'addGold'     => new sfWidgetFormFilterInput(array('with_empty' => false)),
             'description' => new sfWidgetFormFilterInput(array('with_empty' => false)),
             'admin_id'    => new sfWidgetFormFilterInput(array('with_empty' => false)),
         ));
 
         $this->setValidators(array(
             'userId'      => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
-            'addCash'     => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
-            'addGold'     => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
-            'description' => new sfValidatorPass(array('required' => true)),
+            'description' => new sfValidatorPass(array('required' => false)),
             'admin_id'    => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
         ));
 
@@ -45,14 +41,14 @@ class gvManageAddMoneyFormFiltersAdmin extends BaseAddMoneyFormFilter
         $query->select("s.username as admin_name, "  . $alias . ".*");
 //        $query->where($alias. ".money > 0");
 //        $query->andWhere("status = 1");
-        if(array_key_exists('status', $values)&& $values['status'] != ''){
-            $query->andWhere($alias . ".status = ?",$values["status"] );
+        $query->where("1=1");
+        if(array_key_exists('userId', $values)&& $values['userId']['text'] != ''){
+            $query->andWhere('userId =  ?',$values['userId']['text']);
         }
-//        if(array_key_exists('user_name', $values)&& $values['user_name'] != ''){
-//            $query->andWhere('lower(u.displayName) LIKE ?  OR u.userId = ?  OR u.userName LIKE  ?',
-//                array('%' . VtHelper::translateQuery($values['user_name']['text']) . '%', $values['user_name']['text'],
-//                    '%' . VtHelper::translateQuery($values['user_name']['text']) . '%'));
-//        }
+        if(array_key_exists('description', $values)&& $values['description'] ["text"] != ''){
+            $query->andWhere('lower(description) like  ?', "%" . $values['description']["text"] . "%");
+        }
+
         $query->leftJoin($alias. ".sfGuardUser s");
         $query->orderBy($alias . ".created_at desc");
         return $query;
