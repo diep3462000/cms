@@ -1,3 +1,15 @@
+LogWeb:
+  tableName: log_web
+  actAs:
+    Timestampable: ~
+  columns:
+    imei:  { type: string(12), notnull: true, comment: "imei thiêt bị" }
+    agent:  { type: string(12), notnull: true, comment: "agent" }
+    brownser:  { type: string(12), notnull: true, comment: "trình duyệt" }
+    refer:  { type: string(12), notnull: true, comment: "nguồn" }
+    ip:  { type: string(12), notnull: true, comment: "Link hình ảnh" }
+    platform: {type: string(32), notnull: false, comment: "loại thiết bị" }
+
 WebContent:
   tableName: web_content
   actAs:
