@@ -12,19 +12,17 @@
 </div>
 <?php
    if($platform == "android"){
-     if($link_android->getIsDirect() == 1){
+     if($link_android->getIsDirect() == 0){
        $link = $link_android->getLinkTai();
      } else {
        $link = '/wap/uploads/files/' . $link_android->getFileDown();
      }
    } else if($platform == "iphone") {
-      if($link_ios->getIsDirect() == 1){
+      if($link_ios->getIsDirect() == 0){
         $link = $link_ios->getLinkTai();
       } else {
         $link = '/wap/uploads/files/' . $link_ios->getFileDown();
       }
-   } else {
-    $link = "https://www.google.com";
    }
 ?>
 <?php if (isset($link)){ ?>
@@ -34,7 +32,7 @@
    count--;
 //   document.getElementById('countDown').innerHTML = count;
    if (count == 0) {
-    window.location = "<?php echo $link ?>";
+ //   window.location = "<?php echo $link ?>";
    }
   },1000);
  </script>
