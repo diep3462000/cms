@@ -2,12 +2,15 @@ WebContent:
   tableName: web_content
   actAs:
     Timestampable: ~
+    Sluggable:
+      fields: [title]
+      unique: true
   columns:
-    image:  { type: string(12), notnull: true, comment: "Link hình ảnh" }
+    image:  { type: string(255), notnull: true, comment: "Link hình ảnh" }
     content:     {  type: string(8000), notnull: false, comment: "Nội dung" }
-    title:     {  type: string(512), notnull: false, comment: "Tieu de" }
+    title:     {  type: string(100), notnull: false, comment: "Tieu de" }
     status:     {  type: integer(1), notnull: false, default: 0, comment: "0 tạo mới, 1 active" }
-    type: {  type: integer(1), notnull: false, comment: "0: tin tức, 1 sự kiện" }
+    type: {  type: integer(1), notnull: false, comment: "0: tin tức, 1 sự kiện, 2 giới thiệu, 3 hỗ trợ, 4 luật game" }
     is_hot:     {  type: integer(1), notnull: false, default: 0, comment: "1: top hot" }
     keywords:     {  type: string(256), notnull: false, comment: "keywords" }
     description:     {  type: string(512), notnull: false, comment: "description" }

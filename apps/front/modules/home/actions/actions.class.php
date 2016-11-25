@@ -12,8 +12,8 @@ class homeActions extends sfActions
 //        Lay list tin tuc moi nhat
         $this->news = WebContentTable::getNewestRecord(0);
         $this->totalNews = WebContentTable::getTotalRecord(0);
-        $this->games = GameTable::getNewestRecord();
-        $this->totalGames = GameTable::getTotalRecord();
+        $this->games = WebContentTable::getNewestRecord(4);
+        $this->totalGames = WebContentTable::getTotalRecord(4);
         $this->notify = NotifyTable::getNewestNofify(0);
     }
     public function executeGioiThieu(sfWebRequest $request)

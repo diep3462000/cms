@@ -15,7 +15,7 @@ class bkManageWebContentFormAdmin extends BaseWebContentForm
     public function configure()
     {
         $i18n = sfContext::getInstance()->getI18N();
-        $arr_type = array(0 =>$i18n->__("Tin Tức"), 2 => $i18n->__("Giới Thiệu"), 3 => $i18n->__("Hỗ trợ"));
+        $arr_type = array(0 =>$i18n->__("Tin Tức"), 2 => $i18n->__("Giới Thiệu"), 3 => $i18n->__("Hỗ trợ"), 4 => $i18n->__("Luật chơi"));
         $this->setWidgets(array(
             'content'    => new sfWidgetFormCKEditor(
                 array(
@@ -64,13 +64,6 @@ class bkManageWebContentFormAdmin extends BaseWebContentForm
                 )
             )
         ));
-
-//        $this->widgetSchema['status']->setOption('value_attribute_value', 1);
-
-//        $this->widgetSchema['status']->setDefault('value_attribute_value', 0);
-//        $this->widgetSchema['is_hot']->setDefault('value_attribute_value', 0);
-
-//        $this->widgetSchema['is_hot']->setOption('value_attribute_value', 1);
 
         $this->widgetSchema->setNameFormat('web_content[%s]');
 

@@ -23,8 +23,9 @@ class newsActions extends sfActions
 
     public function executeShow(sfWebRequest $request)
     {
-        $news_id = $request->getParameter("id", null);
-        $this->news = Doctrine_Core::getTable('WebContent')->find($news_id);
+        $slug = $request->getParameter("slug", null);
+
+        $this->news = WebContentTable::getObjectBySlug($slug);
     }
 
 

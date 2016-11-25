@@ -59,8 +59,10 @@ rule_game:
   url: /luat-choi
   param: {module: rules, action: index}
 tin_tuc_chi_tiet:
-  url: /tin-tuc-chi-tiet/:id
+  url: /tin-tuc/:slug
+  options: { model: WebContent, type: object, method: getObjectBySlug }
   param: { module: news, action: show }
+  requirements: { sf_method: get }
 rule_game_detail:
   url: /luat-choi-chi-tiet/:id
   param: { module: rules, action: show }

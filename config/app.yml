@@ -35,14 +35,18 @@ all:
   
 #  url_media_default_file: http://localhost:8086/images/default-image.jpg
 
-  upload_file: E:\Projects\kinggame\CMS\cms\web\wap\uploads
-  upload_avatar_dir: E:\2015\xampp\htdocs\vuagame\web\media\vuagameAvatars\upload
-  url_media_file: http://vuagame.vn/uploads
-  url_media_default_file: http://vuagame.vn/images/default-image.jpg
+#  upload_file: E:\Projects\kinggame\CMS\cms\web\wap\uploads
+#  upload_avatar_dir: E:\2015\xampp\htdocs\vuagame\web\media\vuagameAvatars\upload
+#  url_media_file: http://vuagame.vn/uploads
+#  url_media_default_file: http://vuagame.vn/images/default-image.jpg
 
   #upload_media_file: D:\data\Project\QT01_13068_VAS_VTP2.0\06.SOURCE\Draft\VTP2.0\web/uploads
   #url_media_file: http://192.168.174.52:9872/uploads
   #url_media_default_file: http://192.168.174.52:9872/images/default-image.jpg
+
+  upload_media_file: E:\PHP\bigken_new\cms\web\uploads
+  url_media_file: http://localhost:8088/uploads
+  url_media_default_file: http://localhost:8088/images/default-image.jpg
 
   image_default:
     default: '/img/default.png'

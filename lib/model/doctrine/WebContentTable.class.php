@@ -125,4 +125,13 @@ class WebContentTable extends Doctrine_Table
         return Doctrine::getTable('WebContent')->addActiveWebContentQuery($q, $type);
     }
 
+    public static function getObjectBySlug($slug)
+    {
+        $sql =   WebContentTable::getInstance()->createQuery('a')
+            ->select('*')
+            ->where('a.slug = ?', $slug)
+            ->orderBy('a.created_at desc');
+        return $sql->fetchOne();
+    }
+
 }

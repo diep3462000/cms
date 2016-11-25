@@ -10,21 +10,19 @@ class rulesActions extends sfActions
     public function executeIndex(sfWebRequest $request)
     {
         $this->title = 'Luật chơi';
-//        $this->rules = GameTable::getAllRecord();
-//        $this->category = $this->getRoute()->getObject();
         $this->pager = new sfDoctrinePager(
-            'Game',
+            'WebContent',
             sfConfig::get('app_wap_max_items_on_page')
         );
-        $this->pager->setQuery(GameTable::getActiveGameQuery());
+        $this->pager->setQuery(WebContentTable::getActiveWebContentQuery(4));
         $this->pager->setPage($request->getParameter('page', 1));
         $this->pager->init();
     }
 
     public function executeShow(sfWebRequest $request)
     {
-        $games_id = $request->getParameter("id", null);
-        $this->games = Doctrine_Core::getTable('Game')->find($games_id);
+        $slug = $request->getParameter("slug", null);
+        $this->games = WebContentTable::getObjectBySlug($slug);
     }
 
 

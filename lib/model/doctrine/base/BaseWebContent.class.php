@@ -41,11 +41,11 @@ abstract class BaseWebContent extends sfDoctrineRecord
     public function setTableDefinition()
     {
         $this->setTableName('web_content');
-        $this->hasColumn('image', 'string', 12, array(
+        $this->hasColumn('image', 'string', 255, array(
              'type' => 'string',
              'notnull' => true,
              'comment' => 'Link hình ảnh',
-             'length' => 12,
+             'length' => 255,
              ));
         $this->hasColumn('content', 'string', 8000, array(
              'type' => 'string',
@@ -53,11 +53,11 @@ abstract class BaseWebContent extends sfDoctrineRecord
              'comment' => 'Nội dung',
              'length' => 8000,
              ));
-        $this->hasColumn('title', 'string', 512, array(
+        $this->hasColumn('title', 'string', 100, array(
              'type' => 'string',
              'notnull' => false,
              'comment' => 'Tieu de',
-             'length' => 512,
+             'length' => 100,
              ));
         $this->hasColumn('status', 'integer', 1, array(
              'type' => 'integer',
@@ -69,7 +69,7 @@ abstract class BaseWebContent extends sfDoctrineRecord
         $this->hasColumn('type', 'integer', 1, array(
              'type' => 'integer',
              'notnull' => false,
-             'comment' => '0: tin tức, 1 sự kiện',
+             'comment' => '0: tin tức, 1 sự kiện, 2 giới thiệu, 3 hỗ trợ, 4 luật game',
              'length' => 1,
              ));
         $this->hasColumn('is_hot', 'integer', 1, array(
@@ -97,6 +97,14 @@ abstract class BaseWebContent extends sfDoctrineRecord
     {
         parent::setUp();
         $timestampable0 = new Doctrine_Template_Timestampable();
+        $sluggable0 = new Doctrine_Template_Sluggable(array(
+             'fields' => 
+             array(
+              0 => 'title',
+             ),
+             'unique' => true,
+             ));
         $this->actAs($timestampable0);
+        $this->actAs($sluggable0);
     }
 }

@@ -19,6 +19,7 @@
 <!--</div>-->
 <!-- ./CONTAINER -->
 <!--Phan tin tuc moi-->
+<?php if($totalNews > 0):?>
 <div class="news">
  <div class="newsBar">
   <div class="title"><i class="fa fa-calendar" aria-hidden="true"></i> Tin tức</div>
@@ -34,8 +35,9 @@
  <?php endif; ?>
 
 </div>
+<?php endif; ?>
 
-
+<?php if($totalGames > 0):?>
 <!--Phan luat choi moi-->
 <div class="news">
  <div class="newsBar">
@@ -53,3 +55,4 @@
   </div>
  <?php endif; ?>
 </div>
+<?php endif; ?>
