@@ -16,10 +16,10 @@ abstract class BaseLogPaymentForm extends BaseFormDoctrine
   {
     $this->setWidgets(array(
       'id'           => new sfWidgetFormInputHidden(),
-      'userid'       => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('User'), 'add_empty' => false)),
+      'userid'       => new sfWidgetFormInputText(),
       'seria'        => new sfWidgetFormInputText(),
       'pin_card'     => new sfWidgetFormInputText(),
-      'providerId'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Provider'), 'add_empty' => true)),
+      'providerId'   => new sfWidgetFormInputText(),
       'money'        => new sfWidgetFormInputText(),
       'type'         => new sfWidgetFormInputText(),
       'status'       => new sfWidgetFormInputText(),
@@ -32,10 +32,10 @@ abstract class BaseLogPaymentForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'id'           => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'userid'       => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('User'))),
+      'userid'       => new sfValidatorInteger(),
       'seria'        => new sfValidatorString(array('max_length' => 30, 'required' => false)),
       'pin_card'     => new sfValidatorString(array('max_length' => 30, 'required' => false)),
-      'providerId'   => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Provider'), 'required' => false)),
+      'providerId'   => new sfValidatorString(array('max_length' => 30, 'required' => false)),
       'money'        => new sfValidatorInteger(array('required' => false)),
       'type'         => new sfValidatorInteger(array('required' => false)),
       'status'       => new sfValidatorInteger(array('required' => false)),

@@ -63,10 +63,10 @@ class chargeActions extends sfActions
                     $api_response = null;
                     if($response['status'] == 0 || $response['status']  == '00'){
                         $api_response =  new Response(PaymentErrorCode::SUCCESS, PaymentErrorCode::getMessage(PaymentErrorCode::SUCCESS, PaymentErrorCode::$messages), $response);
-                        LogPaymentTable::writeLogs($userId, isset($response['realAmount'])? $response['realAmount']: 0 , 0, $response['status'], $response['message'], $cardSerial, $cardPin, $request_time, $provider);
+                        LogPaymentTable::writeLogs($userId, isset($response['realAmount'])? $response['realAmount']: 0 , 0, $response['status'], $response['message'], $cardSerial, $cardPin, $request_time);
                         LogPaymentTable::resetLockPayment($userId);
                     } else {
-                        LogPaymentTable::writeLogs($userId,0 , 0, $response['status'], $response['message'], $cardSerial, $cardPin, $request_time, $provider);
+                        LogPaymentTable::writeLogs($userId,0 , 0, $response['status'], $response['message'], $cardSerial, $cardPin, $request_time);
                         $api_response = new Response(PaymentErrorCode::FAILURE, PaymentErrorCode::getMessage(PaymentErrorCode::FAILURE, PaymentErrorCode::$messages));
                     }
                     return $api_response;

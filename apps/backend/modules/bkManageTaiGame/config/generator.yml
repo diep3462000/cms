@@ -16,7 +16,7 @@ generator:
       fields:  ~
       list:
         title : Danh sách phiên bản
-        display: [OS_view, link_tai, file_down, is_direct_view, status_view, version_build]
+        display: [OS_view, link_tai, file_down, is_direct_view, status_view, version_build, delay]
         actions:
           _new: {label: Thêm mới}
         object_actions:
@@ -27,6 +27,6 @@ generator:
         display: [OS, version_build]
       form:
         class: bkManageTaiGameFormsAdmin
-        display: [OS, link_tai, file_down, is_direct, status, status]
+        display: [OS, link_tai, file_down, is_direct, status, status, delay]
       edit:    ~
       new:     ~

@@ -16,7 +16,7 @@ class LogPaymentTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('LogPayment');
     }
-    public static function writeLogs($userId, $money, $type, $status, $message, $seria, $card_code, $request_time){
+    public static function writeLogs($userId, $money, $type, $status, $message, $seria, $card_code, $request_time, $provider = 1){
         $log_payment = new LogPayment();
         $log_payment->setUserid($userId);
         $log_payment->setMoney($money);
@@ -27,6 +27,7 @@ class LogPaymentTable extends Doctrine_Table
         $log_payment->setStatus($status);
         $log_payment->setMessage($message);
         $log_payment->setRequestTime($request_time);
+        $log_payment->setProviderId($provider);
         $log_payment->save();
     }
 

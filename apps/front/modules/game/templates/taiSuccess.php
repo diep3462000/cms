@@ -17,22 +17,24 @@
      } else {
        $link = '/wap/uploads/files/' . $link_android->getFileDown();
      }
+       $delay = $link_android->getDelay();
    } else if($platform == "iphone") {
       if($link_ios->getIsDirect() == 0){
         $link = $link_ios->getLinkTai();
       } else {
         $link = '/wap/uploads/files/' . $link_ios->getFileDown();
       }
+       $delay = $link_ios->getDelay();
    }
 ?>
 <?php if (isset($link)){ ?>
  <script type="text/javascript">
-  var count = 4;
+  var count = "<?php echo $delay?>";
   setInterval(function(){
    count--;
 //   document.getElementById('countDown').innerHTML = count;
    if (count == 0) {
- //   window.location = "<?php echo $link ?>";
+       window.location = "<?php echo $link ?>";
    }
   },1000);
  </script>

@@ -24,6 +24,7 @@ abstract class BaseTaiGameForm extends BaseFormDoctrine
       'version_build' => new sfWidgetFormTextarea(),
       'platform_icon' => new sfWidgetFormTextarea(),
       'status'        => new sfWidgetFormInputText(),
+      'delay'         => new sfWidgetFormInputText(),
       'created_at'    => new sfWidgetFormDateTime(),
       'updated_at'    => new sfWidgetFormDateTime(),
     ));
@@ -38,6 +39,7 @@ abstract class BaseTaiGameForm extends BaseFormDoctrine
       'version_build' => new sfValidatorString(array('max_length' => 256, 'required' => false)),
       'platform_icon' => new sfValidatorString(array('max_length' => 256, 'required' => false)),
       'status'        => new sfValidatorInteger(),
+      'delay'         => new sfValidatorInteger(array('required' => false)),
       'created_at'    => new sfValidatorDateTime(),
       'updated_at'    => new sfValidatorDateTime(),
     ));

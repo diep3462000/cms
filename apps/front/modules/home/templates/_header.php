@@ -14,10 +14,10 @@
             <span class = "icon-bar"></span>
         </button>
         <a class = "navbar-brand" href="/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
-        <a class = "navbar-brand" href="<?php echo url_for('tin_tuc')?>" ><?php echo __("Tin tức")?></a></li>
-        <a class = "navbar-brand" href="<?php echo url_for('tai_game')?>" ><?php echo __("Tải game")?></a></li>
+        <a class = "navbar-brand" href="<?php echo VtHelper::formatUrl(url_for('tin_tuc')) ?>" ><?php echo __("Tin tức")?></a></li>
+        <a class = "navbar-brand" href="<?php echo VtHelper::formatUrl(url_for('tai_game'))?>" ><?php echo __("Tải game")?></a></li>
 
-        <a class = "navbar-brand" href="<?php echo url_for('nap_tien')?>" ><?php echo __("Nạp ken")?></a></li>
+        <a class = "navbar-brand" href="<?php echo VtHelper::formatUrl(url_for('nap_tien'))?>" ><?php echo __("Nạp ken")?></a></li>
         <!--<a class = "navbar-brand" href="https://bigken.net/tai-game.html">Tải game</a></li>-->
         <!--<a class = "navbar-brand" href="https://bigken.net/tin-tuc.html">Thông Tin</a></li>-->
     </div>
@@ -25,13 +25,13 @@
         <ul class = "nav navbar-nav">
 
             <li>
-                <a href="<?php echo url_for('gioi_thieu')?>" title="Giới thiệu"> <?php echo __("Giới thiệu")?> </a>
+                <a href="<?php echo VtHelper::formatUrl(url_for('gioi_thieu'))?>" title="Giới thiệu"> <?php echo __("Giới thiệu")?> </a>
             </li>
             <li>
-                <a href="<?php echo url_for('ho_tro')?>" title="Hỗ trợ"> <?php echo __("Hỗ trợ")?> </a>
+                <a href="<?php echo VtHelper::formatUrl(url_for('ho_tro'))?>" title="Hỗ trợ"> <?php echo __("Hỗ trợ")?> </a>
             </li>
             <li>
-                <a href="<?php echo url_for('doi_thuong')?>" title="Game đổi thưởng"> <?php echo __("Đổi thưởng")?> </a>
+                <a href="<?php echo VtHelper::formatUrl(url_for('doi_thuong'))?>" title="Game đổi thưởng"> <?php echo __("Đổi thưởng")?> </a>
             </li>
         </ul>
     </div>

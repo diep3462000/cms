@@ -27,8 +27,11 @@ class VtHelper
 
         return $string;
     }
+    public static function formatUrl($url){
+       return  str_replace('index.php/', "", $url);
+    }
     public static function getPlatform(){
-        $agent = $_SERVER['HTTP_USER_AGENT'];
+        $agent = mb_strtolower($_SERVER['HTTP_USER_AGENT']);
         if (strpos($agent, 'android') !== false) {
             return 'android';
         } elseif(strpos($agent, 'iphone') !== false) {

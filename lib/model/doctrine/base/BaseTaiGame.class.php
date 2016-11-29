@@ -13,6 +13,7 @@
  * @property string $version_build
  * @property string $platform_icon
  * @property integer $status
+ * @property integer $delay
  * 
  * @method string  getOS()            Returns the current record's "OS" value
  * @method string  getLinkTai()       Returns the current record's "link_tai" value
@@ -22,6 +23,7 @@
  * @method string  getVersionBuild()  Returns the current record's "version_build" value
  * @method string  getPlatformIcon()  Returns the current record's "platform_icon" value
  * @method integer getStatus()        Returns the current record's "status" value
+ * @method integer getDelay()         Returns the current record's "delay" value
  * @method TaiGame setOS()            Sets the current record's "OS" value
  * @method TaiGame setLinkTai()       Sets the current record's "link_tai" value
  * @method TaiGame setFileDown()      Sets the current record's "file_down" value
@@ -30,6 +32,7 @@
  * @method TaiGame setVersionBuild()  Sets the current record's "version_build" value
  * @method TaiGame setPlatformIcon()  Sets the current record's "platform_icon" value
  * @method TaiGame setStatus()        Sets the current record's "status" value
+ * @method TaiGame setDelay()         Sets the current record's "delay" value
  * 
  * @package    Vt_Portals
  * @subpackage model
@@ -87,6 +90,12 @@ abstract class BaseTaiGame extends sfDoctrineRecord
              'type' => 'integer',
              'notnull' => true,
              'comment' => '0: inactive, 1: active',
+             'length' => 1,
+             ));
+        $this->hasColumn('delay', 'integer', 1, array(
+             'type' => 'integer',
+             'notnull' => false,
+             'comment' => 'thời gian đợi trước khi chuyển link',
              'length' => 1,
              ));
     }

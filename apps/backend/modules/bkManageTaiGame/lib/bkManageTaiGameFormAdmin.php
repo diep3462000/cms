@@ -25,6 +25,7 @@ class bkManageTaiGameFormsAdmin extends BaseTaiGameForm
 //            'version' => new sfWidgetFormTextarea(),
             'platform_icon' => new sfWidgetFormTextarea(),
             'status'    => new sfWidgetFormInputCheckbox(),
+            'delay'         => new sfWidgetFormInputText(),
 
         ));
 
@@ -36,6 +37,7 @@ class bkManageTaiGameFormsAdmin extends BaseTaiGameForm
 //            'version' => new sfValidatorString(array('max_length' => 256, 'required' => false)),
             'platform_icon' => new sfValidatorString(array('max_length' => 256, 'required' => false)),
             'status'    => new sfValidatorBoolean(array('required' => false)),
+            'delay'         => new sfValidatorInteger(array('required' => false)),
         ));
         $this->setWidget('file_down', new sfWidgetFormInputFileEditable(
             array('edit_mode' => !$this->isNew(),

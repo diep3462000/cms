@@ -10,16 +10,13 @@ Doctrine_Manager::getInstance()->bindComponent('Provider', 'doctrine');
  * @property integer $id
  * @property string $code
  * @property string $description
- * @property Doctrine_Collection $LogPayments
  * 
- * @method integer             getId()          Returns the current record's "id" value
- * @method string              getCode()        Returns the current record's "code" value
- * @method string              getDescription() Returns the current record's "description" value
- * @method Doctrine_Collection getLogPayments() Returns the current record's "LogPayments" collection
- * @method Provider            setId()          Sets the current record's "id" value
- * @method Provider            setCode()        Sets the current record's "code" value
- * @method Provider            setDescription() Sets the current record's "description" value
- * @method Provider            setLogPayments() Sets the current record's "LogPayments" collection
+ * @method integer  getId()          Returns the current record's "id" value
+ * @method string   getCode()        Returns the current record's "code" value
+ * @method string   getDescription() Returns the current record's "description" value
+ * @method Provider setId()          Sets the current record's "id" value
+ * @method Provider setCode()        Sets the current record's "code" value
+ * @method Provider setDescription() Sets the current record's "description" value
  * 
  * @package    Vt_Portals
  * @subpackage model
@@ -54,8 +51,6 @@ abstract class BaseProvider extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasMany('LogPayment as LogPayments', array(
-             'local' => 'id',
-             'foreign' => 'providerId'));
+        
     }
 }
