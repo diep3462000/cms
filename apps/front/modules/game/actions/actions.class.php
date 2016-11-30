@@ -35,6 +35,22 @@ class gameActions extends sfActions
         $this->link_android = TaiGameTable::getLinkByOs(0);
         $this->link_ios = TaiGameTable::getLinkByOs(1);
     }
+    public function executeTaiFull(sfWebRequest $request)
+    {
+        $this->platform  = VtHelper::getPlatform();
+        $this->link_android = TaiGameTable::getLinkByOs(0);
+        $this->link_ios = TaiGameTable::getLinkByOs(1);
+
+        $logger = new sfFileLogger(new sfEventDispatcher(), array('file' => sfConfig::get('sf_log_dir') . '/tai/tai_' . date('d') . '.log'));
+        $logger->log('[executeTai] check doi tac:'. "ip:" . VtHelper::getRealIpAddr());
+        $log = new LogWeb();
+        $log->setAgent($_SERVER['HTTP_USER_AGENT']);
+        $log->setBrownser(VtHelper::get_browser_name());
+        $log->setIp(VtHelper::getDeviceIp());
+        $log->setPlatform($this->platform);
+        $log->setRefer(isset($_SERVER['HTTP_REFERER'])? $_SERVER['HTTP_REFERER'] : "");
+        $log->save();
+    }
     public function executeDl(sfWebRequest $request)
     {
     }

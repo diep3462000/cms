@@ -29,6 +29,10 @@ tai_game:
 dl:
   url: /dl
   param: {module: game, action: dl}
+tai_direct:
+  url: /tai/:slug
+  param: {module: game, action: taiFull}
+  options: { suffix: .apk}
 tai:
   url: /tai
   param: {module: game, action: tai}

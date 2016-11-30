@@ -31,7 +31,7 @@
                 <a href="<?php echo VtHelper::formatUrl(url_for('ho_tro'))?>" title="Hỗ trợ"> <?php echo __("Hỗ trợ")?> </a>
             </li>
             <li>
-                <a href="<?php echo VtHelper::formatUrl(url_for('doi_thuong'))?>" title="Game đổi thưởng"> <?php echo __("Đổi thưởng")?> </a>
+                <a href="<?php #echo VtHelper::formatUrl(url_for('doi_thuong'))?>" title="Game đổi thưởng"> <?php echo __("Đổi thưởng")?> </a>
             </li>
         </ul>
     </div>

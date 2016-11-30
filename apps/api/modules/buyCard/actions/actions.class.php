@@ -45,11 +45,11 @@ class buyCardActions extends sfActions
             $logger_err->log("[error buyCardActions index invalid request] check ip:" . VtHelper::getRealIpAddr()  . "|RequestKey: " . $securityKey . "|requestId" .  $requestId);
             return new Response(BuyCardErrorCode::FAILURE, BuyCardErrorCode::getMessage(BuyCardErrorCode::FAILURE, BuyCardErrorCode::$messages));
         }
-        $sum_request = ExchangeAssetRequestTable::getSumRequestByDay($exchangeRequest->getRequestUserId());
-        if($sum_request && $sum_request->sum_money > 1500000){
-            $logger_err->log("[error buyCardActions index invalid request] check ip:" . VtHelper::getRealIpAddr()  . "Đoi thuong toi nguong" . $sum_request->sum_money);
-            return new Response(BuyCardErrorCode::FAILURE, BuyCardErrorCode::getMessage(BuyCardErrorCode::FAILURE, BuyCardErrorCode::$messages));
-        }
+//        $sum_request = ExchangeAssetRequestTable::getSumRequestByDay($exchangeRequest->getRequestUserId());
+//        if($sum_request && $sum_request->sum_money > 1500000){
+//            $logger_err->log("[error buyCardActions index invalid request] check ip:" . VtHelper::getRealIpAddr()  . "Đoi thuong toi nguong" . $sum_request->sum_money);
+//            return new Response(BuyCardErrorCode::FAILURE, BuyCardErrorCode::getMessage(BuyCardErrorCode::FAILURE, BuyCardErrorCode::$messages));
+//        }
         $service = new WsBuyCard();
         $request_topup_id = $config['partnerName'].'_'.time().rand(000, 999);
         $sofpin = $service->downloadSofpin($info,$request_topup_id);
