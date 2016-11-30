@@ -2138,8 +2138,10 @@ GiftCode:
     status: { type: integer(2),  comment: "Trạng thái: 1: active, 0: đã sử dụng"}
     ip: { type: string(50),  comment: "Đổi đến từ IP"}
     description: { type: string(250),  comment: "Mô tả"}
+    adminId: { type: integer(11),  comment: "adminid người tạo sự kiện"}
   relations:
     GiftEvent:       { class: GiftEvent, local: giftEventId, foreign: giftEventId, type: one, foreignAlias: GiftCodes }
+    sfGuardUser: { class: sfGuardUser, local: adminId, type: one, foreignAlias: GuardUser }
 GiftEvent:
   connection: doctrine
   tableName: gift_event

@@ -27,6 +27,7 @@ abstract class BaseGiftCodeForm extends BaseFormDoctrine
       'status'      => new sfWidgetFormInputText(),
       'ip'          => new sfWidgetFormInputText(),
       'description' => new sfWidgetFormInputText(),
+      'adminId'     => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('sfGuardUser'), 'add_empty' => true)),
       'created_at'  => new sfWidgetFormDateTime(),
       'updated_at'  => new sfWidgetFormDateTime(),
     ));
@@ -44,6 +45,7 @@ abstract class BaseGiftCodeForm extends BaseFormDoctrine
       'status'      => new sfValidatorInteger(array('required' => false)),
       'ip'          => new sfValidatorString(array('max_length' => 50, 'required' => false)),
       'description' => new sfValidatorString(array('max_length' => 250, 'required' => false)),
+      'adminId'     => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('sfGuardUser'), 'required' => false)),
       'created_at'  => new sfValidatorDateTime(),
       'updated_at'  => new sfValidatorDateTime(),
     ));

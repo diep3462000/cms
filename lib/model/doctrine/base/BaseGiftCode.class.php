@@ -19,34 +19,40 @@ Doctrine_Manager::getInstance()->bindComponent('GiftCode', 'doctrine');
  * @property integer $status
  * @property string $ip
  * @property string $description
+ * @property integer $adminId
  * @property GiftEvent $GiftEvent
+ * @property sfGuardUser $sfGuardUser
  * 
- * @method integer   getGiftId()      Returns the current record's "giftId" value
- * @method integer   getGiftEventId() Returns the current record's "giftEventId" value
- * @method integer   getUserId()      Returns the current record's "userId" value
- * @method string    getUserName()    Returns the current record's "userName" value
- * @method integer   getCashValue()   Returns the current record's "cashValue" value
- * @method integer   getGoldValue()   Returns the current record's "goldValue" value
- * @method string    getCode()        Returns the current record's "code" value
- * @method timestamp getExpiredTime() Returns the current record's "expiredTime" value
- * @method integer   getReuseable()   Returns the current record's "reuseable" value
- * @method integer   getStatus()      Returns the current record's "status" value
- * @method string    getIp()          Returns the current record's "ip" value
- * @method string    getDescription() Returns the current record's "description" value
- * @method GiftEvent getGiftEvent()   Returns the current record's "GiftEvent" value
- * @method GiftCode  setGiftId()      Sets the current record's "giftId" value
- * @method GiftCode  setGiftEventId() Sets the current record's "giftEventId" value
- * @method GiftCode  setUserId()      Sets the current record's "userId" value
- * @method GiftCode  setUserName()    Sets the current record's "userName" value
- * @method GiftCode  setCashValue()   Sets the current record's "cashValue" value
- * @method GiftCode  setGoldValue()   Sets the current record's "goldValue" value
- * @method GiftCode  setCode()        Sets the current record's "code" value
- * @method GiftCode  setExpiredTime() Sets the current record's "expiredTime" value
- * @method GiftCode  setReuseable()   Sets the current record's "reuseable" value
- * @method GiftCode  setStatus()      Sets the current record's "status" value
- * @method GiftCode  setIp()          Sets the current record's "ip" value
- * @method GiftCode  setDescription() Sets the current record's "description" value
- * @method GiftCode  setGiftEvent()   Sets the current record's "GiftEvent" value
+ * @method integer     getGiftId()      Returns the current record's "giftId" value
+ * @method integer     getGiftEventId() Returns the current record's "giftEventId" value
+ * @method integer     getUserId()      Returns the current record's "userId" value
+ * @method string      getUserName()    Returns the current record's "userName" value
+ * @method integer     getCashValue()   Returns the current record's "cashValue" value
+ * @method integer     getGoldValue()   Returns the current record's "goldValue" value
+ * @method string      getCode()        Returns the current record's "code" value
+ * @method timestamp   getExpiredTime() Returns the current record's "expiredTime" value
+ * @method integer     getReuseable()   Returns the current record's "reuseable" value
+ * @method integer     getStatus()      Returns the current record's "status" value
+ * @method string      getIp()          Returns the current record's "ip" value
+ * @method string      getDescription() Returns the current record's "description" value
+ * @method integer     getAdminId()     Returns the current record's "adminId" value
+ * @method GiftEvent   getGiftEvent()   Returns the current record's "GiftEvent" value
+ * @method sfGuardUser getSfGuardUser() Returns the current record's "sfGuardUser" value
+ * @method GiftCode    setGiftId()      Sets the current record's "giftId" value
+ * @method GiftCode    setGiftEventId() Sets the current record's "giftEventId" value
+ * @method GiftCode    setUserId()      Sets the current record's "userId" value
+ * @method GiftCode    setUserName()    Sets the current record's "userName" value
+ * @method GiftCode    setCashValue()   Sets the current record's "cashValue" value
+ * @method GiftCode    setGoldValue()   Sets the current record's "goldValue" value
+ * @method GiftCode    setCode()        Sets the current record's "code" value
+ * @method GiftCode    setExpiredTime() Sets the current record's "expiredTime" value
+ * @method GiftCode    setReuseable()   Sets the current record's "reuseable" value
+ * @method GiftCode    setStatus()      Sets the current record's "status" value
+ * @method GiftCode    setIp()          Sets the current record's "ip" value
+ * @method GiftCode    setDescription() Sets the current record's "description" value
+ * @method GiftCode    setAdminId()     Sets the current record's "adminId" value
+ * @method GiftCode    setGiftEvent()   Sets the current record's "GiftEvent" value
+ * @method GiftCode    setSfGuardUser() Sets the current record's "sfGuardUser" value
  * 
  * @package    Vt_Portals
  * @subpackage model
@@ -128,6 +134,11 @@ abstract class BaseGiftCode extends sfDoctrineRecord
              'comment' => 'Mô tả',
              'length' => 250,
              ));
+        $this->hasColumn('adminId', 'integer', 11, array(
+             'type' => 'integer',
+             'comment' => 'adminid người tạo sự kiện',
+             'length' => 11,
+             ));
     }
 
     public function setUp()
@@ -136,6 +147,10 @@ abstract class BaseGiftCode extends sfDoctrineRecord
         $this->hasOne('GiftEvent', array(
              'local' => 'giftEventId',
              'foreign' => 'giftEventId'));
+
+        $this->hasOne('sfGuardUser', array(
+             'local' => 'adminId',
+             'foreign' => 'id'));
 
         $timestampable0 = new Doctrine_Template_Timestampable();
         $this->actAs($timestampable0);
