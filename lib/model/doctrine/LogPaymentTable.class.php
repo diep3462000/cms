@@ -42,7 +42,7 @@ class LogPaymentTable extends Doctrine_Table
     public static function countLockPayment($userId){
         return LogPaymentTable::getInstance()->createQuery()
             ->where('userid = ?', $userId)
-            ->andwhere('status = ?', '4')
+            ->andwhere('status != ?', '4')
             ->andwhere('request_time >=?',date("Y-m-d H:i:s", time() - 3600))
             ->count();
     }

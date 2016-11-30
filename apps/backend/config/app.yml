@@ -141,6 +141,9 @@ all:
             Quản lý link tải game:
               credentials: [admin]
               route: tai_game
+            Quản lý log truy cập web tải game:
+              credentials: [admin]
+              route: log_web
             Quản lý testcase:
               credentials: [admin]
               route: gv_test_case

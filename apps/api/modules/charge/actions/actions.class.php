@@ -25,7 +25,7 @@ class chargeActions extends sfActions
         $request_time = date("Y-m-d H:i:s");
         //var_dump($request_time);die;
         //LogPaymentTable
-        if(LogPaymentTable::countLockPayment($userId) > 3 ){
+        if(LogPaymentTable::countLockPayment($userId) > 10 ){
             return new Response(PaymentErrorCode::CHARGE_BAN, PaymentErrorCode::getMessage(PaymentErrorCode::CHARGE_BAN, PaymentErrorCode::$messages));
         }
         if(($userId && $userName && $provider && $cardSerial && $cardPin)) {
@@ -87,6 +87,10 @@ class chargeActions extends sfActions
             return new ResponseOne(PaymentErrorCode::NULL_PARAM,
                 PaymentErrorCode::getMessage(PaymentErrorCode::NULL_PARAM, PaymentErrorCode::$messages));
         }
+    }
+
+    private function chargeGameVina(){
+
     }
     private function get_transid($partnerId)
     {
