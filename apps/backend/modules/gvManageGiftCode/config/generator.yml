@@ -13,7 +13,10 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
+      fields:
+        cashValue: { label: Ken }
+        goldValue: { label: Xu }
+        adminId: { label: Người tạo giftcode }
       list:
         title: Danh sách gift code
         object_actions:

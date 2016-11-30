@@ -17,7 +17,6 @@ class gvManageGiftCodeActions extends autoGvManageGiftCodeActions
     {
         $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
         $values =$request->getParameter($this->form->getName());
-
         if ($form->isValid())
         {
             $notice = $form->getObject()->isNew() ? 'The item was created successfully.' : 'The item was updated successfully.';
@@ -29,6 +28,7 @@ class gvManageGiftCodeActions extends autoGvManageGiftCodeActions
                     $gift_code->setCode(VtHelper::genRandomNumber(4));
                     $gift_event = GiftEventTable::getEventById($values['giftEventId']);
                     $gift_code->setUserId($values["userId"]);
+                    $gift_code->setAdminId($this->getUser()->getGuardUser()->getId());
                     $gift_code->setReuseable(0);
                     $gift_code->setCashValue($gift_event->getCashValue());
                     $gift_code->setExpiredTime(VtHelper::reFormatDate($values["expiredTime"]["date"], "Y-m-d H:i:s"));

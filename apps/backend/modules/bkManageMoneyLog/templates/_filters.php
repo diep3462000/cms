@@ -2,7 +2,7 @@
 <?php use_javascripts_for_form($form) ?>
 
 <div class="row-fluid">
-    <div class="span9">
+    <div class="span6">
 
       <div class="control-group">
               <?php if ($form->hasGlobalErrors()): ?>
@@ -10,7 +10,7 @@
               <?php endif; ?>
       
               <form action="<?php echo url_for('purchase_money_log_collection', array('action' => 'filter')) ?>" method="post">
-                  <div class="span11">
+                  <div class="span12 column-container">
                       <?php echo $form->renderHiddenFields() ?>
                       <?php foreach ($configuration->getFormFilterFields($form) as $name => $field): ?>
                       <?php if ((isset($form[$name]) && $form[$name]->isHidden()) || (!isset($form[$name]) && $field->isReal())) continue ?>

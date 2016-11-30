@@ -57,7 +57,7 @@ foreach ($dataDate2 as $valDate2){
         <div class="span12">
             <div class="row-fluid " id="inspect-summary-div">
                 <div class="span3">
-                    <p style="font-size: 20px;"><?php echo __('Tổng phế cash') ?></p>
+                    <p style="font-size: 20px;"><?php echo __('Tổng phế Ken') ?></p>
                     <span style="font-size: 25px;"><?php echo VtHelper::number_format(array_sum($arrRevenueTotal2)). __(' VND'); ?> </span>
                     <table class="table" style="margin-top: 10px;">
                         <tr><td><?php echo __('Hôm nay') ?></td><td style="text-align: center"><?php echo VtHelper::number_format($revenuCashToday[0]['sumTaxValue']);?> <?php echo __('KEN')?></td></tr>
@@ -67,7 +67,7 @@ foreach ($dataDate2 as $valDate2){
                     </table>
                 </div>
                 <div class="span3">
-                    <p style="font-size: 20px;"><?php echo __('Tổng phế gold')?></p>
+                    <p style="font-size: 20px;"><?php echo __('Tổng phế Xu')?></p>
                     <span style="font-size: 25px;"><?php echo VtHelper::number_format(array_sum($arrRevenueGoldTotal2)); ?></span>
 
                     <table class="table" style="margin-top: 10px;">

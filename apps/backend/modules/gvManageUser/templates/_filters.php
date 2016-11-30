@@ -10,7 +10,7 @@
               <?php endif; ?>
       
               <form action="<?php echo url_for('user_collection', array('action' => 'filter')) ?>" method="post">
-                  <div class="span11">
+                  <div class="span11 column-container">
                       <?php echo $form->renderHiddenFields() ?>
                       <?php foreach ($configuration->getFormFilterFields($form) as $name => $field): ?>
                       <?php if ((isset($form[$name]) && $form[$name]->isHidden()) || (!isset($form[$name]) && $field->isReal())) continue ?>
