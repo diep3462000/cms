@@ -13,7 +13,7 @@ abstract class BaseWebContentFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'image'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'image'       => new sfWidgetFormFilterInput(),
       'content'     => new sfWidgetFormFilterInput(),
       'title'       => new sfWidgetFormFilterInput(),
       'status'      => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),

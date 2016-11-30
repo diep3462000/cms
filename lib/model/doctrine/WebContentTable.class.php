@@ -134,4 +134,15 @@ class WebContentTable extends Doctrine_Table
         return $sql->fetchOne();
     }
 
+    public static function checkSlug($slug, $id)
+    {
+
+        $sql =   WebContentTable::getInstance()->createQuery('a')
+            ->select('*')
+            ->where('a.slug = ?', $slug)
+            ->andWhere('a.id != ?', $id)
+            ->orderBy('a.created_at desc');
+        return $sql->count();
+    }
+
 }

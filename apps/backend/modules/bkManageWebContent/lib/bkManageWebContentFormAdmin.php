@@ -15,7 +15,7 @@ class bkManageWebContentFormAdmin extends BaseWebContentForm
     public function configure()
     {
         $i18n = sfContext::getInstance()->getI18N();
-        $arr_type = array(0 =>$i18n->__("Tin Tức"), 2 => $i18n->__("Giới Thiệu"), 3 => $i18n->__("Hỗ trợ"), 4 => $i18n->__("Luật chơi"));
+        $arr_type = array(0 =>$i18n->__("Tin Tức"), 2 => $i18n->__("Giới Thiệu"), 3 => $i18n->__("Hỗ trợ"), 4 => $i18n->__("Luật chơi"), 5 => $i18n->__("Điều lệ"));
         $this->setWidgets(array(
             'content'    => new sfWidgetFormCKEditor(
                 array(

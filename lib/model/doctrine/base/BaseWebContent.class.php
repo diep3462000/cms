@@ -43,7 +43,7 @@ abstract class BaseWebContent extends sfDoctrineRecord
         $this->setTableName('web_content');
         $this->hasColumn('image', 'string', 255, array(
              'type' => 'string',
-             'notnull' => true,
+             'notnull' => false,
              'comment' => 'Link hình ảnh',
              'length' => 255,
              ));
@@ -67,7 +67,7 @@ abstract class BaseWebContent extends sfDoctrineRecord
         $this->hasColumn('type', 'integer', 1, array(
              'type' => 'integer',
              'notnull' => false,
-             'comment' => '0: tin tức, 1 sự kiện, 2 giới thiệu, 3 hỗ trợ, 4 luật game',
+             'comment' => '0: tin tức, 1 sự kiện, 2 giới thiệu, 3 hỗ trợ, 4 luật game, 5 điều lệ',
              'length' => 1,
              ));
         $this->hasColumn('is_hot', 'boolean', null, array(

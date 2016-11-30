@@ -31,7 +31,7 @@ abstract class BaseWebContentForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'id'          => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'image'       => new sfValidatorString(array('max_length' => 255)),
+      'image'       => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'content'     => new sfValidatorString(array('max_length' => 8000, 'required' => false)),
       'title'       => new sfValidatorString(array('max_length' => 100, 'required' => false)),
       'status'      => new sfValidatorBoolean(array('required' => false)),
