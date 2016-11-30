@@ -70,6 +70,9 @@ tin_tuc_chi_tiet:
 rule_game_detail:
   url: /luat-choi-chi-tiet/:id
   param: { module: rules, action: show }
+dieu_le:
+  url: /dieu-le
+  param: {module: home, action: dieuLe}
 
 privacy_policy:
   url: /privacy-policy
