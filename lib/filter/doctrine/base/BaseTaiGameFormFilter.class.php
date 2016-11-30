@@ -21,6 +21,7 @@ abstract class BaseTaiGameFormFilter extends BaseFormFilterDoctrine
       'version_build' => new sfWidgetFormFilterInput(),
       'platform_icon' => new sfWidgetFormFilterInput(),
       'status'        => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'delay'         => new sfWidgetFormFilterInput(),
       'created_at'    => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
       'updated_at'    => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
     ));
@@ -34,6 +35,7 @@ abstract class BaseTaiGameFormFilter extends BaseFormFilterDoctrine
       'version_build' => new sfValidatorPass(array('required' => false)),
       'platform_icon' => new sfValidatorPass(array('required' => false)),
       'status'        => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'delay'         => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'created_at'    => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
       'updated_at'    => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
     ));
@@ -64,6 +66,7 @@ abstract class BaseTaiGameFormFilter extends BaseFormFilterDoctrine
       'version_build' => 'Text',
       'platform_icon' => 'Text',
       'status'        => 'Number',
+      'delay'         => 'Number',
       'created_at'    => 'Date',
       'updated_at'    => 'Date',
     );

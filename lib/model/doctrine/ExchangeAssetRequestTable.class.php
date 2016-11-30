@@ -44,6 +44,14 @@ class ExchangeAssetRequestTable extends Doctrine_Table
         $query->where("a.status = 1");
         return $query->fetchOne()->sum_money;
     }
+    public static function getSumRequestByDay($userId)
+    {
+        $query = ExchangeAssetRequestTable::getInstance()->createQuery('a');
+        $query->select("sum(a.totalParValue) as sum_money");
+        $query->where("a.requestUserId = ?" . $userId);
+        $query->andWhere("a.created_at > ?",  date("Y-m-d"));
+        return $query->fetchOne();
+    }
 
 
 }

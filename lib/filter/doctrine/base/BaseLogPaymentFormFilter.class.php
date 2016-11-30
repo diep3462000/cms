@@ -13,10 +13,10 @@ abstract class BaseLogPaymentFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'userid'       => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('User'), 'add_empty' => true)),
+      'userid'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'seria'        => new sfWidgetFormFilterInput(),
       'pin_card'     => new sfWidgetFormFilterInput(),
-      'providerId'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Provider'), 'add_empty' => true)),
+      'providerId'   => new sfWidgetFormFilterInput(),
       'money'        => new sfWidgetFormFilterInput(),
       'type'         => new sfWidgetFormFilterInput(),
       'status'       => new sfWidgetFormFilterInput(),
@@ -28,10 +28,10 @@ abstract class BaseLogPaymentFormFilter extends BaseFormFilterDoctrine
     ));
 
     $this->setValidators(array(
-      'userid'       => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('User'), 'column' => 'userid')),
+      'userid'       => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'seria'        => new sfValidatorPass(array('required' => false)),
       'pin_card'     => new sfValidatorPass(array('required' => false)),
-      'providerId'   => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Provider'), 'column' => 'id')),
+      'providerId'   => new sfValidatorPass(array('required' => false)),
       'money'        => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'type'         => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'status'       => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
@@ -60,10 +60,10 @@ abstract class BaseLogPaymentFormFilter extends BaseFormFilterDoctrine
   {
     return array(
       'id'           => 'Number',
-      'userid'       => 'ForeignKey',
+      'userid'       => 'Number',
       'seria'        => 'Text',
       'pin_card'     => 'Text',
-      'providerId'   => 'ForeignKey',
+      'providerId'   => 'Text',
       'money'        => 'Number',
       'type'         => 'Number',
       'status'       => 'Number',

@@ -21,7 +21,6 @@ Doctrine_Manager::getInstance()->bindComponent('User', 'doctrine');
  * @property integer $age
  * @property UserInfo $UserInfo
  * @property Doctrine_Collection $ExchangeAssetRequest
- * @property Doctrine_Collection $LogPayment
  * @property Doctrine_Collection $MoneyLogs
  * 
  * @method integer             getUserid()               Returns the current record's "userid" value
@@ -38,7 +37,6 @@ Doctrine_Manager::getInstance()->bindComponent('User', 'doctrine');
  * @method integer             getAge()                  Returns the current record's "age" value
  * @method UserInfo            getUserInfo()             Returns the current record's "UserInfo" value
  * @method Doctrine_Collection getExchangeAssetRequest() Returns the current record's "ExchangeAssetRequest" collection
- * @method Doctrine_Collection getLogPayment()           Returns the current record's "LogPayment" collection
  * @method Doctrine_Collection getMoneyLogs()            Returns the current record's "MoneyLogs" collection
  * @method User                setUserid()               Sets the current record's "userid" value
  * @method User                setUsername()             Sets the current record's "username" value
@@ -54,7 +52,6 @@ Doctrine_Manager::getInstance()->bindComponent('User', 'doctrine');
  * @method User                setAge()                  Sets the current record's "age" value
  * @method User                setUserInfo()             Sets the current record's "UserInfo" value
  * @method User                setExchangeAssetRequest() Sets the current record's "ExchangeAssetRequest" collection
- * @method User                setLogPayment()           Sets the current record's "LogPayment" collection
  * @method User                setMoneyLogs()            Sets the current record's "MoneyLogs" collection
  * 
  * @package    Vt_Portals
@@ -191,10 +188,6 @@ abstract class BaseUser extends sfDoctrineRecord
         $this->hasMany('ExchangeAssetRequest', array(
              'local' => 'userId',
              'foreign' => 'requestUserId'));
-
-        $this->hasMany('LogPayment', array(
-             'local' => 'userId',
-             'foreign' => 'userId'));
 
         $this->hasMany('MoneyLog as MoneyLogs', array(
              'local' => 'userId',

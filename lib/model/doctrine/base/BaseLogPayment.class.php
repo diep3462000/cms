@@ -11,29 +11,25 @@ Doctrine_Manager::getInstance()->bindComponent('LogPayment', 'doctrine');
  * @property integer $userid
  * @property string $seria
  * @property string $pin_card
- * @property interger $providerId
+ * @property string $providerId
  * @property integer $money
  * @property integer $type
  * @property integer $status
  * @property string $message
  * @property string $content
  * @property timestamp $request_time
- * @property User $User
- * @property Provider $Provider
  * 
  * @method integer    getId()           Returns the current record's "id" value
  * @method integer    getUserid()       Returns the current record's "userid" value
  * @method string     getSeria()        Returns the current record's "seria" value
  * @method string     getPinCard()      Returns the current record's "pin_card" value
- * @method interger   getProviderId()   Returns the current record's "providerId" value
+ * @method string     getProviderId()   Returns the current record's "providerId" value
  * @method integer    getMoney()        Returns the current record's "money" value
  * @method integer    getType()         Returns the current record's "type" value
  * @method integer    getStatus()       Returns the current record's "status" value
  * @method string     getMessage()      Returns the current record's "message" value
  * @method string     getContent()      Returns the current record's "content" value
  * @method timestamp  getRequestTime()  Returns the current record's "request_time" value
- * @method User       getUser()         Returns the current record's "User" value
- * @method Provider   getProvider()     Returns the current record's "Provider" value
  * @method LogPayment setId()           Sets the current record's "id" value
  * @method LogPayment setUserid()       Sets the current record's "userid" value
  * @method LogPayment setSeria()        Sets the current record's "seria" value
@@ -45,8 +41,6 @@ Doctrine_Manager::getInstance()->bindComponent('LogPayment', 'doctrine');
  * @method LogPayment setMessage()      Sets the current record's "message" value
  * @method LogPayment setContent()      Sets the current record's "content" value
  * @method LogPayment setRequestTime()  Sets the current record's "request_time" value
- * @method LogPayment setUser()         Sets the current record's "User" value
- * @method LogPayment setProvider()     Sets the current record's "Provider" value
  * 
  * @package    Vt_Portals
  * @subpackage model
@@ -85,10 +79,10 @@ abstract class BaseLogPayment extends sfDoctrineRecord
              'comment' => 'mã thẻ',
              'length' => 30,
              ));
-        $this->hasColumn('providerId', 'interger', 2, array(
-             'type' => 'interger',
-             'comment' => 'Id nhà cung cấp',
-             'length' => 2,
+        $this->hasColumn('providerId', 'string', 30, array(
+             'type' => 'string',
+             'comment' => 'nhà cung cấp',
+             'length' => 30,
              ));
         $this->hasColumn('money', 'integer', 8, array(
              'type' => 'integer',
@@ -147,14 +141,6 @@ abstract class BaseLogPayment extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasOne('User', array(
-             'local' => 'userId',
-             'foreign' => 'userId'));
-
-        $this->hasOne('Provider', array(
-             'local' => 'providerId',
-             'foreign' => 'id'));
-
         $timestampable0 = new Doctrine_Template_Timestampable();
         $this->actAs($timestampable0);
     }

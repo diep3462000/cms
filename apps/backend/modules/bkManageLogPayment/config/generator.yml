@@ -15,12 +15,13 @@ generator:
       actions: ~
       fields:  ~
       list:
-        display: [userid, seria, pin_card, created_at, updated_at]
+        sort: [created_at, desc]
+        display: [userid, seria, pin_card, message, providerId,status, created_at, updated_at]
         actions: {}
         object_actions: {}
         batch_actions: {}
       filter:
-        display: [userid, seria]
+        display: [userid, seria, providerId, status]
       form:    ~
       edit:    ~
       new:     ~
