@@ -4,21 +4,17 @@
 <?php
 include_once("analyticstracking.php");
 ?>
-  <head>
+<head>
     <?php include_http_metas() ?>
     <?php include_metas() ?>
     <?php include_title() ?>
-    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="shortcut icon" href="http://bigken.net//images/favicon.ico" />
     <?php include_stylesheets() ?>
     <?php include_javascripts() ?>
   </head>
 <head>
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <title>BIGKEN Game bài đổi thưởng HẤP DẪN và UY TÍN</title>
   <meta name ="keywords" content="game bai doi thuong, game bai, bigken" />
   <meta name ="description" content="Game bài đổi thưởng BIGKEN  là game mobile trực tuyến hấp dẫn và uy tín, chơi game đánh bài ảo đổi thưởng thật hay nhất tại Việt Nam." />
   <link rel="shortcut icon" href="https://bigken.net/public/images/favicon.ico" />

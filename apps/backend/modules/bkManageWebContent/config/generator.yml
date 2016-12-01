@@ -25,7 +25,7 @@ generator:
         display: [title, content, type]
       form:
         class: bkManageWebContentFormAdmin
-        display: [title, description, content, image, status, type, is_hot]
+        display: [title, keywords, description, content, image, status, type, is_hot]
       edit:
         title: Thêm mới nội dung web site
       new:
