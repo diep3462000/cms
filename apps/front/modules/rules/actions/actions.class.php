@@ -9,7 +9,9 @@ class rulesActions extends sfActions
 {
     public function executeIndex(sfWebRequest $request)
     {
-        $this->title = 'Luật chơi';
+        $response = $this->getResponse();
+//        $this->title = 'Luật chơi';
+        $response->setTitle('Điều lệ game bài BigKen');
         $this->pager = new sfDoctrinePager(
             'WebContent',
             sfConfig::get('app_wap_max_items_on_page')
@@ -21,8 +23,12 @@ class rulesActions extends sfActions
 
     public function executeShow(sfWebRequest $request)
     {
+        $response = $this->getResponse();
         $slug = $request->getParameter("slug", null);
         $this->games = WebContentTable::getObjectBySlug($slug);
+        $response->setTitle($this->games->title);
+        $response->addMeta('keywords',$this->games->keywords);
+        $response->addMeta('description',$this->games->description);
     }
 
 
