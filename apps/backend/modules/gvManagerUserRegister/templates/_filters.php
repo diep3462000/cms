@@ -1,13 +1,5 @@
 <?php use_stylesheets_for_form($form) ?>
 <?php use_javascripts_for_form($form) ?>
-<!-- Include Required Prerequisites -->
-<script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" />
-
-<!-- Include Date Range Picker -->
-<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
 <div class="row-fluid">
     <div class="span9">
 
@@ -41,20 +33,13 @@
 
               </form>
           <script type="text/javascript">
-//              $('#gv_user_register_filters_registedtime').daterangepicker(
-//                  {
-//                      format: 'DD/MM/YYYY H:i:s',
-//                      startDate: '<?php //echo date('d/m/Y H:i:s')?>//',
-//                      endDate: '<?php //echo date('d/m/Y H:i:s')?>//'
-//                  }
-//              );
-              $('#gv_user_register_filters_registedtime').daterangepicker({
-                  timePicker: true,
-                  timePickerIncrement: 30,
-                  locale: {
-                      format: 'DD/MM/YYYY H:mm'
+              $('#gv_user_register_filters_registedtime').daterangepicker(
+                  {
+                      format: 'DD/MM/YYYY H:i:s',
+                      startDate: '<?php echo date('d/m/Y H:i:s')?>',
+                      endDate: '<?php echo date('d/m/Y H:i:s')?>'
                   }
-              });
+              );
           </script>
       </div>
     </div>

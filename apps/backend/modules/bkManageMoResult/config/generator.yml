@@ -1,0 +1,32 @@
+generator:
+  class: tmcTwitterBootstrapDoctrineGenerator
+  param:
+    model_class:           MoResult
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          mo_result
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        userId: {label: SDT}
+        userName: {label: Tên đăng nhập}
+        mt_content: {label: tin trả về}
+        mo_id: {label: Id tin nhắn lên}
+      list:
+        title: Danh sách MT
+        sort: [created_at, desc]
+        actions: {}
+        object_actions: {}
+        batch_actions: {}
+        display: [mo_id, userId, userName, mt_content, mt_content, created_at]
+      filter:
+        display: [mo_id, userId, userName, mt_content]
+      form:    ~
+      edit:    ~
+      new:     ~

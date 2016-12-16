@@ -1,0 +1,33 @@
+generator:
+  class: tmcTwitterBootstrapDoctrineGenerator
+  param:
+    model_class:           Notification
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          notification
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        repeat_daily: {label: Lặp lại hàng ngày}
+        title: {label: tiêu đề}
+        message: {label: Nội dung push}
+        pushHour: {label: Giờ push}
+      list:
+        title: Danh sách notification
+        display: [title, message, pushHour, repeat_daily, status]
+        batch_actions: {}
+        object_actions:
+          _edit: ~
+        batch_actions: {}
+      filter:
+        display: [title, message]
+      form:
+        class: bkManageNotificationFormAdmin
+      edit:    ~
+      new:     ~

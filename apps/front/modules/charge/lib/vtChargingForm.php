@@ -41,7 +41,7 @@ class vtChargingForm extends BaseForm
             ),
             'serial'         => new sfValidatorAnd(
                 array(
-                    new sfValidatorString(array('max_length' => 15, 'min_length' => 11, 'required' => true, 'trim' => true),
+                    new sfValidatorString(array('max_length' => 15, 'min_length' => 9, 'required' => true, 'trim' => true),
                         array('required' => $i18n->__('Bạn chưa nhập chuỗi số in trên thẻ cào.'),
                             'max_length' => $i18n->__('Serial tối đa %max_length% ký tự.'),
                             'min_length' => $i18n->__("Serial tối thiểu %min_length% ký tự.")
@@ -55,7 +55,7 @@ class vtChargingForm extends BaseForm
             ),
             'card_code'     => new sfValidatorAnd(
                 array(
-                    new sfValidatorString(array('max_length' => 15, 'min_length' => 13, 'required' => true, 'trim' => true),
+                    new sfValidatorString(array('max_length' => 15, 'min_length' => 9, 'required' => true, 'trim' => true),
                         array('required' => $i18n->__('Bạn chưa nhập chuỗi số dưới lớp bạc.'),
                             'max_length' => $i18n->__('Mã thẻ tối đa %max_length% ký tự.') ,
                             'min_length' => $i18n->__("Mã thẻ tối thiểu %min_length% ký tự.")

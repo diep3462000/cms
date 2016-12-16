@@ -15,19 +15,21 @@ abstract class BaseNotificationForm extends BaseFormDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'notificationid' => new sfWidgetFormInputHidden(),
+      'notificationId' => new sfWidgetFormInputHidden(),
       'title'          => new sfWidgetFormTextarea(),
       'message'        => new sfWidgetFormTextarea(),
-      'pushtime'       => new sfWidgetFormDateTime(),
-      'cp'             => new sfWidgetFormInputText(),
+      'pushHour'       => new sfWidgetFormInputText(),
+      'repeat_daily'   => new sfWidgetFormInputText(),
+      'status'         => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
-      'notificationid' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('notificationid')), 'empty_value' => $this->getObject()->get('notificationid'), 'required' => false)),
-      'title'          => new sfValidatorString(array('max_length' => 500, 'required' => false)),
-      'message'        => new sfValidatorString(array('max_length' => 500, 'required' => false)),
-      'pushtime'       => new sfValidatorDateTime(array('required' => false)),
-      'cp'             => new sfValidatorString(array('max_length' => 10, 'required' => false)),
+      'notificationId' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('notificationId')), 'empty_value' => $this->getObject()->get('notificationId'), 'required' => false)),
+      'title'          => new sfValidatorString(array('max_length' => 500)),
+      'message'        => new sfValidatorString(array('max_length' => 500)),
+      'pushHour'       => new sfValidatorPass(),
+      'repeat_daily'   => new sfValidatorInteger(array('required' => false)),
+      'status'         => new sfValidatorInteger(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('notification[%s]');

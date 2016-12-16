@@ -34,5 +34,10 @@
 
               </form>
       </div>
+        <style type="text/css">
+            input{
+                height: 28px;
+            }
+        </style>
     </div>
 </div>

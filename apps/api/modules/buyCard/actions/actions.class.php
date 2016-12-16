@@ -72,11 +72,15 @@ class buyCardActions extends sfActions
             $result[$index]['serial'] = $code_details['2'];
             $result[$index]['pin'] = $code_details['3'];
         }
-        $exchangeRequest->setResponseData(json_encode($result));
-        $exchangeRequest->setRequestTopupId($request_topup_id);
-        $exchangeRequest->setStatus(VtCommonEnum::NUMBER_ONE);
-        $exchangeRequest->save();
+
+        if(strlen(json_encode($result)) > 10){
+            $exchangeRequest->setResponseData(json_encode($result));
+            $exchangeRequest->setRequestTopupId($request_topup_id);
+            $exchangeRequest->setStatus(VtCommonEnum::NUMBER_ONE);
+            $exchangeRequest->save();
+        }
         return new Response(BuyCardErrorCode::SUCCESS, ErrorCodeUtil::getMessage(BuyCardErrorCode::SUCCESS, BuyCardErrorCode::$messages), $result);
+
     }
     public function executeShowBuyCard(sfWebRequest $request)
     {

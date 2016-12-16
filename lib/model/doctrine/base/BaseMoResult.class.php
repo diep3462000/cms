@@ -12,17 +12,20 @@ Doctrine_Manager::getInstance()->bindComponent('MoResult', 'doctrine');
  * @property bigint $amount
  * @property bigint $userId
  * @property string $userName
+ * @property string $mt_content
  * 
- * @method bigint   getId()       Returns the current record's "id" value
- * @method bigint   getMoId()     Returns the current record's "mo_id" value
- * @method bigint   getAmount()   Returns the current record's "amount" value
- * @method bigint   getUserId()   Returns the current record's "userId" value
- * @method string   getUserName() Returns the current record's "userName" value
- * @method MoResult setId()       Sets the current record's "id" value
- * @method MoResult setMoId()     Sets the current record's "mo_id" value
- * @method MoResult setAmount()   Sets the current record's "amount" value
- * @method MoResult setUserId()   Sets the current record's "userId" value
- * @method MoResult setUserName() Sets the current record's "userName" value
+ * @method bigint   getId()         Returns the current record's "id" value
+ * @method bigint   getMoId()       Returns the current record's "mo_id" value
+ * @method bigint   getAmount()     Returns the current record's "amount" value
+ * @method bigint   getUserId()     Returns the current record's "userId" value
+ * @method string   getUserName()   Returns the current record's "userName" value
+ * @method string   getMtContent()  Returns the current record's "mt_content" value
+ * @method MoResult setId()         Sets the current record's "id" value
+ * @method MoResult setMoId()       Sets the current record's "mo_id" value
+ * @method MoResult setAmount()     Sets the current record's "amount" value
+ * @method MoResult setUserId()     Sets the current record's "userId" value
+ * @method MoResult setUserName()   Sets the current record's "userName" value
+ * @method MoResult setMtContent()  Sets the current record's "mt_content" value
  * 
  * @package    Vt_Portals
  * @subpackage model
@@ -64,11 +67,18 @@ abstract class BaseMoResult extends sfDoctrineRecord
              'comment' => 'username nap tien',
              'length' => 32,
              ));
+        $this->hasColumn('mt_content', 'string', 256, array(
+             'type' => 'string',
+             'notnull' => false,
+             'comment' => 'tin nhan tra ve cho nguoi dung',
+             'length' => 256,
+             ));
     }
 
     public function setUp()
     {
         parent::setUp();
-        
+        $timestampable0 = new Doctrine_Template_Timestampable();
+        $this->actAs($timestampable0);
     }
 }

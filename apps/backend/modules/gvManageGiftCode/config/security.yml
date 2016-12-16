@@ -1,0 +1,11 @@
+## YAML Template.
+##---
+all:
+  is_secure:   true
+  credentials: [[admin, add_cash, cp_view, cskh]]
+new:
+  is_secure:   true
+  credentials: [[admin, add_cash, cskh]]
+edit:
+  is_secure:   true
+  credentials: [[admin, add_cash]]

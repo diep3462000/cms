@@ -17,13 +17,13 @@ generator:
       fields:  ~
       list:
         title: Danh sách người chơi
-        display: [userId, username, displayName, trustedIndex, mobile, device, totalMatch, totalWin, total_lost,  cash, gold]
+        display: [userId, username_view, displayName, trustedIndex, verified_phone, device, totalMatch, totalWin, total_lost,  cash, gold]
         actions: {}
         object_actions: {}
         batch_actions: {}
       filter:
         class: gvManageUserFormFiltersAdmin
-        display: [lastLoginTime, user_name, mobile, device, top, cash, gold]
+        display: [lastLoginTime, user_name, verified_phone, device, top, cash, gold]
       form:    ~
       edit:    ~
       new:     ~

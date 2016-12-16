@@ -22,7 +22,7 @@ generator:
         batch_actions: {}
       filter:
         class: gvManageMoneyLogtFormFiltersAdmin
-        display: [user_name, type, gameId, insertedTime]
+        display: [user_id, user_name, type, gameId, insertedTime]
       form:    ~
       edit:    ~
       new:     ~

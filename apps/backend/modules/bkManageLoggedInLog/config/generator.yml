@@ -1,0 +1,26 @@
+generator:
+  class: tmcTwitterBootstrapDoctrineGenerator
+  param:
+    model_class:           LoggedInLog
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          logged_in_log
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        sort: [loggedInTime, 'desc']
+        batch_actions: {}
+        object_actions: {}
+        batch_actions: {}
+      filter:
+        display: [userId, userName]
+      form:    ~
+      edit:    ~
+      new:     ~

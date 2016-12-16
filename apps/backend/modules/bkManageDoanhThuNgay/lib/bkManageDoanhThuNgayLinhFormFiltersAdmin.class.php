@@ -22,9 +22,9 @@ class bkManageDoanhThuNgayLinhFormFiltersAdmin extends BasePurchaseMoneyLogFormF
             'partner_id' => new sfWidgetFormChoice(array('choices' => $arr_cp), array('add_empty' => true)),
             'os_id' => new sfWidgetFormChoice(array('choices' => $arr_os), array('add_empty' => true)),
             'type' => new sfWidgetFormChoice(array('choices' => $arr_type), array('add_empty' => true)),
-            'created_date' => new sfWidgetFormFilterInput(array('with_empty' => false), array('readonly' => false)),
-            'user_name'      => new sfWidgetFormFilterInput(array('with_empty' => false)),
-            'register_at' => new sfWidgetFormFilterInput(array('with_empty' => false), array('readonly' => false)),
+            'created_date' => new sfWidgetFormFilterInput(array('with_empty' => false), array('readonly' => true, 'style' => "width: 230px; height: 28px")),
+            'user_name'      => new sfWidgetFormFilterInput(array('with_empty' => false), array( 'style' => "width: 230px; height: 28px")),
+            'register_at' => new sfWidgetFormFilterInput(array('with_empty' => false), array('readonly' => false,'style' => "width: 230px; height: 28px")),
 
 
         ));
@@ -41,7 +41,6 @@ class bkManageDoanhThuNgayLinhFormFiltersAdmin extends BasePurchaseMoneyLogFormF
                 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')),
                 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
         ));
-
         $this->widgetSchema->setNameFormat('gv_log_payment_filters[%s]');
         $this->widgetSchema['created_date']->setLabel($i18n->__("Thời gian nạp tiền"));
         $this->widgetSchema['register_at']->setLabel($i18n->__("Thời gian bắt đầu chơi game"));

@@ -12,5 +12,22 @@
  */
 class User extends BaseUser
 {
-
+    public function getUsernameView()
+    {
+        $admin = sfContext::getInstance()->getUser()->hasCredential('admin');
+        if ($admin) {
+            return $this->getUsername();
+        } else {
+            return VtHelper::truncate( $this->getUsername(), 5, "****");
+        }
+    }
+    public function getMobileView()
+    {
+        $admin = sfContext::getInstance()->getUser()->hasCredential('admin');
+        if ($admin) {
+            return $this->getMobile();
+        } else {
+            return VtHelper::truncate( $this->getMobile(), 8, "***");
+        }
+    }
 }

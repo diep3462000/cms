@@ -22,7 +22,8 @@ class gvManageUserRegisterFormFiltersAdmin extends BaseUserFormFilter
             'ip'     => new sfWidgetFormFilterInput(array('with_empty' => false)),
             'cp' => new sfWidgetFormChoice(array('choices' => $arr_cp), array('add_empty' => true)),
 
-            'registedtime' => new sfWidgetFormFilterInput(array('with_empty' => false), array('readonly' => false)),
+            'registedtime' => new sfWidgetFormFilterInput(array('with_empty' => false), array('readonly' => true)),
+            'user_name'  => new sfWidgetFormFilterInput(array('with_empty' => false)),
 
 
         ));
@@ -31,6 +32,7 @@ class gvManageUserRegisterFormFiltersAdmin extends BaseUserFormFilter
             'clientId' => new sfValidatorChoice(array('required' => false, 'choices' => array_keys($arr_type))),
             'ip'     => new sfValidatorPass(array('required' => false)),
             'cp' => new sfValidatorChoice(array('required' => false, 'choices' => array_keys($arr_cp))),
+            'user_name'  => new sfValidatorPass(array('required' => false)),
             'registedtime' => new sfValidatorDateRange(array('required' => false,
                 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')),
                 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
@@ -75,7 +77,12 @@ class gvManageUserRegisterFormFiltersAdmin extends BaseUserFormFilter
         if(array_key_exists('cp', $values)&& $values['cp'] != ''){
             $query->andWhere("g.cp = ?",$values["cp"] );
         }
-        $query->select("p.partnerName as parter_name, c.name as os_build, g.deviceIdentify as imei,". $alias . ".*");
+        if(array_key_exists('user_name', $values)&& !empty($values['user_name']['text'])){
+            $query->andWhere('lower(' . $alias . '.displayName) LIKE ?  OR ' . $alias . '.userId = ?  OR ' . $alias . '.userName LIKE  ?',
+                array('%' . VtHelper::translateQuery($values['user_name']['text']) . '%', $values['user_name']['text'],
+                    '%' . VtHelper::translateQuery($values['user_name']['text']) . '%'));
+        }
+        $query->select("p.partnerName as parter_name, c.name as os_build, g.deviceIdentify as imei, g.lastLoginTime as last_logi_time,". $alias . ".*");
         $query->leftJoin($alias. ".UserInfo g");
         $query->leftJoin("g.Partner p");
         $query->leftJoin("g.ClientType c");

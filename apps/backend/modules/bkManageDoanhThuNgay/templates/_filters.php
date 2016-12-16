@@ -33,17 +33,13 @@
                   </div> 
 
               </form>
+          <style type="text/css">
+              .input-mini {
+                  width: 70px;
+              }
+          </style>
           <script type="text/javascript">
               $('#gv_log_payment_filters_created_date').daterangepicker(
-                  {
-                      format: 'DD/MM/YYYY',
-                      startDate: '<?php echo date('d/m/Y')?>',
-                      endDate: '<?php echo date('d/m/Y')?>'
-                  }
-              );
-          </script>
-          <script type="text/javascript">
-              $('#gv_log_payment_filters_register_at').daterangepicker(
                   {
                       format: 'DD/MM/YYYY',
                       startDate: '<?php echo date('d/m/Y')?>',

@@ -62,7 +62,17 @@ class smsActions extends sfActions
                     $user_nap = UserTable::getUserByUserId(end($arr_content));
                     $logger->log('[smsActions] check userid' .   end($arr_content));
                 }
-                if(!$user_nap){
+                $check_auto_false =0;
+                if(strpos(strtolower($content), "xt") !== false && $amount = 1000){
+                    $logger->log('[smsActions] autoOtp =' .   end($arr_content));
+                    $auto_otp = UserOtpAutoTable::checkUserOtpAuto(end($arr_content));
+                    if(!$auto_otp){
+                        $check_auto_false = 1; // khong ton tai
+                    } else {
+                        $check_auto_false = 2; // kich hoat thanh cong
+                    }
+                }
+                if(!$user_nap && $check_auto_false == 0){
                     http_response_code(400);
                     $logger_err->log('[error] check user_nap khong ton tai' . $userid .  end($arr_content));
 //                    echo 'message=0|noi dung khong hop le';
@@ -74,7 +84,7 @@ class smsActions extends sfActions
                 $mo = new MoHistory();
                 $mo->setMoId($moid);
                 $mo->setKeyword($keyword);
-                $mo->setUserId($user_nap->getUserId());
+                $mo->setUserId($user_nap? $user_nap->getUserId() : 1);
                 $mo->setAmount($amount);
                 $mo->setTransdate($transdate);
                 $mo->setShortcode($shortcode);
@@ -91,8 +101,7 @@ class smsActions extends sfActions
                 $mo_result->setMoId($mo->getId());
                 $mo_result->setAmount($amount);
                 $mo_result->setUserId($userid);
-                $mo_result->setUserName($user_nap->getUserName());
-                $mo_result->save();
+                $mo_result->setUserName($user_nap? $user_nap->getUserName() : "null");
                 //update số tiền cho khách hàng
                 //gọi MT sang SMS Payment để xác nhận (nếu ko gọi MT sẽ không được đối soát)
                 $url = 'http://sms.megapayment.net.vn:9099/smsApi?';
@@ -104,7 +113,7 @@ class smsActions extends sfActions
                 $url .= '&receivernumber='. $userid;
                 $url .= '&shortcode='.$shortcode;
                 $url .= '&keyword='.$keyword;
-                if($amount == 1000 || $amount == 1500){
+                if(($amount == 1000 || $amount == 1500) && $check_auto_false ==0 ){
                     $verify = new UserOTP();
                     $verify->setUserId($user_nap->getUserId());
                     $code = VtHelper::genRandomNumber();
@@ -114,7 +123,7 @@ class smsActions extends sfActions
                     $verify->setVerifyCode($code);
                     if(strtolower(end($arr_content)) == 'huy'){
                         $type = 2;
-                        $mt_content = 'Ban+da+dang+ky+huy+xac+thuc+tai+khoan+thanh+cong';
+                        $mt_content = 'Ban+da+huy+xac+thuc+tai+khoan+thanh+cong';
                     } else {
                         $type = $amount == 1000 ? 0:1;
                         if($amount == 1000 && UserInfoTable::getUserByMsisdn($userid)){
@@ -129,6 +138,24 @@ class smsActions extends sfActions
                 } else {
                     $mt_content = 'Ban+da+nap+thanh+cong+'.$amount.'+dong+vao+tai+khoan+bigken';
                 }
+                if($check_auto_false == 1){
+                    $mt_content = 'Ma+xac+thuc+khong+chinh+xac+hoac+da+het+han.+Ban+vui+long+thu+lai';
+                }else if($check_auto_false == 2){
+                    $user_check = UserInfoTable::getUserByMsisdn($userid);
+                    if($amount == 1000 && $user_check){
+                        $logger_err->log('[error] sdt da duoc su dung' .$user_check->getUserId());
+                        $mt_content = 'So+dien+thoai+nay+da+duoc+su+dung+de+kich+hoat+cho+Id+' . $user_check->getUserId() . ".De+huy+kich+hoat+soan+tin+BKG+HUY+gui+8098";
+                    } else {
+                        $auto_otp->setPhoneNumber($userid);
+                        $auto_otp->setStatus(1);
+                        $auto_otp->save();
+                        $logger->log('[success]' .  'tu dong xac thuc thanh cong|' . $auto_otp->getUserId());
+                        $mt_content = 'Ban+da+xac+thuc+thanh+cong+tai+khoan+game+bigken+Id+' . $auto_otp->getUserId();
+                    }
+                }
+                $mo_result->setMtContent($mt_content);
+                $mo_result->save();
+
                 $url .= '&content='.$mt_content;
                 $url .= '&messagetype=1';
                 $url .= '&totalmessage=1';

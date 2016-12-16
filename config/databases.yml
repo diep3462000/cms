@@ -1,15 +1,30 @@
+#all:
+#  slave:
+#    class: sfDoctrineDatabase
+#    param:
+#      dsn: 'mysql:host=124.158.7.138;dbname=bigken'
+#      username: bigken
+#      password: mySql!Bk16@
+#      attributes: { default_table_charset: utf8, default_table_collate: utf8_general_ci }
+#  doctrine:
+#    class: sfDoctrineDatabase
+#    param:
+#      dsn: 'mysql:host=124.158.7.138;dbname=bigken'
+#      username: bigken
+#      password: mySql!Bk16@
+#      attributes: { default_table_charset: utf8, default_table_collate: utf8_general_ci }
 all:
   slave:
     class: sfDoctrineDatabase
     param:
-      dsn: 'mysql:host=124.158.7.138;dbname=bigken'
-      username: bigken
-      password: mySql!Bk16@
+      dsn: 'mysql:host=192.168.100.250;dbname=bigken'
+      username: root
+      password: mysql!mi14@
       attributes: { default_table_charset: utf8, default_table_collate: utf8_general_ci }
   doctrine:
     class: sfDoctrineDatabase
     param:
-      dsn: 'mysql:host=124.158.7.138;dbname=bigken'
-      username: bigken
-      password: mySql!Bk16@
+      dsn: 'mysql:host=192.168.100.250;dbname=bigken'
+      username: root
+      password: mysql!mi14@
       attributes: { default_table_charset: utf8, default_table_collate: utf8_general_ci }

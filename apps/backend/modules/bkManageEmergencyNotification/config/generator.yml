@@ -1,0 +1,30 @@
+generator:
+  class: tmcTwitterBootstrapDoctrineGenerator
+  param:
+    model_class:           EmergencyNotification
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          emergency_notification
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        content: {label: Nội dung}
+        expriedTime: {label: Thời hạn}
+        createdTime: {label: Thời gian bắt đầu}
+      list:
+        title: Danh sách thông báo khẩn cấp trong game
+        object_actions: {}
+        batch_actions: {}
+      filter:
+        display: [content]
+      form:
+        class: bkManageEmergencyNotificationAdmin
+        display: [content, createdTime, expriedTime, active]
+      edit:    ~
+      new:     ~

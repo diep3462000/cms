@@ -19,7 +19,7 @@ class gvManageUserFormFiltersAdmin extends BaseUserFormFilter
             5 => $i18n->__("Số ván thắng"), 6 => $i18n->__("Top nạp thẻ"));
         $this->setWidgets(array(
             'user_name'  => new sfWidgetFormFilterInput(array('with_empty' => false)),
-            'mobile'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
+            'verified_phone'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
             'cash'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
             'gold'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
             'device'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
@@ -31,7 +31,7 @@ class gvManageUserFormFiltersAdmin extends BaseUserFormFilter
 
         $this->setValidators(array(
             'user_name'  => new sfValidatorPass(array('required' => false)),
-            'mobile'     => new sfValidatorPass(array('required' => false)),
+            'verified_phone'     => new sfValidatorPass(array('required' => false)),
             'cash'     => new sfValidatorPass(array('required' => false)),
             'gold'     => new sfValidatorPass(array('required' => false)),
             'device'      => new sfValidatorPass(array('required' => false)),
@@ -83,6 +83,13 @@ class gvManageUserFormFiltersAdmin extends BaseUserFormFilter
         if(array_key_exists('cash', $values)&& $values['cash']['text'] != ''){
             $query->andwhere("g.cash = ?", $values['cash']['text']);
         }
+        if(array_key_exists('verified_phone', $values)&& $values['verified_phone']['text'] != ''){
+            $phone =$values['verified_phone']['text'];
+            if (substr($phone, 0, 1) == '0') { #0975292582
+                $phone = substr($values['verified_phone']['text'], 1);
+            }
+            $query->andwhere("g.verifiedPhone like ?", "%".  $phone . "%");
+        }
 
         if(array_key_exists('gold', $values)&& $values['gold']['text'] != ''){
             $query->andwhere("g.gold = ?", $values['gold']['text']);
@@ -91,12 +98,12 @@ class gvManageUserFormFiltersAdmin extends BaseUserFormFilter
 ////            $query->orderBy("g."  . $values['top'] . " desc");
 //        }
         $query->select("g.trustedIndex as trusted_index, g.device as device, 
-            g.totalMatch as total_match, g.totalWin as total_win, (g.totalMatch - g.totalWin) as total_lost, g.cash as cash, g.gold as gold, ". $alias . ".*");
+            g.totalMatch as total_match, g.totalWin as total_win, (g.totalMatch - g.totalWin) as total_lost, g.cash as cash, g.gold as gold, g.verifiedPhone as verified_phone,  ". $alias . ".*");
         $query->leftJoin($alias. ".UserInfo g");
 
         if(array_key_exists('top', $values) && $values['top'] != ''){
             $list_top = array(0 => "startPlayedTime", 1 => "level", 2 => "cash", 3 => "gold", 4 => "totalMatch", 5 => "totalWin", 6 => "");
-            $query->where("1=1");
+//            $query->andwhere("1=1");
             $query->orderBy($list_top[$values['top']] . " desc");
             $query->limit(100);
         }

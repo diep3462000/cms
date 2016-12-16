@@ -138,7 +138,8 @@ class WsBuyCard
         $client = new SoapClient($this->config['ws_url']);
 
         $logger = new sfFileLogger(new sfEventDispatcher(), array('file' => sfConfig::get('sf_log_dir') . '/requestId/' .  date('d') . '.log'));
-        $logger->log("[downloadSofpin index] check ip:" . VtHelper::getRealIpAddr()  . "|RequestId: " . $request_id );
+        $logger_ex = new sfFileLogger(new sfEventDispatcher(), array('file' => sfConfig::get('sf_log_dir') . '/exception/' .  date('d') . '.log'));
+        $logger->log("[downloadSofpin function] check ip:" . VtHelper::getRealIpAddr()  . "|RequestId: " . $request_id );
         $data = array(
             'requestId' => $request_id,
             'partnerName' => $this->config['partnerName'],
@@ -151,6 +152,7 @@ class WsBuyCard
             $result = $client->__soapCall("downloadSoftpin", $data);
             return $result;
         }catch (Exception $ex){
+            $logger_ex->log("[downloadSofpin index] check ip:" . VtHelper::getRealIpAddr()  . "|RequestId: " . $request_id  . "exception:" . $ex->getMessage());
             return false;
         }
     }
@@ -167,6 +169,7 @@ class WsBuyCard
     {
         $client = new SoapClient($this->config['ws_url']);
         $request_id = $this->config['partnerName'].'_'.time().rand(000, 999);
+        $logger_ex = new sfFileLogger(new sfEventDispatcher(), array('file' => sfConfig::get('sf_log_dir') . '/exception/' .  date('d') . '.log'));
         $data = array(
             'requestId' => $request_id,
             'partnerName' => $this->config['partnerName'],
@@ -179,6 +182,7 @@ class WsBuyCard
             $result = $client->__soapCall("topup", $data);
             return $result;
         }catch (Exception $ex){
+            $logger_ex->log("[topup] check ip:" . VtHelper::getRealIpAddr()  . "|RequestId: " . $request_id  . "exception:" . $ex->getMessage());
             return false;
         }
     }
@@ -198,10 +202,12 @@ class WsBuyCard
                 'partnerName' => $this->config['partnerName'],
                 'sign' => $this->sign($request_id.$this->config['partnerName'])
             );
+            $logger_ex = new sfFileLogger(new sfEventDispatcher(), array('file' => sfConfig::get('sf_log_dir') . '/exception/' .  date('d') . '.log'));
             try{
                 $result = $client->__soapCall("checkOrdersCDV", $data);
                 return $result;
             }catch (Exception $ex){
+                $logger_ex->log("[checkOrdersCVD] check ip:" . VtHelper::getRealIpAddr()  . "|RequestId: " . $request_id  . "exception:" . $ex->getMessage());
                 return false;
             }
         }else{
@@ -227,10 +233,12 @@ class WsBuyCard
                 'type' => $type,
                 'sign' => $this->sign($request_id.$this->config['partnerName'].$type)
             );
+            $logger_ex = new sfFileLogger(new sfEventDispatcher(), array('file' => sfConfig::get('sf_log_dir') . '/exception/' .  date('d') . '.log'));
             try{
                 $result = $client->__soapCall("checkTrans", $data);
                 return $result;
             }catch (Exception $ex){
+                $logger_ex->log("[checkTrans] check ip:" . VtHelper::getRealIpAddr()  . "|RequestId: " . $request_id  . "exception:" . $ex->getMessage());
                 return false;
             }
         }else{

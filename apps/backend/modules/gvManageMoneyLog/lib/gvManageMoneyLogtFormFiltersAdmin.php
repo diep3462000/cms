@@ -18,6 +18,7 @@ class gvManageMoneyLogtFormFiltersAdmin extends BaseMoneyLogFormFilter
         $arr_status = array("" => $i18n->__("Tất cả"), 1 => $i18n->__("Ken"), 2 => $i18n->__("Xu"));
         $this->setWidgets(array(
             'user_name'  => new sfWidgetFormFilterInput(array('with_empty' => false)),
+            'user_id'  => new sfWidgetFormFilterInput(array('with_empty' => false)),
             'insertedTime' => new sfWidgetFormFilterInput(array('with_empty' => false), array('readonly' => true)),
             'type' => new sfWidgetFormChoice(array('choices' => $arr_status), array('add_empty' => true)),
             'gameId'        => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Game'), 'add_empty' => true)),
@@ -26,21 +27,20 @@ class gvManageMoneyLogtFormFiltersAdmin extends BaseMoneyLogFormFilter
         ));
 
         $this->setValidators(array(
-            'user_name'  => new sfValidatorPass(array('required' => true)),
+            'user_name'  => new sfValidatorPass(array('required' => false)),
+            'user_id'  => new sfValidatorPass(array('required' => false)),
             'type' => new sfValidatorChoice(array('required' => false, 'choices' => array_keys($arr_status))),
             'gameId'        => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Game'), 'column' => 'gameid')),
-            'insertedTime' => new sfValidatorDateRange(array('required' => true,
+            'insertedTime' => new sfValidatorDateRange(array('required' => false,
                 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')),
                 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
         ));
 
         $this->widgetSchema->setNameFormat('money_log_filters[%s]');
-
+        $this->widgetSchema['user_id']->setLabel($i18n->__("User id"));
         $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
-
         $this->setupInheritance();
 
-        $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
     }
 
     public function doBuildQuery(array $values) {
@@ -70,17 +70,19 @@ class gvManageMoneyLogtFormFiltersAdmin extends BaseMoneyLogFormFilter
         }
         $request = sfContext::getInstance()->getRequest();
         $userId = $request->getParameter('userId');
-//        var_dump($userId);die;
+        $qr = false;
+
         if($userId){
             $query->where("u.userId = ?", $userId);
+            $qr = true;
         }
-        else if(array_key_exists('user_name', $values)&& $values['user_name'] != ''){
-                $query->andWhere('lower(u.displayName) LIKE ?  OR u.userId = ?  OR u.userName LIKE  ?',
-                    array('%' . VtHelper::translateQuery($values['user_name']['text']) . '%', $values['user_name']['text'],
+        else if(array_key_exists('user_name', $values)&& $values['user_name']['text'] != ''){
+                $query->andWhere('lower(u.displayName) LIKE ? OR u.userName LIKE  ?',
+                    array('%' . VtHelper::translateQuery($values['user_name']['text']) . '%',
                         '%' . VtHelper::translateQuery($values['user_name']['text']) . '%'));
-            } else{
-                $query->andWhere("1=2");
-            }
+            $qr = true;
+
+        }
             if(array_key_exists('type', $values)&& $values['type'] != ''){
             if($values['type'] = 1) {
                 $query->andWhere($alias . ".changeCash != 0");
@@ -88,9 +90,17 @@ class gvManageMoneyLogtFormFiltersAdmin extends BaseMoneyLogFormFilter
                 $query->andWhere($alias . ".changeGold != 0" );
             }
         }
+        if(array_key_exists('user_id', $values)&& $values['user_id']['text'] != ''){
+            $query->andWhere("u.userId = ?", $values['user_id']['text']);
+            $qr = true;
+        }
+        if($qr == false){
+            $query->andWhere("1=2");
+        }
 
 
-        $query->leftJoin($alias . ".User u");
+
+                $query->leftJoin($alias . ".User u");
         $query->leftJoin($alias . ".MoneyTransaction t");
         $query->orderBy($alias . ".insertedTime desc");
         return $query;

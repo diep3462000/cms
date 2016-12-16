@@ -16,7 +16,7 @@ class LogPaymentTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('LogPayment');
     }
-    public static function writeLogs($userId, $money, $type, $status, $message, $seria, $card_code, $request_time, $provider = 1){
+    public static function writeLogs($userId, $money, $type, $status, $message, $seria, $card_code, $request_time, $provider = "VTT"){
         $log_payment = new LogPayment();
         $log_payment->setUserid($userId);
         $log_payment->setMoney($money);
@@ -42,7 +42,7 @@ class LogPaymentTable extends Doctrine_Table
     public static function countLockPayment($userId){
         return LogPaymentTable::getInstance()->createQuery()
             ->where('userid = ?', $userId)
-            ->andwhere('status != ?', '4')
+            ->andwhere('status != ?', '1')
             ->andwhere('request_time >=?',date("Y-m-d H:i:s", time() - 3600))
             ->count();
     }

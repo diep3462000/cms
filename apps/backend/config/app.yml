@@ -15,7 +15,7 @@ all:
     header:
       menu:
         Hệ thống:
-          credentials: [admin]
+          credentials: [[admin, cp_view, dev]]
           dropdown:
             Danh sách người dùng:
               route: sf_guard_user
@@ -28,13 +28,13 @@ all:
             English:
               route: pageEN
         Doanh thu:
-          credentials: [admin]
+          credentials: [[admin, cp_view, dev, cskh]]
           dropdown:
             Quản lý doanh thu theo ngày:
-              credentials: [[admin, dev]]
+              credentials: [[admin, cp_view, dev]]
               route: doanh_thu_ngay_linh
             Thống kê chi tiết giao dịch nạp tiền:
-              credentials: [[admin]]
+              credentials: [[admin, cp_view, dev, cskh]]
               route: purchase_money_log
 #            Quản lý doanh thu theo ngày online:
 #              credentials: [[admin]]
@@ -43,134 +43,146 @@ all:
 #              credentials: [[admin, dev]]
 #              route: doanh_thu
             Quản lý tiền phế trong game online:
-              credentials: [[admin]]
+              credentials: [[admin, cp_view, dev]]
               route: revenue_game
             Quản lý tiền phế trong game:
-              credentials: [[admin]]
+              credentials: [[admin, cp_view, dev]]
               route: tax_daily_statictis
             Quản lý lịch sử tiền chơi game:
-              credentials: [[admin]]
+              credentials: [[admin, cp_view, dev]]
               route: money_log
             Quản lý lịch sử nạp thẻ:
-              credentials: [[admin, dev]]
+              credentials: [[admin, cp_view, dev]]
               route: log_payment
             Thông kê doanh thu SMS:
-              credentials: [[admin, dev]]
+              credentials: [[admin, cp_view, dev, cskh]]
               route: sms_revenue
-            Thông kê chi tiết SMS:
-              credentials: [[admin, dev]]
+            Thông kê chi tiết MO SMS:
+              credentials: [[admin, cp_view, dev, cskh]]
               route: mo_history
+            Thông kê chi tiết MT SMS:
+              credentials: [[admin, cp_view, dev, cskh]]
+              route: mo_result
             Thống kê đổi thưởng:
-              credentials: [[admin, dev]]
+              credentials: [[admin, cp_view, dev, cskh]]
               route: exchange_asset_request
             Quản lý CCU:
               credentials: [admin]
               route: online_log
         Game:
-          credentials: [[admin]]
+          credentials: [[admin, cp_view, dev]]
           dropdown:
+            Quản lý thông báo khẩn cấp trong game:
+              credentials: [[admin, add_cash, cp_view, cskh]]
+              route: emergency_notification
             Quản lý game:
-              credentials: [[admin]]
+              credentials: [[admin, cp_view, dev]]
               route: game
             Quản lý ván chơi:
-              credentials: [[admin]]
+              credentials: [[admin, dev]]
               route: match_log
-            Quản lý lịch sử chơi game:
-              credentials: [[admin]]
-              route: game_history
+#            Quản lý lịch sử chơi game:
+#              credentials: [[admin, dev]]
+#              route: game_history
             Quản lý Log Game:
-              credentials: [[admin]]
+              credentials: [[admin, cp_view, dev]]
               route: game_log
             Quản lý nhà cung cấp game:
-              credentials: [admin]
+              credentials: [[admin, cp_view, dev]]
               route: game_provider
-            Danh sách giao dịch game:
-              credentials: [admin]
-              route: game_transaction
-            Quản lý Version Game:
-              credentials: [admin]
-              route: game_version
+#            Danh sách giao dịch game:
+#              credentials: [[admin, dev]]
+#              route: game_transaction
+#            Quản lý Version Game:
+#              credentials: [[admin, cp_view, dev]]
+#              route: game_version
             Quản lý phòng Game:
-              credentials: [admin]
+              credentials: [[admin, dev]]
               route: room
             Thống kê game xóc đĩa:
-              credentials: [admin]
+              credentials: [[admin, dev]]
               route: xoc_dia
         Người chơi game:
-          credentials: [[admin]]
+          credentials: [[admin, cp_view, dev,cskh]]
           dropdown:
             Quản lý user đăng ký:
-              credentials: [[admin]]
+              credentials: [[admin, cp_view, dev, cskh]]
               route: user_register
             Quản lý thông tin người chơi:
-              credentials: [[admin]]
+              credentials: [[admin, cp_view, dev,cskh]]
               route: user
             Quản lý OTP:
-              credentials: [[admin]]
+              credentials: [[admin, cp_view, dev, cskh]]
               route: user_otp
+            Quản lý OTP tự kích hoạt:
+              credentials: [[admin, cp_view, dev, cskh]]
+              route: user_otp_auto
+            Quản lý log user đăng nhập:
+              credentials: [[admin, cp_view, dev, cskh]]
+              route: logged_in_log
         Tiền trong game:
-          credentials: [[admin, add_cash]]
+          credentials: [[admin, add_cash, cp_view, cskh]]
           dropdown:
             Quản lý tiền trong game:
-              credentials: [[admin, add_cash]]
+              credentials: [[admin, add_cash, cp_view]]
               route: money_log
-            Quản lý cash cược:
-              credentials: [[admin]]
-              route: bet_cash
-            Quản lý gold cược:
-              credentials: [[admin]]
-              route: bet_gold
+#            Quản lý cash cược:
+#              credentials: [[admin, add_cash, cp_view]]
+#              route: bet_cash
+#            Quản lý gold cược:
+#              credentials: [[admin, add_cash, cp_view]]
+#              route: bet_gold
             Quản lý nhà cung cấp thẻ:
-              credentials: [[admin]]
+              credentials: [[admin, add_cash, cp_view]]
               route: card_provider
             Quản lý mã quà tặng:
-              credentials: [[admin, add_cash]]
+              credentials: [[admin, add_cash, cp_view, cskh]]
               route: gift_code
             Quản lý quà sự kiện:
-              credentials: [[admin, add_cash]]
+              credentials: [[admin, add_cash, cp_view, cskh]]
               route: gift_event
             Bù tiền thẻ nạp lỗi:
-              credentials: [[admin, add_cash]]
+              credentials: [[admin, add_cash, cp_view]]
               route: purchase_money_missing
             Cộng tiền cho người dùng:
-              credentials: [[admin, add_cash]]
+              credentials: [[admin, add_cash, cp_view, cskh]]
               route: add_money
         Các phân hệ khác:
-          credentials: [[admin]]
+          credentials: [[admin, cp_view]]
           dropdown:
             Quản lý link tải game:
-              credentials: [admin]
+              credentials: [[admin, cp_view]]
               route: tai_game
             Quản lý log truy cập web tải game:
-              credentials: [admin]
+              credentials: [[admin, cp_view]]
               route: log_web
             Quản lý testcase:
-              credentials: [admin]
+              credentials: [[admin, cp_view]]
               route: gv_test_case
             Quản lý hệ điều hành:
-              credentials: [admin]
+              credentials: [[admin, cp_view]]
               route: client_type
             Quản lý đối tác:
-              credentials: [admin]
+              credentials: [[admin, cp_view]]
               route: partner
             Danh sách nhà mạng:
-              credentials: [admin]
+              credentials: [[admin, cp_view]]
               route: provider
             Quản lý notify game:
-              credentials: [admin]
+              credentials: [[admin, cp_view]]
               route: notify
             Quản lý tin nhắn đến user:
-              credentials: [admin]
+              credentials: [[admin, cp_view]]
               route: message
             Quản lý loại tin nhắn:
-              credentials: [admin]
+              credentials: [[admin, cp_view]]
               route: message_type
-            Quản lý thông báo đến user:
-              credentials: [admin]
-              route: notification
             Quản lý nội dung web:
-              credentials: [admin]
+              credentials: [[admin, cp_view]]
               route: web_content
+            Quản lý notification bắn vào apps:
+              credentials: [[admin, cp_view]]
+              route: notification
   sf_captchagd:
      image_width:                180 # image width in pixels
      image_height:               27 # image height in pixels

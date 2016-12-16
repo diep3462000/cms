@@ -25,8 +25,11 @@ class chargeActions extends sfActions
         $request_time = date("Y-m-d H:i:s");
         //var_dump($request_time);die;
         //LogPaymentTable
+        $logger = new sfFileLogger(new sfEventDispatcher(), array('file' => sfConfig::get('sf_log_dir') . '/charge/success_' . date('Y_m_d') . '.log'));
+        $logger_err = new sfFileLogger(new sfEventDispatcher(), array('file' => sfConfig::get('sf_log_dir') . '/charge/error_' . date('Y_m_d') . '.log'));
+
         if(LogPaymentTable::countLockPayment($userId) > 10 ){
-            return new Response(PaymentErrorCode::CHARGE_BAN, PaymentErrorCode::getMessage(PaymentErrorCode::CHARGE_BAN, PaymentErrorCode::$messages));
+         //   return new Response(PaymentErrorCode::CHARGE_BAN, PaymentErrorCode::getMessage(PaymentErrorCode::CHARGE_BAN, PaymentErrorCode::$messages));
         }
         if(($userId && $userName && $provider && $cardSerial && $cardPin)) {
             try{
@@ -37,9 +40,7 @@ class chargeActions extends sfActions
 //                foreach($result as $key=>$value){
 //                    $result_return[$key] = $value;
 //                }
-                $logger = new sfFileLogger(new sfEventDispatcher(), array('file' => sfConfig::get('sf_log_dir') . '/charge' . date('Y_m_d') . '.log'));
-                $logger->log("userId:". $userId. "|userName:" . $userName
-                    . "|provider:" . $provider . "|cardSerial:" . $cardSerial. "|cardPin:" . $cardPin);
+
                 $yamlFile = sfConfig::get('sf_app_dir') . '/config/bccs.yml';
                 $arrData = sfYaml::load($yamlFile);
                 $bccsConfig = $arrData['bccs'];
@@ -55,19 +56,24 @@ class chargeActions extends sfActions
                 $url .= '&targetAcc='.$bccsConfig['targetAcc'];
                 $url .= '&password='.md5($bccsConfig['password']);
                 $url .= '&signature='.$this->signature_hash($transid, $bccsConfig, $cardSerial, $cardPin, $provider);
-                $response = $this->get_curl($url);
-                //$response = "status=00&message=card is correct&realAmount=0&transId=11359_20160708091904_843&realAmount=100000";
-                if(!empty($response)){
-                    $response = $this->parseArray($response);
+                $response_1 = $this->get_curl($url);
+                //$response_1 = "status=00&message=card is correct&realAmount=0&transId=11359_20160708091904_843&realAmount=100000";
+
+                if(!empty($response_1)){
+                    $response = $this->parseArray($response_1);
                     //var_dump($response);die;
                     $api_response = null;
                     if($response['status'] == 0 || $response['status']  == '00'){
                         $api_response =  new Response(PaymentErrorCode::SUCCESS, PaymentErrorCode::getMessage(PaymentErrorCode::SUCCESS, PaymentErrorCode::$messages), $response);
                         LogPaymentTable::writeLogs($userId, isset($response['realAmount'])? $response['realAmount']: 0 , 0, $response['status'], $response['message'], $cardSerial, $cardPin, $request_time, $provider);
                         LogPaymentTable::resetLockPayment($userId);
+                        $logger->log("userId:". $userId. "|userName:" . $userName
+                            . "|provider:" . $provider . "|cardSerial:" . $cardSerial. "|cardPin:" . $cardPin . "|response:" . $response_1);
                     } else {
                         LogPaymentTable::writeLogs($userId,0 , 0, $response['status'], $response['message'], $cardSerial, $cardPin, $request_time, $provider);
                         $api_response = new Response(PaymentErrorCode::FAILURE, PaymentErrorCode::getMessage(PaymentErrorCode::FAILURE, PaymentErrorCode::$messages));
+                        $logger_err->log("userId:". $userId. "|userName:" . $userName
+                            . "|provider:" . $provider . "|cardSerial:" . $cardSerial. "|cardPin:" . $cardPin . "|response:" . $response_1);
                     }
                     return $api_response;
                 }else{
@@ -89,9 +95,52 @@ class chargeActions extends sfActions
         }
     }
 
-    private function chargeGameVina(){
+    public function executeCharge(sfWebRequest $request)
+    {
+        $response = $this->getResponse();
+        $response->setContentType('application/json');
+        $userId = $request->getParameter("userId", null);
+        $userName = $request->getParameter("userName", null);
+        $provider = $request->getParameter("provider", "VTT");
+        $cardSerial = $request->getParameter("cardSerial", 1231);
+        $cardPin = $request->getParameter("cardPin", 23123);
+        $key_webservice =  $request->getParameter("key_webservice", null);
+        $key_check = md5(sfConfig::get('app_username') . date("Y/m/d/h")  . sfConfig::get('app_password'));
+        if($key_webservice != $key_check) {
+            //return new ResponseOne(PaymentErrorCode::LOGIN_FAIL,
+            //  PaymentErrorCode::getMessage(PaymentErrorCode::LOGIN_FAIL, PaymentErrorCode::$messages));
+        }
+        $request_time = date("Y-m-d H:i:s");
+        //var_dump($request_time);die;
+        //LogPaymentTable
+        $logger = new sfFileLogger(new sfEventDispatcher(), array('file' => sfConfig::get('sf_log_dir') . '/charge/success_' . date('Y_m_d') . '.log'));
+        $logger_err = new sfFileLogger(new sfEventDispatcher(), array('file' => sfConfig::get('sf_log_dir') . '/charge/error_' . date('Y_m_d') . '.log'));
 
+        if(LogPaymentTable::countLockPayment($userId) > 10 ){
+            //   return new Response(PaymentErrorCode::CHARGE_BAN, PaymentErrorCode::getMessage(PaymentErrorCode::CHARGE_BAN, PaymentErrorCode::$messages));
+        }
+        if(($userId && $userName && $provider && $cardSerial && $cardPin)) {
+            try{
+                $ws = new WsChargeVNP();
+                $m_Card_DATA = $cardSerial.":".$cardPin.":"."0".":".$provider;
+                $result = $ws->cardCharging($m_Card_DATA);
+                $result_return = array();
+                foreach($result as $key=>$value){
+                    $result_return[$key] = $value;
+                }
+                
+
+            }catch (CallSoapErrorException $exc) {
+                $response =  new ResponseOne($exc->getCode(), $exc->getMessage());
+                return $this->renderText($response->toJson());
+            }
+
+        } else {
+            return new ResponseOne(PaymentErrorCode::NULL_PARAM,
+                PaymentErrorCode::getMessage(PaymentErrorCode::NULL_PARAM, PaymentErrorCode::$messages));
+        }
     }
+
     private function get_transid($partnerId)
     {
         return $partnerId.'_'.date('YmdHis').'_'.rand(0, 999);

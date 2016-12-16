@@ -221,8 +221,20 @@
                 <target>Tên đăng nhập</target>
             </trans-unit>
             <trans-unit id="51">
+                <source>Username view</source>
+                <target>Tên đăng nhập</target>
+            </trans-unit>
+            <trans-unit id="51">
+                <source>Registedtime</source>
+                <target>Thời gian đăng ký</target>
+            </trans-unit>
+            <trans-unit id="51">
+                <source>Parter name</source>
+                <target>Tên đối tác</target>
+            </trans-unit>
+            <trans-unit id="51">
                 <source>Sum cash</source>
-                <target>Tổng Xu nạp</target>
+                <target>Tổng ken nạp</target>
             </trans-unit>
             <trans-unit id="51">
                 <source>Sum money</source>
@@ -315,6 +327,26 @@
             <trans-unit id="55">
                 <source>AddGold</source>
                 <target>Cộng xu</target>
+            </trans-unit>
+            <trans-unit id="55">
+                <source>Msisdn</source>
+                <target>Số điện thoại</target>
+            </trans-unit>VerifyPhone
+            <trans-unit id="55">
+                <source>VerifyPhone</source>
+                <target>SDT xác thực</target>
+            </trans-unit>
+            <trans-unit id="55">
+                <source>Par value</source>
+                <target>Mệnh giá</target>
+            </trans-unit>
+            <trans-unit id="55">
+                <source>Description arr</source>
+                <target>Mô tả</target>
+            </trans-unit>
+            <trans-unit id="55">
+                <source>Verified phone</source>
+                <target>SDT xác thực</target>
             </trans-unit>
         </body>
     </file>

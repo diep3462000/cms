@@ -1,3 +1,114 @@
+EmergencyNotification:
+  tableName: emergency_notification
+  columns:
+    notificationId:
+      type: integer(11)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    content:  { type: string(1000),  comment: "Nội dung thông báo" }
+    createdTime:  { type: timestamp, notnull: true, comment: "thời gian bắt đầu" }
+    expriedTime:  { type: timestamp, notnull: true, comment: "thời gian hết hạn" }
+    active:  { type: int(2), comment: "1 active" }
+
+LuckyWheelItem:
+  tableName: lucky_wheel_item
+  columns:
+    itemId:
+      type: integer(11)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    itemName:  { type: string(256),  comment: "Tên Item" }
+    round:  { type: int(2), comment: "1: xu, 2: ken" }
+    value:  { type: bigint(15), comment: "giá trị thưởng" }
+    rare:  { type: bigint(15), comment: "" }
+    description:  { type: string(256),  comment: "" }
+    emotionId:  { type: bigint(15), notnull: true, comment: "" }
+    status:  { type: int(2), comment: "1 active" }
+
+LuckyWheelChance:
+  tableName: lucky_wheel_chance
+  columns:
+    logId:
+      type: integer(11)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    userId:  { type: bigint(15), notnull: true, comment: "" }
+    description:  { type: string(256),  comment: "" }
+    userId:  { type: bigint(15), comment: "" }
+    round1_item:  { type: bigint(15), comment: "" }
+    round2_item:  { type: bigint(15), comment: "" }
+    time:  { type: timestamp, notnull: true, comment: "thời gian quay" }
+BlackListUser:
+  tableName: black_list_user
+  actAs:
+    Timestampable: ~
+  columns:
+    blackListId:
+      type: integer(11)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    userId:  { type: bigint(15), comment: "" }
+    userLockId:  { type: bigint(15), comment: "admin khoa" }
+    lockTime:  { type: timestamp, notnull: true, comment: "thời gian khóa" }
+    ipLocked:  { type: int(2), comment: "" }
+    reason:  { type: string(20),  comment: "" }
+LoggedInLog:
+  tableName: logged_in_log
+  columns:
+    logId:
+      type: integer(11)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    userId:  { type: bigint(15), comment: "" }
+    userName:  { type: string(20), comment: "" }
+    loggedInTime:
+      type: timestamp(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    deviceId:  { type: string(20),  comment: "" }
+    deviceInfo:  { type: string(20),  comment: "" }
+    remoteIp:  { type: string(20), comment: "" }
+    clientType:  { type: int(2),  comment: "" }
+    packageName:  { type: string(20),  comment: "" }
+    versionCode:  { type: int(5), comment: "" }
+    versionBuild:  { type: string(20), comment: "" }
+    ipLocked:  { type: int(2), comment: "" }
+
+UserOtpAuto:
+  tableName: user_otp_auto
+  actAs:
+    Timestampable: ~
+  columns:
+    otpId:
+      type: integer(11)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    userId:  { type: bigint(20), notnull: true, comment: "" }
+    verifyCode:  { type: string(32), comment: "mã otp" }
+    phoneNumber:  { type: bigint(20), notnull: true, comment: "" }
+    status: {  type: integer(1), notnull: true, default: 0, comment: "0-chua su dung, 1: da gui ma xac thuc, 2 - da xu ly" }
+    expiredTime:
+      type: timestamp(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
 LogWeb:
   tableName: log_web
   actAs:
@@ -2329,7 +2440,7 @@ Notification:
   connection: doctrine
   tableName: notification
   columns:
-    notificationid:
+    notificationId:
       type: integer(4)
       fixed: false
       unsigned: false
@@ -2340,28 +2451,31 @@ Notification:
       fixed: false
       unsigned: false
       primary: false
-      notnull: false
+      notnull: true
       autoincrement: false
     message:
       type: string(500)
       fixed: false
       unsigned: false
       primary: false
-      notnull: false
+      notnull: true
       autoincrement: false
-    pushtime:
-      type: timestamp(25)
+    pushHour: {type: interger(2), notnull: true, comment: "Thời gian push"}
+    repeat_daily:
+      type: integer(1)
       fixed: false
       unsigned: false
       primary: false
-      notnull: false
+      default: '0'
+      notnull: true
       autoincrement: false
-    cp:
-      type: string(10)
+    status:
+      type: integer(1)
       fixed: false
       unsigned: false
       primary: false
-      notnull: false
+      default: '0'
+      notnull: true
       autoincrement: false
 OnlineLog:
   connection: doctrine
@@ -4092,12 +4206,15 @@ MoHistory:
 MoResult:
   connection: doctrine
   tableName: mo_result
+  actAs:
+    Timestampable: ~
   columns:
     id:               { type: bigint(20), primary: true, autoincrement: true }
     mo_id:  { type: bigint(11), notnull: true, comment: "map voi id MoHistory" }
     amount:  { type: bigint(15), notnull: true, comment: "" }
     userId:  { type: bigint(15), notnull: true, comment: "" }
     userName:  { type: string(32), notnull: true, comment: "username nap tien" }
+    mt_content: { type: string(256), notnull: false, comment: "tin nhan tra ve cho nguoi dung" }
 UserInfo:
   connection: doctrine
   tableName: user_info

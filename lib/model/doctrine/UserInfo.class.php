@@ -12,5 +12,22 @@
  */
 class UserInfo extends BaseUserInfo
 {
-
+    public function getPhoneNumberView()
+    {
+        $admin = sfContext::getInstance()->getUser()->hasCredential('admin');
+        if ($admin) {
+            return $this->getVerifiedPhone();
+        } else {
+            return VtHelper::truncate( $this->getVerifiedPhone(), 8, "*");
+        }
+    }
+    public function getUsernameView()
+    {
+        $admin = sfContext::getInstance()->getUser()->hasCredential('admin');
+        if ($admin) {
+            return $this->getUsername();
+        } else {
+            return VtHelper::truncate( $this->getUsername(), 3, "*");
+        }
+    }
 }

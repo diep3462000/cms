@@ -3,4 +3,15 @@
 
 default:
   is_secure: true
-    
+all:
+  is_secure:   true
+  credentials: [[admin, add_cash, cp_view, cskh]]
+new:
+  is_secure:   true
+  credentials: [[admin, add_cash]]
+edit:
+  is_secure:   true
+  credentials: [[admin, add_cash]]
+delete:
+  is_secure:   true
+  credentials: [[admin, add_cash]]

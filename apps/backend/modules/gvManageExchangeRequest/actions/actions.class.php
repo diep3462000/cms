@@ -59,7 +59,7 @@ class gvManageExchangeRequestActions extends autoGvManageExchangeRequestActions
             $purchase_arr[$purchase_money["purchase_date"]] = $purchase_money["sum_money"];
         }
         $this->purchase_arr = $purchase_arr;
-
+        $this->sum_ken_nap = ExchangeAssetRequestTable::getTotalRevenue();
         $this->sum_money = ExchangeAssetRequestTable::getTotalRevenue();
         $this->sum_xu_ken = UserInfoTable::getSumMoneyUser();
 //        var_dump($this->sum_xu_ken);die;

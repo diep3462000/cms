@@ -13,7 +13,7 @@
         <div class="span<?php echo $sidebar_status ? '10' : '12'; ?>">
             
             <div class="span12">
-            <h1 style="display: inline"><?php echo __('GvManageOnlineLog List', array(), 'messages') ?></h1>
+            <h1 style="display: inline"><?php echo __('Thống kê CCU', array(), 'messages') ?></h1>
             </div>
             <div class="row-fluid">
                 <div class="span9">

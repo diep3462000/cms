@@ -18,7 +18,7 @@ class gvManageGiftCodeFormFiltersAdmin extends BaseGiftCodeFormFilter
         $this->setWidgets(array(
             'giftEventId' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('GiftEvent'), 'add_empty' => true)),
             'userId'      => new sfWidgetFormFilterInput(),
-            'userName'    => new sfWidgetFormFilterInput(),
+            'userName'    => new sfWidgetFormFilterInput(array('with_empty' => false)),
             'cashValue'   => new sfWidgetFormFilterInput(),
             'goldValue'   => new sfWidgetFormFilterInput(),
             'code'        => new sfWidgetFormFilterInput(array('with_empty' => false)),

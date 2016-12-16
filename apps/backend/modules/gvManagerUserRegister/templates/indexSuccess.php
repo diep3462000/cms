@@ -97,9 +97,9 @@
         chart_api.draw(data_api, options_api);
 
         //Hình 3: Thông tin nhà phát triển đăng ký tài khoản
-        var array_develop_info = new Array(["<?php echo __('Ngày') ?>", "<?php echo __('Đăng ký mới') ?>", "<?php echo __('Thiết bị mới') ?>", "<?php echo __('Còn chơi đến ngày') ?>"]);
+        var array_develop_info = new Array(["<?php echo __('Ngày') ?>", "<?php echo __('Đăng ký mới') ?>", "<?php echo __('Thiết bị mới') ?>", "<?php echo __('Nghỉ chơi trong ngày') ?>", "<?php echo __('Đăng nhập trong ngày') ?>"]);
     <?php foreach($sevent_day as $day => $value):?>
-        array_develop_info.push(['<?php echo $day;  ?>', Number('<?php echo $value[0]?>'), Number('<?php echo $value[1]?>'), Number('<?php echo $value[2]?>') ]);
+        array_develop_info.push(['<?php echo $day;  ?>', Number('<?php echo $value[0]?>'), Number('<?php echo $value[1]?>'), Number('<?php echo $value[2]?>'), Number('<?php echo $value[3]?>') ]);
         <?php endforeach ?>
         var data_develop_info = google.visualization.arrayToDataTable(array_develop_info);
         formatter.format(data_develop_info, 1);

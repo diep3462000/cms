@@ -9,6 +9,9 @@ class testActions extends sfActions
 {
     public function executeIndex(sfWebRequest $request)
     {
+
+        $auto_otp = UserOtpAutoTable::checkUserOtpAuto(123);
+        var_dump(123);die;
         $prefix = $request->getParameter("prefix", null);
         $num = $request->getParameter("num", null);
         $user_check = UserTable::getUserLikeName($prefix . "_");

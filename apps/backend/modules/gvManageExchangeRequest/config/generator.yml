@@ -26,7 +26,7 @@ generator:
         display: [display_name, requestUserId, requestUserName, assetId, amount, totalCash, totalParValue, status, description,checkedTime, responseData, request_topup_id, created_at]
       filter:
         class: gvManageExchangeAssetRequestFormFiltersAdmin
-        display: [user_name, status, created_date, request_topup_id, responseData]
+        display: [user_name, verified_phone, status, created_date, request_topup_id, responseData]
       form:
         display: [requestUserId, requestUserName, assetId, amount, totalCash, totalParValue, status, description,checkedTime, responseData, request_topup_id, created_at]
       edit:    ~

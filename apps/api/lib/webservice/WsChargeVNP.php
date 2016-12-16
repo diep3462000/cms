@@ -25,7 +25,7 @@ class WsChargeVNP
 
     public function __construct()
     {
-        $yamlFile = sfConfig::get('sf_app_dir') . '/config/bccs.yml';
+        $yamlFile = sfConfig::get('sf_app_dir') . '/config/bccs2.yml';
         $arrData = sfYaml::load($yamlFile);
         $wsdl = $arrData['bccs']['url_megapay'];
         $connectTimeout = $arrData['timeout']['connect'];
@@ -40,7 +40,9 @@ class WsChargeVNP
         $ObjLogin= new loginResponse();
         $RSAClass = new ClsCryptor();
         //Ham thuc hien lay public key cua EPAy tu file pem
-        $RSAClass->GetpublicKeyFrompemFile("./Key/Epay_Public_key.pem");
+       // sfConfig::get('sf_app_dir') . "/config/key/private_key.pem";
+       # $RSAClass->GetpublicKeyFrompemFile("./Key/Epay_Public_key.pem");
+        $RSAClass->GetpublicKeyFrompemFile(sfConfig::get('sf_app_dir') . "/config/key2/DTT_public_key.pem");
         try{
             $EncrypedPass = $RSAClass -> encrypt($this-> m_Pass);
         }
@@ -63,7 +65,9 @@ class WsChargeVNP
         $ObjLogin->m_Status = $result->status;
 
         //Ham thuc hien lay private key cua doi tac tu file pem
-        $RSAClass->GetPrivatekeyFrompemFile("./Key/private_key.pem");
+       # $RSAClass->GetPrivatekeyFrompemFile("./Key/private_key.pem");
+        $RSAClass->GetPrivatekeyFrompemFile(sfConfig::get('sf_app_dir'). "/config/key2/private_key.pem" );
+
         try{
             $Session_Decryped =   $RSAClass -> decrypt(base64_decode($result->sessionid));
             $ObjLogin->m_SessionID = $this->Hextobyte( $Session_Decryped) ;
@@ -74,7 +78,7 @@ class WsChargeVNP
             throw new Exception( $ex->getMessage(), $ex->getCode());        }
         //print_r($Obj->m_SessionID) ;
 
-        $ObjLogin->m_TransID  = $this->m_PartnerCode.date("YmdHms");;
+        $ObjLogin->m_TransID  = $this->m_PartnerCode.date("YmdHms") . rand(0, 999);;
         $this->ObjLogin = $ObjLogin;
 
 
@@ -119,7 +123,6 @@ class WsChargeVNP
     }
     public function  cardCharging($m_Card_DATA){
         $sessionID = bin2hex($this->ObjLogin->m_SessionID);
-
         $ObjCardCharging = new CardChargingResponse();
         $key = $this->Hextobyte($sessionID);
         //print_r($this-> m_SessionID);
@@ -133,9 +136,8 @@ class WsChargeVNP
             //$decode =  $ObjTriptDes->decrypt(  $strEncreped);
             //print_r ($decode);
             $Mpin = $this->  ByteToHex($strEncreped);
-
             $Card_DATA = $this->  ByteToHex( $ObjTriptDes->encrypt($m_Card_DATA));
-            //print_r($Card_DATA);
+           // var_dump($Card_DATA);die;
 
         }catch(Exception $ex){
             sfContext::getInstance()->getLogger()->log('[cardCharging] xau ra loi trong qua trinh ma hoa the');
@@ -146,8 +148,9 @@ class WsChargeVNP
             $logger = new sfFileLogger(new sfEventDispatcher(), array('file' => sfConfig::get('sf_log_dir') . '/charge' . date('d') . '.log'));
             $logger->log("m_TransID:". $this->ObjLogin->m_TransID. "|m_UserName:" . $this->m_UserName
                 . "|m_PartnerID:" . $this->m_PartnerID. "|Mpin:". $Mpin . "|m_Target:" . $this->m_Target . "|Card_DATA: " . $Card_DATA . "|sessionID:" . $sessionID);
-            $result = $this->soapClient->cardCharging( $this->ObjLogin->m_TransID , $this->m_UserName, $this->m_PartnerID, $Mpin, $this->m_Target, $Card_DATA ,md5($sessionID)); // goi ham login de lay session id du lieu tra ve la mot mang voi cac thong tin message, sessionid,status,transid
-            //var_dump($result);die;
+            $result = $this->soapClient->cardCharging( $this->ObjLogin->m_TransID , $this->m_UserName, $this->m_PartnerID, $Mpin, $this->m_Target, $Card_DATA ,md5($sessionID));
+            // goi ham login de lay session id du lieu tra ve la mot mang voi cac thong tin message, sessionid,status,transid
+//            var_dump($result);die;
             $this->soapClient->httpsocket = null;
             //var_dump($result);die;
             //print_r($result);

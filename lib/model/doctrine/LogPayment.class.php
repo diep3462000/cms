@@ -12,5 +12,12 @@
  */
 class LogPayment extends BaseLogPayment
 {
-
+    public function getPinCardView(){
+        $admin = sfContext::getInstance()->getUser()->hasCredential('admin');
+        if ($admin) {
+            return $this->getPinCard();
+        } else {
+            return VtHelper::truncate( $this->getPinCard(), 6, "****");
+        }
+    }
 }

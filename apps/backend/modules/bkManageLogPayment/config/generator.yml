@@ -13,15 +13,19 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
+      fields:
+        money: {label: Mệnh giá thẻ}
+        pin_card: {label: Mã thẻ cào}
       list:
+        title: Quản lý lịch sử nạp thẻ
         sort: [created_at, desc]
-        display: [userid, seria, pin_card, message, providerId,status, created_at, updated_at]
+        display: [userid, seria, pin_card_view, money,  message, providerId,status, created_at, updated_at]
         actions: {}
         object_actions: {}
         batch_actions: {}
       filter:
-        display: [userid, seria, providerId, status]
+        class: bkManageLogPaymentFormFiltersAdmin
+        display: [userid, seria, pin_card,  money, providerId, status]
       form:    ~
       edit:    ~
       new:     ~

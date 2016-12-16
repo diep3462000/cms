@@ -12,8 +12,45 @@
  */
 class MatchLog extends BaseMatchLog
 {
-public function getDescriptionArr(){
-//    return (array) json_decode($this->getDescription());
-   return str_replace('"', "'",$this->getDescription());
-}
+   public function getDescriptionArr(){
+      $arr =  (array) json_decode($this->getDescription());
+      $string = "Thắng:" . $arr["winner"];
+      $array_bet_ = (array)(get_object_vars($arr["betMoney"]));
+      $cuoc = array(0 => "+4 trắng", 4 => "+4 lẻ", 10 => "+Chẵn", 11 => "+Lẻ", 1 => "+3 trắng", 3 => "+3 đỏ:");
+      foreach ($cuoc as $i => $cuoc1){
+         if (sizeof($array_bet_[$i]) > 0){
+        //    var_dump($array_bet_0[$i]);die;
+           $string = $string .  (string)$cuoc1 . ": ";
+            foreach ($array_bet_[$i] as $i => $bet){
+               foreach ($bet as $userId => $bet){
+                  $string = $string .(string)$userId . " đặt " .  VtHelper::number_format((string)$bet) . ", ";
+               }
+            }
+         }
+      }
+//      $array_player = (array)(get_object_vars($arr["player"]));
+      $string = $string . "+Ip ";
+      foreach ($arr["player"] as $user){
+       //  $user_ip = (array)(get_object_vars($arr["player"]));
+         $string = $string . $user->userId . ":" . $user->ip . ", ";
+      }
+       $array_refund= (array)(get_object_vars($arr["refundMoney"]));
+
+       if (sizeof($array_refund) > 0){
+           $string = $string . "+Refund ";
+//           var_dump($array_refund);die;
+           foreach ($array_refund as $userId => $refund){
+         //  $user_ip = (array)(get_object_vars($arr["player"]));
+//               var_dump($refund_);die;
+//              foreach ($refund_ as $userId => $refund){
+                  $string = $string .(string)$userId . " hoàn " .  VtHelper::number_format((string)$refund) . ", ";
+//              }
+           }
+      }
+       return $string;
+   }
+
+    public function getType(){
+        return strpos($this->getDescription(), "true")? "Ken" : "Xu";
+    }
 }

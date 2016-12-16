@@ -97,7 +97,7 @@
         chart_api.draw(data_api, options_api);
 
         //Hình 3: Thông tin doanh thu theo ngay
-        var array_develop_info = new Array(["<?php echo __('Ngày') ?>", "<?php echo __('SMS') ?>", "<?php echo __('Thẻ cào') ?>", "<?php echo __('Tổng xu nạp vào game') ?>"]);
+        var array_develop_info = new Array(["<?php echo __('Ngày') ?>", "<?php echo __('SMS') ?>", "<?php echo __('Thẻ cào') ?>", "<?php echo __('Tổng Ken nạp vào game') ?>"]);
         <?php foreach($purchase_arr as $day => $value):?>
             array_develop_info.push(['<?php echo $day;  ?>', Number('<?php echo $value[2][0] ?>'), Number('<?php echo $value[1][0] ?>'), Number('<?php echo (int)$value[1][1] + (int)$value[2][1]  ?>') ]);
         <?php endforeach ?>

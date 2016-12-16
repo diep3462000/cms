@@ -13,17 +13,19 @@ abstract class BaseNotificationFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'title'          => new sfWidgetFormFilterInput(),
-      'message'        => new sfWidgetFormFilterInput(),
-      'pushtime'       => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate())),
-      'cp'             => new sfWidgetFormFilterInput(),
+      'title'          => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'message'        => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'pushHour'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'repeat_daily'   => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'status'         => new sfWidgetFormFilterInput(array('with_empty' => false)),
     ));
 
     $this->setValidators(array(
       'title'          => new sfValidatorPass(array('required' => false)),
       'message'        => new sfValidatorPass(array('required' => false)),
-      'pushtime'       => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
-      'cp'             => new sfValidatorPass(array('required' => false)),
+      'pushHour'       => new sfValidatorPass(array('required' => false)),
+      'repeat_daily'   => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'status'         => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
     ));
 
     $this->widgetSchema->setNameFormat('notification_filters[%s]');
@@ -43,11 +45,12 @@ abstract class BaseNotificationFormFilter extends BaseFormFilterDoctrine
   public function getFields()
   {
     return array(
-      'notificationid' => 'Number',
+      'notificationId' => 'Number',
       'title'          => 'Text',
       'message'        => 'Text',
-      'pushtime'       => 'Date',
-      'cp'             => 'Text',
+      'pushHour'       => 'Text',
+      'repeat_daily'   => 'Number',
+      'status'         => 'Number',
     );
   }
 }

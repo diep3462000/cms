@@ -27,11 +27,13 @@ class gvManageExchangeAssetRequestFormFiltersAdmin extends BaseExchangeAssetRequ
             'request_topup_id' => new sfWidgetFormFilterInput(array('with_empty' => false)),
             'created_date' => new sfWidgetFormFilterInput(array('with_empty' => false), array('readonly' => true)),
             'responseData'     => new sfWidgetFormFilterInput(array('with_empty' => false)),
+            'verified_phone'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
 
         ));
 
         $this->setValidators(array(
             'requestUserId'    => new sfValidatorPass(array('required' => false)),
+            'verified_phone'     => new sfValidatorPass(array('required' => false)),
             'requestUserName'  => new sfValidatorPass(array('required' => false)),
             'user_name'  => new sfValidatorPass(array('required' => false)),
             'assetId'          => new sfValidatorPass(array('required' => false)),
@@ -45,7 +47,7 @@ class gvManageExchangeAssetRequestFormFiltersAdmin extends BaseExchangeAssetRequ
                 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')),
                 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
             ));
-
+        $this->widgetSchema['user_name']->setLabel($i18n->__("Id/Tên"));
         $this->widgetSchema->setNameFormat('exchange_asset_request_filters[%s]');
 
         $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
@@ -88,7 +90,17 @@ class gvManageExchangeAssetRequestFormFiltersAdmin extends BaseExchangeAssetRequ
         if(array_key_exists('responseData', $values)&& $values['responseData'] != ''){
             $query->andWhere('lower('.$alias. '.responseData) LIKE  ?', VtHelper::translateQuery($values['responseData']['text']) . '%');
         }
+
+        if(array_key_exists('verified_phone', $values)&& $values['verified_phone']['text'] != ''){
+            $phone =$values['verified_phone']['text'];
+            if (substr($phone, 0, 1) == '0') { #0975292582
+                $phone = substr($values['verified_phone']['text'], 1);
+            }
+            $query->andwhere("i.verifiedPhone like ?", "%".  $phone . "%");
+        }
         $query->leftJoin($alias . ".User u");
+        $query->leftJoin("u.UserInfo i");
+
 //        $query->leftJoin($alias . ".MoneyTransaction t");
         $query->orderBy($alias . ".created_at desc");
         return $query;

@@ -84,8 +84,8 @@ foreach ($dataDate2 as $valDate2){
                 <div class="span12">
                     <div class="span6" style="text-align: left; margin-left: 0px;">
                         <select name="filterType" id="filter-type" style="margin-left: 10px; width: 130px;">
-                            <option value="1">Xu</option>
-                            <option value="0">KEN</option>
+                            <option value="1">Ken</option>
+                            <option value="0">Xu</option>
                         </select>
                             <select name="filtergame" id="filter-game" style="margin-left: 10px; width: 130px;">
 								<option value="">Tất cả Game</option>

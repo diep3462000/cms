@@ -1,3 +1,75 @@
+purchase_money_log_bkTestMoney:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                PurchaseMoneyLog
+    module:               bkTestMoney
+    prefix_path:          /bkTestMoney
+    column:               purchaseLogId
+    with_wildcard_routes: true
+
+emergency_notification:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                EmergencyNotification
+    module:               bkManageEmergencyNotification
+    prefix_path:          /bkManageEmergencyNotification
+    column:               notificationId
+    with_wildcard_routes: true
+
+system_properties:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                SystemProperties
+    module:               bkManageSystemProperties
+    prefix_path:          /bkManageSystemProperties
+    column:               key_
+    with_wildcard_routes: true
+
+black_list_user:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                BlackListUser
+    module:               bkManageBlackListUser
+    prefix_path:          /bkManageBlackListUser
+    column:               blackListId
+    with_wildcard_routes: true
+
+logged_in_log:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                LoggedInLog
+    module:               bkManageLoggedInLog
+    prefix_path:          /bkManageLoggedInLog
+    column:               logId
+    with_wildcard_routes: true
+
+mo_result:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                MoResult
+    module:               bkManageMoResult
+    prefix_path:          /bkManageMoResult
+    column:               id
+    with_wildcard_routes: true
+
+user_otp_auto:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                UserOtpAuto
+    module:               bkManageUserAuto
+    prefix_path:          /bkManageUserAuto
+    column:               otpId
+    with_wildcard_routes: true
+
+notification:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Notification
+    module:               bkManageNotification
+    prefix_path:          /bkManageNotification
+    column:               notificationId
+    with_wildcard_routes: true
+
 log_web:
   class: sfDoctrineRouteCollection
   options:
@@ -86,15 +158,6 @@ purchase_money_log:
     module:               bkManageMoneyLog
     prefix_path:          /bkManageMoneyLog
     column:               purchaseLogId
-    with_wildcard_routes: true
-
-system_properties:
-  class: sfDoctrineRouteCollection
-  options:
-    model:                SystemProperties
-    module:               gvManageSystemProperties
-    prefix_path:          /gvManageSystemProperties
-    column:               key_
     with_wildcard_routes: true
 
 notify:
@@ -462,14 +525,6 @@ message_type:
     module:               gvManageMessageType
     prefix_path:          /gvManageMessagenType
     column:               messageTypeId
-    with_wildcard_routes: true
-notification:
-  class: sfDoctrineRouteCollection
-  options:
-    model:                Notification
-    module:               gvManageNotification
-    prefix_path:          /gvManageNotification
-    column:               notificationId
     with_wildcard_routes: true
 room:
   class: sfDoctrineRouteCollection

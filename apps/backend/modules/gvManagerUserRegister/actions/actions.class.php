@@ -56,6 +56,7 @@ class gvManagerUserRegisterActions extends autoGvManagerUserRegisterActions
         $register_info = UserTable::getRegisterInfo(date("Y-m-d", $day_7) . "00:00:00");
         $register_info_new = UserInfoTable::getRegisterInfoNew(date("Y-m-d", $day_7) . "00:00:00");
         $user_play_inday  =  UserInfoTable::getPlayUserInday(date("Y-m-d", $day_7) . "00:00:00");
+        $user_login_inday = LoggedInLogTable::getPlayUserInday(date("Y-m-d", $day_7) . "00:00:00");
 //        $register_info_new = UserTable::getRegisterInfoNew(date("Y-m-d", $day_7) . "00:00:00");
         $created_at = array();
         //tai khoan moi
@@ -74,7 +75,11 @@ class gvManagerUserRegisterActions extends autoGvManagerUserRegisterActions
         foreach($user_play_inday as $date){
             $play_in_day[$date['date']] = $date['count'];
         }
-
+        // nguoi choi trong ngay
+        $login_in_day= array();
+        foreach($user_login_inday as $date){
+            $login_in_day[$date['date']] = $date['count'];
+        }
         $sevent_day = array();
 //        for($i=0; $i<7; $i++) {
 //            $sevent_day[date("d/m/Y", $day_7 + $i* $day)] = array(
@@ -86,6 +91,7 @@ class gvManagerUserRegisterActions extends autoGvManagerUserRegisterActions
                 isset($created_at[date("Y-m-d", $day_7 + $i* $day)]) ? $created_at[date("Y-m-d", $day_7 + $i* $day)]: 0,
                 isset($created_at_new[date("Y-m-d", $day_7 + $i* $day)]) ? $created_at_new[date("Y-m-d", $day_7 + $i* $day)]: 0,
                 isset($play_in_day[date("Y-m-d", $day_7 + $i* $day)]) ? $play_in_day[date("Y-m-d", $day_7 + $i* $day)]: 0,
+                isset($login_in_day[date("Y-m-d", $day_7 + $i* $day)]) ? $login_in_day[date("Y-m-d", $day_7 + $i* $day)]: 0,
             );
 
         }

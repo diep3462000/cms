@@ -1,0 +1,26 @@
+## YAML Template.
+---
+bccs:
+#url test
+  #url_megapay: "http://cttcorp.net/ChargingGW/services/Services?wsdl"
+  url_megapay: "http://103.68.243.233/ChargingGW/services/Services?wsdl"
+  m_PartnerID: "CTT_gamebigone"
+  m_MPIN: "tdsscloji"
+  m_UserName: "CTT_gamebigone"
+  m_Pass: 	"lbrxzfbfv"
+  m_PartnerCode: "00137"
+  m_Target: "useraccount1"
+  # that
+  ws_url: 'http://cttcorp.net/ChargingGW/services/Services?wsdl',                                         //link webservice của Epay
+  partnerId: '00137',                                                                     //Mã Merchant, sau khi đăng ký dịch vụ, Epay sẽ cung cấp cho khách hàng
+  targetAcc: 'CTT_gamebigone',                                                                    //Tên Merchant Epay cung cấp cho khách hàng
+  password: 'lbrxzfbfv  '
+#SMS
+  partner_name_sms: KING
+  partner_id_sms: 10229
+  md5_pass: 4a6ec3e52a89dcb4fa020d0a9d6aab4e
+  command_code: BKG
+  short_code: 9039
+timeout:
+  connect: 3
+  response: 30

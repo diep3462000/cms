@@ -27,4 +27,29 @@ class sfGuardUserTable extends PluginsfGuardUserTable
     {
         return $q->orderBy('username');
     }
+    public static function queryListUserActive(){
+        return sfGuardUserTable::getInstance()->createQuery()
+            ->select('username, id')
+            ->where('is_active =?', VtCommonEnum::NUMBER_ONE)
+            ->orderBy('username ASC');
+    }
+    public function setUnLockUser($username) {
+        $q = $this->createQuery()
+            ->update('sfGuardUser u')
+            ->set('u.is_lock_signin', '?', 0)
+            ->set('u.locked_time', 'NULL')
+            ->where('u.username = ?', $username);
+
+        return $q->execute();
+    }
+
+    public function updateUserLog($username, $time) {
+        $q = $this->createQuery()
+            ->update()
+            ->set('is_lock_signin', '?', 1)
+            ->set('locked_time', '?', $time)
+            ->where('username = ?', $username);
+
+        return $q->execute();
+    }
 }
