@@ -39,18 +39,10 @@ class vtChargingForm extends BaseForm
                     )
                 )
             ),
-            'serial'         => new sfValidatorAnd(
-                array(
-                    new sfValidatorString(array('max_length' => 15, 'min_length' => 9, 'required' => true, 'trim' => true),
-                        array('required' => $i18n->__('Bạn chưa nhập chuỗi số in trên thẻ cào.'),
-                            'max_length' => $i18n->__('Serial tối đa %max_length% ký tự.'),
-                            'min_length' => $i18n->__("Serial tối thiểu %min_length% ký tự.")
-                        )
-                    ),
-                    new sfValidatorRegex(
-                        array('pattern' =>   '/^[0-9]+$/'),
-                        array('invalid' => $i18n->__('Serial chỉ bao gồm các ký tự 0-9.'))
-                    )
+            'serial'         =>                     new sfValidatorString(array('max_length' => 15, 'min_length' => 9, 'required' => true, 'trim' => true),
+                array('required' => $i18n->__('Bạn chưa nhập chuỗi số in trên thẻ cào.'),
+                    'max_length' => $i18n->__('Serial tối đa %max_length% ký tự.'),
+                    'min_length' => $i18n->__("Serial tối thiểu %min_length% ký tự.")
                 )
             ),
             'card_code'     => new sfValidatorAnd(

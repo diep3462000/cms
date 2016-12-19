@@ -16,7 +16,7 @@ class PurchaseMoneyLogTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('PurchaseMoneyLog');
     }
-    public static function getTotalRevenueByType($values = null)
+    public function getTotalRevenueByType($values = null)
     {
         $query = PurchaseMoneyLogTable::getInstance()->createQuery('a');
         $query->select("sum(a.parValue) as sum_money, sum(a.cashValue) as sum_cash, a.type");
@@ -77,6 +77,52 @@ class PurchaseMoneyLogTable extends Doctrine_Table
         $query->groupBy("a.type");
         return $query->fetchArray();
     }
+// tổng nạp vào
+    public function getTotalRevenue($values = null)
+    {
+        $query = PurchaseMoneyLogTable::getInstance()->createQuery('a');
+        $query->select("sum(a.parValue) as sum_money, sum(a.cashValue) as sum_cash, a.type");
+//        $query->where($alias. ".money > 0");
+//        $query->andWhere("status = 1");
+        if (array_key_exists('created_date', $values)) {
+            $text = trim($values['created_date']['text']);
+            $dateArr = explode('-', $text);
+            if (count($dateArr) == 2) {
+                $date1 = trim($dateArr[0]);
+                $date1Arr = explode('/', $date1);
+                $date1Str = '';
+                if (count($date1Arr) == 3) {
+                    $date1Str = $date1Arr[2] . '-' . $date1Arr[1] . '-' . $date1Arr[0] . ' 00:00:00';
+                }
+                $date2 = trim($dateArr[1]);
+                $date2Arr = explode('/', $date2);
+                $date2Str = '';
+                if (count($date2Arr) == 3) {
+                    $date2Str = $date2Arr[2] . '-' . $date2Arr[1] . '-' . $date2Arr[0] . ' 23:59:59';
+                }
+                $query->andWhere('a.purchasedTime BETWEEN ? AND ?', array($date1Str, $date2Str));
+            }
+        }
+        if(array_key_exists('user_name', $values)&& $values['user_name'] != ''){
+            $query->andWhere('lower(u.displayName) LIKE ?  OR u.userId = ?  OR u.userName LIKE  ?',
+                array('%' . VtHelper::translateQuery($values['user_name']['text']) . '%', $values['user_name']['text'],
+                    '%' . VtHelper::translateQuery($values['user_name']['text']) . '%'));
+        }
+
+        if(array_key_exists('verified_phone', $values)&& $values['verified_phone']['text'] != ''){
+            $phone =$values['verified_phone']['text'];
+            if (substr($phone, 0, 1) == '0') { #0975292582
+                $phone = substr($values['verified_phone']['text'], 1);
+            }
+            $query->andwhere("i.verifiedPhone like ?", "%".  $phone . "%");
+        }
+        $query->leftJoin("a.UserInfo g");
+        $query->leftJoin("g.User u");
+//        $query->leftJoin("g.Partner p");
+//        $query->groupBy("a.type");
+        return $query->fetchOne();
+    }
+
     public static function getTotalRevenueByDate($values = null)
     {
         $query = PurchaseMoneyLogTable::getInstance()->createQuery('a');
