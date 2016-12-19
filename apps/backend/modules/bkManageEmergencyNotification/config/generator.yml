@@ -15,16 +15,19 @@ generator:
       actions: ~
       fields:
         content: {label: Nội dung}
-        expriedTime: {label: Thời hạn}
+        expriedTime: {label: Thời gian kết thúc}
         createdTime: {label: Thời gian bắt đầu}
       list:
         title: Danh sách thông báo khẩn cấp trong game
-        object_actions: {}
+        object_actions:
+          _edit: {label: Chi tiết}
         batch_actions: {}
       filter:
         display: [content]
       form:
         class: bkManageEmergencyNotificationAdmin
         display: [content, createdTime, expriedTime, active]
-      edit:    ~
-      new:     ~
+      edit:
+        title: Chỉnh sửa thông báo
+      new:
+        title: Tạo mới thống báo

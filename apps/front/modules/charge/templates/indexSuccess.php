@@ -111,13 +111,18 @@
                 </tbody>
             </table>
             <p>Ví dụ với 10.000đ thẻ megacard bạn sẽ nhận được 8.500 Ken trong game</p>
-            <p>Hướng dẫn nạp thẻ</p>
+            <b>Hướng dẫn nạp thẻ</b>
             <p style="text-align:justify">Số seri thẻ là dãy kỹ tự số thường gồm 13 chữ số in phía trên thẻ, bên cạnh là dòng chữ Số Seri.
                 Nếu cần trợ giúp khẩn cấp bạn gọi lên Hotline : 0124.983.5555 để được trợ giúp ngay nhé</p>
             <p style="text-align:center">
                 <img alt="so seri the viettel" src="/images/so-seri-the-viettel.jpg"
                      title="Số seri và mã thẻ Viettel trên thẻ cào Viettel 50K">
             </p>
+            <b>Hướng dẫn nạp Ken bằng SMS</b>
+            <p>1. Đối với thuê bao Viettel (trả trước và trả sau) soạn tin nhắn theo cú pháp để nạp Ken:</p>
+            <p style="text-align:justify">Soạn tin MW [Menhgiatien] BKG NAP [userId] </p>
+            <p>1. Đối với thuê bao Vina và Mobi (trả trước và trả sau) soạn tin nhắn theo cú pháp để nạp Ken:</p>
+            <p style="text-align:justify">Soạn tin MW [Menhgiatien] BKG NAP [userId] </p>
         </div>
     </div>
 </div>
@@ -208,9 +213,6 @@
                             min: 11,
                             max: 15,
                             message: "<?php echo __("Serial từ 11 đến 15 ký tự")?>"
-                        },
-                        numeric: {
-                            message: "<?php echo __("Serial chỉ gồm kỹ tự số.")?>"
                         }
                     }
                 },

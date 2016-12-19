@@ -16,13 +16,14 @@ generator:
       fields:  ~
       list:
         title : Thống kê user đăng ký
-        display: [parter_name, os_build, imei, userid, username_view, display_name, registedtime, last_logi_time]
+        display: [parter_name, os_build, imei, userid, username_view, display_name, registedtime, last_login_time]
         actions: {}
         object_actions: {}
         batch_actions: {}
       filter:
         class: gvManageUserRegisterFormFiltersAdmin
         display: [user_name, registedtime, clientId, cp, ip]
-      form:    ~
+      form:
+        display: []
       edit:    ~
       new:     ~

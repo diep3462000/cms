@@ -44,6 +44,7 @@ class gvManageUserFormFiltersAdmin extends BaseUserFormFilter
 
         $this->widgetSchema->setNameFormat('gv_user_filters[%s]');
         $this->widgetSchema['lastLoginTime']->setLabel($i18n->__("Lần cuối đăng nhập"));
+        $this->widgetSchema['user_name']->setLabel($i18n->__("Tên/ Id"));
         $this->widgetSchema['device']->setLabel($i18n->__("IME"));
 
         $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
@@ -106,6 +107,8 @@ class gvManageUserFormFiltersAdmin extends BaseUserFormFilter
 //            $query->andwhere("1=1");
             $query->orderBy($list_top[$values['top']] . " desc");
             $query->limit(100);
+        } else {
+            $query->orderBy($alias . ".userId desc");
         }
        // $query->leftJoin($alias. ".LogPayment l");
        // $query->groupBy("l.money");
