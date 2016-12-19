@@ -31,8 +31,6 @@ abstract class BaseClientType extends sfDoctrineRecord
         $this->setTableName('client_type');
         $this->hasColumn('clientId', 'integer', 4, array(
              'type' => 'integer',
-             'fixed' => 0,
-             'unsigned' => true,
              'primary' => true,
              'autoincrement' => true,
              'length' => 4,

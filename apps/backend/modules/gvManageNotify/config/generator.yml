@@ -14,7 +14,7 @@ generator:
     config:
       actions: ~
       fields:
-        content: {label: Nội dùng}
+        content: {label: Nội dung}
         status: {label: Trạng thái}
       list:
         title: Quản lý notify

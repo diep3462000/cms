@@ -27,7 +27,7 @@ abstract class BasePartnerForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'partnerid'   => new sfValidatorChoice(array('choices' => array($this->getObject()->get('partnerid')), 'empty_value' => $this->getObject()->get('partnerid'), 'required' => false)),
-      'partnername' => new sfValidatorString(array('max_length' => 50, 'required' => false)),
+      'partnername' => new sfValidatorString(array('max_length' => 50)),
       'smsnumber'   => new sfValidatorString(array('max_length' => 4, 'required' => false)),
       'username'    => new sfValidatorString(array('max_length' => 75, 'required' => false)),
       'password'    => new sfValidatorString(array('max_length' => 255, 'required' => false)),

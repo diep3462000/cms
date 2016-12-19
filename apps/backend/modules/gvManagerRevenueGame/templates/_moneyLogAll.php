@@ -55,6 +55,7 @@ foreach ($dataDate2 as $valDate2){
 <div class="container-fluid">
     <div class="row-fluid">
         <div class="span12">
+            <form action="<?php echo url_for('doanh_thu_ngay_linh_collection', array('action' => 'filter')) ?>" method="post">
             <div class="row-fluid " id="inspect-summary-div">
                 <div class="span3">
                     <p style="font-size: 20px;"><?php echo __('Tổng phế Ken') ?></p>
@@ -127,6 +128,7 @@ foreach ($dataDate2 as $valDate2){
 					</div>
 				</div>
             </div><!-- Lựa chọn tìm kiếm -->
+            </form>
 <!--            <div class="row-fluid" class="ui-talbe-body">-->
 <!--                <div class="col-lg-12">-->
 <!--                    <div style="border: 1px solid #ddd;">-->

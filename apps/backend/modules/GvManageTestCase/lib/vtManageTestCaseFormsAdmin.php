@@ -22,15 +22,15 @@ class gvManageTestCaseFormsAdmin extends BaseGvTestCaseForm
             'value'       => new sfWidgetFormTextarea(),
             'game_id'     => new sfWidgetFormInputText(),
             'description' => new sfWidgetFormTextarea(),
-            'status'      => new sfWidgetFormInputText(),
+            'status'      => new sfWidgetFormInputCheckbox(),
         ));
         $this->setValidators(array(
             'id'          => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
             'test_key'    => new sfValidatorString(array('max_length' => 20)),
             'value'       => new sfValidatorString(),
-            'game_id'     => new sfValidatorString(array('max_length' => 12)),
+            'game_id'     => new sfValidatorInteger(),
             'description' => new sfValidatorString(array('max_length' => 256, 'required' => false)),
-            'status'      => new sfValidatorString(array('required' => false)),
+            'status'      => new sfValidatorBoolean(),
         ));
 
         $this->widgetSchema->setNameFormat('gv_test_case[%s]');

@@ -13,13 +13,13 @@ abstract class BasePartnerFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'partnername' => new sfWidgetFormFilterInput(),
+      'partnername' => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'smsnumber'   => new sfWidgetFormFilterInput(),
       'username'    => new sfWidgetFormFilterInput(),
       'password'    => new sfWidgetFormFilterInput(),
       'accesskey1'  => new sfWidgetFormFilterInput(),
       'accesskey2'  => new sfWidgetFormFilterInput(),
-      'createdtime' => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
+      'createdtime' => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate())),
     ));
 
     $this->setValidators(array(

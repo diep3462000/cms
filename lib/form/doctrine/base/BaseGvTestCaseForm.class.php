@@ -20,7 +20,7 @@ abstract class BaseGvTestCaseForm extends BaseFormDoctrine
       'value'       => new sfWidgetFormTextarea(),
       'game_id'     => new sfWidgetFormInputText(),
       'description' => new sfWidgetFormTextarea(),
-      'status'      => new sfWidgetFormInputText(),
+      'status'      => new sfWidgetFormInputCheckbox(),
     ));
 
     $this->setValidators(array(
@@ -29,7 +29,7 @@ abstract class BaseGvTestCaseForm extends BaseFormDoctrine
       'value'       => new sfValidatorString(array('max_length' => 512)),
       'game_id'     => new sfValidatorInteger(),
       'description' => new sfValidatorString(array('max_length' => 500, 'required' => false)),
-      'status'      => new sfValidatorInteger(array('required' => false)),
+      'status'      => new sfValidatorBoolean(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('gv_test_case[%s]');

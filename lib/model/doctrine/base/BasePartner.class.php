@@ -59,7 +59,7 @@ abstract class BasePartner extends sfDoctrineRecord
              'fixed' => 0,
              'unsigned' => false,
              'primary' => false,
-             'notnull' => false,
+             'notnull' => true,
              'autoincrement' => false,
              'length' => 50,
              ));
@@ -113,8 +113,7 @@ abstract class BasePartner extends sfDoctrineRecord
              'fixed' => 0,
              'unsigned' => false,
              'primary' => false,
-             'default' => '0000-00-00 00:00:00',
-             'notnull' => true,
+             'notnull' => false,
              'autoincrement' => false,
              'length' => 25,
              ));

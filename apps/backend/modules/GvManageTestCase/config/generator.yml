@@ -20,7 +20,7 @@ generator:
       fields:
         test_key: {label: Tên test case}
         value: {label: Giá trị}
-        game_id: {label: Game}
+        game_id: {label: Game ID}
         status: {label: Trạng thái}
       list:
         title : Danh sách test case

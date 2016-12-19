@@ -12,10 +12,20 @@ generator:
     actions_base_class:    sfActions
 
     config:
-      actions: ~
+      actions:
+        _list: {label: Quay trở lại danh sách}
+        _save: {label: Lưu}
+        _delete: {label: Xóa}
+        _edit: {label: Chi tiết}
       fields:  ~
-      list:    ~
+      list:
+        title : Danh sách hệ điều hành
+        object_actions:
+          _edit: {label: Chi tiết}
+          _delete: ~
       filter:  ~
       form:    ~
-      edit:    ~
-      new:     ~
+      edit:
+        title: Chỉnh sửa hệ điều hành
+      new:
+        title: Tạo mới hệ điều hành

@@ -12,14 +12,14 @@ Doctrine_Manager::getInstance()->bindComponent('GvTestCase', 'doctrine');
  * @property string $value
  * @property integer $game_id
  * @property string $description
- * @property integer $status
+ * @property boolean $status
  * 
  * @method integer    getId()          Returns the current record's "id" value
  * @method string     getTestKey()     Returns the current record's "test_key" value
  * @method string     getValue()       Returns the current record's "value" value
  * @method integer    getGameId()      Returns the current record's "game_id" value
  * @method string     getDescription() Returns the current record's "description" value
- * @method integer    getStatus()      Returns the current record's "status" value
+ * @method boolean    getStatus()      Returns the current record's "status" value
  * @method GvTestCase setId()          Sets the current record's "id" value
  * @method GvTestCase setTestKey()     Sets the current record's "test_key" value
  * @method GvTestCase setValue()       Sets the current record's "value" value
@@ -81,15 +81,14 @@ abstract class BaseGvTestCase extends sfDoctrineRecord
              'autoincrement' => false,
              'length' => 500,
              ));
-        $this->hasColumn('status', 'integer', 1, array(
-             'type' => 'integer',
+        $this->hasColumn('status', 'boolean', null, array(
+             'type' => 'boolean',
              'fixed' => 0,
              'unsigned' => false,
              'primary' => false,
              'default' => 0,
              'notnull' => true,
              'autoincrement' => false,
-             'length' => 1,
              ));
     }
 

@@ -17,7 +17,7 @@ abstract class BaseGvTestCaseFormFilter extends BaseFormFilterDoctrine
       'value'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'game_id'     => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'description' => new sfWidgetFormFilterInput(),
-      'status'      => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'status'      => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
     ));
 
     $this->setValidators(array(
@@ -25,7 +25,7 @@ abstract class BaseGvTestCaseFormFilter extends BaseFormFilterDoctrine
       'value'       => new sfValidatorPass(array('required' => false)),
       'game_id'     => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'description' => new sfValidatorPass(array('required' => false)),
-      'status'      => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'status'      => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
     ));
 
     $this->widgetSchema->setNameFormat('gv_test_case_filters[%s]');
@@ -50,7 +50,7 @@ abstract class BaseGvTestCaseFormFilter extends BaseFormFilterDoctrine
       'value'       => 'Text',
       'game_id'     => 'Number',
       'description' => 'Text',
-      'status'      => 'Number',
+      'status'      => 'Boolean',
     );
   }
 }

@@ -12,12 +12,23 @@ generator:
     actions_base_class:    sfActions
 
     config:
-      actions: ~
+      actions:
+        _list: {label: Quay trở lại danh sách}
+        _save: {label: Lưu}
+        _delete: {label: Xóa}
+        _edit: {label: Chi tiết}
       fields:  ~
       list:
-        display: [partnername, username]
+        title : Danh sách đối tác
+        display: [partnername, smsnumber, username, accesskey1, accesskey2]
+        object_actions:
+          _edit: {label: Chi tiết}
+          _delete: ~
       filter:
         display: [partnername, username]
-      form:    ~
-      edit:    ~
-      new:     ~
+      form:
+        display: [partnername, smsnumber, username, password, accesskey1, accesskey2]
+      edit:
+        title: Chỉnh sửa đối tác
+      new:
+        title: Tạo mới đối tác

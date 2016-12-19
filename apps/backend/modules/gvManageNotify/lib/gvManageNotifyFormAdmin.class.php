@@ -23,12 +23,12 @@ class gvManageNotifyFormAdmin extends BaseNotifyForm
                         'width' => '700',
                         'height' => '200'),
                 )),
-            'status'     => new sfWidgetFormInputText(),
+            'status'     => new sfWidgetFormInputCheckbox(),
         ));
 
         $this->setValidators(array(
             'content'   => new sfValidatorString(array('max_length' => 40000, 'required' => false)),
-            'status'     => new sfValidatorInteger(),
+            'status'     => new sfValidatorBoolean(),
         ));
 
 

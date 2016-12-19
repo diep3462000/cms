@@ -172,7 +172,7 @@ Notify:
     Timestampable: ~
   columns:
     content: { type: string(6000),  comment: "Noi dung thong bao"}
-    status:     {  type: integer(1), notnull: true, comment: "0: deactive, 1:active" }
+    status:     {  type: boolean, notnull: true, comment: "0: deactive, 1:active" }
 UserOTP:
   tableName: user_otp
   actAs:
@@ -1649,7 +1649,7 @@ GvTestCase:
       notnull: false
       autoincrement: false
     status:
-      type: integer(1)
+      type: boolean
       fixed: false
       unsigned: false
       primary: false
@@ -2071,8 +2071,6 @@ ClientType:
   columns:
     clientId:
       type: integer(4)
-      fixed: false
-      unsigned: true
       primary: true
       autoincrement: true
     code:     { type: bigint(11), comment: "mã hệ điều hành" }
@@ -2586,7 +2584,7 @@ Partner:
       fixed: false
       unsigned: false
       primary: false
-      notnull: false
+      notnull: true
       autoincrement: false
     smsnumber:
       type: string(4)
@@ -2628,8 +2626,7 @@ Partner:
       fixed: false
       unsigned: false
       primary: false
-      default: '0000-00-00 00:00:00'
-      notnull: true
+      notnull: false
       autoincrement: false
 PasswordUpdate:
   connection: doctrine
