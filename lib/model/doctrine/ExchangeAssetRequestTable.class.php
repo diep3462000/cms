@@ -42,6 +42,47 @@ class ExchangeAssetRequestTable extends Doctrine_Table
         $query->select("sum(a.totalParValue) as sum_money");
         $query->orderBy("a.created_at asc");
         $query->where("a.status = 1");
+        if (array_key_exists('created_date', $values)) {
+            $text = trim($values['created_date']['text']);
+            $dateArr = explode('-', $text);
+            if (count($dateArr) == 2) {
+                $date1 = trim($dateArr[0]);
+                $date1Arr = explode('/', $date1);
+                $date1Str = '';
+                if (count($date1Arr) == 3) {
+                    $date1Str = $date1Arr[2] . '-' . $date1Arr[1] . '-' . $date1Arr[0] . ' 00:00:00';
+                }
+                $date2 = trim($dateArr[1]);
+                $date2Arr = explode('/', $date2);
+                $date2Str = '';
+                if (count($date2Arr) == 3) {
+                    $date2Str = $date2Arr[2] . '-' . $date2Arr[1] . '-' . $date2Arr[0] . ' 23:59:59';
+                }
+                $query->andWhere('a.created_at BETWEEN ? AND ?', array($date1Str, $date2Str));
+            }
+        }
+        if(array_key_exists('status', $values)&& $values['status'] != ''){
+            $query->andWhere( ".status = ?",$values["status"] );
+        }
+        if(array_key_exists('user_name', $values)&& $values['user_name'] != ''){
+            $query->andWhere('lower(u.displayName) LIKE ?  OR u.userId = ?  OR u.userName LIKE  ?',
+                array('%' . VtHelper::translateQuery($values['user_name']['text']) . '%', $values['user_name']['text'],
+                    '%' . VtHelper::translateQuery($values['user_name']['text']) . '%'));
+        }
+        if(array_key_exists('responseData', $values)&& $values['responseData'] != ''){
+            $query->andWhere('lower(a.responseData) LIKE  ?', VtHelper::translateQuery($values['responseData']['text']) . '%');
+        }
+
+        if(array_key_exists('verified_phone', $values)&& $values['verified_phone']['text'] != ''){
+            $phone =$values['verified_phone']['text'];
+            if (substr($phone, 0, 1) == '0') { #0975292582
+                $phone = substr($values['verified_phone']['text'], 1);
+            }
+            $query->andwhere("i.verifiedPhone like ?", "%".  $phone . "%");
+        }
+        $query->leftJoin("a.User u");
+        $query->leftJoin("u.UserInfo i");
+
         return $query->fetchOne()->sum_money;
     }
     public static function getSumRequestByDay($userId)

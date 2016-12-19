@@ -29,8 +29,9 @@ class charge2Actions extends sfActions
         $logger_err = new sfFileLogger(new sfEventDispatcher(), array('file' => sfConfig::get('sf_log_dir') . '/charge2/error_' . date('Y_m_d') . '.log'));
         $logger_ex = new sfFileLogger(new sfEventDispatcher(), array('file' => sfConfig::get('sf_log_dir') . '/charge2/exception_' . date('Y_m_d') . '.log'));
         if(LogPaymentTable::countLockPayment($userId) > 10 ){
-         //   return new Response(PaymentErrorCode::CHARGE_BAN, PaymentErrorCode::getMessage(PaymentErrorCode::CHARGE_BAN, PaymentErrorCode::$messages));
+           return new Response(PaymentErrorCode::CHARGE_BAN, PaymentErrorCode::getMessage(PaymentErrorCode::CHARGE_BAN, PaymentErrorCode::$messages));
         }
+        ini_set('max_execution_time', 180);
         if(($userId && $userName && $provider && $cardSerial && $cardPin)) {
             try{
 //                $ws = new WsChargeVNP();

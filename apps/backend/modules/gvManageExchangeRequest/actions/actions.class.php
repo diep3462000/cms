@@ -58,9 +58,21 @@ class gvManageExchangeRequestActions extends autoGvManageExchangeRequestActions
         foreach ($purchase_moneys as $index => $purchase_money){
             $purchase_arr[$purchase_money["purchase_date"]] = $purchase_money["sum_money"];
         }
+        $filters = $this->getUser()->getAttribute('gvManageExchangeRequest.filters', array(), 'admin_module');
+
+        if($filters){
+            foreach ($filters as $key => $value)
+            {
+                if (isset($filters[$key]['text']))
+                {
+                    $filters[$key]['text'] = trim($filters[$key]['text']);
+                }
+            }
+        }
+
         $this->purchase_arr = $purchase_arr;
-        $this->sum_ken_nap = ExchangeAssetRequestTable::getTotalRevenue();
-        $this->sum_money = ExchangeAssetRequestTable::getTotalRevenue();
+        $this->sum_ken_nap = PurchaseMoneyLogTable::getInstance()->getTotalRevenue($filters); // so Ken nap vao
+        $this->sum_money = ExchangeAssetRequestTable::getTotalRevenue($filters);
         $this->sum_xu_ken = UserInfoTable::getSumMoneyUser();
 //        var_dump($this->sum_xu_ken);die;
     }

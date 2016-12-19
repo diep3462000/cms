@@ -82,7 +82,7 @@ class gvManageUserRegisterFormFiltersAdmin extends BaseUserFormFilter
                 array('%' . VtHelper::translateQuery($values['user_name']['text']) . '%', $values['user_name']['text'],
                     '%' . VtHelper::translateQuery($values['user_name']['text']) . '%'));
         }
-        $query->select("p.partnerName as parter_name, c.name as os_build, g.deviceIdentify as imei, g.lastLoginTime as last_logi_time,". $alias . ".*");
+        $query->select("p.partnerName as parter_name, c.name as os_build, g.deviceIdentify as imei, g.lastLoginTime as last_login_time,". $alias . ".*");
         $query->leftJoin($alias. ".UserInfo g");
         $query->leftJoin("g.Partner p");
         $query->leftJoin("g.ClientType c");
