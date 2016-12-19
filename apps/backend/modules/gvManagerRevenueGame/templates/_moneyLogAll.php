@@ -61,7 +61,7 @@ foreach ($dataDate2 as $valDate2){
                     <span style="font-size: 25px;"><?php echo VtHelper::number_format(array_sum($arrRevenueTotal2)). __(' VND'); ?> </span>
                     <table class="table" style="margin-top: 10px;">
                         <tr><td><?php echo __('Hôm nay') ?></td><td style="text-align: center"><?php echo VtHelper::number_format($revenuCashToday[0]['sumTaxValue']);?> <?php echo __('KEN')?></td></tr>
-                        <tr><td><?php echo __('Hôm quá') ?></td><td style="text-align: center"><?php echo VtHelper::number_format($revenuCashYesterday[0]['sumTaxValue']);?> <?php echo __('KEN')?></td></tr>
+                        <tr><td><?php echo __('Hôm qua') ?></td><td style="text-align: center"><?php echo VtHelper::number_format($revenuCashYesterday[0]['sumTaxValue']);?> <?php echo __('KEN')?></td></tr>
                         <tr><td><?php echo __('Tháng này') ?></td><td style="text-align: center"><?php echo VtHelper::number_format($revenuCashThisMonth[0]['sumTaxValue']);?> <?php echo __('KEN')?></td></tr>
                         <tr><td></td><td></td></tr>
                     </table>

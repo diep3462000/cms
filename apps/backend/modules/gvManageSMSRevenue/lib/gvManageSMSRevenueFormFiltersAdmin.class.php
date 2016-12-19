@@ -46,8 +46,9 @@ class gvManageSMSRevenueFormFiltersAdmin extends BaseMoHistoryFormFilter
     public function doBuildQuery(array $values) {
         $query = parent::doBuildQuery($values);
         $alias = $query->getRootAlias();
-        $query->select("DATE(". $alias .".created_at) as created_date," . "sum(". $alias . ".amount) as sum_money, "
-            . $alias . ".keyword as keyword". $alias . ".telco as telco");
+//        $query->select("DATE(". $alias .".created_at) as created_date," . "sum(". $alias . ".amount) as sum_money, "
+//            . $alias . ".keyword as keyword, ". $alias . ".telco as telco");
+        $query->select("DATE(". $alias .".created_at) as created_date," . "sum(". $alias . ".amount) as sum_money, *");
         $query->where($alias. ".amount > 0");
 //        $query->andWhere("status = 1");
         if (array_key_exists('created_date', $values)) {
@@ -69,9 +70,12 @@ class gvManageSMSRevenueFormFiltersAdmin extends BaseMoHistoryFormFilter
                 $query->andWhere($alias. '.created_at BETWEEN ? AND ?', array($date1Str, $date2Str));
             }
         }
-//        if(array_key_exists('amount', $values)&& $values['amount'] != 0){
-//            $query->andWhere($alias .".amount = ?",$values["amount"] );
-//        }
+        if(array_key_exists('keyword', $values)&& $values['keyword']['text'] != ''){
+            $query->andWhere($alias .".keyword LIKE ?",'%' . VtHelper::translateQuery($values['keyword']['text']) . '%' );
+        }
+        if(array_key_exists('amount', $values)&& $values['amount']['text'] != ''){
+            $query->andWhere($alias .".amount = ?",$values['amount']['text']);
+        }
         $query->groupBy("DATE(". $alias .".created_at)");
         $query->orderBy($alias . ".created_at desc");
         return $query;

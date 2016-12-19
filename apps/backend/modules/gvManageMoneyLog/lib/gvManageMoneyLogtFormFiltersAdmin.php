@@ -28,7 +28,10 @@ class gvManageMoneyLogtFormFiltersAdmin extends BaseMoneyLogFormFilter
 
         $this->setValidators(array(
             'user_name'  => new sfValidatorPass(array('required' => false)),
-            'user_id'  => new sfValidatorPass(array('required' => false)),
+            'user_id'  => new sfValidatorInteger(array('required' => true), array(
+                'required'   => 'Bắt buộc phải nhập UserID',
+                'invalid' => 'Bắt buộc, UserID phải là số nguyên',
+            )),
             'type' => new sfValidatorChoice(array('required' => false, 'choices' => array_keys($arr_status))),
             'gameId'        => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Game'), 'column' => 'gameid')),
             'insertedTime' => new sfValidatorDateRange(array('required' => false,
@@ -83,12 +86,15 @@ class gvManageMoneyLogtFormFiltersAdmin extends BaseMoneyLogFormFilter
             $qr = true;
 
         }
-            if(array_key_exists('type', $values)&& $values['type'] != ''){
+        if(array_key_exists('type', $values)&& $values['type'] != ''){
             if($values['type'] = 1) {
                 $query->andWhere($alias . ".changeCash != 0");
             } else {
                 $query->andWhere($alias . ".changeGold != 0" );
             }
+        }
+        if(array_key_exists('gameId', $values)&& $values['gameId'] != ''){
+            $query->andWhere($alias . ".gameId = ?", $values['gameId']);
         }
         if(array_key_exists('user_id', $values)&& $values['user_id']['text'] != ''){
             $query->andWhere("u.userId = ?", $values['user_id']['text']);

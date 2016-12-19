@@ -16,7 +16,7 @@ generator:
       fields:  ~
       list:
         title: Thống kê doanh thu SMS theo ngày
-        display: [keyword, created_date, sum_money]
+        display: [keyword, created_date, sum_money, telco]
         actions: {}
         object_actions: {}
         batch_actions: {}

@@ -10,4 +10,7 @@
  */
 class gvManageSMSRevenueGeneratorConfiguration extends BaseGvManageSMSRevenueGeneratorConfiguration
 {
+    public function getPagerClass(){
+        return 'sfDoctrineGroupByPager';
+    }
 }
