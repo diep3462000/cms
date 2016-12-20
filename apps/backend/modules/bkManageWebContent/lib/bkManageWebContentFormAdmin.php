@@ -43,7 +43,7 @@ class bkManageWebContentFormAdmin extends BaseWebContentForm
 
         $this->setValidators(array(
             'content'   => new sfValidatorString(array('max_length' => 40000, 'required' => false)),
-            'title'       => new sfValidatorString(array('max_length' => 512, 'required' => false)),
+            'title'       => new sfValidatorString(array('max_length' => 512, 'required' => true)),
             'type' => new sfValidatorChoice(array('required' => false, 'choices' => array_keys($arr_type))),
 //            'type'        => new sfValidatorInteger(array('required' => false)),
             'keywords'    => new sfValidatorString(array('max_length' => 256, 'required' => false)),

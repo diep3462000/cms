@@ -15,7 +15,7 @@ generator:
       actions: ~
       fields:
         repeat_daily: {label: Lặp lại hàng ngày}
-        title: {label: tiêu đề}
+        title: {label: Tiêu đề}
         message: {label: Nội dung push}
         pushHour: {label: Giờ push}
       list:

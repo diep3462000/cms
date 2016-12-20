@@ -16,7 +16,7 @@ abstract class BaseNotificationForm extends BaseFormDoctrine
   {
     $this->setWidgets(array(
       'notificationId' => new sfWidgetFormInputHidden(),
-      'title'          => new sfWidgetFormTextarea(),
+      'title'          => new sfWidgetFormInputText(),
       'message'        => new sfWidgetFormTextarea(),
       'pushHour'       => new sfWidgetFormInputText(),
       'repeat_daily'   => new sfWidgetFormInputText(),
@@ -25,7 +25,7 @@ abstract class BaseNotificationForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'notificationId' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('notificationId')), 'empty_value' => $this->getObject()->get('notificationId'), 'required' => false)),
-      'title'          => new sfValidatorString(array('max_length' => 500)),
+      'title'          => new sfValidatorString(array('max_length' => 100)),
       'message'        => new sfValidatorString(array('max_length' => 500)),
       'pushHour'       => new sfValidatorPass(),
       'repeat_daily'   => new sfValidatorInteger(array('required' => false)),

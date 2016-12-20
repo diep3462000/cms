@@ -45,14 +45,14 @@ abstract class BaseNotification extends sfDoctrineRecord
              'autoincrement' => true,
              'length' => 4,
              ));
-        $this->hasColumn('title', 'string', 500, array(
+        $this->hasColumn('title', 'string', 100, array(
              'type' => 'string',
              'fixed' => 0,
              'unsigned' => false,
              'primary' => false,
              'notnull' => true,
              'autoincrement' => false,
-             'length' => 500,
+             'length' => 100,
              ));
         $this->hasColumn('message', 'string', 500, array(
              'type' => 'string',

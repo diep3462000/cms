@@ -2445,7 +2445,7 @@ Notification:
       primary: true
       autoincrement: true
     title:
-      type: string(500)
+      type: string(100)
       fixed: false
       unsigned: false
       primary: false

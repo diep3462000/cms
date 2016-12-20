@@ -17,7 +17,7 @@ class bkManageNotificationFormAdmin extends BaseNotificationForm
         $i18n = sfContext::getInstance()->getI18N();
         $this->setWidgets(array(
             'notificationId' => new sfWidgetFormInputHidden(),
-            'title'          => new sfWidgetFormTextarea(),
+            'title'          => new sfWidgetFormInputText(),
             'message'        => new sfWidgetFormTextarea(),
             'pushHour'       => new sfWidgetFormInputText(),
             'repeat_daily' => new sfWidgetFormChoice(array('choices' => array(0 => "Một lần" , 1 => "lặp lại hàng ngày")), array('add_empty' => true)),
@@ -29,7 +29,7 @@ class bkManageNotificationFormAdmin extends BaseNotificationForm
 
         $this->setValidators(array(
             'notificationId' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('notificationId')), 'empty_value' => $this->getObject()->get('notificationId'), 'required' => false)),
-            'title'          => new sfValidatorString(array('max_length' => 500)),
+            'title'          => new sfValidatorString(array('max_length' => 100, 'required' => true)),
             'message'        => new sfValidatorString(array('max_length' => 500)),
             'pushHour'       => new sfValidatorInteger(
                 array('required' => true, 'min'=>0, 'max'=>24,'trim' => true),
