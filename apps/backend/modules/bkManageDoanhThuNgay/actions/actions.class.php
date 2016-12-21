@@ -63,7 +63,7 @@ class bkManageDoanhThuNgayActions extends autoBkManageDoanhThuNgayActions
         }
 
 
-        $this->total_by_type = PurchaseMoneyLogTable::getTotalRevenueByType($filters);
+        $this->total_by_type = PurchaseMoneyLogTable::getInstance()->getTotalRevenueByType($filters);
 
 //        $day = 60*60*24; $day_7 = time() - 6*$day;
         $purchase_moneys = PurchaseMoneyLogTable::getTotalRevenueByDate($filters);

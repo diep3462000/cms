@@ -13,14 +13,20 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
+      fields:
+        deviceId: {label: IME}
+        remoteIp: {label: Địa chỉ Ip}
+        deviceInfo: {label: Thông tin thiết bị}
       list:
+        title: Log đăng nhập
+        display: [userId, userName, loggedInTime, deviceId, deviceInfo, remoteIp, clientType, packageName, versionCode, versionBuild, ipLocked, reloggedIn]
         sort: [loggedInTime, 'desc']
-        batch_actions: {}
+        actions: {}
         object_actions: {}
         batch_actions: {}
       filter:
-        display: [userId, userName]
+        class: gvManageLoggedInLogFormFiltersAdmin
+        display: [userId, userName,deviceId, remoteIp ]
       form:    ~
       edit:    ~
       new:     ~

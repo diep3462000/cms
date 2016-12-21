@@ -28,6 +28,19 @@ class gameActions extends sfActions
         $log->setRefer(isset($_SERVER['HTTP_REFERER'])? $_SERVER['HTTP_REFERER'] : "");
         $log->save();
     }
+    public function executeTai4(sfWebRequest $request)
+    {
+        $logger = new sfFileLogger(new sfEventDispatcher(), array('file' => sfConfig::get('sf_log_dir') . '/tai4/tai_' . date('d') . '.log'));
+        $refer = isset($_SERVER['HTTP_REFERER'])? $_SERVER['HTTP_REFERER'] : "";
+	$logger->log('[executeTai] check doi tac:'. "ip:" . VtHelper::getRealIpAddr() . $refer);
+        $log = new LogWeb();
+        $log->setAgent($_SERVER['HTTP_USER_AGENT']);
+        $log->setBrownser(VtHelper::get_browser_name());
+        $log->setIp(VtHelper::getDeviceIp());
+        $log->setPlatform($this->platform);
+        $log->setRefer($refer);
+        $log->save();
+    }
     public function executeTaiGame(sfWebRequest $request)
     {
         $this->platform  = VtHelper::getPlatform();

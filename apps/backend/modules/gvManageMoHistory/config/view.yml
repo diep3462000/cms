@@ -2,7 +2,7 @@
 ---
 indexSuccess:
   metas:
-    title: Lịch sử giao dịch SMS
+    title: Lịch sử MO
   stylesheets:
     - bootstrapDaterangepickerMaster/daterangepicker-bs2.css
 

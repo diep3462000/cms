@@ -33,15 +33,21 @@ class sfGuardUserCustomAdminForm extends PluginsfGuardUserForm
 
     //Set default cho truong is_active = false
     $this->setDefault('is_active', false);
-
+      $this->setValidator('phone', new sfValidatorRegex(
+          array('pattern' => '/^[+0-9_]{9,12}$/',
+              'trim' => true,
+              'max_length' => 12,
+              'required'   => false),
+          array('invalid' => $i18n->__('SDT không hợp lệ. Độ dài từ 9 -> 12 ký tự, chỉ bao gồm sô'))
+      ));
     //validator cho truong username, password, email_address
 	  if($this->isNew()){
 		  $this->setValidator('username', new sfValidatorRegex(
-			  array('pattern' => '/^[A-Za-z0-9_]{5,255}$/', 
+			  array('pattern' => '/^[A-Za-z0-9_]{5,32}$/',
                               'trim' => true,
-                              'max_length' => 255,
+                              'max_length' => 32,
                               'required'   => true),
-			  array('invalid' => $i18n->__('Định dạng không hợp lệ. Độ dài từ 5 -> 255 ký tự, không chứa ký tự đặc biệt, chỉ gồm chữ cái, số và gạch dưới'))
+			  array('invalid' => $i18n->__('Định dạng không hợp lệ. Độ dài từ 5 -> 32 ký tự, không chứa ký tự đặc biệt, chỉ gồm chữ cái, số và gạch dưới'))
 		  ));
 	  }else{
 		  $this->setValidator('username', new sfValidatorPass());

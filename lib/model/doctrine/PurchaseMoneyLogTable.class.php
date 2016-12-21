@@ -114,7 +114,7 @@ class PurchaseMoneyLogTable extends Doctrine_Table
             if (substr($phone, 0, 1) == '0') { #0975292582
                 $phone = substr($values['verified_phone']['text'], 1);
             }
-            $query->andwhere("i.verifiedPhone like ?", "%".  $phone . "%");
+            $query->andwhere("g.verifiedPhone like ?", "%".  $phone . "%");
         }
         $query->leftJoin("a.UserInfo g");
         $query->leftJoin("g.User u");

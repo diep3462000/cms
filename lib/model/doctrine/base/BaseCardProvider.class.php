@@ -40,13 +40,11 @@ abstract class BaseCardProvider extends sfDoctrineRecord
     public function setTableDefinition()
     {
         $this->setTableName('card_provider');
-        $this->hasColumn('providerId', 'integer', 4, array(
+        $this->hasColumn('providerId', 'integer', 10, array(
              'type' => 'integer',
-             'fixed' => 0,
-             'unsigned' => false,
              'primary' => true,
              'autoincrement' => true,
-             'length' => 4,
+             'length' => 10,
              ));
         $this->hasColumn('providerCode', 'string', 10, array(
              'type' => 'string',

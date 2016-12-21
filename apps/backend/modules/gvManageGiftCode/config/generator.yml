@@ -18,6 +18,7 @@ generator:
         goldValue: { label: Xu }
         adminId: { label: Người tạo giftcode }
       list:
+        title: Danh sách gift code
         display: [giftEventId, userId, code, cashValue, goldValue,ip,  reuseable, status,adminId,description]
         title: Danh sách gift code
         object_actions:

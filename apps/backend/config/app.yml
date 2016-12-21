@@ -28,13 +28,13 @@ all:
             English:
               route: pageEN
         Doanh thu:
-          credentials: [[admin, cp_view, dev, cskh]]
+          credentials: [[admin, cp_view, dev, cskh, cp_truyenthong]]
           dropdown:
             Quản lý doanh thu theo ngày:
-              credentials: [[admin, cp_view, dev]]
+              credentials: [[admin, cp_view, dev, cp_truyenthong]]
               route: doanh_thu_ngay_linh
             Thống kê chi tiết giao dịch nạp tiền:
-              credentials: [[admin, cp_view, dev, cskh]]
+              credentials: [[admin, cp_view, dev, cskh, cp_truyenthong]]
               route: purchase_money_log
 #            Quản lý doanh thu theo ngày online:
 #              credentials: [[admin]]
@@ -43,7 +43,7 @@ all:
 #              credentials: [[admin, dev]]
 #              route: doanh_thu
             Quản lý tiền phế trong game online:
-              credentials: [[admin, cp_view, dev]]
+              credentials: [[admin, cp_view, dev, cp_truyenthong]]
               route: revenue_game
             Quản lý tiền phế trong game:
               credentials: [[admin, cp_view, dev]]
@@ -52,19 +52,19 @@ all:
               credentials: [[admin, cp_view, dev]]
               route: money_log
             Quản lý lịch sử nạp thẻ:
-              credentials: [[admin, cp_view, dev]]
+              credentials: [[admin, cp_view, dev, cp_truyenthong]]
               route: log_payment
             Thông kê doanh thu SMS:
-              credentials: [[admin, cp_view, dev, cskh]]
+              credentials: [[admin, cp_view, dev, cskh, cp_truyenthong]]
               route: sms_revenue
             Thông kê chi tiết MO SMS:
-              credentials: [[admin, cp_view, dev, cskh]]
+              credentials: [[admin, cp_view, dev, cskh, cp_truyenthong]]
               route: mo_history
             Thông kê chi tiết MT SMS:
-              credentials: [[admin, cp_view, dev, cskh]]
+              credentials: [[admin, cp_view, dev, cskh, cp_truyenthong]]
               route: mo_result
             Thống kê đổi thưởng:
-              credentials: [[admin, cp_view, dev, cskh]]
+              credentials: [[admin, cp_view, dev, cskh, cp_truyenthong]]
               route: exchange_asset_request
             Quản lý CCU:
               credentials: [admin]
@@ -87,9 +87,9 @@ all:
             Quản lý Log Game:
               credentials: [[admin, cp_view, dev]]
               route: game_log
-            Quản lý nhà cung cấp game:
-              credentials: [[admin, cp_view, dev]]
-              route: game_provider
+#            Quản lý nhà cung cấp game:
+#              credentials: [[admin, cp_view, dev]]
+#              route: game_provider
 #            Danh sách giao dịch game:
 #              credentials: [[admin, dev]]
 #              route: game_transaction
@@ -174,9 +174,9 @@ all:
             Quản lý tin nhắn đến user:
               credentials: [[admin, cp_view]]
               route: message
-            Quản lý loại tin nhắn:
-              credentials: [[admin, cp_view]]
-              route: message_type
+#            Quản lý loại tin nhắn:
+#              credentials: [[admin, cp_view]]
+#              route: message_type
             Quản lý nội dung web:
               credentials: [[admin, cp_view]]
               route: web_content

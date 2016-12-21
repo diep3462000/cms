@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
 <xliff version="1.0">
-  <file source-language="EN" target-language="en" datatype="plaintext" original="messages" date="2014-09-17T16:32:09Z" product-name="messages">
+  <file source-language="EN" target-language="en" datatype="plaintext" original="messages" date="2016-12-20T09:53:05Z" product-name="messages">
     <header/>
     <body>
       <trans-unit id="1">
@@ -2762,261 +2762,944 @@
       </trans-unit>
       <trans-unit id="690">
         <source>Question_name không được để trống</source>
-          <target>Value is not empty</target>
+        <target>Value is not empty</target>
       </trans-unit>
-        <trans-unit id="690">
-            <source>---Chọn chuyên mục---</source>
-            <target>---Select category---</target>
-        </trans-unit>
-        <trans-unit id="690">
-            <source>Tiêu đề *</source>
-            <target>Title*</target>
-        </trans-unit>
-        <trans-unit id="690">
-            <source>Chuyên mục *</source>
-            <target>Category*</target>
-        </trans-unit>
-        <trans-unit id="690">
-            <source>Tóm tắt *</source>
-            <target>Summary*</target>
-        </trans-unit>
-        <trans-unit id="690">
-            <source>---Chọn câu hỏi---</source>
-            <target>---Select Survey---</target>
-        </trans-unit>
-
-        <trans-unit id="690">
-            <source>Thêm mới bài viết Tin tức</source>
-            <target>Add new articles</target>
-        </trans-unit>
-        <trans-unit id="690">
-            <source>Đóng</source>
-            <target>Close</target>
-        </trans-unit>
-        <trans-unit id="690">
-            <source>Tìm kiếm</source>
-            <target>Search</target>
-        </trans-unit>
-        <trans-unit id="690">
-            <source>Từ khóa</source>
-            <target>Keyword</target>
-        </trans-unit>
-        <trans-unit id="690">
-            <source>Tin Khuyến mại</source>
-            <target>Promotion news</target>
-        </trans-unit>
-        <trans-unit id="690">
-            <source>Danh hiệu</source>
-            <target>Appellation</target>
-        </trans-unit>
-        <trans-unit id="690">
-            <source>Tin mới</source>
-            <target>New</target>
-        </trans-unit>
-        <trans-unit id="690">
-            <source>Toàn quốc</source>
-            <target>Nationwide</target>
-        </trans-unit>
-        <trans-unit id="690">
-            <source>Mã dịch vụ *</source>
-            <target>Service code *</target>
-        </trans-unit>
-
-        <trans-unit id="690">
-            <source>Dịch vụ mới</source>
-            <target>New Service</target>
-        </trans-unit>
-
-        <trans-unit id="690">
-            <source>Dịch vụ Vas</source>
-            <target>Vas Service</target>
-        </trans-unit>
-        <trans-unit id="690">
-            <source>Câu hỏi *</source>
-            <target>Question *</target>
-        </trans-unit>
-        <trans-unit id="690">
-            <source>Câu trả lời *</source>
-            <target>Answer *</target>
-        </trans-unit>
-        <trans-unit id="690">
-            <source>Tên ĐVHC *</source>
-            <target>Name *</target>
-        </trans-unit>
-
-        <trans-unit id="690">
-            <source>ĐVHC cấp trên</source>
-            <target>Parent</target>
-        </trans-unit>
-
-        <trans-unit id="690">
-            <source>---Tỉnh/thành phố---</source>
-            <target>---Province/city---</target>
-        </trans-unit>
-        <trans-unit id="690">
-            <source>Điểm giao dịch *</source>
-            <target>Transaction *</target>
-        </trans-unit>
-        <trans-unit id="690">
-            <source>Tỉnh/thành phố *</source>
-            <target>Province/city *</target>
-        </trans-unit>
-
-        <trans-unit id="690">
-            <source>Địa chỉ *</source>
-            <target>Address</target>
-        </trans-unit>
-
-        <trans-unit id="690">
-            <source>Tên quốc gia *</source>
-            <target>National name *</target>
-        </trans-unit>
-
-        <trans-unit id="690">
-            <source>Mã nước *</source>
-            <target>National code *</target>
-        </trans-unit>
-
-        <trans-unit id="690">
-            <source>Vùng *</source>
-            <target>Area *</target>
-        </trans-unit>
-
-        <trans-unit id="690">
-            <source>Tên nhà cung cấp *</source>
-            <target>Provider name *</target>
-        </trans-unit>
-
-        <trans-unit id="690">
-            <source>Quốc gia *</source>
-            <target>National *</target>
-        </trans-unit>
-
-        <trans-unit id="690">
-            <source>Vấn đề *</source>
-            <target>Problem *</target>
-        </trans-unit>
-
-        <trans-unit id="690">
-            <source>Chủ đề *</source>
-            <target>Subject *</target>
-        </trans-unit>
-
-        <trans-unit id="690">
-            <source>Nội dung *</source>
-            <target>Content *</target>
-        </trans-unit>
-
-        <trans-unit id="690">
-            <source>Mã sản phẩm *</source>
-            <target>Product code *</target>
-        </trans-unit>
-
-        <trans-unit id="690">
-            <source>Tên sản phẩm *</source>
-            <target>Product name *</target>
-        </trans-unit>
-
-        <trans-unit id="690">
-            <source>Danh mục *</source>
-            <target>Category *</target>
-        </trans-unit>
-
-        <trans-unit id="690">
-            <source>Tên sự kiện*</source>
-            <target>Event name *</target>
-        </trans-unit>
-
-        <trans-unit id="690">
-            <source>Ngày sự kiện*</source>
-            <target>Event date *</target>
-        </trans-unit>
-        <trans-unit id="690">
-            <source>Tên Album *</source>
-            <target>Album name *</target>
-        </trans-unit>
-        <trans-unit id="690">
-            <source>Giới thiệu Album *</source>
-            <target>Album Introduction *</target>
-        </trans-unit>
-        <trans-unit id="690">
-            <source>Tên chuyên mục*</source>
-            <target>Category name *</target>
-        </trans-unit>
-        <trans-unit id="690">
-            <source>Phân quyền *</source>
-            <target>Permission *</target>
-        </trans-unit>
-
-        <trans-unit id="690">
-            <source>Tên chuyên mục *</source>
-            <target>Category name *</target>
-        </trans-unit>
-
-        <trans-unit id="690">
-            <source>Tên danh mục *</source>
-            <target>Category name *</target>
-        </trans-unit>
-
-        <trans-unit id="690">
-            <source>Đường dẫn ảnh *</source>
-            <target>Image path *</target>
-        </trans-unit>
-
-        <trans-unit id="690">
-            <source>Tên Menu*</source>
-            <target>Menu Name *</target>
-        </trans-unit>
-
-        <trans-unit id="690">
-            <source>Kiểu liên kết</source>
-            <target>Link type</target>
-        </trans-unit>
-
-        <trans-unit id="690">
-            <source>Bài viết nội dung</source>
-            <target>Content</target>
-        </trans-unit>
-
-        <trans-unit id="690">
-            <source>Kiểu chuyên mục</source>
-            <target>Category type</target>
-        </trans-unit>
-
-        <trans-unit id="690">
-            <source>Link liên kết</source>
-            <target>Link path</target>
-        </trans-unit>
-
-        <trans-unit id="690">
-            <source>Tên liên kết *</source>
-            <target>Link name</target>
-        </trans-unit>
-
-        <trans-unit id="690">
-            <source>Nhóm liên kết *</source>
-            <target>Link group</target>
-        </trans-unit>
-
-        <trans-unit id="690">
-            <source>Đường dẫn hiện tại</source>
-            <target>Current path</target>
-        </trans-unit>
-
-        <trans-unit id="690">
-            <source>Loại đường dẫn</source>
-            <target>Path type</target>
-        </trans-unit>
-
-        <trans-unit id="690">
-            <source>Quyền *</source>
-            <target>Permisstion</target>
-        </trans-unit>
-        <trans-unit id="690">
-            <source>Tài khoản</source>
-            <target>Account</target>
-        </trans-unit>
-
+      <trans-unit id="690">
+        <source>---Chọn chuyên mục---</source>
+        <target>---Select category---</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Tiêu đề *</source>
+        <target>Title*</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Chuyên mục *</source>
+        <target>Category*</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Tóm tắt *</source>
+        <target>Summary*</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>---Chọn câu hỏi---</source>
+        <target>---Select Survey---</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Thêm mới bài viết Tin tức</source>
+        <target>Add new articles</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Đóng</source>
+        <target>Close</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Tìm kiếm</source>
+        <target>Search</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Từ khóa</source>
+        <target>Keyword</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Tin Khuyến mại</source>
+        <target>Promotion news</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Danh hiệu</source>
+        <target>Appellation</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Tin mới</source>
+        <target>New</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Toàn quốc</source>
+        <target>Nationwide</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Mã dịch vụ *</source>
+        <target>Service code *</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Dịch vụ mới</source>
+        <target>New Service</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Dịch vụ Vas</source>
+        <target>Vas Service</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Câu hỏi *</source>
+        <target>Question *</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Câu trả lời *</source>
+        <target>Answer *</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Tên ĐVHC *</source>
+        <target>Name *</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>ĐVHC cấp trên</source>
+        <target>Parent</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>---Tỉnh/thành phố---</source>
+        <target>---Province/city---</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Điểm giao dịch *</source>
+        <target>Transaction *</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Tỉnh/thành phố *</source>
+        <target>Province/city *</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Địa chỉ *</source>
+        <target>Address</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Tên quốc gia *</source>
+        <target>National name *</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Mã nước *</source>
+        <target>National code *</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Vùng *</source>
+        <target>Area *</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Tên nhà cung cấp *</source>
+        <target>Provider name *</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Quốc gia *</source>
+        <target>National *</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Vấn đề *</source>
+        <target>Problem *</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Chủ đề *</source>
+        <target>Subject *</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Nội dung *</source>
+        <target>Content *</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Mã sản phẩm *</source>
+        <target>Product code *</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Tên sản phẩm *</source>
+        <target>Product name *</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Danh mục *</source>
+        <target>Category *</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Tên sự kiện*</source>
+        <target>Event name *</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Ngày sự kiện*</source>
+        <target>Event date *</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Tên Album *</source>
+        <target>Album name *</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Giới thiệu Album *</source>
+        <target>Album Introduction *</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Tên chuyên mục*</source>
+        <target>Category name *</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Phân quyền *</source>
+        <target>Permission *</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Tên chuyên mục *</source>
+        <target>Category name *</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Tên danh mục *</source>
+        <target>Category name *</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Đường dẫn ảnh *</source>
+        <target>Image path *</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Tên Menu*</source>
+        <target>Menu Name *</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Kiểu liên kết</source>
+        <target>Link type</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Bài viết nội dung</source>
+        <target>Content</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Kiểu chuyên mục</source>
+        <target>Category type</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Link liên kết</source>
+        <target>Link path</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Tên liên kết *</source>
+        <target>Link name</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Nhóm liên kết *</source>
+        <target>Link group</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Đường dẫn hiện tại</source>
+        <target>Current path</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Loại đường dẫn</source>
+        <target>Path type</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Quyền *</source>
+        <target>Permisstion</target>
+      </trans-unit>
+      <trans-unit id="690">
+        <source>Tài khoản</source>
+        <target>Account</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Giá trị token không hợp lệ.</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="2">
+        <source>Thu nhập ước tính (VND):</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="3">
+        <source>Tổng phế GOLD:</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="4">
+        <source>Ngày</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="5">
+        <source>Thu nhập (VND)</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="6">
+        <source>Không có dữ liệu nào!</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="7">
+        <source>Tổng cộng</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="8">
+        <source>Tổng phế CASH</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="9">
+        <source> VND</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="10">
+        <source>Hôm qua</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="11">
+        <source>VND</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="12">
+        <source>Tháng này</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="13">
+        <source>Tháng trước</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="14">
+        <source>Tổng phế GOLD</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="15">
+        <source>[Thêm mới/chỉnh sửa add_money]</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="16">
+        <source>Thông tin người chơi không tồn tại</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="17">
+        <source>Danh sách cộng tiền cho user</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="18">
+        <source>Thẻ cào</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="19">
+        <source>Thời gian nạp tiền</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="20">
+        <source>Thời gian bắt đầu chơi game</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="21">
+        <source>Doanh thu tổng hợp</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="22">
+        <source>10</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="23">
+        <source>Loại hệ điều hành</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="24">
+        <source>Doanh thu theo loại</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="25">
+        <source>Tổng Ken nạp vào game</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="26">
+        <source>Thống kê doanh thu theo ngày</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="27">
+        <source>Filter</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="28">
+        <source>Reset filter</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="29">
+        <source>Thời gian kết thúc phải lớn hơn hoặc bằng ngày thông báo.</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="30">
+        <source>Danh sách thông báo khẩn cấp trong game</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="31">
+        <source>Chỉnh sửa thông báo</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="32">
+        <source>Tạo mới thống báo</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="33">
+        <source>BkManageLogPayment List</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="34">
+        <source>Quản lý lịch sử nạp thẻ</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="35">
+        <source>Mệnh giá thẻ</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="36">
+        <source>Mã thẻ cào</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="37">
+        <source>Thời gian nạp thẻ</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="38">
+        <source>Thống kê chi tiết nạp tiền</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="39">
+        <source>Danh sách MT</source>
+        <target>List MT</target>
+      </trans-unit>
+      <trans-unit id="40">
+        <source>SDT</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="41">
+        <source>tin trả về</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="42">
+        <source>Id tin nhắn lên</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="43">
+        <source>Giờ phải lơn hơn hoặc bằng %min%</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="44">
+        <source>Giờ phải nhỏ hơn hoặc bằng %max%</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="45">
+        <source>Danh sách notification</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="46">
+        <source>Lặp lại hàng ngày</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="47">
+        <source>tiêu đề</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="48">
+        <source>Nội dung push</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="49">
+        <source>Giờ push</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="50">
+        <source>Chọn nhà cung cấp</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="51">
+        <source>Viettel</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="52">
+        <source>Mobifone</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="53">
+        <source>Vinaaphone</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="54">
+        <source>VietNam Mobile</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="55">
+        <source>MegaCard</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="56">
+        <source>Giá trị thẻ nạp phải là số nguyên dương</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="57">
+        <source>Tối đa 500.000</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="58">
+        <source>Giá trị phải là số nguyên dương</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="59">
+        <source>Danh sách nạp thẻ lỗi</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="60">
+        <source>File upload dung lượng không quá 20M.</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="61">
+        <source>Chỉ được upload các file có định dạng .apk, .ipa, .exe</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="62">
+        <source>Danh sách phiên bản</source>
+        <target>List versions</target>
+      </trans-unit>
+      <trans-unit id="63">
+        <source>Tin Tức</source>
+        <target>News</target>
+      </trans-unit>
+      <trans-unit id="64">
+        <source>Giới Thiệu</source>
+        <target>Introduce</target>
+      </trans-unit>
+      <trans-unit id="65">
+        <source>Hỗ trợ</source>
+        <target>Support</target>
+      </trans-unit>
+      <trans-unit id="66">
+        <source>Luật chơi</source>
+        <target>Rule game</target>
+      </trans-unit>
+      <trans-unit id="67">
+        <source>Điều lệ</source>
+        <target>Regulations</target>
+      </trans-unit>
+      <trans-unit id="68">
+        <source>Tất Cả</source>
+        <target>All</target>
+      </trans-unit>
+      <trans-unit id="69">
+        <source>Loại</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="70">
+        <source>Thống kê nội dung web site</source>
+        <target>list contents of website</target>
+      </trans-unit>
+      <trans-unit id="71">
+        <source>Thêm mới nội dung web site</source>
+        <target>Add new content site</target>
+      </trans-unit>
+      <trans-unit id="72">
+        <source>Sửa nội dung web site</source>
+        <target>Edit content site</target>
+      </trans-unit>
+      <trans-unit id="73">
+        <source>Thống kê xóc đĩa</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="74">
+        <source>Adchip | 404</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="75">
+        <source>Xin chào</source>
+        <target>Hello</target>
+      </trans-unit>
+      <trans-unit id="76">
+        <source>Bạn đã nhấn vào liên kết không tồn tại hoặc không đúng. Bạn vui lòng, nhấn</source>
+        <target>You've hit the link does not exist or is not right. Please click</target>
+      </trans-unit>
+      <trans-unit id="77">
+        <source>vào đây</source>
+        <target>here</target>
+      </trans-unit>
+      <trans-unit id="78">
+        <source>để chọn các chức năng khác.</source>
+        <target>to select other functions.</target>
+      </trans-unit>
+      <trans-unit id="79">
+        <source>Thành công</source>
+        <target>Success</target>
+      </trans-unit>
+      <trans-unit id="80">
+        <source>Thất bại</source>
+        <target>Failure</target>
+      </trans-unit>
+      <trans-unit id="81">
+        <source>Id/Tên</source>
+        <target>Id/username</target>
+      </trans-unit>
+      <trans-unit id="82">
+        <source>Thống kê đổi thưởng</source>
+        <target>List change award</target>
+      </trans-unit>
+      <trans-unit id="83">
+        <source>Total deposit: </source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="84">
+        <source>Tổng Ken nạp: </source>
+        <target>Total Ken</target>
+      </trans-unit>
+      <trans-unit id="85">
+        <source>Tổng đổi thưởng: </source>
+        <target>Total Change award</target>
+      </trans-unit>
+      <trans-unit id="86">
+        <source>Tổng Ken trong game: </source>
+        <target> Total Ken in game</target>
+      </trans-unit>
+      <trans-unit id="87">
+        <source>Tổng Xu: </source>
+        <target>Total Coin</target>
+      </trans-unit>
+      <trans-unit id="88">
+        <source>Tổng tiền rút ra</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="89">
+        <source>Thống kê chi tiết đổ thưởng</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="90">
+        <source>Giá trị thẻ</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="91">
+        <source>User Id</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="92">
+        <source>Gameid</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="93">
+        <source>Name</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="94">
+        <source>Description</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="95">
+        <source>Help</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="96">
+        <source>Status</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="97">
+        <source>Quản lý game</source>
+        <target>List Game</target>
+      </trans-unit>
+      <trans-unit id="98">
+        <source>Danh sách gift code</source>
+        <target>List gift codes</target>
+      </trans-unit>
+      <trans-unit id="99">
+        <source>Ken</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="100">
+        <source>Xu</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="101">
+        <source>Người tạo giftcode</source>
+        <target>Created By</target>
+      </trans-unit>
+      <trans-unit id="102">
+        <source>Danh sách Event</source>
+        <target>List Events</target>
+      </trans-unit>
+      <trans-unit id="103">
+        <source>User id</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="104">
+        <source>Lịch sử giao dịch</source>
+        <target>Transaction History</target>
+      </trans-unit>
+      <trans-unit id="105">
+        <source>Quản lý notify</source>
+        <target>List Notifíes</target>
+      </trans-unit>
+      <trans-unit id="106">
+        <source>Chỉnh sửa notify</source>
+        <target>Add New notify</target>
+      </trans-unit>
+      <trans-unit id="107">
+        <source>Thêm mới notify</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="108">
+        <source>Nội dùng</source>
+        <target>Content</target>
+      </trans-unit>
+      <trans-unit id="109">
+        <source>6 tiếng</source>
+        <target>Sis hour</target>
+      </trans-unit>
+      <trans-unit id="110">
+        <source>1 tiếng</source>
+        <target>An Hour</target>
+      </trans-unit>
+      <trans-unit id="111">
+        <source>2 tiếng</source>
+        <target>Two hour</target>
+      </trans-unit>
+      <trans-unit id="112">
+        <source>Trong ngày</source>
+        <target>In day</target>
+      </trans-unit>
+      <trans-unit id="113">
+        <source>Thời gian</source>
+        <target>Time</target>
+      </trans-unit>
+      <trans-unit id="114">
+        <source>Thống kê CCU</source>
+        <target>CCU Management</target>
+      </trans-unit>
+      <trans-unit id="114">
+        <source>Quản lý CCU</source>
+        <target>CCU Management</target>
+      </trans-unit>
+      <trans-unit id="115">
+        <source>Online</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Trong bàn</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="117">
+        <source>CCU</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="118">
+        <source>Danh sách nhà mạng</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="119">
+        <source>Id</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="120">
+        <source>Code</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="121">
+        <source>Chỉnh sửa nhà mạng</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="122">
+        <source>Thêm mới nhà mạng</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="123">
+        <source>Doanh thu theo ngày</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="124">
+        <source>Tổng phế Ken</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="125">
+        <source>Hôm nay</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="126">
+        <source>KEN</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="127">
+        <source>Hôm quá</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="128">
+        <source>Tổng phế Xu</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="129">
+        <source>7 ngày qua</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="130">
+        <source>Toàn bộ thời gian</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="131">
+        <source>Tùy chọn ngày</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="132">
+        <source>Thống kê phế theo game</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="133">
+        <source>Tổng phế</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="134">
+        <source>Thời gian đăng ký</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="135">
+        <source>Bản build</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="136">
+        <source>Thống kê user đăng ký</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="137">
+        <source>Đăng ký mới</source>
+        <target>Total new register</target>
+      </trans-unit>
+      <trans-unit id="138">
+        <source>Thiết bị mới</source>
+        <target>Total new device</target>
+      </trans-unit>
+      <trans-unit id="139">
+        <source>Nghỉ chơi trong ngày</source>
+        <target>Total last login in day</target>
+      </trans-unit>
+      <trans-unit id="140">
+        <source>Đăng nhập trong ngày</source>
+        <target>Total login in day</target>
+      </trans-unit>
+      <trans-unit id="141">
+        <source>Thông tin người chơi đăng ký</source>
+        <target>User register infomation</target>
+      </trans-unit>
+      <trans-unit id="142">
+        <source>Tất cá</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="143">
+        <source>Thời gian giao dịch</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="144">
+        <source>Parter name</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="145">
+        <source>Provider code</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="146">
+        <source>Card amount</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="147">
+        <source>Menhgia</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="148">
+        <source>Thành tiền</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="149">
+        <source>Thống kê doanh thu thẻ nạp</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="150">
+        <source>Thống kê doanh thu SMS theo ngày</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="151">
+        <source>Danh sách test case</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="152">
+        <source>Chỉnh sửa test case</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="153">
+        <source>Tạo mới test cases</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Tên test case</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="155">
+        <source>Giá trị</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="156">
+        <source>Game</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="157">
+        <source>Mới nhất</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="158">
+        <source>Level</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="159">
+        <source>Đại gia Ken</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="160">
+        <source>Đại gia Xu</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="161">
+        <source>Số ván chơi</source>
+        <target>Total match</target>
+      </trans-unit>
+      <trans-unit id="162">
+        <source>Số ván thắng</source>
+        <target>Total win</target>
+      </trans-unit>
+      <trans-unit id="163">
+        <source>Top nạp thẻ</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="164">
+        <source>Lần cuối đăng nhập</source>
+        <target> Last login time</target>
+      </trans-unit>
+      <trans-unit id="165">
+        <source>Tên/ Id</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="166">
+        <source>IME</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="167">
+        <source>User</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="168">
+        <source>Username</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="169">
+        <source>Display name</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="170">
+        <source>Trusted index</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="171">
+        <source>VerifyPhone</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="172">
+        <source>Device</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="173">
+        <source>Total match</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="174">
+        <source>Total win</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="175">
+        <source>Total lost</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="176">
+        <source>Cash</source>
+        <target>Ken</target>
+      </trans-unit>
+      <trans-unit id="177">
+        <source>Gold</source>
+        <target>Xu</target>
+      </trans-unit>
+      <trans-unit id="178">
+        <source>Danh sách người chơi</source>
+        <target>List Players</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

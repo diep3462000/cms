@@ -34,7 +34,7 @@
 
             <h3 style="display: inline"><?php echo __('Tổng tiền nạp: ', array(), 'messages') ?><?php echo VtHelper::number_format($sum_ken_nap["sum_money"]) ?> VNĐ</h3></br>
             <h3 style="display: inline"><?php echo __('Tổng Ken nạp: ', array(), 'messages') ?><?php echo VtHelper::number_format($sum_ken_nap["sum_cash"]) ?> Ken</h3></br>
-            <h3 style="display: inline"><?php echo __('Tổng đổi thưởng: ', array(), 'messages') ?><?php echo VtHelper::number_format($sum_money) ?> VNĐ(<?php echo number_format($sum_money / $sum_ken_nap["sum_cash"] * 100, 2, '.', '') ?>%)</h3></br>
+            <h3 style="display: inline"><?php echo __('Tổng đổi thưởng: ', array(), 'messages') ?><?php echo VtHelper::number_format($sum_money) ?> VNĐ(<?php echo number_format($sum_ken_nap["sum_cash"] != 0 ? $sum_money / $sum_ken_nap["sum_cash"] * 100 : 0, 2, '.', '') ?>%)</h3></br>
             <h3 style="display: inline"><?php echo __('Tổng Ken trong game: ', array(), 'messages') ?><?php echo VtHelper::number_format($sum_xu_ken["sum_cash"]) ?> Ken</h3></br>
             <h3 style="display: inline"><?php echo __('Tổng Xu: ', array(), 'messages') ?><?php echo VtHelper::number_format($sum_xu_ken["sum_gold"]) ?> Xu</h3>
             <?php include_partial('gvManageExchangeRequest/flashes') ?>

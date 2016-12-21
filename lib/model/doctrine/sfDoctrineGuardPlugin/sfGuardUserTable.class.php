@@ -52,4 +52,35 @@ class sfGuardUserTable extends PluginsfGuardUserTable
 
         return $q->execute();
     }
+    /**
+     * Khoa nguoi dung
+     * @author loilv4
+     * @created on 04/05/2013
+     * @param $ids
+     */
+    public static function deactive($ids) {
+        $query = Doctrine_Core::getTable('sfGuardUser')->createQuery('q')
+            ->update()
+            ->set('q.is_active', 0)
+            ->set('updated_at', '?', date('Y-m-d H:i:s', strtotime('now')))
+            ->andWhereIn('q.id', $ids)
+            ->andWhere('q.is_active = ?', 1);
+        return $query->execute();
+    }
+
+    /**
+     * Mo khoa nguoi dung
+     * @author loilv4
+     * @created on 04/05/2013
+     * @param $ids
+     */
+    public static function active($ids) {
+        $query = Doctrine_Core::getTable('sfGuardUser')->createQuery('q')
+            ->update()
+            ->set('q.is_active', 1)
+            ->set('updated_at', '?', date('Y-m-d H:i:s', strtotime('now')))
+            ->andWhereIn('q.id', $ids)
+            ->andWhere('q.is_active = ?', 0);
+        return $query->execute();
+    }
 }

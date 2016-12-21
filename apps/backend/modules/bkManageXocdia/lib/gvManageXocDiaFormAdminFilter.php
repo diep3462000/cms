@@ -17,7 +17,7 @@ class gvManageXocDiaFormAdminFilter extends BaseMatchLogFormFilter
         $i18n = sfContext::getInstance()->getI18N();
         $this->setWidgets(array(
             'roomid'      => new sfWidgetFormFilterInput(array('with_empty' => false)),
-            'matchindex'  => new sfWidgetFormFilterInput(array('with_empty' => false)),
+            'matchIndex'  => new sfWidgetFormFilterInput(array('with_empty' => false)),
             'gameid'      => new sfWidgetFormFilterInput(array('with_empty' => false)),
             'created_date' => new sfWidgetFormFilterInput(array('with_empty' => false), array('readonly' => true)),
             'description' => new sfWidgetFormFilterInput(array('with_empty' => false)),
@@ -26,7 +26,7 @@ class gvManageXocDiaFormAdminFilter extends BaseMatchLogFormFilter
 
         $this->setValidators(array(
             'roomid'      => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
-            'matchindex'  => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+            'matchIndex'  => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
             'gameid'      => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
             'description' => new sfValidatorPass(array('required' => false)),
 //            'created_date' => new sfValidatorDateTime(array('required' => false)),
@@ -73,8 +73,11 @@ class gvManageXocDiaFormAdminFilter extends BaseMatchLogFormFilter
         if(array_key_exists('description', $values)&& $values['description']['text'] != ''){
             $query->andWhere($alias .".description like ? ", "%" . $values["description"]['text'] . "%" );
         }
-        if(array_key_exists('roomid', $values)&& $values['roomid']["text"] != ''){
+        if(array_key_exists('roomid', $values) && is_integer($values["roomid"]["text"] )){
             $query->andWhere($alias . ".roomId = ?", $values["roomid"]["text"] );
+        }
+        if(array_key_exists('matchIndex', $values) && is_integer($values["matchIndex"]["text"] )){
+            $query->andWhere($alias . ".matchIndex = ?", $values["matchIndex"]["text"] );
         }
 //        $query->leftJoin($alias. ".Game g");
 //        $query->groupBy("DATE(". $alias .".created_at)");

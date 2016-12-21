@@ -17,6 +17,10 @@ generator:
       list:
         title: Danh sách nạp thẻ lỗi
         display: [userId, provider, cardValue, cardPin, active_view]
+        batch_actions: {}
+        object_actions:
+          _edit: ~
+        batch_actions: {}
       filter:
         class: gvManagePurchaseMoneyMissingFormFiltersAdmin
         display: [userId, provider, cardValue, cardPin]

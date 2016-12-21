@@ -15,10 +15,12 @@ generator:
       actions: ~
       fields:  ~
       list:
+        title: Danh sách phòng game
         actions: {}
         object_actions: {}
         batch_actions: {}
-      filter:  ~
+      filter:
+        display: [gameId]
       form:    ~
       edit:    ~
       new:     ~

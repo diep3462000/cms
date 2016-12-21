@@ -17,6 +17,7 @@
  * @property int $versionCode
  * @property string $versionBuild
  * @property int $ipLocked
+ * @property int $reloggedIn
  * 
  * @method integer     getLogId()        Returns the current record's "logId" value
  * @method bigint      getUserId()       Returns the current record's "userId" value
@@ -30,6 +31,7 @@
  * @method int         getVersionCode()  Returns the current record's "versionCode" value
  * @method string      getVersionBuild() Returns the current record's "versionBuild" value
  * @method int         getIpLocked()     Returns the current record's "ipLocked" value
+ * @method int         getReloggedIn()   Returns the current record's "reloggedIn" value
  * @method LoggedInLog setLogId()        Sets the current record's "logId" value
  * @method LoggedInLog setUserId()       Sets the current record's "userId" value
  * @method LoggedInLog setUserName()     Sets the current record's "userName" value
@@ -42,6 +44,7 @@
  * @method LoggedInLog setVersionCode()  Sets the current record's "versionCode" value
  * @method LoggedInLog setVersionBuild() Sets the current record's "versionBuild" value
  * @method LoggedInLog setIpLocked()     Sets the current record's "ipLocked" value
+ * @method LoggedInLog setReloggedIn()   Sets the current record's "reloggedIn" value
  * 
  * @package    Vt_Portals
  * @subpackage model
@@ -116,6 +119,11 @@ abstract class BaseLoggedInLog extends sfDoctrineRecord
              'length' => 20,
              ));
         $this->hasColumn('ipLocked', 'int', 2, array(
+             'type' => 'int',
+             'comment' => '',
+             'length' => 2,
+             ));
+        $this->hasColumn('reloggedIn', 'int', 2, array(
              'type' => 'int',
              'comment' => '',
              'length' => 2,

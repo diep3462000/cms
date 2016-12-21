@@ -23,7 +23,7 @@ generator:
         batch_actions: {}
       filter:
         class: gvManageUserFormFiltersAdmin
-        display: [lastLoginTime, user_name, verified_phone, device, top, cash, gold]
+        display: [lastLoginTime, user_name, verified_phone, device, top]
       form:    ~
       edit:    ~
       new:     ~
