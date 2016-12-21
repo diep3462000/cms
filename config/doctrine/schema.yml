@@ -86,6 +86,7 @@ LoggedInLog:
     versionCode:  { type: int(5), comment: "" }
     versionBuild:  { type: string(20), comment: "" }
     ipLocked:  { type: int(2), comment: "" }
+    reloggedIn:  { type: int(2), comment: "" }
 
 UserOtpAuto:
   tableName: user_otp_auto
@@ -495,9 +496,7 @@ CardProvider:
   tableName: card_provider
   columns:
     providerId:
-      type: integer(4)
-      fixed: false
-      unsigned: false
+      type: integer(10)
       primary: true
       autoincrement: true
     providerCode:
@@ -2274,13 +2273,13 @@ MoneyLog:
   connection: doctrine
   tableName: money_log
   columns:
-    logid:
+    logId:
       type: integer(8)
       fixed: false
       unsigned: false
       primary: true
       autoincrement: true
-    uuid:
+    uuId:
       type: string(50)
       fixed: false
       unsigned: false
@@ -2301,14 +2300,14 @@ MoneyLog:
       primary: false
       notnull: true
       autoincrement: false
-    username:
+    userName:
       type: string(75)
       fixed: false
       unsigned: false
       primary: false
       notnull: false
       autoincrement: false
-    transactionid:
+    transactionId:
       type: integer(4)
       fixed: false
       unsigned: false
@@ -2316,57 +2315,49 @@ MoneyLog:
       default: '0'
       notnull: true
       autoincrement: false
-    lastcash:
+    lastCash:
       type: integer(8)
       fixed: false
       unsigned: false
       primary: false
       notnull: true
       autoincrement: false
-    changecash:
+    changeCash:
       type: integer(8)
       fixed: false
       unsigned: false
       primary: false
       notnull: true
       autoincrement: false
-    currentcash:
+    currentCash:
       type: integer(8)
       fixed: false
       unsigned: false
       primary: false
       notnull: true
       autoincrement: false
-    lastgold:
+    lastGold:
       type: integer(8)
       fixed: false
       unsigned: false
       primary: false
       notnull: true
       autoincrement: false
-    changegold:
+    changeGold:
       type: integer(8)
       fixed: false
       unsigned: false
       primary: false
       notnull: true
       autoincrement: false
-    currentgold:
+    currentGold:
       type: integer(8)
       fixed: false
       unsigned: false
       primary: false
       notnull: true
       autoincrement: false
-    taxpercent:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: false
-      default: '0'
-      notnull: false
-      autoincrement: false
-    taxvalue:
+    taxPercent:
       type: integer(4)
       fixed: false
       unsigned: false
@@ -2374,7 +2365,15 @@ MoneyLog:
       default: '0'
       notnull: false
       autoincrement: false
-    gameid:
+    taxValue:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '0'
+      notnull: false
+      autoincrement: false
+    gameId:
       type: integer(4)
       fixed: false
       unsigned: false
@@ -2382,7 +2381,7 @@ MoneyLog:
       default: '0'
       notnull: true
       autoincrement: false
-    insertedtime:
+    insertedTime:
       type: timestamp(25)
       fixed: false
       unsigned: false
@@ -2945,7 +2944,7 @@ Room:
       unsigned: false
       primary: true
       autoincrement: true
-    gameid:
+    gameId:
       type: integer(4)
       fixed: false
       unsigned: false
@@ -2953,14 +2952,14 @@ Room:
       default: '0'
       notnull: true
       autoincrement: false
-    roomname:
+    roomName:
       type: string(20)
       fixed: false
       unsigned: false
       primary: false
       notnull: true
       autoincrement: false
-    viproom:
+    vipRoom:
       type: integer(1)
       fixed: false
       unsigned: false
@@ -2968,7 +2967,7 @@ Room:
       default: '0'
       notnull: true
       autoincrement: false
-    mincash:
+    minCash:
       type: integer(4)
       fixed: false
       unsigned: false
@@ -2976,7 +2975,7 @@ Room:
       default: '0'
       notnull: true
       autoincrement: false
-    mingold:
+    minGold:
       type: integer(4)
       fixed: false
       unsigned: false
@@ -2984,7 +2983,7 @@ Room:
       default: '0'
       notnull: true
       autoincrement: false
-    minlevel:
+    minLevel:
       type: integer(4)
       fixed: false
       unsigned: false
@@ -2992,7 +2991,7 @@ Room:
       default: '0'
       notnull: true
       autoincrement: false
-    roomcapacity:
+    roomCapacity:
       type: integer(4)
       fixed: false
       unsigned: false
@@ -3000,14 +2999,14 @@ Room:
       default: '50'
       notnull: true
       autoincrement: false
-    playersize:
+    playerSize:
       type: integer(4)
       fixed: false
       unsigned: false
       primary: false
       notnull: true
       autoincrement: false
-    minbet:
+    minBet:
       type: integer(4)
       fixed: false
       unsigned: false
@@ -3023,7 +3022,7 @@ Room:
       default: '5'
       notnull: false
       autoincrement: false
-    maxroomplay:
+    maxRoomplay:
       type: integer(4)
       fixed: false
       unsigned: false
@@ -3031,7 +3030,7 @@ Room:
       default: '100'
       notnull: true
       autoincrement: false
-    permanentroomplay:
+    permanentRoomPlay:
       type: integer(4)
       fixed: false
       unsigned: false
@@ -3039,7 +3038,7 @@ Room:
       default: '0'
       notnull: true
       autoincrement: false
-    kicklimit:
+    kickLimit:
       type: integer(1)
       fixed: false
       unsigned: false
@@ -3047,14 +3046,14 @@ Room:
       default: '0'
       notnull: false
       autoincrement: false
-    starttime:
+    startTime:
       type: timestamp(25)
       fixed: false
       unsigned: false
       primary: false
       notnull: false
       autoincrement: false
-    endtime:
+    endTime:
       type: timestamp(25)
       fixed: false
       unsigned: false

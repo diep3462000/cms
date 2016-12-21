@@ -45,7 +45,7 @@ class gvManageUserFormFiltersAdmin extends BaseUserFormFilter
         $this->widgetSchema->setNameFormat('gv_user_filters[%s]');
         $this->widgetSchema['lastLoginTime']->setLabel($i18n->__("Lần cuối đăng nhập"));
         $this->widgetSchema['user_name']->setLabel($i18n->__("Tên/ Id"));
-        $this->widgetSchema['device']->setLabel($i18n->__("IME"));
+        $this->widgetSchema['device']->setLabel($i18n->__("Thông tin thiết bị"));
 
         $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
 
@@ -76,7 +76,7 @@ class gvManageUserFormFiltersAdmin extends BaseUserFormFilter
                 $query->andWhere('g.lastLoginTime BETWEEN ? AND ?', array($date1Str, $date2Str));
             }
         }
-        if(array_key_exists('user_name', $values)&& !empty($values['user_name']['text'])){
+        if(array_key_exists('user_name', $values)&& isset($values['user_name']['text'])){
             $query->andWhere('lower(' . $alias . '.displayName) LIKE ?  OR ' . $alias . '.userId = ?  OR ' . $alias . '.userName LIKE  ?',
                 array('%' . VtHelper::translateQuery($values['user_name']['text']) . '%', $values['user_name']['text'],
                     '%' . VtHelper::translateQuery($values['user_name']['text']) . '%'));
@@ -94,6 +94,9 @@ class gvManageUserFormFiltersAdmin extends BaseUserFormFilter
 
         if(array_key_exists('gold', $values)&& $values['gold']['text'] != ''){
             $query->andwhere("g.gold = ?", $values['gold']['text']);
+        }
+        if(array_key_exists('device', $values)&& $values['device']['text'] != ''){
+            $query->andwhere("g.device like ?", "%" . $values['device']['text'] . "%");
         }
 //        if(array_key_exists('top', $values)&& $values['top'] != ''){
 ////            $query->orderBy("g."  . $values['top'] . " desc");

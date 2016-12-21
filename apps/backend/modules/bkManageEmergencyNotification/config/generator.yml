@@ -22,6 +22,7 @@ generator:
         object_actions:
           _edit: {label: Chi tiết}
         batch_actions: {}
+        display: [content, active, createdTime, expriedTime]
       filter:
         display: [content]
       form:

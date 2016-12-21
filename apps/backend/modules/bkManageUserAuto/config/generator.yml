@@ -15,6 +15,7 @@ generator:
       actions: ~
       fields:  ~
       list:
+        title: Thống kê otp auto
         display: [userId, verifyCode, phoneNumberView, status, expiredTime]
         actions: {}
         object_actions: {}

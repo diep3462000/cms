@@ -22,7 +22,7 @@ class gvManageUserOTPFormFiltersAdmin extends BaseUserOTPFormFilter
             'verify_code'  => new sfWidgetFormFilterInput(array('with_empty' => false)),
             'expried_time' => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
             'mo_id'        => new sfWidgetFormFilterInput(array('with_empty' => false)),
-            'msisdn'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
+            'verified_phone'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
             'type'         => new sfWidgetFormFilterInput(array('with_empty' => false)),
             'status'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
             'created_at'   => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
@@ -34,7 +34,7 @@ class gvManageUserOTPFormFiltersAdmin extends BaseUserOTPFormFilter
             'verify_code'  => new sfValidatorPass(array('required' => false)),
             'expried_time' => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
             'mo_id'        => new sfValidatorPass(array('required' => false)),
-            'msisdn'       => new sfValidatorPass(array('required' => false)),
+            'verified_phone'       => new sfValidatorPass(array('required' => false)),
             'type'         => new sfValidatorPass(array('required' => false)),
             'status'       => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
             'created_at'   => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
@@ -56,6 +56,13 @@ class gvManageUserOTPFormFiltersAdmin extends BaseUserOTPFormFilter
     public function doBuildQuery(array $values) {
         $query = parent::doBuildQuery($values);
         $alias = $query->getRootAlias();
+        if(array_key_exists('verified_phone', $values)&& $values['verified_phone']['text'] != ''){
+            $phone =$values['verified_phone']['text'];
+            if (substr($phone, 0, 1) == '0') { #0975292582
+                $phone = substr($values['verified_phone']['text'], 1);
+            }
+            $query->andwhere($alias . ".msisdn like ?", "%".  $phone . "%");
+        }
         $query->orderBy("created_at desc");
         return $query;
     }

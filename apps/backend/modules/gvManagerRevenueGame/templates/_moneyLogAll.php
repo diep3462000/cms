@@ -117,7 +117,7 @@ foreach ($dataDate2 as $valDate2){
 							<option value="yesterday"><?php echo __('Hôm qua')?></option>
 							<option value="thismonth"><?php echo __('Tháng này')?></option>
 							<option value="previousmonth"><?php echo __('Tháng trước')?></option>
-							<option value="all"><?php echo __('Toàn bộ thời gian')?></option>
+							<!-- <option value="all"><?php echo __('Toàn bộ thời gian')?></option> -->
 							<option value="dateoption"><?php echo __('Tùy chọn ngày')?></option>
 						</select>
 						<?php

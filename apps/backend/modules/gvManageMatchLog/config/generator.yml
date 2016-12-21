@@ -15,6 +15,7 @@ generator:
       actions: ~
       fields:  ~
       list:
+        title: Thống kê ván đánh
         display: [roomid, matchindex, gameid, game_name, description]
 #        class: gvManageMatchLogFormAdmin
         object_actions:

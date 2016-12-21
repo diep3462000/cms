@@ -27,6 +27,7 @@ abstract class BaseLoggedInLogForm extends BaseFormDoctrine
       'versionCode'  => new sfWidgetFormInputText(),
       'versionBuild' => new sfWidgetFormInputText(),
       'ipLocked'     => new sfWidgetFormInputText(),
+      'reloggedIn'   => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
@@ -42,6 +43,7 @@ abstract class BaseLoggedInLogForm extends BaseFormDoctrine
       'versionCode'  => new sfValidatorPass(array('required' => false)),
       'versionBuild' => new sfValidatorString(array('max_length' => 20, 'required' => false)),
       'ipLocked'     => new sfValidatorPass(array('required' => false)),
+      'reloggedIn'   => new sfValidatorPass(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('logged_in_log[%s]');

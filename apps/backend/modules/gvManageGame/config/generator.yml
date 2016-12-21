@@ -19,6 +19,7 @@ generator:
         display:  ~
         actions: {}
         object_actions: {}
+        batch_actions: {}
       filter:
         class: gvManageGameFormFilter
         display:  ~

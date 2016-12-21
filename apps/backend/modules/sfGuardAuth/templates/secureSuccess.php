@@ -17,9 +17,8 @@
         <div id="links">
           <?php if (!include_slot('secure_links')): ?>
             <ul>
-              <li><?php echo link_to(__('Trang Quản Trị', null, 'sfGuardPlugin'), '@homepage') ?></li>                      
-    <!--                            <li><?php // echo link_to(__('Trang trước', null, 'sfGuardPlugin'), 'history.go(-1)')  ?></li>-->
-              <li><?php echo link_to(__('Thoát', null, 'sfGuardPlugin'), '@sf_guard_signout') ?></li>
+              <?php echo link_to(__('Trang Quản Trị', null, 'sfGuardPlugin'), '@homepage') ?></br>
+              <?php echo link_to(__('Thoát', null, 'sfGuardPlugin'), '@sf_guard_signout') ?>
             </ul>
           <?php endif ?>
           <div class="clear"></div>

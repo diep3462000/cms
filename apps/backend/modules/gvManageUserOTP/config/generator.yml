@@ -21,7 +21,7 @@ generator:
         batch_actions: {}
       filter:
         class: gvManageUserOTPFormFiltersAdmin
-        display: [msisdn, user_id, verify_code, status, type]
+        display: [verified_phone, user_id, verify_code, status, type]
       form:    ~
       edit:    ~
       new:     ~

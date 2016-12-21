@@ -24,6 +24,7 @@ abstract class BaseLoggedInLogFormFilter extends BaseFormFilterDoctrine
       'versionCode'  => new sfWidgetFormFilterInput(),
       'versionBuild' => new sfWidgetFormFilterInput(),
       'ipLocked'     => new sfWidgetFormFilterInput(),
+      'reloggedIn'   => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
@@ -38,6 +39,7 @@ abstract class BaseLoggedInLogFormFilter extends BaseFormFilterDoctrine
       'versionCode'  => new sfValidatorPass(array('required' => false)),
       'versionBuild' => new sfValidatorPass(array('required' => false)),
       'ipLocked'     => new sfValidatorPass(array('required' => false)),
+      'reloggedIn'   => new sfValidatorPass(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('logged_in_log_filters[%s]');
@@ -69,6 +71,7 @@ abstract class BaseLoggedInLogFormFilter extends BaseFormFilterDoctrine
       'versionCode'  => 'Text',
       'versionBuild' => 'Text',
       'ipLocked'     => 'Text',
+      'reloggedIn'   => 'Text',
     );
   }
 }

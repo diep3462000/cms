@@ -14,8 +14,15 @@ generator:
     config:
       actions: ~
       fields:  ~
-      list:    ~
-      filter:  ~
+      list:
+        display: [providerCode, providerName, description, active, telcoPercent, valuePercent]
+        title: Danh sách nhà cung cấp thẻ
+        object_actions: {}
+        actions: {}
+        batch_actions: {}
+      filter:
+        display: [providerCode]
+        class: gvManageCardProviderFormFiltersAdmin
       form:    ~
       edit:    ~
       new:     ~

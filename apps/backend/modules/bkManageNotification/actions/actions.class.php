@@ -13,7 +13,4 @@ require_once dirname(__FILE__).'/../lib/bkManageNotificationGeneratorHelper.clas
  */
 class bkManageNotificationActions extends autoBkManageNotificationActions
 {
-    protected function processForm(sfWebRequest $request, sfForm $form)
-    {
-    }
 }

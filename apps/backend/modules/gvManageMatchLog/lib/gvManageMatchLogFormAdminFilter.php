@@ -63,12 +63,12 @@ class gvManageMatchLogFormAdminFilter extends BaseMatchLogFormFilter
                 $query->andWhere($alias. '.createdtime BETWEEN ? AND ?', array($date1Str, $date2Str));
             }
         }
-//        if(array_key_exists('partner_id', $values)&& $values['partner_id'] != ''){
-//            $query->andWhere($alias .".providerId = ?",$values["partner_id"] );
-//        }
-//        if(array_key_exists('os_id', $values)&& $values['os_id'] != ''){
-//            $query->andWhere("g.clientID = ?",$values["os_id"] );
-//        }
+        if(array_key_exists('gameid', $values)&& $values['gameid'] != ''){
+            $query->andWhere($alias .".gameid = ?",$values["gameid"] );
+        }
+        if(array_key_exists('matchindex', $values)&& $values['matchindex'] != ''){
+            $query->andWhere("g.matchindex = ?",$values["matchindex"] );
+        }
         $query->leftJoin($alias. ".Game g");
 //        $query->groupBy("DATE(". $alias .".created_at)");
 

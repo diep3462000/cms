@@ -2,11 +2,4 @@
 ---
 indexSuccess:
   metas:
-    title: Thống kê CCU
-  stylesheets:
-    - bootstrapDaterangepickerMaster/daterangepicker-bs2.css
-
-  javascripts:
-    - bootstrapDaterangepickerMaster/moment.min.js
-    - bootstrapDaterangepickerMaster/daterangepicker.js
-    - frontend/jquery.datetimepicker.js
+    title: Quản lý game xóc đĩa

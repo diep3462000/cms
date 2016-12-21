@@ -16,13 +16,13 @@ generator:
       fields:  ~
       list:
         title: Thống kê xóc đĩa
-        display: [roomid, matchindex, description_arr, type, createdTime]
+        display: [roomid, matchIndex, description_arr, type, createdTime]
         actions: {}
         object_actions: {}
         batch_actions: {}
       filter:
         class: gvManageXocDiaFormAdminFilter
-        display: [roomid, matchindex, created_date, description]
+        display: [roomid, matchIndex, created_date, description]
       form:    ~
       edit:    ~
       new:     ~

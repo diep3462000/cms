@@ -15,17 +15,17 @@ class gvManageLoggedInLogFormFiltersAdmin extends BaseLoggedInLogFormFilter
     public function configure()
     {
         $this->setWidgets(array(
-            'userId'       => new sfWidgetFormFilterInput(),
-            'userName'     => new sfWidgetFormFilterInput(),
+            'userId'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
+            'userName'     => new sfWidgetFormFilterInput(array('with_empty' => false)),
             'loggedInTime' => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
-            'deviceId'     => new sfWidgetFormFilterInput(),
-            'deviceInfo'   => new sfWidgetFormFilterInput(),
-            'remoteIp'     => new sfWidgetFormFilterInput(),
-            'clientType'   => new sfWidgetFormFilterInput(),
-            'packageName'  => new sfWidgetFormFilterInput(),
-            'versionCode'  => new sfWidgetFormFilterInput(),
-            'versionBuild' => new sfWidgetFormFilterInput(),
-            'ipLocked'     => new sfWidgetFormFilterInput(),
+            'deviceId'     => new sfWidgetFormFilterInput(array('with_empty' => false)),
+            'deviceInfo'   => new sfWidgetFormFilterInput(array('with_empty' => false)),
+            'remoteIp'     => new sfWidgetFormFilterInput(array('with_empty' => false)),
+            'clientType'   => new sfWidgetFormFilterInput(array('with_empty' => false)),
+            'packageName'  => new sfWidgetFormFilterInput(array('with_empty' => false)),
+            'versionCode'  => new sfWidgetFormFilterInput(array('with_empty' => false)),
+            'versionBuild' => new sfWidgetFormFilterInput(array('with_empty' => false)),
+            'ipLocked'     => new sfWidgetFormFilterInput(array('with_empty' => false)),
         ));
 
         $this->setValidators(array(
@@ -53,7 +53,7 @@ class gvManageLoggedInLogFormFiltersAdmin extends BaseLoggedInLogFormFilter
     public function doBuildQuery(array $values) {
         $query = parent::doBuildQuery($values);
         $alias = $query->getRootAlias();
-        $query->orderBy($alias . ".loggedInTime desc");
+        $query->orderBy($alias . ".logId desc");
         return $query;
     }
 
